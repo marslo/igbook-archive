@@ -46,3 +46,14 @@ Notes about software installation or configurations
     - [How to install](https://github.com/Marslo/GoagentConfig#how-to-install)
     - [如何安装](https://github.com/Marslo/GoagentConfig#如何安装)
 - [Q&A](https://github.com/Marslo/GoagentConfig#如何安装)
+
+## [Colorful Command Line](https://github.com/Marslo/Colorful_CommandLine_Windows/blob/master/README.md#default-command-line)
+- [Colorful Prompt](https://github.com/Marslo/Colorful_CommandLine_Windows#colorful-prompt)
+      - [Needed Tools and files](https://github.com/Marslo/Colorful_CommandLine_Windows#colorful-prompt)
+      - [Steps](https://github.com/Marslo/Colorful_CommandLine_Windows#steps)
+  - [Specified Font](https://github.com/Marslo/Colorful_CommandLine_Windows#change-font-in-commandline)
+      - [Add the specified font](https://github.com/Marslo/Colorful_CommandLine_Windows#add-the-customize-font)
+      - [Set code page](https://github.com/Marslo/Colorful_CommandLine_Windows#set-code-page)
+      - [Set cmd use font](https://github.com/Marslo/Colorful_CommandLine_Windows#settings)
+  - [Specified Cursor Size](https://github.com/Marslo/Colorful_CommandLine_Windows#specified-the-cursor-size)
+  - [Set aliases in cmd](https://github.com/Marslo/Colorful_CommandLine_Windows#set-aliases-in-command-linedefaul
