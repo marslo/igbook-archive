@@ -30,4 +30,24 @@
     > -DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
     > -DMYSQL_UNIX_ADDR=/tmp/mysqld.sock \
     > -DWITH_DEBUG=0 \
-    > -DMYSQL_TCP_PORT=3306 
+    > -DMYSQL_TCP_PORT=3306
+    # make
+    # make install
+
+#### Permission Manager
+
+    # chown -R mysql:mysql /usr/local/mysql
+
+#### Initinal MySQL
+
+    # scripts/mysql_install_db --user=mysql
+    # cp support-files/mysql.server /etc/init.d/mysqld
+
+#### Setup root password
+
+    # ./bin/mysqladmin -u root password 'root'
+Or
+
+    # ./bin/mysql_secure_installation
+
+##### [cmake logs](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Cmake_Logs.md)
