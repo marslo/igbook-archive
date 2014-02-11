@@ -1,4 +1,22 @@
 ## Install MySQL from Source code
+### Contact
+- Compile and Install
+    - [Usefull Links](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#usefull-links)
+    - [Preconfiguratio setup](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#preconfiguration-setup)
+        - [Create user and group account](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#create-user-and-group)
+        - [Extract tar.gz](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#extract-targz)
+    - [Compile and install](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#compile-and-install)
+- Configuration and Initial
+    - [Change permission](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#permission-manager)
+    - [Initial Mysql](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#initial-mysql)
+    - [Change Permission again](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#change-permission-again)
+    - [Start mysqld_safe](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#start-mysqld_safe)
+    - [Setup root password](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#setup-root-password)
+
+- [Set Envionment](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#set-environment)
+- [Check the mysql port](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-the-mysql-port)
+-[Check variables](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-variables)
+- [Make msyql as boot start](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#make-mysql-as-boot-start)
 
 ### Usefull Links
 - [MySQL Community Server](http://dev.mysql.com/downloads/mysql/)
@@ -20,7 +38,7 @@
     # tar xf mysql-5.7.3-m13.tar.gz
     # cd mysql-5.7.3-m13
 
-##### Compile and Install
+#### Compile and Install
 
     # cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
     > -DDEFAULT_CHARSET=gbk \
@@ -35,7 +53,7 @@
     # make
     # make install
 
-###### [cmake logs](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Cmake_Logs.md)
+##### [cmake logs](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Cmake_Logs.md)
 
 ### Configuration and Initial
 #### Permission Manager
