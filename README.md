@@ -19,5 +19,5 @@ Notes about software installation or configurations
     - [Setup root password](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#setup-root-password)
 - [Set Envionment](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#set-environment)
 - [Check the mysql port](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-the-mysql-port)
--[Check variables](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-variables)
+- [Check variables](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-variables)
 - [Make msyql as boot start](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#make-mysql-as-boot-start)

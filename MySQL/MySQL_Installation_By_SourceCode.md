@@ -14,7 +14,7 @@
     - [Setup root password](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#setup-root-password)
 - [Set Envionment](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#set-environment)
 - [Check the mysql port](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-the-mysql-port)
--[Check variables](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-variables)
+- [Check variables](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-variables)
 - [Make msyql as boot start](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#make-mysql-as-boot-start)
 
 ### Usefull Links
@@ -64,7 +64,7 @@
     # scripts/mysql_install_db --user=mysql
     # cp support-files/mysql.server /etc/init.d/mysqld
 
-#### [Log of mysql_install_db --user=mysql](https://github.com/Marslo/MyNotes/blob/master/MySQL/mysql_install_db.md)
+##### [Log of mysql_install_db --user=mysql](https://github.com/Marslo/MyNotes/blob/master/MySQL/mysql_install_db.md)
 
 #### Change Permission again
 
@@ -82,7 +82,7 @@ Or
 
     # ./bin/mysql_secure_installation
 
-#### [Log of mysql_secure_installatioin](https://github.com/Marslo/MyNotes/blob/master/MySQL/mysql_secure_installation.md)
+##### [Log of mysql_secure_installatioin](https://github.com/Marslo/MyNotes/blob/master/MySQL/mysql_secure_installation.md)
 
 ### Set Environment
 
