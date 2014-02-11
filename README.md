@@ -3,8 +3,7 @@ MyNotes
 
 Notes about software installation or configurations
 
-## MySQL
-### [INSTALL MYSQL FROM SOURCE CODE](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#install-mysql-from-source-code)
+## [INSTALL MYSQL FROM SOURCE CODE](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#install-mysql-from-source-code)
 - [Usefull Links](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#usefull-links)
 - [Compile and Install](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#compile-and-install)
     - [Preconfiguratio setup](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#preconfiguration-setup)
@@ -36,3 +35,14 @@ Notes about software installation or configurations
     - [Error: BerkeleyDB (libdb) not found](https://github.com/Marslo/Moc_Cmus-Config#error-berkeleydb-libdb-not-found)
     - [decoder.c:22:18: fatal error: ltdl.h](https://github.com/Marslo/Moc_Cmus-Config#decoderc2218-fatal-error-ltdlh)
     - [FATAL_ERROR: No valid sound driver!](https://github.com/Marslo/Moc_Cmus-Config#fatal_error-no-valid-sound-driver)
+
+## [GoAgent Config](https://github.com/Marslo/GoagentConfig#goagentconfig)
+- [Offical Website](https://github.com/Marslo/GoagentConfig#offical-webiste)
+- [Latest Version](https://github.com/Marslo/GoagentConfig#latest-version)
+    - [Install](https://github.com/Marslo/GoagentConfig#install)
+    - [Configuration](https://github.com/Marslo/GoagentConfig#configuration)
+    - [Run GoAgent](https://github.com/Marslo/GoagentConfig#run-goagent)
+- [Older Version](https://github.com/Marslo/GoagentConfig#older-version)
+    - [How to install](https://github.com/Marslo/GoagentConfig#how-to-install)
+    - [如何安装](https://github.com/Marslo/GoagentConfig#如何安装)
+- [Q&A](https://github.com/Marslo/GoagentConfig#如何安装)
