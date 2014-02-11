@@ -8,18 +8,19 @@
 - [2.8.2. Installing MySQL Using a Standard Source Distribution](http://dev.mysql.com/doc/refman/5.7/en/installing-source-distribution.html)
 - [2.8.4. MySQL Source-Configuration Options](http://dev.mysql.com/doc/refman/5.7/en/source-configuration-options.html)
 
-### Preconfiguration Setup
-#### Create user and group
+### Compile and Install
+#### Preconfiguration Setup
+##### Create user and group
 
     # groupadd mysql
     # useradd -r -g mysql mysql
 
-#### Extract tar.gz
+##### Extract tar.gz
 
     # tar xf mysql-5.7.3-m13.tar.gz
     # cd mysql-5.7.3-m13
 
-#### Compile and Install
+##### Compile and Install
 
     # cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
     > -DDEFAULT_CHARSET=gbk \
@@ -34,13 +35,14 @@
     # make
     # make install
 
-##### [cmake logs](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Cmake_Logs.md)
+###### [cmake logs](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Cmake_Logs.md)
 
+### Configuration and Initial
 #### Permission Manager
 
     # chown -R mysql:mysql /usr/local/mysql
 
-#### Initinal MySQL
+#### Initial MySQL
 
     # scripts/mysql_install_db --user=mysql
     # cp support-files/mysql.server /etc/init.d/mysqld
@@ -58,25 +60,25 @@
 
 #### Setup root password
 
-    # ./bin/mysqladmin -u root password 'root'
+    # ./bin/mysqladmin -u root password '<PASSWORDHERE>'
 Or
 
     # ./bin/mysql_secure_installation
 
 #### [Log of mysql_secure_installatioin](https://github.com/Marslo/MyNotes/blob/master/MySQL/mysql_secure_installation.md)
 
-#### Set Environment
+### Set Environment
 
     # cat >> /etc/bash.bashrc << EOF
     > export PATH=/usr/local/mysql/bin:$PATH
     > EOF
 
-## Check the mysql port
+### Check the mysql port
 
     sudo netstat -tunlp  | grep 3306
     tcp6       0      0 :::3306                 :::*                    LISTEN      21712/mysqld
 
-## Check variables
+### Check variables
 
     # mysqladmin variables -p
     Enter password:
@@ -85,4 +87,3 @@ Or
 
     chkconfig --add mysqld
     chkconfig --level 345 mysqld on
-
