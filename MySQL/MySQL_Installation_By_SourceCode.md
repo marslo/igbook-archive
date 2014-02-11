@@ -33,6 +33,7 @@
     > -DMYSQL_TCP_PORT=3306
     # make
     # make install
+
 ##### [cmake logs](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Cmake_Logs.md)
 
 #### Permission Manager
@@ -69,4 +70,19 @@ Or
     # cat >> /etc/bash.bashrc << EOF
     > export PATH=/usr/local/mysql/bin:$PATH
     > EOF
+
+## Check the mysql port
+
+    sudo netstat -tunlp  | grep 3306
+    tcp6       0      0 :::3306                 :::*                    LISTEN      21712/mysqld
+
+## Check variables
+
+    # mysqladmin variables -p
+    Enter password:
+
+## Make mysql as boot start
+
+    chkconfig --add mysqld
+    chkconfig --level 345 mysqld on
 
