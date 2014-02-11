@@ -56,4 +56,4 @@ Notes about software installation or configurations
       - [Set code page](https://github.com/Marslo/Colorful_CommandLine_Windows#set-code-page)
       - [Set cmd use font](https://github.com/Marslo/Colorful_CommandLine_Windows#settings)
   - [Specified Cursor Size](https://github.com/Marslo/Colorful_CommandLine_Windows#specified-the-cursor-size)
-  - [Set aliases in cmd](https://github.com/Marslo/Colorful_CommandLine_Windows#set-aliases-in-command-linedefaul
+  - [Set aliases in cmd](https://github.com/Marslo/Colorful_CommandLine_Windows#set-aliases-in-command-linedefault-command-line)
