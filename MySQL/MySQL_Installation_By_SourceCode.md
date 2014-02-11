@@ -33,6 +33,7 @@
     > -DMYSQL_TCP_PORT=3306
     # make
     # make install
+##### [cmake logs](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Cmake_Logs.md)
 
 #### Permission Manager
 
@@ -42,6 +43,8 @@
 
     # scripts/mysql_install_db --user=mysql
     # cp support-files/mysql.server /etc/init.d/mysqld
+
+#### [Log of mysql_install_db --user=mysql](https://github.com/Marslo/MyNotes/blob/master/MySQL/mysql_install_db.md)
 
 #### Change Permission again
 
@@ -59,10 +62,11 @@ Or
 
     # ./bin/mysql_secure_installation
 
+#### [Log of mysql_secure_installatioin](https://github.com/Marslo/MyNotes/blob/master/MySQL/mysql_secure_installation.md)
+
 #### Set Environment
 
     # cat >> /etc/bash.bashrc << EOF
     > export PATH=/usr/local/mysql/bin:$PATH
     > EOF
 
-##### [cmake logs](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Cmake_Logs.md)

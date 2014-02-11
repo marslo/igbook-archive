@@ -1,4 +1,4 @@
-Log for `./bin/mysql_secure_installation`
+## Log for ./bin/mysql_secure_installation
 
     <pre><code>
     # ./bin/mysql_secure_installation
