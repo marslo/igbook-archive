@@ -21,3 +21,10 @@ Notes about software installation or configurations
 - [Check the mysql port](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-the-mysql-port)
 - [Check variables](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-variables)
 - [Make msyql as boot start](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#make-mysql-as-boot-start)
+
+## [Build MOCP by Source Code]
+- [Precondiction](https://github.com/Marslo/Moc_Cmus-Config#precondiction)
+- [Error and Solucton](https://github.com/Marslo/Moc_Cmus-Config#errors-and-soluctions)
+    - [Error: BerkeleyDB (libdb) not found](https://github.com/Marslo/Moc_Cmus-Config#error-berkeleydb-libdb-not-found)
+    - [decoder.c:22:18: fatal error: ltdl.h](https://github.com/Marslo/Moc_Cmus-Config#decoderc2218-fatal-error-ltdlh)
+    - [FATAL_ERROR: No valid sound driver!](https://github.com/Marslo/Moc_Cmus-Config#fatal_error-no-valid-sound-driver)
