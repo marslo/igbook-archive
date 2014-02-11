@@ -22,7 +22,15 @@ Notes about software installation or configurations
 - [Check variables](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-variables)
 - [Make msyql as boot start](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#make-mysql-as-boot-start)
 
-## [Build MOCP by Source Code]
+## [Build VIM/GVIM from source code](https://github.com/Marslo/VimConfig#compile-vimgvim-by-source-code-on-linuxubuntu)
+- [Compile vim/gvim by source code](https://github.com/Marslo/VimConfig#compile-vimgvim-by-source-code-on-linuxubuntu)
+    - [Precondiction](https://github.com/Marslo/VimConfig#1-prepare-environment)
+    - [Compile and Install](https://github.com/Marslo/VimConfig#2-compile-and-install)
+    - [Make compiled vim as default text editor](https://github.com/Marslo/VimConfig#3-make-the-compiled-gvim-as-the-default-text-editor-in-ubunut)
+    - [Q&A](https://github.com/Marslo/VimConfig#4-qa)
+
+
+## [Build MOCP by Source Code](https://github.com/Marslo/Moc_Cmus-Config#build-moc-by-souce-code)
 - [Precondiction](https://github.com/Marslo/Moc_Cmus-Config#precondiction)
 - [Error and Solucton](https://github.com/Marslo/Moc_Cmus-Config#errors-and-soluctions)
     - [Error: BerkeleyDB (libdb) not found](https://github.com/Marslo/Moc_Cmus-Config#error-berkeleydb-libdb-not-found)
