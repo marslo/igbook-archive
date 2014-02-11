@@ -43,11 +43,26 @@
     # scripts/mysql_install_db --user=mysql
     # cp support-files/mysql.server /etc/init.d/mysqld
 
+#### Change Permission again
+
+    # chown -R root .
+    # chown -R mysql data
+
+#### Start mysqld_safe
+
+    # bin/mysqld_safe --user=mysql &
+
 #### Setup root password
 
     # ./bin/mysqladmin -u root password 'root'
 Or
 
     # ./bin/mysql_secure_installation
+
+#### Set Environment
+
+    # cat >> /etc/bash.bashrc << EOF
+    > export PATH=/usr/local/mysql/bin:$PATH
+    > EOF
 
 ##### [cmake logs](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Cmake_Logs.md)
