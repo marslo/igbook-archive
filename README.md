@@ -3,6 +3,22 @@ MyNotes
 
 Notes about software installation or configurations
 
+## [Git Command Study and Practice](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#git-command-study-and-practice)
+- [Appoint](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#appoint)
+    - [Git Aliases](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#git-alias)
+    - [.marslorc](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#marslorc)
+
+- [Rebase](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#rebase)
+    - [Without Confilite file](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#without-confilite-file)
+        - [Precondition](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#precondiction)
+        - [Merge with rebase](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#merge-with-rebase)
+    - [With Confilite file](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#with-confilite-file)
+        - [Precondicition](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#precondiction-1)
+        - [Merge by rebase](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#merge-by-rebase)
+        - [Return to master branch](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#return-to-master-branch)
+
+
+
 ## [INSTALL MYSQL FROM SOURCE CODE](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#install-mysql-from-source-code)
 - [Usefull Links](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#usefull-links)
 - [Compile and Install](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#compile-and-install)
