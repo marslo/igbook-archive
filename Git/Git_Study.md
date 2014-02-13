@@ -42,7 +42,6 @@ Git Command Study and practice
 ### Without Confilite file
 #### Precondiction
 
-
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git plog
     * 37a0595 - (HEAD, master) 2: 2.txt (5 seconds ago) <Marslo>
@@ -176,8 +175,8 @@ Git Command Study and practice
         no changes added to commit (use "git add" and/or "git commit -a")
 
 - Log changed:
-    - New committed version has been **removed**
-    - Remote new version has been **added*
+    1. New committed version has been **removed**
+    2. Remote new version has been **added*
         <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git rlog
         * b9709fe - (HEAD, origin/master, origin/HEAD) 1: 1 (2 minutes ago)
@@ -188,7 +187,7 @@ Git Command Study and practice
         * 1d9bcce - Initial commit (26 minutes ago) <Marslo>
         </code></pre>
 
-    - The confilicted file has been meraged
+    3. The confilicted file has been meraged
 
         <pre><code>
         [marslo@MJ ~/Tools/Git/2_GitStudy]
@@ -229,7 +228,7 @@ Git Command Study and practice
     Applying: 2: 1
 
 - Check the status
-    - The merged file (`Unmerged`) -> `staged`
+    1. The merged file (`Unmerged`) -> `staged`
           <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
           $ git st
           # On branch master
@@ -239,7 +238,7 @@ Git Command Study and practice
           nothing to commit, working directory clean
           </code></pre>
 
-    - Log added the remote new version
+    2. Log added the remote new version
 
         <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git plog
@@ -252,7 +251,7 @@ Git Command Study and practice
         * 1d9bcce - Initial commit (27 minutes ago) <Marslo>
         </code></pre>
 
-    - Branch changed `no branch, rebasing master` -> `master`
+    3. Branch changed `no branch, rebasing master` -> `master`
         <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git br
         * master
