@@ -4,11 +4,11 @@ MyNotes
 Notes about software installation or configurations
 
 ## Content
-- [Git Command Study and Practice](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#git-command-study-and-practice)
-- [INSTALL MYSQL FROM SOURCE CODE](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#install-mysql-from-source-code)
-- [Build VIM/GVIM from source code](https://github.com/Marslo/VimConfig#compile-vimgvim-by-source-code-on-linuxubuntu)
-- [Build VIM/GVIM from source code](https://github.com/Marslo/VimConfig#compile-vimgvim-by-source-code-on-linuxubuntu)
-- [Colorful Command Line](https://github.com/Marslo/Colorful_CommandLine_Windows/blob/master/README.md#default-command-line)
+- [Git Command Study and Practice](https://github.com/Marslo/MyNotes#git-command-study-and-practice)
+- [INSTALL MYSQL FROM SOURCE CODE](https://github.com/Marslo/MyNotes#install-mysql-from-source-code)
+- [Build VIM/GVIM from source code](https://github.com/Marslo/MyNotes#build-vimgvim-from-source-code)
+- [Build MOCP by Source Code](https://github.com/Marslo/MyNotes#build-mocp-by-source-code)
+- [Colorful Command Line](https://github.com/Marslo/MyNotes#goagent-config)
 
 ## [Git Command Study and Practice](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#git-command-study-and-practice)
 - [Appoint](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#appoint)
