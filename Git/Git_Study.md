@@ -1,8 +1,92 @@
 Git Command Study and practice
+=======
+
+## Appoint
+### Git Alias
+- st = status
+- ci = commit -am
+- br = branch
+- plog = log --max-count=3 --color --graph  
+ --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset'
+ --abbrev-commit --date=relative
+- plogs = log --color --graph  
+ --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset'
+ --abbrev-commit --date=relative
+- rlog = !bash -c 'git fetch && git plog remotes/origin/master'
+- rlogs = !bash -c 'git fetch && git plogs remotes/origin/master'
+- info = !bash -c '. ~/.marslo/.marslorc && gitinfo'
+### .marslorc
+- [.marslorc](https://github.com/Marslo/LinuxStuff/blob/master/Configs/HOME/.marslo/.marslorc)
+
+
 
 ## Rebase
-### Without Confilite
-### With Confilite
+
+### Without Confilite file
+#### Precondiction
+
+
+    [marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git plog
+    * 37a0595 - (HEAD, master) 2: 2.txt (5 seconds ago) <Marslo>
+    * 1d9bcce - Initial commit (65 minutes ago) <Marslo>
+    [marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git rlog
+    * 4e3106e - (origin/master, origin/HEAD) 1: 1.txt (2 minutes ago) <Marslo>
+    * 1d9bcce - Initial commit (65 minutes ago) <Marslo>
+    [marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git br
+    * master
+    [marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git push
+    To git@github.com:Marslo/GitStudy.git
+     ! [rejected]        master -> master (non-fast-forward)
+    error: failed to push some refs to 'git@github.com:Marslo/GitStudy.git'
+    hint: Updates were rejected because the tip of your current branch is behind
+    hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+    hint: before pushing again.
+    hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+#### Merge with rebase
+##### Use command: git pulll --rebase
+
+    [marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git pull --rebase
+    First, rewinding head to replay your work on top of it...
+    Applying: 2: 2.txt
+
+##### Check the status after pull rebase
+- Check the status
+    - The status of meraged file hasn't been changed
+
+        [marslo@MJ ~/Tools/Git/2_GitStudy]
+        $ git st
+        # On branch master
+        # Your branch is ahead of 'origin/master' by 1 commit.
+        #   (use "git push" to publish your local commits)
+        #
+        nothing to commit, working directory clean
+
+    - The branch hasn't been changed
+
+        [marslo@MJ ~/Tools/Git/2_GitStudy]
+        $ git br
+        * master
+
+    - Log: added the remote new version
+
+        [marslo@MJ ~/Tools/Git/2_GitStudy]
+        $ git plog
+        * 7bc54e0 - (HEAD, master) 2: 2.txt (12 seconds ago) <Marslo>
+        * 4e3106e - (origin/master, origin/HEAD) 1: 1.txt (4 minutes ago) <Marslo>
+        * 1d9bcce - Initial commit (68 minutes ago) <Marslo>
+        [marslo@MJ ~/Tools/Git/2_GitStudy]
+        $ git rlog
+        * 4e3106e - (origin/master, origin/HEAD) 1: 1.txt (4 minutes ago) <Marslo>
+        * 1d9bcce - Initial commit (68 minutes ago) <Marslo>
+
+
+### With Confilite file
 #### Precondiction
 
     marslo@MJ ~/Tools/Git/2_GitStudy]
@@ -141,11 +225,11 @@ Git Command Study and practice
         [marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git plog
         * d6962d6 - (HEAD, master) 2: 1 (4 seconds ago) <Marslo>
-        * b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Mars
+        * b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Marslo>
         * 1d9bcce - Initial commit (27 minutes ago) <Marslo>
         [marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git rlog
-        * b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Mars
+        * b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Marslo>
         * 1d9bcce - Initial commit (27 minutes ago) <Marslo>
 
     - Branch changed: `no branch, rebasing master` -> `master`
