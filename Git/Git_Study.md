@@ -2,7 +2,7 @@ Git Command Study and practice
 =======
 
 ## Appoint
-### Git Alias
+### [Git Alias](https://github.com/Marslo/LinuxStuff/blob/master/Configs/HOME/Git/.gitconfig)
 - st = status
 - ci = commit -am
 - br = branch
@@ -15,6 +15,7 @@ Git Command Study and practice
 - rlog = !bash -c 'git fetch && git plog remotes/origin/master'
 - rlogs = !bash -c 'git fetch && git plogs remotes/origin/master'
 - info = !bash -c '. ~/.marslo/.marslorc && gitinfo'
+
 ### .marslorc
 - [.marslorc](https://github.com/Marslo/LinuxStuff/blob/master/Configs/HOME/.marslo/.marslorc)
 
