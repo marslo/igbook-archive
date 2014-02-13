@@ -59,24 +59,23 @@ Git Command Study and practice
 - Check the status
 
     - The status of meraged file hasn't been changed
-
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
+        <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git st
         # On branch master
         # Your branch is ahead of 'origin/master' by 1 commit.
         #   (use "git push" to publish your local commits)
         #
         nothing to commit, working directory clean
+        </code></pre>
 
     - The branch hasn't been changed
-
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
+        <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git br
         * master
+        </code></pre>
 
     - Log: added the remote new version
-
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
+        <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git plog
         * 7bc54e0 - (HEAD, master) 2: 2.txt (12 seconds ago) <Marslo>
         * 4e3106e - (origin/master, origin/HEAD) 1: 1.txt (4 minutes ago) <Marslo>
@@ -85,7 +84,7 @@ Git Command Study and practice
         $ git rlog
         * 4e3106e - (origin/master, origin/HEAD) 1: 1.txt (4 minutes ago) <Marslo>
         * 1d9bcce - Initial commit (68 minutes ago) <Marslo>
-
+        </code></pre>
 
 ### With Confilite file
 #### Precondiction
@@ -161,8 +160,7 @@ Git Command Study and practice
 - Log changed:
     - New committed version has been **removed**
     - Remote new version has been **added*
-
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
+        <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git rlog
         * b9709fe - (HEAD, origin/master, origin/HEAD) 1: 1 (2 minutes ago)
         * 1d9bcce - Initial commit (26 minutes ago) <Marslo>
@@ -170,6 +168,7 @@ Git Command Study and practice
         $ git plog
         * b9709fe - (HEAD, origin/master, origin/HEAD) 1: 1 (2 minutes ago)
         * 1d9bcce - Initial commit (26 minutes ago) <Marslo>
+        </code></pre>
 
 - The confilicted file has been meraged
 
@@ -212,18 +211,17 @@ Git Command Study and practice
 
 - Check the status
     - The merged file (`Unmerged`) -> `staged`
-
-          marslo@MJ ~/Tools/Git/2_GitStudy]
+          <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
           $ git st
           # On branch master
           # Your branch is ahead of 'origin/master' by 1 commit.
           #   (use "git push" to publish your local commits)
           #
           nothing to commit, working directory clean
+          </code></pre>
 
     - Log: added the remote new version
-
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
+        <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git plog
         * d6962d6 - (HEAD, master) 2: 1 (4 seconds ago) <Marslo>
         * b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Marslo>
@@ -232,9 +230,10 @@ Git Command Study and practice
         $ git rlog
         * b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Marslo>
         * 1d9bcce - Initial commit (27 minutes ago) <Marslo>
+        </code></pre>
 
     - Branch changed: `no branch, rebasing master` -> `master`
-
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
+        <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git br
         * master
+        </code></pre>
