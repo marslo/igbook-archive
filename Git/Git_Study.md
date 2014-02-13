@@ -75,33 +75,32 @@ Git Command Study and practice
 - Check the status
 
     - The status of meraged file hasn't been changed
-        <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git st
-        # On branch master
-        # Your branch is ahead of 'origin/master' by 1 commit.
-        #   (use "git push" to publish your local commits)
-        #
-        nothing to commit, working directory clean
-        </code></pre>
+    <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git st
+    # On branch master
+    # Your branch is ahead of 'origin/master' by 1 commit.
+    #   (use "git push" to publish your local commits)
+    #
+    nothing to commit, working directory clean
+    </code></pre>
 
     - The branch hasn't been changed
-        <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git br
-        * master
-        </code></pre>
+    <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git br
+    * master
+    </code></pre>
 
     - Log added the remote new version
-
-        <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git plog
-        * 7bc54e0 - (HEAD, master) 2: 2.txt (12 seconds ago) <Marslo>
-        * 4e3106e - (origin/master, origin/HEAD) 1: 1.txt (4 minutes ago) <Marslo>
-        * 1d9bcce - Initial commit (68 minutes ago) <Marslo>
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git rlog
-        * 4e3106e - (origin/master, origin/HEAD) 1: 1.txt (4 minutes ago) <Marslo>
-        * 1d9bcce - Initial commit (68 minutes ago) <Marslo>
-        </code></pre>
+    <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git plog
+    * 7bc54e0 - (HEAD, master) 2: 2.txt (12 seconds ago) <Marslo>
+    * 4e3106e - (origin/master, origin/HEAD) 1: 1.txt (4 minutes ago) <Marslo>
+    * 1d9bcce - Initial commit (68 minutes ago) <Marslo>
+    [marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git rlog
+    * 4e3106e - (origin/master, origin/HEAD) 1: 1.txt (4 minutes ago) <Marslo>
+    * 1d9bcce - Initial commit (68 minutes ago) <Marslo>
+    </code></pre>
 
 ### With Confilite file
 #### Precondiction
@@ -151,75 +150,75 @@ Git Command Study and practice
 ##### Check the status after pull rebase
 - branch is changed (`master` -> `no branch`)
 
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git br
-        * (no branch, rebasing master)
-          master
+    <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git br
+    * (no branch, rebasing master)
+      master
+    </code></pre>
 
 - Status from `unchanged` and `staged` -> `Umerged`
-
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git st
-        # HEAD detached at b9709fe
-        # You are currently rebasing branch 'master' on 'b9709fe'.
-        #   (fix conflicts and then run "git rebase --continue")
-        #   (use "git rebase --skip" to skip this patch)
-        #   (use "git rebase --abort" to check out the original branch)
-        #
-        # Unmerged paths:
-        #   (use "git reset HEAD <file>..." to unstage)
-        #   (use "git add <file>..." to mark resolution)
-        #
-        #       both modified:      README.md
-        #
-        no changes added to commit (use "git add" and/or "git commit -a")
+    <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git st
+    # HEAD detached at b9709fe
+    # You are currently rebasing branch 'master' on 'b9709fe'.
+    #   (fix conflicts and then run "git rebase --continue")
+    #   (use "git rebase --skip" to skip this patch)
+    #   (use "git rebase --abort" to check out the original branch)
+    #
+    # Unmerged paths:
+    #   (use "git reset HEAD <file>..." to unstage)
+    #   (use "git add <file>..." to mark resolution)
+    #
+    #       both modified:      README.md
+    #
+    no changes added to commit (use "git add" and/or "git commit -a")
+    </code></pre>
 
 - Log changed:
-    1. New committed version has been **removed**
-    2. Remote new version has been **added*
-        <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git rlog
-        * b9709fe - (HEAD, origin/master, origin/HEAD) 1: 1 (2 minutes ago)
-        * 1d9bcce - Initial commit (26 minutes ago) <Marslo>
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git plog
-        * b9709fe - (HEAD, origin/master, origin/HEAD) 1: 1 (2 minutes ago)
-        * 1d9bcce - Initial commit (26 minutes ago) <Marslo>
-        </code></pre>
+    - New committed version has been **removed**
+    - Remote new version has been **added*
+    <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git rlog
+    * b9709fe - (HEAD, origin/master, origin/HEAD) 1: 1 (2 minutes ago)
+    * 1d9bcce - Initial commit (26 minutes ago) <Marslo>
+    [marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git plog
+    * b9709fe - (HEAD, origin/master, origin/HEAD) 1: 1 (2 minutes ago)
+    * 1d9bcce - Initial commit (26 minutes ago) <Marslo>
+    </code></pre>
 
-    3. The confilicted file has been meraged
-
-        <pre><code>
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git add .
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git st
-        # HEAD detached at b9709fe
-        # You are currently rebasing branch 'master' on 'b9709fe'.
-        #   (all conflicts fixed: run "git rebase --continue")
-        #
-        # Changes to be committed:
-        #   (use "git reset HEAD <file>..." to unstage)
-        #
-        #       modified:   README.md
-        #
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git br
-        * (no branch, rebasing master)
-          master
-        [marslo@MJ ~/Tools/2_GitStudy]
-        $ git diff --staged
-        diff --git a/README.md b/README.md
-        index b1acca3..12afed2 100644
-        --- a/README.md
-        +++ b/README.md
-        @@ -1 +1,5 @@
-        +<<<<<<< HEAD
-         1: 1
-        +=======
-        +2: 1
-        +>>>>>>> 2: 1
-        </code></pre>
+- The confilicted file has been meraged
+    <pre><code>
+    [marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git add .
+    [marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git st
+    # HEAD detached at b9709fe
+    # You are currently rebasing branch 'master' on 'b9709fe'.
+    #   (all conflicts fixed: run "git rebase --continue")
+    #
+    # Changes to be committed:
+    #   (use "git reset HEAD <file>..." to unstage)
+    #
+    #       modified:   README.md
+    #
+    [marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git br
+    * (no branch, rebasing master)
+      master
+    [marslo@MJ ~/Tools/2_GitStudy]
+    $ git diff --staged
+    diff --git a/README.md b/README.md
+    index b1acca3..12afed2 100644
+    --- a/README.md
+    +++ b/README.md
+    @@ -1 +1,5 @@
+    +<<<<<<< HEAD
+     1: 1
+    +=======
+    +2: 1
+    +>>>>>>> 2: 1
+    </code></pre>
 
 #### Return to master branch
 
@@ -228,31 +227,30 @@ Git Command Study and practice
     Applying: 2: 1
 
 - Check the status
-    1. The merged file (`Unmerged`) -> `staged`
-          <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
-          $ git st
-          # On branch master
-          # Your branch is ahead of 'origin/master' by 1 commit.
-          #   (use "git push" to publish your local commits)
-          #
-          nothing to commit, working directory clean
-          </code></pre>
+    - The merged file (`Unmerged`) -> `staged`
+    <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git st
+    # On branch master
+    # Your branch is ahead of 'origin/master' by 1 commit.
+    #   (use "git push" to publish your local commits)
+    #
+    nothing to commit, working directory clean
+    </code></pre>
 
-    2. Log added the remote new version
+    - Log added the remote new version
+    <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git plog
+    * d6962d6 - (HEAD, master) 2: 1 (4 seconds ago) <Marslo>
+    * b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Marslo>
+    * 1d9bcce - Initial commit (27 minutes ago) <Marslo>
+    [marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git rlog
+    * b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Marslo>
+    * 1d9bcce - Initial commit (27 minutes ago) <Marslo>
+    </code></pre>
 
-        <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git plog
-        * d6962d6 - (HEAD, master) 2: 1 (4 seconds ago) <Marslo>
-        * b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Marslo>
-        * 1d9bcce - Initial commit (27 minutes ago) <Marslo>
-        [marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git rlog
-        * b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Marslo>
-        * 1d9bcce - Initial commit (27 minutes ago) <Marslo>
-        </code></pre>
-
-    3. Branch changed `no branch, rebasing master` -> `master`
-        <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
-        $ git br
-        * master
-        </code></pre>
+    - Branch changed `no branch, rebasing master` -> `master`
+    <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
+    $ git br
+    * master
+    </code></pre>
