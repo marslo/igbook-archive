@@ -190,6 +190,7 @@ Git Command Study and practice
 
     - The confilicted file has been meraged
 
+        <pre><code>
         [marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git add .
         [marslo@MJ ~/Tools/Git/2_GitStudy]
@@ -219,6 +220,7 @@ Git Command Study and practice
         +=======
         +2: 1
         +>>>>>>> 2: 1
+        </code></pre>
 
 #### Return to master branch
 
@@ -238,6 +240,7 @@ Git Command Study and practice
           </code></pre>
 
     - Log added the remote new version
+
         <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git plog
         * d6962d6 - (HEAD, master) 2: 1 (4 seconds ago) <Marslo>
@@ -249,7 +252,7 @@ Git Command Study and practice
         * 1d9bcce - Initial commit (27 minutes ago) <Marslo>
         </code></pre>
 
-    - Branch changed: `no branch, rebasing master` -> `master`
+    - Branch changed `no branch, rebasing master` -> `master`
         <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git br
         * master
