@@ -44,15 +44,15 @@ Git Command Study and practice
     <pre><code>
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git plog
-    * 37a0595 - (HEAD, master) 2: 2.txt (5 seconds ago) <Marslo>
-    * 1d9bcce - Initial commit (65 minutes ago) <Marslo>
+    37a0595 - (HEAD, master) 2: 2.txt (5 seconds ago) <Marslo>
+    1d9bcce - Initial commit (65 minutes ago) <Marslo>
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git rlog
-    * 4e3106e - (origin/master, origin/HEAD) 1: 1.txt (2 minutes ago) <Marslo>
-    * 1d9bcce - Initial commit (65 minutes ago) <Marslo>
+    4e3106e - (origin/master, origin/HEAD) 1: 1.txt (2 minutes ago) <Marslo>
+    1d9bcce - Initial commit (65 minutes ago) <Marslo>
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git br
-    * master
+      master
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git push
     To git@github.com:Marslo/GitStudy.git
@@ -90,19 +90,19 @@ Git Command Study and practice
     - The branch hasn't been changed
     <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git br
-    * master
+      master
     </code></pre>
 
     - Log added the remote new version
     <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git plog
-    * 7bc54e0 - (HEAD, master) 2: 2.txt (12 seconds ago) <Marslo>
-    * 4e3106e - (origin/master, origin/HEAD) 1: 1.txt (4 minutes ago) <Marslo>
-    * 1d9bcce - Initial commit (68 minutes ago) <Marslo>
+    7bc54e0 - (HEAD, master) 2: 2.txt (12 seconds ago) <Marslo>
+    4e3106e - (origin/master, origin/HEAD) 1: 1.txt (4 minutes ago) <Marslo>
+    1d9bcce - Initial commit (68 minutes ago) <Marslo>
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git rlog
-    * 4e3106e - (origin/master, origin/HEAD) 1: 1.txt (4 minutes ago) <Marslo>
-    * 1d9bcce - Initial commit (68 minutes ago) <Marslo>
+    4e3106e - (origin/master, origin/HEAD) 1: 1.txt (4 minutes ago) <Marslo>
+    1d9bcce - Initial commit (68 minutes ago) <Marslo>
     </code></pre>
 
 ### With Confilite file
@@ -111,15 +111,15 @@ Git Command Study and practice
     <pre><code>
     marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git plog
-    * 94a5935 - (HEAD, master) 2: 1 (25 seconds ago) <Marslo>
-    * 1d9bcce - Initial commit (25 minutes ago) <Marslo>
+     94a5935 - (HEAD, master) 2: 1 (25 seconds ago) <Marslo>
+     1d9bcce - Initial commit (25 minutes ago) <Marslo>
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git rlog
-    * b9709fe - (origin/master, origin/HEAD) 1: 1 (71 seconds ago) <Mar
-    * 1d9bcce - Initial commit (25 minutes ago) <Marslo>
+    b9709fe - (origin/master, origin/HEAD) 1: 1 (71 seconds ago) <Mar
+    1d9bcce - Initial commit (25 minutes ago) <Marslo>
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git br
-    * master
+      master
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git push
     To git@github.com:Marslo/GitStudy.git
@@ -158,7 +158,7 @@ Git Command Study and practice
 
     <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git br
-    * (no branch, rebasing master)
+      (no branch, rebasing master)
       master
     </code></pre>
 
@@ -185,12 +185,12 @@ Git Command Study and practice
     - Remote new version has been **added*
     <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git rlog
-    * b9709fe - (HEAD, origin/master, origin/HEAD) 1: 1 (2 minutes ago)
-    * 1d9bcce - Initial commit (26 minutes ago) <Marslo>
+    b9709fe - (HEAD, origin/master, origin/HEAD) 1: 1 (2 minutes ago)
+    1d9bcce - Initial commit (26 minutes ago) <Marslo>
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git plog
-    * b9709fe - (HEAD, origin/master, origin/HEAD) 1: 1 (2 minutes ago)
-    * 1d9bcce - Initial commit (26 minutes ago) <Marslo>
+    b9709fe - (HEAD, origin/master, origin/HEAD) 1: 1 (2 minutes ago)
+    1d9bcce - Initial commit (26 minutes ago) <Marslo>
     </code></pre>
 
 - The confilicted file has been meraged
@@ -210,7 +210,7 @@ Git Command Study and practice
     #
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git br
-    * (no branch, rebasing master)
+      (no branch, rebasing master)
       master
     [marslo@MJ ~/Tools/2_GitStudy]
     $ git diff --staged
@@ -248,17 +248,17 @@ Git Command Study and practice
     - Log added the remote new version
     <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git plog
-    * d6962d6 - (HEAD, master) 2: 1 (4 seconds ago) <Marslo>
-    * b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Marslo>
-    * 1d9bcce - Initial commit (27 minutes ago) <Marslo>
+    d6962d6 - (HEAD, master) 2: 1 (4 seconds ago) <Marslo>
+    b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Marslo>
+    1d9bcce - Initial commit (27 minutes ago) <Marslo>
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git rlog
-    * b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Marslo>
-    * 1d9bcce - Initial commit (27 minutes ago) <Marslo>
+    b9709fe - (origin/master, origin/HEAD) 1: 1 (3 minutes ago) <Marslo>
+    1d9bcce - Initial commit (27 minutes ago) <Marslo>
     </code></pre>
 
     - Branch changed `no branch, rebasing master` -> `master`
     <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git br
-    * master
+      master
     </code></pre>
