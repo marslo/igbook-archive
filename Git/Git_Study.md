@@ -1,6 +1,20 @@
 Git Command Study and practice
 =======
 
+## Content
+- [Appoint](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#appoint)
+    -[Git Aliases](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#git-alias)
+    - [.marslorc](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#marslorc)
+- [Rebase](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#rebase)
+    - [Without Confilite file](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#without-confilite-file)
+        - [Precondition](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#precondiction)
+        - [Merge with rebase](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#merge-with-rebase)
+    - [With Confilite file](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#with-confilite-file)
+        - [Precondicition](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#precondiction-1)
+        - [Merge by rebase](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#merge-by-rebase)
+        - [Return to master branch](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#return-to-master-branch)
+
+
 ## Appoint
 ### [Git Alias](https://github.com/Marslo/LinuxStuff/blob/master/Configs/HOME/Git/.gitconfig)
 - st = status
@@ -75,7 +89,8 @@ Git Command Study and practice
         * master
         </code></pre>
 
-    - Log: added the remote new version
+    - Log added the remote new version
+
         <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git plog
         * 7bc54e0 - (HEAD, master) 2: 2.txt (12 seconds ago) <Marslo>
@@ -171,11 +186,10 @@ Git Command Study and practice
         * 1d9bcce - Initial commit (26 minutes ago) <Marslo>
         </code></pre>
 
-- The confilicted file has been meraged
+    - The confilicted file has been meraged
 
         [marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git add .
-
         [marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git st
         # HEAD detached at b9709fe
@@ -221,7 +235,7 @@ Git Command Study and practice
           nothing to commit, working directory clean
           </code></pre>
 
-    - Log: added the remote new version
+    - Log added the remote new version
         <pre><code>[marslo@MJ ~/Tools/Git/2_GitStudy]
         $ git plog
         * d6962d6 - (HEAD, master) 2: 1 (4 seconds ago) <Marslo>
