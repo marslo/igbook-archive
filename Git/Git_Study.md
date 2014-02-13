@@ -6,10 +6,10 @@ Git Command Study and practice
 - st = status
 - ci = commit -am
 - br = branch
-- plog = log --max-count=3 --color --graph  
+- plog = log --max-count=3 --color --graph
  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset'
  --abbrev-commit --date=relative
-- plogs = log --color --graph  
+- plogs = log --color --graph
  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset'
  --abbrev-commit --date=relative
 - rlog = !bash -c 'git fetch && git plog remotes/origin/master'
@@ -57,6 +57,7 @@ Git Command Study and practice
 
 ##### Check the status after pull rebase
 - Check the status
+
     - The status of meraged file hasn't been changed
 
         [marslo@MJ ~/Tools/Git/2_GitStudy]
