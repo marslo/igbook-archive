@@ -41,7 +41,7 @@ Git Command Study and practice
 
 ### Without Confilite file
 #### Precondiction
-
+    <pre><code>
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git plog
     * 37a0595 - (HEAD, master) 2: 2.txt (5 seconds ago) <Marslo>
@@ -62,14 +62,17 @@ Git Command Study and practice
     hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
     hint: before pushing again.
     hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+    </code></pre>
 
 #### Merge with rebase
 ##### Use command: git pulll --rebase
 
+    <pre><code>
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git pull --rebase
     First, rewinding head to replay your work on top of it...
     Applying: 2: 2.txt
+    </code></pre>
 
 ##### Check the status after pull rebase
 - Check the status
@@ -105,6 +108,7 @@ Git Command Study and practice
 ### With Confilite file
 #### Precondiction
 
+    <pre><code>
     marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git plog
     * 94a5935 - (HEAD, master) 2: 1 (25 seconds ago) <Marslo>
@@ -125,10 +129,12 @@ Git Command Study and practice
     hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
     hint: before pushing again.
     hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+    </code></pre>
 
 #### Merge by rebase
 ##### Using command: git pull --rebase
 
+    <pre><code>
     [marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git pull --rebase
     First, rewinding head to replay your work on top of it...
@@ -142,10 +148,10 @@ Git Command Study and practice
     Patch failed at 0001 2: 1
     The copy of the patch that failed is found in:
        /home/marslo/Tools/Git/2_GitStudy/.git/rebase-apply/patch
-
     When you have resolved this problem, run "git rebase --continue".
     If you prefer to skip this patch, run "git rebase --skip" instead.
     To check out the original branch and stop rebasing, run "git rebase --abort".
+    </code></pre>
 
 ##### Check the status after pull rebase
 - branch is changed (`master` -> `no branch`)
@@ -222,9 +228,11 @@ Git Command Study and practice
 
 #### Return to master branch
 
+    <pre><code>
     marslo@MJ ~/Tools/Git/2_GitStudy]
     $ git rebase --continue
     Applying: 2: 1
+    </code></pre>
 
 - Check the status
     - The merged file (`Unmerged`) -> `staged`
