@@ -2,9 +2,11 @@ Git Command Study and practice
 =======
 
 ## Content
+
 - [Appoint](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#appoint)
-    -[Git Aliases](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#git-alias)
+    - [Git Aliases](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#git-alias)
     - [.marslorc](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#marslorc)
+
 - [Rebase](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#rebase)
     - [Without Confilite file](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#without-confilite-file)
         - [Precondition](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#precondiction)
