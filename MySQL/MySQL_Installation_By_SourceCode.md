@@ -18,8 +18,10 @@
 - [Make msyql as boot start](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#make-mysql-as-boot-start)
 
 ### Usefull Links
-- [MySQL Community Server](http://dev.mysql.com/downloads/mysql/)
+- [5.7 MySQL Community Server](http://dev.mysql.com/downloads/mysql/)
+- [5.6 MySQL Community Server](http://dev.mysql.com/downloads/mysql/5.6.html)
 - [mysql-5.7.3-m13.tar.gz](http://cdn.mysql.com/Downloads/MySQL-5.7/mysql-5.7.3-m13.tar.gz)
+- [mysql-5.6.16.tar.gz](http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.16.tar.gz)
 - [MySQL Document](http://dev.mysql.com/doc/)
 - [MySQL Online manual](http://dev.mysql.com/doc/refman/5.7/en/)
 - [2.8.2. Installing MySQL Using a Standard Source Distribution](http://dev.mysql.com/doc/refman/5.7/en/installing-source-distribution.html)
