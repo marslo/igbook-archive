@@ -93,3 +93,58 @@
     ibus-daemon      0.1 /usr/bin/ibus-daemon --daemonize --xim
     ....
     </code></pre>
+
+- Batch move
+    <pre><code>[marslo@MJ ~]
+    $ mkdir backup-folder && ls | grep -Ze ".*rar" | xargs -d '\n' -I {} mv {} backup-folder
+    </code></pre>
+
+- Show all line numbers in a file
+    - Method 1
+        <pre><code>[marslo@MJ ~]
+        $ sudo cat /etc/passwd | wc -l
+        36
+        </code></pre>
+
+    - Method 2
+        <pre><code>[marslo@MJ ~]
+        $ awk 'END {print NR}' /etc/passwd
+        36
+        </code></pre>
+
+- Clear
+    <pre><code>[marslo@MJ ~]
+    $ printf "\ec"
+    </code></pre>
+
+- Quick create bak file
+    <pre><code>[marslo@MJ ~]
+    $ l *filename*
+    -rw-r--r-- 1 marslo marslo 0 Feb 21 00:18 filename
+    [marslo@MJ ~]
+    $ cp filename{,.bak}
+    [marslo@MJ ~]
+    $ l *filename*
+    -rw-r--r-- 1 marslo marslo 0 Feb 21 00:18 filename
+    -rw-r--r-- 1 marslo marslo 0 Feb 21 00:18 filename.bak
+    </code></pre>
+
+- Encrypt bash file
+    <pre><code>[marslo@MJ ~]
+    $ echo "ls" > script.bash; gpg -c script.bash; cat script.bash.gpg | gpg -d --no-mdc-warning | bash
+    </code></pre>
+
+- Get URL
+    <pre><code>[marslo@MJ ~]
+    $ echo http://www.baidu.com | awk '{for(i=1;i<=NF;i++){if($i~/^(http|ftp):\/\//)print $i}}'http://www.baidu.com
+    </code></pre>
+
+- Get the count of a word in a file
+    <pre><code>[marslo@MJ ~]
+    $ cat /etc/passwd | grep marslo -o | wc -l
+    3
+    </code></pre>
+    Or
+    <pre><code>$ find . -name file.txt | xargs -e grep "token" -o | wc -l
+    </code></pre>
+
