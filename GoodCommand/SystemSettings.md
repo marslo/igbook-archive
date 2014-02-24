@@ -202,3 +202,20 @@
 
     >>> Last update of whois database: Mon, 24 Feb 2014 17:24:05 UTC <<<
     </code></pre>
+
+- About `whatis`
+    <pre><code>[marslo@MJ ~/Tools/Git/MyNotes]
+    $ whatis whois
+    whois (1)            - client for the whois directory service
+    [marslo@MJ ~/Tools/Git/MyNotes]
+    $ whatis which
+    which (1)            - locate a command
+    [marslo@MJ ~/Tools/Git/MyNotes]
+    $ whatis whereis
+    whereis (1)          - locate the binary, source, and manual page files for a command
+    </code></pre>
+
+- Find the zombie process
+    <pre><code>[marslo@MJ ~/Tools/Git/MyNotes]
+    $ ps aux | awk '{ print $8 " " $2 " " $11}' | grep -w Z
+    </code></pre>
