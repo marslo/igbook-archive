@@ -49,10 +49,6 @@
     --------------------------------------------------
     </code></pre>
 
-- Import data to SQL and print process
-    <pre><code>(pv -n ~/database.sql | mysql -u root -pPASSWORD -D database_name) 2>&1 | zenity --width 550 --progress --auto-close --auto-kill --title "Im
-    </code></pre>
-
 - Batch move
     <pre><code>[marslo@MJ ~]
     $ mkdir backup-folder && ls | grep -Ze ".*rar" | xargs -d '\n' -I {} mv {} backup-folder
@@ -200,3 +196,16 @@
 - Directory diff
     <pre><code>diff --suppress-common-lines -y <(cd path_to_dir1; find .|sort) <(cd path_to_dir2; find .|sort)</code></pre>
 
+- Show last n lines in a file
+    <pre><code>[marslo@MJ ~]
+    $ tail /etc/passwd -n 3
+    saned:x:115:123::/home/saned:/bin/false
+    marslo:x:1000:1000:Marslo,,,:/home/marslo:/bin/bash
+    mysql:x:1001:1001::/home/mysql:/bin/sh
+    [marslo@MJ ~]
+    $ tail /etc/passwd -n 2
+    marslo:x:1000:1000:Marslo,,,:/home/marslo:/bin/bash
+    mysql:x:1001:1001::/home/mysql:/bin/sh
+    </code></pre>
+
+-
