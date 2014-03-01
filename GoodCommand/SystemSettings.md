@@ -219,3 +219,10 @@
     <pre><code>[marslo@MJ ~/Tools/Git/MyNotes]
     $ ps aux | awk '{ print $8 " " $2 " " $11}' | grep -w Z
     </code></pre>
+
+- Sogou Pinyin input method
+    <pre><code>$ sudo add-apt-repository ppa:fcitx-team/nightly
+    $ sudo apt-get update
+    $ sudo apt-get install fcitx-sogoupinyin
+    $ # sudo apt-get remove ibus
+    </code></pre>
