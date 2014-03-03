@@ -213,3 +213,54 @@
     $ echo 00{1..9} 0{10..99} 100
     001 002 003 004 005 006 007 008 009 010 011 012 013 014 015 016 017 018 019 020 021 022 023 024 025 026 027 028 029 030 031 032 033 034 035 036 037 038 039 040 041 042 043 044 045 046 047 048 049 050 051 052 053 054 055 056 057 058 059 060 061 062 063 064 065 066 067 068 069 070 071 072 073 074 075 076 077 078 079 080 081 082 083 084 085 086 087 088 089 090 091 092 093 094 095 096 097 098 099 100
     </code></pre>
+
+- Fast copy or moving or someting ([Detials](http://www.manpager.com/linux/man1/bash.1.html) -> Brace Expansion)
+    - Usage 1:
+        <pre><code>[marslo@MJ ~]
+        $ ls | grep foo
+        [marslo@MJ ~]
+        $ touch foo{1,2,3}
+        [marslo@MJ ~]
+        $ ls | grep foo
+        foo1
+        foo2
+        foo3
+        </code></pre>
+
+    - Usage 2
+        <pre><code>[marslo@MJ ~]
+        $ ls | grep foo
+        [marslo@MJ ~]
+        $ touch foo-{a..d}
+        [marslo@MJ ~]
+        $ ls | grep foo
+        foo-a
+        foo-b
+        foo-c
+        foo-d
+        </code></pre>
+
+    - Usage 3
+        <pre><code>[marslo@MJ ~]
+        $ ls foo-*
+        foo-a  foo-b  foo-c  foo-d
+        [marslo@MJ ~]
+        $ mv foo-{a,}
+        [marslo@MJ ~]
+        $ ls foo-*
+        foo-  foo-b  foo-c  foo-d
+        </code></pre>
+
+    - Usage 4
+        <pre><code>[marslo@MJ ~]
+        $ mkdir -p test/{a,b,c,d}
+        [marslo@MJ ~]
+        $ tree test/
+        test/
+        ├── a
+        ├── b
+        ├── c
+        └── d
+
+        4 directories, 0 files
+        </code></per>
