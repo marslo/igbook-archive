@@ -226,3 +226,6 @@
     $ sudo apt-get install fcitx-sogoupinyin
     $ # sudo apt-get remove ibus
     </code></pre>
+
+- dstat
+    ![dstat](https://github.com/Marslo/MyNotes/blob/master/Screenshots/dstat.png?raw=true)
