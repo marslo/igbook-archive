@@ -264,3 +264,32 @@
 
         4 directories, 0 files
         </code></per>
+
+- Searching for commands without knowing their exact names
+    <pre><code>[marslo@MJ ~]
+    $ apropos editor | head
+    Git::SVN::Editor (3pm) - commit driver for "git svn set-tree" and dcommit
+    INIFILE (1)          - OpenLink Virtuoso Opensource ini File Editor
+    atobm (1)            - bitmap editor and converter utilities for the X Window System
+    bitmap (1)           - bitmap editor and converter utilities for the X Window System
+    bmtoa (1)            - bitmap editor and converter utilities for the X Window System
+    ed (1)               - line-oriented text editor
+    editor (1)           - Nano's ANOther editor, an enhanced free Pico clone
+    editres (1)          - a dynamic resource editor for X Toolkit applications
+    ex (1)               - Vi IMproved, a programmers text editor
+    gedit (1)            - text editor for the GNOME Desktop
+    </code></pre>
+
+- PWD's secrets
+    <pre><code>[marslo@MJ ~]
+    $ l | grep bc
+    lrwxrwxrwx 1 marslo marslo   37 Mar  4 00:25 bc -> /home/marslo/Tools/Git/BrowserConfig//
+    [marslo@MJ ~]
+    $ cd bc/
+    [marslo@MJ ~/bc]
+    $ pwd -L
+    /home/marslo/bc
+    [marslo@MJ ~/bc]
+    $ pwd -P
+    /home/marslo/Tools/Git/BrowserConfig
+    </code></pre>
