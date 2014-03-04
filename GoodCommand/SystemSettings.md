@@ -227,5 +227,8 @@
     $ # sudo apt-get remove ibus
     </code></pre>
 
+- Specified terminal size
+    <pre><code>$ gnome-terminal --geometry=123x42+0+0</code></pre>
+
 - dstat
     ![dstat](https://github.com/Marslo/MyNotes/blob/master/Screenshots/dstat.png?raw=true)
