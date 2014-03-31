@@ -232,3 +232,10 @@
 
 - dstat
     ![dstat](https://github.com/Marslo/MyNotes/blob/master/Screenshots/dstat.png?raw=true)
+
+- Install Ubuntu Theme
+    <pre><code>$ sudo add-apt-repository ppa:noobslab/themessudo
+    $ sudo apt-get update
+    $ sudo apt-get install nokto-theme
+    </code></pre>
+
