@@ -220,6 +220,16 @@
     $ ps aux | awk '{ print $8 " " $2 " " $11}' | grep -w Z
     </code></pre>
 
+- Sort process by PID
+    <pre><code>[marslo@MJ ~/Tools/Git/MyNotes]
+    $ ps -axww
+    </code></pre>
+
+- Check the group PID
+    <pre><code>[marslo@MJ ~/Tools/Git/MyNotes]
+    $ ps -xj
+    </code></pre>
+
 - Sogou Pinyin input method
     <pre><code>$ sudo add-apt-repository ppa:fcitx-team/nightly
     $ sudo apt-get update
