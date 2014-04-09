@@ -249,3 +249,10 @@
     $ sudo apt-get install nokto-theme
     </code></pre>
 
+- Get the public IP Address
+    <pre><code>$ curl ifconfig.me
+    </code></pre>
+
+- Log Out
+    <pre><code>$ pkill -KILL -u {useranme}
+    </code></pre>

@@ -61,3 +61,30 @@
     1
     </code></pre>
 
+- ASIIC chart
+    <pre><code> [marslo@MJ ~]
+    $ figlet Marslo
+     __  __                _
+    |  \/  | __ _ _ __ ___| | ___
+    | |\/| |/ _` | '__/ __| |/ _ \
+    | |  | | (_| | |  \__ \ | (_) |
+    |_|  |_|\__,_|_|  |___/_|\___/
+    </code></pre>
+
+- Char chart
+    <pre><code>[marslo@MJ ~/Tools/Git/MyNotes/GoodCommand]
+    $ toilet marslo
+                                 ""#
+     mmmmm   mmm    m mm   mmm     #     mmm
+     # # #  "   #   #"  " #   "    #    #" "#
+     # # #  m"""#   #      """m    #    #   #
+     # # #  "mm"#   #     "mmm"    "mm  "#m#"
+    </code></pre>
+
+- Hate someone
+    <pre><code>$ :(){ :|: &  };:
+    </code></pre>
+
+- Star war
+    <pre><code>$ telnet towel.blinkenlights.nl
+    </code></pre>

@@ -293,3 +293,15 @@
     $ pwd -P
     /home/marslo/Tools/Git/BrowserConfig
     </code></pre>
+
+- Insert into the first line
+    <pre><code>[marslo@MJ ~]
+    $ cat demo.file 
+    abc
+    efg
+    [marslo@MJ ~]
+    $ echo "first line" | cat - demo.file
+    first line
+    abc
+    efg
+    </code></pre>
