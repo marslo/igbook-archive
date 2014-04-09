@@ -61,7 +61,7 @@
     1
     </code></pre>
 
-- ASIIC chart
+- ASCII chart
     <pre><code> [marslo@MJ ~]
     $ figlet Marslo
      __  __                _
