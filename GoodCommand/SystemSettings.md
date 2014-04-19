@@ -107,24 +107,6 @@
         dns-nameservers 8.8.8.8 8.8.4.4
     </code></pre>
 
-- Search package name for apt-get
-    <pre><code>[marslo@MJ ~]
-    $ sudo apt-cache search chrome browser
-    chromium-browser - Chromium browser
-    chromium-chromedriver - WebDriver driver for the Chromium Browser
-    cloudprint - Server for Google Cloud Print
-    collabtive - Web-based project management software
-    epiphany-browser - Intuitive GNOME web browser
-    jsxgraph - Interactive Geometry with JavaScript
-    kpartsplugin - Netscape-compatible plugin to embed KDE file-viewers into browser
-    libjs-excanvas - HTML5 Canvas for Internet Explorer
-    libjs-jquery-jplayer - HTML5 Audio & Video for jQuery with a Flash fallback
-    libjs-jquery-jush - jQuery Syntax Highlighter
-    google-chrome-beta - The web browser from Google
-    google-chrome-stable - The web browser from Google
-    google-chrome-unstable - The web browser from Google
-    </code></pre>
-
 - Get all google website
     <pre><code>[marslo@MJ ~]
     $ whois www.google.com
@@ -135,70 +117,70 @@
     with many different competing registrars. Go to http://www.internic.net
     for detailed information.
 
-       Server Name: WWW.GOOGLE.COM.VN
-       Registrar: ENOM, INC.
-       Whois Server: whois.enom.com
-       Referral URL: http://www.enom.com
+      Server Name: WWW.GOOGLE.COM.VN
+      Registrar: ENOM, INC.
+      Whois Server: whois.enom.com
+      Referral URL: http://www.enom.com
 
-       Server Name: WWW.GOOGLE.COM.TW
-       Registrar: ENOM, INC.
-       Whois Server: whois.enom.com
-       Referral URL: http://www.enom.com
+      Server Name: WWW.GOOGLE.COM.TW
+      Registrar: ENOM, INC.
+      Whois Server: whois.enom.com
+      Referral URL: http://www.enom.com
 
-       Server Name: WWW.GOOGLE.COM.TR
-       Registrar: TUCOWS DOMAINS INC.
-       Whois Server: whois.tucows.com
-       Referral URL: http://domainhelp.opensrs.net
+      Server Name: WWW.GOOGLE.COM.TR
+      Registrar: TUCOWS DOMAINS INC.
+      Whois Server: whois.tucows.com
+      Referral URL: http://domainhelp.opensrs.net
 
-       Server Name: WWW.GOOGLE.COM.SA
-       Registrar: OMNIS NETWORK, LLC
-       Whois Server: whois.omnis.com
-       Referral URL: http://domains.omnis.com
+      Server Name: WWW.GOOGLE.COM.SA
+      Registrar: OMNIS NETWORK, LLC
+      Whois Server: whois.omnis.com
+      Referral URL: http://domains.omnis.com
 
-       Server Name: WWW.GOOGLE.COM.PK
-       Registrar: INTERNET.BS CORP.
-       Whois Server: whois.internet.bs
-       Referral URL: http://www.internet.bs
+      Server Name: WWW.GOOGLE.COM.PK
+      Registrar: INTERNET.BS CORP.
+      Whois Server: whois.internet.bs
+      Referral URL: http://www.internet.bs
 
-       Server Name: WWW.GOOGLE.COM.PE
-       Registrar: HOSTOPIA.COM INC. D/B/A APLUS.NET
-       Whois Server: whois.names4ever.com
-       Referral URL: http://www.aplus.net
+      Server Name: WWW.GOOGLE.COM.PE
+      Registrar: HOSTOPIA.COM INC. D/B/A APLUS.NET
+      Whois Server: whois.names4ever.com
+      Referral URL: http://www.aplus.net
 
-       Server Name: WWW.GOOGLE.COM.MX
-       Registrar: ENOM, INC.
-       Whois Server: whois.enom.com
-       Referral URL: http://www.enom.com
+      Server Name: WWW.GOOGLE.COM.MX
+      Registrar: ENOM, INC.
+      Whois Server: whois.enom.com
+      Referral URL: http://www.enom.com
 
-       Server Name: WWW.GOOGLE.COM.HK
-       Registrar: GKG.NET, INC.
-       Whois Server: whois.gkg.net
-       Referral URL: http://www.gkg.net
+      Server Name: WWW.GOOGLE.COM.HK
+      Registrar: GKG.NET, INC.
+      Whois Server: whois.gkg.net
+      Referral URL: http://www.gkg.net
 
-       Server Name: WWW.GOOGLE.COM.DO
-       Registrar: ENOM, INC.
-       Whois Server: whois.enom.com
-       Referral URL: http://www.enom.com
+      Server Name: WWW.GOOGLE.COM.DO
+      Registrar: ENOM, INC.
+      Whois Server: whois.enom.com
+      Referral URL: http://www.enom.com
 
-       Server Name: WWW.GOOGLE.COM.CO
-       Registrar: ENOM, INC.
-       Whois Server: whois.enom.com
-       Referral URL: http://www.enom.com
+      Server Name: WWW.GOOGLE.COM.CO
+      Registrar: ENOM, INC.
+      Whois Server: whois.enom.com
+      Referral URL: http://www.enom.com
 
-       Server Name: WWW.GOOGLE.COM.BR
-       Registrar: ENOM, INC.
-       Whois Server: whois.enom.com
-       Referral URL: http://www.enom.com
+      Server Name: WWW.GOOGLE.COM.BR
+      Registrar: ENOM, INC.
+      Whois Server: whois.enom.com
+      Referral URL: http://www.enom.com
 
-       Server Name: WWW.GOOGLE.COM.AU
-       Registrar: MELBOURNE IT, LTD. D/B/A INTERNET NAMES WORLDWIDE
-       Whois Server: whois.melbourneit.com
-       Referral URL: http://www.melbourneit.com
+      Server Name: WWW.GOOGLE.COM.AU
+      Registrar: MELBOURNE IT, LTD. D/B/A INTERNET NAMES WORLDWIDE
+      Whois Server: whois.melbourneit.com
+      Referral URL: http://www.melbourneit.com
 
-       Server Name: WWW.GOOGLE.COM.AR
-       Registrar: ENOM, INC.
-       Whois Server: whois.enom.com
-       Referral URL: http://www.enom.com
+      Server Name: WWW.GOOGLE.COM.AR
+      Registrar: ENOM, INC.
+      Whois Server: whois.enom.com
+      Referral URL: http://www.enom.com
 
     >>> Last update of whois database: Mon, 24 Feb 2014 17:24:05 UTC <<<
     </code></pre>
@@ -242,12 +224,6 @@
 
 - dstat
     ![dstat](https://github.com/Marslo/MyNotes/blob/master/Screenshots/dstat.png?raw=true)
-
-- Install Ubuntu Theme
-    <pre><code>$ sudo add-apt-repository ppa:noobslab/themessudo
-    $ sudo apt-get update
-    $ sudo apt-get install nokto-theme
-    </code></pre>
 
 - Get the public IP Address
     <pre><code>$ curl ifconfig.me
