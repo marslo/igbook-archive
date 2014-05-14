@@ -29,4 +29,34 @@
     $ sudo apt-get install nokto-theme
     </code></pre>
 
+- Open Font Viewer and install font
+    <pre><code>┌─ (root@MarsloJiao ~) ->
+    └─ # gnome-font-viewer ~/Tools/Monaco/Monaco_Linux.TTF
+    </code></pre>
 
+- Show launcher icon
+    <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
+    └─ $ gsettings get com.canonical.Unity.Launcher favorites
+    ['application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://firefox.desktop', 'unity://running-apps', 'application://gvim.desktop', 'unity://desktop-icon', 'unity://expo-icon', 'unity://devices']
+    </code></pre>
+
+- Show the softer renderer
+    <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
+    └─ $ /usr/lib/nux/unity_support_test -p
+    OpenGL vendor string:   VMware, Inc.
+    OpenGL renderer string: Gallium 0.4 on SVGA3D; build: RELEASE;  
+    OpenGL version string:  2.1 Mesa 10.1.0
+
+    Not software rendered:    yes
+    Not blacklisted:          yes
+    GLX fbconfig:             yes
+    GLX texture from pixmap:  yes
+    GL npot or rect textures: yes
+    GL vertex program:        yes
+    GL fragment program:      yes
+    GL vertex buffer object:  yes
+    GL framebuffer object:    yes
+    GL version is 1.4+:       yes
+
+    Unity 3D supported:       yes
+    </code></pre>
