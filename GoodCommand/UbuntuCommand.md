@@ -44,7 +44,7 @@
     <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
     └─ $ /usr/lib/nux/unity_support_test -p
     OpenGL vendor string:   VMware, Inc.
-    OpenGL renderer string: Gallium 0.4 on SVGA3D; build: RELEASE;  
+    OpenGL renderer string: Gallium 0.4 on SVGA3D; build: RELEASE;
     OpenGL version string:  2.1 Mesa 10.1.0
 
     Not software rendered:    yes
@@ -60,3 +60,14 @@
 
     Unity 3D supported:       yes
     </code></pre>
+
+- Specified Context Menu
+    <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
+    └─ $ sudo apt-get install nautilus-actions
+    ┌─ (marslo@MarsloJiao ~/Desktop) ->
+    └─ $ nautilus -q
+    ┌─ (marslo@MarsloJiao ~/Desktop) ->
+    └─ $ utilus-actions-config-tool
+    </code></pre>
+
+
