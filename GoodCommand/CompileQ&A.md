@@ -1,7 +1,7 @@
 ### ssl.h
 - Problem:
     <pre><code>git-compat-util.h:213:25: fatal error: openssl/ssl.h: No such file or directory
-    #include <openssl/ssl.h>
+    #include \<openssl/ssl.h\>
     </code></pre>
 - Soluction:
     <pre><code>$ sudo apt-get install libssl-dev</code></pre>
@@ -9,7 +9,7 @@
 ### curl.h
 - Problem:
     <pre><code>http.h:6:23: fatal error: curl/curl.h: No such file or directory
-    #include <curl/curl.h>
+    #include \<curl/curl.h\>
     </code></pre>
 - Soluction:
     - For OpenSuse:
@@ -28,7 +28,7 @@
 ### expat.h
 - Problem:
     <pre><code>http-push.c:17:19: fatal error: expat.h: No such file or directory
-    #include <expat.h>
+    #include \<expat.h\>
     </code></pre>
 - Soluction:
     <pre><code>$ apt-cache search expat | grep dev
