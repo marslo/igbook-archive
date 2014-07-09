@@ -24,7 +24,7 @@
     </code></pre>
 
 - Install Ubuntu Theme
-    <pre><code>$ sudo add-apt-repository ppa:noobslab/themessudo
+    <pre><code>$ sudo add-apt-repository ppa:noobslab/themes
     $ sudo apt-get update
     $ sudo apt-get install nokto-theme
     </code></pre>
