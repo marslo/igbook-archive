@@ -16,6 +16,6 @@
       Writing objects: 100% (40/40), 133.46 KiB | 0 bytes/s, done.
       Total 40 (delta 6), reused 0 (delta 0)
       To git@github.com:Marslo/LaunchySkins.git
-       * [new branch]      master -> master
-       * Branch master set up to track remote branch master from origin.
+      \* [new branch]      master -> master
+      \* Branch master set up to track remote branch master from origin.
       </code></pre>
