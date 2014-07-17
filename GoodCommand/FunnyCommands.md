@@ -62,7 +62,7 @@
     </code></pre>
 
 - ASCII chart
-    <pre><code> [marslo@MJ ~]
+    <pre><code>[marslo@MJ ~]
     $ figlet Marslo
      __  __                _
     |  \/  | __ _ _ __ ___| | ___
@@ -82,9 +82,11 @@
     </code></pre>
 
 - Hate someone
-    <pre><code>$ :(){ :|: &  };:
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ :(){ :|: &  };:
     </code></pre>
 
 - Star war
-    <pre><code>$ telnet towel.blinkenlights.nl
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ telnet towel.blinkenlights.nl
     </code></pre>

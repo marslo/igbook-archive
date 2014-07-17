@@ -213,22 +213,32 @@
     </code></pre>
 
 - Sogou Pinyin input method
-    <pre><code>$ sudo add-apt-repository ppa:fcitx-team/nightly
-    $ sudo apt-get update
-    $ sudo apt-get install fcitx-sogoupinyin
-    $ # sudo apt-get remove ibus
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ sudo add-apt-repository ppa:fcitx-team/nightly
+    ┌─ (marslo@MarsloJiao ~) ->
+    └─ $ sudo apt-get update
+    ┌─ (marslo@MarsloJiao ~) ->
+    └─ $ sudo apt-get install fcitx-sogoupinyin
+    ┌─ (marslo@MarsloJiao ~) ->
+    └─ $ # sudo apt-get remove ibus
     </code></pre>
 
 - Specified terminal size
-    <pre><code>$ gnome-terminal --geometry=123x42+0+0</code></pre>
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ gnome-terminal --geometry=123x42+0+0</code></pre>
 
 - dstat
     ![dstat](https://github.com/Marslo/MyNotes/blob/master/Screenshots/dstat.png?raw=true)
 
 - Get the public IP Address
-    <pre><code>$ curl ifconfig.me
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ curl ifconfig.me
     </code></pre>
 
 - Log Out
-    <pre><code>$ pkill -KILL -u {useranme}
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ pkill -KILL -u {useranme}
     </code></pre>
+
+┌─ (marslo@MarsloJiao ~) ->
+└─ $
