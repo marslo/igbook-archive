@@ -33,3 +33,29 @@
     63: top_srcdir=../..
     279: ossl.o: $(top_srcdir)/thread_native.h $(top_srcdir)/thread_$(THREAD_MODEL).h
     </code></pre>
+
+### sqlite3.h
+- Error Description
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ gem install vmail
+    ...
+    Fetching: sqlite3-1.3.9.gem
+    Building native extensions. This could take a while...
+    ERROR: Error installing vmail:
+           ERROR: Failed to build gem native extension.
+           /usr/local/ruby/bin/ruby extconf.rb
+    checking for sqlite3.h... no
+    sqlite3.h is missing. Try 'port install sqlite3 +universal',
+    'yum install sqlite-devel' or 'apt-get install libsqlite3-dev'
+    and check your shared library search path (the 
+    location where you sqlite3 shared library is located).
+    *** extconf.rb failed ***
+    ...
+    </code></pre>
+
+- Soluction
+    Install `libsqlite3-dev` in Ubuntu as the error logged
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ sudo apt-get install libsqlite3-dev
+    </code></pre>
+
