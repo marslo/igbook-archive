@@ -1,4 +1,4 @@
-- openssl.h
+### openssl.h
     - Error Description
         <pre><code>┌─ (marslo@MarsloJiao ~/Tools/SourceCode/Ruby/ruby-2.1.2/ext/openssl) ->
         └─ $ ruby extconf.rb
@@ -19,7 +19,7 @@
         ii  python-openssl                      0.13-2ubuntu6                              amd64        Python 2 wrapper around the OpenSSL library
         </code></pre>
 
-- thread_native.h
+### thread_native.h
     - Error Description
         <pre><code>┌─ (marslo@MarsloJiao ~/Tools/SourceCode/Ruby/ruby-2.1.2/ext/openssl) ->
         └─ $ make
