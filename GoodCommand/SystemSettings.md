@@ -212,6 +212,9 @@
     $ ps -xj
     </code></pre>
 
+- dstat
+    ![dstat](https://github.com/Marslo/MyNotes/blob/master/Screenshots/dstat.png?raw=true)
+
 - Sogou Pinyin input method
     <pre><code>┌─ (marslo@MarsloJiao ~) ->
     └─ $ sudo add-apt-repository ppa:fcitx-team/nightly
@@ -227,9 +230,6 @@
     <pre><code>┌─ (marslo@MarsloJiao ~) ->
     └─ $ gnome-terminal --geometry=123x42+0+0</code></pre>
 
-- dstat
-    ![dstat](https://github.com/Marslo/MyNotes/blob/master/Screenshots/dstat.png?raw=true)
-
 - Get the public IP Address
     <pre><code>┌─ (marslo@MarsloJiao ~) ->
     └─ $ curl ifconfig.me
@@ -240,5 +240,7 @@
     └─ $ pkill -KILL -u {useranme}
     </code></pre>
 
-┌─ (marslo@MarsloJiao ~) ->
-└─ $
+- Synchronize date and time with a server over ssh (Inspired from [commandlinefu.com](http://www.commandlinefu.com/commands/view/9153/synchronize-date-and-time-with-a-server-over-ssh))
+  <pre><code>┌─ (marslo@MarsloJiao ~) ->
+  └─ $ date --set="$(ssh [username]@[sshserver] date)"
+  </code></pre>
