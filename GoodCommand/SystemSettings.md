@@ -212,23 +212,35 @@
     $ ps -xj
     </code></pre>
 
-- Sogou Pinyin input method
-    <pre><code>$ sudo add-apt-repository ppa:fcitx-team/nightly
-    $ sudo apt-get update
-    $ sudo apt-get install fcitx-sogoupinyin
-    $ # sudo apt-get remove ibus
-    </code></pre>
-
-- Specified terminal size
-    <pre><code>$ gnome-terminal --geometry=123x42+0+0</code></pre>
-
 - dstat
     ![dstat](https://github.com/Marslo/MyNotes/blob/master/Screenshots/dstat.png?raw=true)
 
+- Sogou Pinyin input method
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ sudo add-apt-repository ppa:fcitx-team/nightly
+    ┌─ (marslo@MarsloJiao ~) ->
+    └─ $ sudo apt-get update
+    ┌─ (marslo@MarsloJiao ~) ->
+    └─ $ sudo apt-get install fcitx-sogoupinyin
+    ┌─ (marslo@MarsloJiao ~) ->
+    └─ $ # sudo apt-get remove ibus
+    </code></pre>
+
+- Specified terminal size
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ gnome-terminal --geometry=123x42+0+0</code></pre>
+
 - Get the public IP Address
-    <pre><code>$ curl ifconfig.me
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ curl ifconfig.me
     </code></pre>
 
 - Log Out
-    <pre><code>$ pkill -KILL -u {useranme}
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ pkill -KILL -u {useranme}
     </code></pre>
+
+- Synchronize date and time with a server over ssh (Inspired from [commandlinefu.com](http://www.commandlinefu.com/commands/view/9153/synchronize-date-and-time-with-a-server-over-ssh))
+  <pre><code>┌─ (marslo@MarsloJiao ~) ->
+  └─ $ date --set="$(ssh [username]@[sshserver] date)"
+  </code></pre>
