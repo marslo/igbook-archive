@@ -1,11 +1,11 @@
-- Get Package name by command
+### Get Package name by command
     <pre><code>[marslo@MJ ~]
     $ apt-cache search mkpasswd
     whois - intelligent WHOIS client
     libstring-mkpasswd-perl - Perl module implementing a random password generator
     </code></pre>
 
-- Search package name for apt-get
+### Search package name for apt-get
     <pre><code>[marslo@MJ ~]
     $ sudo apt-cache search chrome browser
     chromium-browser - Chromium browser
@@ -23,24 +23,24 @@
     google-chrome-unstable - The web browser from Google
     </code></pre>
 
-- Install Ubuntu Theme
+### Install Ubuntu Theme
     <pre><code>$ sudo add-apt-repository ppa:noobslab/themes
     $ sudo apt-get update
     $ sudo apt-get install nokto-theme
     </code></pre>
 
-- Open Font Viewer and install font
+### Open Font Viewer and install font
     <pre><code>┌─ (root@MarsloJiao ~) ->
     └─ # gnome-font-viewer ~/Tools/Monaco/Monaco_Linux.TTF
     </code></pre>
 
-- Show launcher icon
+### Show launcher icon
     <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
     └─ $ gsettings get com.canonical.Unity.Launcher favorites
     ['application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://firefox.desktop', 'unity://running-apps', 'application://gvim.desktop', 'unity://desktop-icon', 'unity://expo-icon', 'unity://devices']
     </code></pre>
 
-- Show the softer renderer
+### Show the softer renderer
     <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
     └─ $ /usr/lib/nux/unity_support_test -p
     OpenGL vendor string:   VMware, Inc.
@@ -61,7 +61,7 @@
     Unity 3D supported:       yes
     </code></pre>
 
-- Specified Context Menu
+### Specified Context Menu
     <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
     └─ $ sudo apt-get install nautilus-actions
     ┌─ (marslo@MarsloJiao ~/Desktop) ->
@@ -70,4 +70,7 @@
     └─ $ utilus-actions-config-tool
     </code></pre>
 
-
+### Disable Ubuntu Desktop notification
+    <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
+    └─ $ sudo chmod -x /usr/lib/notify-osd/notify-osd
+    </code></pre>
