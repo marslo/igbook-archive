@@ -11,12 +11,12 @@
 
 ### Install `yo`
     <pre><code>┌─ (marslo@MarsloJiao ~) ->
-    └─ $ npm install -g yo
+    └─ $ sudo npm install -g yo
     </code></pre>
 
 ### Install compass by `gem`
     <pre><code>┌─ (marslo@MarsloJiao ~) ->
-    └─ $ sudo gem innstall compass
+    └─ $ sudo gem install compass
     </code></pre>
 
 ### Install `Angular`
