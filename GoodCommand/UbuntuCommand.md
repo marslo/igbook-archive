@@ -1,12 +1,11 @@
 ### Get Package name by command
-    <pre><code>[marslo@MJ ~]
+    [marslo@MJ ~]
     $ apt-cache search mkpasswd
     whois - intelligent WHOIS client
     libstring-mkpasswd-perl - Perl module implementing a random password generator
-    </code></pre>
 
 ### Search package name for apt-get
-    <pre><code>[marslo@MJ ~]
+    [marslo@MJ ~]
     $ sudo apt-cache search chrome browser
     chromium-browser - Chromium browser
     chromium-chromedriver - WebDriver driver for the Chromium Browser
@@ -21,27 +20,23 @@
     google-chrome-beta - The web browser from Google
     google-chrome-stable - The web browser from Google
     google-chrome-unstable - The web browser from Google
-    </code></pre>
 
 ### Install Ubuntu Theme
-    <pre><code>$ sudo add-apt-repository ppa:noobslab/themes
+    $ sudo add-apt-repository ppa:noobslab/themes
     $ sudo apt-get update
     $ sudo apt-get install nokto-theme
-    </code></pre>
 
 ### Open Font Viewer and install font
-    <pre><code>┌─ (root@MarsloJiao ~) ->
+    ┌─ (root@MarsloJiao ~) ->
     └─ # gnome-font-viewer ~/Tools/Monaco/Monaco_Linux.TTF
-    </code></pre>
 
 ### Show launcher icon
-    <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
+    ┌─ (marslo@MarsloJiao ~/Desktop) ->
     └─ $ gsettings get com.canonical.Unity.Launcher favorites
     ['application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://firefox.desktop', 'unity://running-apps', 'application://gvim.desktop', 'unity://desktop-icon', 'unity://expo-icon', 'unity://devices']
-    </code></pre>
 
 ### Show the softer renderer
-    <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
+    ┌─ (marslo@MarsloJiao ~/Desktop) ->
     └─ $ /usr/lib/nux/unity_support_test -p
     OpenGL vendor string:   VMware, Inc.
     OpenGL renderer string: Gallium 0.4 on SVGA3D; build: RELEASE;
@@ -59,26 +54,21 @@
     GL version is 1.4+:       yes
 
     Unity 3D supported:       yes
-    </code></pre>
 
 ### Specified Context Menu
-    <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
+    ┌─ (marslo@MarsloJiao ~/Desktop) ->
     └─ $ sudo apt-get install nautilus-actions
     ┌─ (marslo@MarsloJiao ~/Desktop) ->
     └─ $ nautilus -q
     ┌─ (marslo@MarsloJiao ~/Desktop) ->
     └─ $ utilus-actions-config-tool
-    </code></pre>
 
 ### Disable Ubuntu Desktop notification
-    <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
+    ┌─ (marslo@MarsloJiao ~/Desktop) ->
     └─ $ sudo chmod -x /usr/lib/notify-osd/notify-osd
-    </code></pre>
 
 ### Recode activity as a GIF file (Inspired from [here](http://askubuntu.com/a/13462/92979) and [here](http://askubuntu.com/a/107735/92979))
-  <pre><code>┌─ (marslo@MarsloJiao ~) ->
-  └─ $ sudo add-apt-repository ppa:fossfreedom/byzanz
-  ┌─ (marslo@MarsloJiao ~) ->
-  └─ $ sudo apt-get update && sudo apt-get install byzanz
-  </code></pre>
-
+    ┌─ (marslo@MarsloJiao ~) ->
+    └─ $ sudo add-apt-repository ppa:fossfreedom/byzanz
+    ┌─ (marslo@MarsloJiao ~) ->
+    └─ $ sudo apt-get update && sudo apt-get install byzanz
