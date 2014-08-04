@@ -1,17 +1,17 @@
-- Backup PuTTy sessions
+### Backup PuTTy sessions
     <pre><code>C:> regedit /e "%userprofile%\desktop\putty-registry.reg" HKEY_CURRENT_USER\Software\Simontatham
     </code></pre>
 
-- Launchy PuTTy session as shortcut
-    <pre><code>[PuTTy.ext] -load [SessionName]
+### Launchy PuTTy session as shortcut
+    <pre><code>C:> [PuTTy.exe] -load [SessionName]
     </code></pre>
 
-- Backup PuTTy session
-		<pre><code>regedit /e "%userprofile%\desktop\putty-sessions.reg" HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions
-		</code></pre>
+### Backup PuTTy session
+    <pre><code>C:> regedit /e "%userprofile%\desktop\putty-sessions.reg" HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions
+    </code></pre>
 
-- Get the list of programs
-    <pre><code> [12:26:33.40 C:\Windows\SysWOW64]
+### Get the list of programs
+    <pre><code>[12:26:33.40 C:\Windows\SysWOW64]
     $ wmic product get name,version
     Name                                                                     Version
     ALM-Platform Loader 11.5x                                                11.52.444.0

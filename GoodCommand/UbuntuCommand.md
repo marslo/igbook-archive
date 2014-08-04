@@ -70,9 +70,15 @@
     └─ $ utilus-actions-config-tool
     </code></pre>
 
-### Recode activity as a GIF file (Inspired from http://askubuntu.com/a/13462/92979)
+### Disable Ubuntu Desktop notification
+    <pre><code>┌─ (marslo@MarsloJiao ~/Desktop) ->
+    └─ $ sudo chmod -x /usr/lib/notify-osd/notify-osd
+    </code></pre>
+
+### Recode activity as a GIF file (Inspired from [here](http://askubuntu.com/a/13462/92979) and [here](http://askubuntu.com/a/107735/92979))
   <pre><code>┌─ (marslo@MarsloJiao ~) ->
   └─ $ sudo add-apt-repository ppa:fossfreedom/byzanz
   ┌─ (marslo@MarsloJiao ~) ->
   └─ $ sudo apt-get update && sudo apt-get install byzanz
   </code></pre>
+
