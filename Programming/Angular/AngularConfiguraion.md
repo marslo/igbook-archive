@@ -16,6 +16,8 @@
 ### Install compass by `gem`
     ┌─ (marslo@MarsloJiao ~) ->
     └─ $ sudo gem install compass
+
+- [The solution](https://github.com/Marslo/MyBlog/blob/master/Programming/Ruby/RubyInstallationQ&A.md#libyaml-0so2--psychso) for `kernel_require.rb:55:in `require': libyaml-0.so.2: cannot open shared object file: No such file or directory - /../../psych.so (LoadError)`
     
 ### Install `Angular`
     ┌─ (marslo@MarsloJiao ~/client) ->
