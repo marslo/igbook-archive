@@ -10,25 +10,21 @@
     </code></pre>
 
 ### Install `yo`
-    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    ┌─ (marslo@MarsloJiao ~) ->
     └─ $ sudo npm install -g yo
-    </code></pre>
-
+    
 ### Install compass by `gem`
-    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    ┌─ (marslo@MarsloJiao ~) ->
     └─ $ sudo gem install compass
-    </code></pre>
-
+    
 ### Install `Angular`
-    <pre><code>┌─ (marslo@MarsloJiao ~/client) ->
+    ┌─ (marslo@MarsloJiao ~/client) ->
     └─ $ npm install generator-angular
     ┌─ (marslo@MarsloJiao ~/client) ->
     └─ $ yo angular
     ┌─ (marslo@MarsloJiao ~/client) ->
     └─ $ bower install
-    </code></pre>
-
+    
 ### Startup server
-    <pre><code>┌─ (marslo@MarsloJiao ~/client) ->
+    ┌─ (marslo@MarsloJiao ~/client) ->
     └─ $ grunt serve
-    </code></pre>
