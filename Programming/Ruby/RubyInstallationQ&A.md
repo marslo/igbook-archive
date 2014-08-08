@@ -53,9 +53,37 @@
     ...
     </code></pre>
 
-- Soluction
+- Solution
     Install `libsqlite3-dev` in Ubuntu as the error logged
     <pre><code>┌─ (marslo@MarsloJiao ~) ->
     └─ $ sudo apt-get install libsqlite3-dev
     </code></pre>
 
+### libyaml-0.so.2 & psych.so
+- Error Description
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ $ gem install compass
+    /usr/local/ruby/lib/ruby/2.1.0/yaml.rb:4:in `<top (required)>':
+    It seems your ruby installation is missing psych (for YAML output).
+    To eliminate this warning, please install libyaml and reinstall your ruby.
+    /usr/local/ruby/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require': libyaml-0.so.2: cannot open shared object file: No such file or directory - /usr/local/ruby/lib/ruby/2.1.0/x86_64-linux/psych.so (LoadError)
+            from /usr/local/ruby/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+            from /usr/local/ruby/lib/ruby/2.1.0/psych.rb:1:in `<top (required)>'
+            from /usr/local/ruby/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+            from /usr/local/ruby/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+            from /usr/local/ruby/lib/ruby/2.1.0/yaml.rb:5:in `<top (required)>'
+            from /usr/local/ruby/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+            from /usr/local/ruby/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+            from /usr/local/ruby/lib/ruby/2.1.0/rubygems.rb:616:in `load_yaml'
+            from /usr/local/ruby/lib/ruby/2.1.0/rubygems/config_file.rb:328:in `load_file'
+            from /usr/local/ruby/lib/ruby/2.1.0/rubygems/config_file.rb:197:in `initialize'
+            from /usr/local/ruby/lib/ruby/2.1.0/rubygems/gem_runner.rb:74:in `new'
+            from /usr/local/ruby/lib/ruby/2.1.0/rubygems/gem_runner.rb:74:in `do_configuration'
+            from /usr/local/ruby/lib/ruby/2.1.0/rubygems/gem_runner.rb:39:in `run'
+            from /usr/local/ruby/bin/gem:21:in `<main>'
+    </code></pre>
+
+- Solution
+    <pre><code>┌─ (marslo@MarsloJiao ~) ->
+    └─ # sudo apt-get install libyaml-dev
+    </code></pre>
