@@ -39,3 +39,46 @@
     tdom-dev - fast XML/DOM/XPath/XSLT extension for Tcl written in C (development files)
     $ sudo apt-get install libexpat1-dev
     </code></pre>
+
+### asciidoc
+- Problem
+    <pre><code>ASCIIDOC git-add.html
+    /bin/sh: 2: asciidoc: not found
+    make[1]: *** [git-add.html] Error 127
+    make[1]: Leaving directory `/home/marslo/Tools/Software/Programming/Git/git-master/Documentation'
+    make: *** [doc] Error 2
+    </code></pre>
+
+- Solution
+    <pre><code>┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+    └─ $ apt-cache search asciidoc
+    ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+    └─ $ sudo apt-get install asciidoc
+    </code></pre>
+
+### docbook2x-texi
+- Problem
+    <pre><code>DB2TEXI user-manual.texi
+    /bin/sh: 2: docbook2x-texi: not found
+    make[1]: *** [user-manual.texi] Error 127
+    make[1]: Leaving directory `/home/marslo/Tools/Software/Programming/Git/git-master/Documentation'
+    make: *** [info] Error 2
+    </code></pre>
+
+- Solution
+    <pre><code>┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+    └─ $ sudo apt-get install docbook2x
+    </code></pre>
+
+### hunspell
+- Problem
+    <pre><code>┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+    └─ $ qmake-qt4
+    Project MESSAGE: Install Prefix is: /usr/local
+    Project ERROR: Package hunspell not found
+    </code></pre>
+
+- Solution
+    <pre><code>┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+    └─ $ sudo apt-get install hunspell
+    </code></pre>
