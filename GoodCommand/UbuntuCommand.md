@@ -72,3 +72,17 @@
     └─ $ sudo add-apt-repository ppa:fossfreedom/byzanz
     ┌─ (marslo@MarsloJiao ~) ->
     └─ $ sudo apt-get update && sudo apt-get install byzanz
+
+### Goldendict Installation
+    ┌─ (marslo@MarsloJiao ~/Tools/Git) ->
+    └─ $ git clone git@github.com:goldendict/goldendict.git
+    ┌─ (marslo@MarsloJiao ~/Tools/Git) ->
+    └─ $ sudo apt-get install liblzma-dev qt4-qmake hunspell-dev hunspell build-essential libvorbis-dev zlib1g-dev libhunspell-dev x11proto-record-dev libqt4-dev libqtwebkit-dev libxtst-dev liblzo2-dev libbz2-dev libao-dev libavutil-dev libavformat-dev libtiff5-dev
+    ┌─ (marslo@MarsloJiao ~/Tools/Git) ->
+    └─ $ cd goldendict/
+    ┌─ (marslo@MarsloJiao ~/Tools/Git) ->
+    └─ $ qmake-qt4
+    ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+    └─ $ qmake "CONFIG+=no_epwing_support"
+    ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+    └─ $ make && sudo make install

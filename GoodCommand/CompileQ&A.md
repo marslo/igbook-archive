@@ -81,4 +81,23 @@
 - Solution
     <pre><code>┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
     └─ $ sudo apt-get install hunspell
+    ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+    └─ $ sudo apt-get install libhunspell-dev
+    </code></pre>
+
+### ao
+- Problem
+    <pre><code>┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+    └─ $ qmake-qt4
+    Project MESSAGE: Install Prefix is: /usr/local
+    Project ERROR: Package ao not found
+    </code></pre>
+
+- Solution
+    <pre><code>┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+    └─ $ acs ao | grep dev
+    libao-dev - Cross Platform Audio Output Library Development
+    ...
+    ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+    └─ $ sudo apt-get install libao-dev
     </code></pre>
