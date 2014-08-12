@@ -17,3 +17,7 @@
     Microsoft Office Professional Plus 2010                                  14.0.6029.1000
     Microsoft Office OneNote MUI (English) 2010                              14.0.6029.1000
     ...
+
+### Set `%USERPROFILE` as `${HOME}` for **cygwin** (Inspired from [here](http://stackoverflow.com/questions/225764/safely-change-home-directory-in-cygwin))
+[15:55:36.30 C:\]
+$ reg add HKCU\Environment /v HOME /t REG_EXPAND_SZ /d ^%USERPROFILE^%
