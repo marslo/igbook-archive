@@ -3,7 +3,7 @@
     <pre><code>git-compat-util.h:213:25: fatal error: openssl/ssl.h: No such file or directory
     #include \<openssl/ssl.h\>
     </code></pre>
-- Soluction:
+- Solution:
     <pre><code>$ sudo apt-get install libssl-dev</code></pre>
 
 ### curl.h
@@ -11,7 +11,7 @@
     <pre><code>http.h:6:23: fatal error: curl/curl.h: No such file or directory
     #include \<curl/curl.h\>
     </code></pre>
-- Soluction:
+- Solution:
     - For OpenSuse:
     <pre><code>$ sudo apt-get install libcurl4-openssl</code></pre>
     - For Ubuntu:
@@ -25,12 +25,13 @@
       libcurl4-gnutls-dev 7.35.0-1ubuntu2
     You should explicitly select one to install.
     </code></pre>
+
 ### expat.h
 - Problem:
     <pre><code>http-push.c:17:19: fatal error: expat.h: No such file or directory
     #include \<expat.h\>
     </code></pre>
-- Soluction:
+- Solution:
     <pre><code>$ apt-cache search expat | grep dev
     libexpat1-dev - XML parsing C library - development kit
     lib64expat1-dev - XML parsing C library - development kit (64bit)
@@ -38,6 +39,18 @@
     lua-expat-dev - libexpat development files for the Lua language
     tdom-dev - fast XML/DOM/XPath/XSLT extension for Tcl written in C (development files)
     $ sudo apt-get install libexpat1-dev
+    </code></pre>
+
+### tclsh
+- Problem:
+    <pre><code>tclsh failed; using unoptimized loading
+    MSGFMT    po/de.msg make[1]: *** [po/de.msg] Error 127
+    make: *** [all] Error 2
+    </code></pre>
+
+- Solution:
+    <pre><code>┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+    └─ $ sudo apt-get install gettext
     </code></pre>
 
 ### asciidoc
