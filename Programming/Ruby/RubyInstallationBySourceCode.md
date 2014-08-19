@@ -24,13 +24,13 @@
         <pre><code>┌─ (marslo@MarsloJiao ~/Tools/SourceCode/Ruby) ->
         └─ $ wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz
         ┌─ (marslo@MarsloJiao ~/Tools/SourceCode/Ruby) ->
-        └─ $ tar xf ruby-2.1.2.tar.gz && cd ruby-2.1.1
+        └─ $ tar xf ruby-2.1.2.tar.gz && cd ruby-2.1.2
         </code></pre>
     - Compile and install
         <pre><code>┌─ (marslo@MarsloJiao ~/Tools/SourceCode/Ruby/ruby-2.1.2) ->
         └─ $ ./configure --prefix=/usr/local/ruby --enable-shared --with-opt-dir=/usr/local/lib
         ┌─ (marslo@MarsloJiao ~/Tools/SourceCode/Ruby/ruby-2.1.2) ->
-        └─ $ make && make install
+        └─ $ make && sudo make install
         </code></pre>
     - Libs installation
         - OpenSSL
