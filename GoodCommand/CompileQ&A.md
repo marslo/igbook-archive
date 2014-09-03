@@ -114,3 +114,17 @@
     ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
     └─ $ sudo apt-get install libao-dev
     </code></pre>
+
+## For CentOS
+### ncurses
+- Problem
+    <pre><code>no terminal library found
+    checking for tgetent()... configure: error: NOT FOUND!
+          You need to install a terminal library; for example ncurses.
+          Or specify the name of the library with --with-tlib.
+    </code></pre>
+
+- Solution
+    <pre><code>┌─ (marslo@MarsloJiao ~/Marslo/Tools/vim) ->
+    └─ $ yum install ncurses-devel
+    </code></pre>

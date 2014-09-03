@@ -1,4 +1,5 @@
-- `no refs in common and none specified; doing nothing.`
+## For Ubuntu
+### `no refs in common and none specified; doing nothing.`
     - Error
         <pre><code>┌─ (marslo@MarsloJiao ~/Tools/Git/LaunchySkins) ->
         └─ $ git push
