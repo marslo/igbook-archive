@@ -50,13 +50,21 @@
 
     - For Ubuntu/Debain:
 
-            $ apt-cache search expat | grep dev
+            ┌─ (marslo@MarsloJiao ~/Marslo/Tools/git) ->
+            └─ $ apt-cache search expat | grep dev
             libexpat1-dev - XML parsing C library - development kit
             lib64expat1-dev - XML parsing C library - development kit (64bit)
             libexpat-ocaml-dev - OCaml expat bindings
             lua-expat-dev - libexpat development files for the Lua language
             tdom-dev - fast XML/DOM/XPath/XSLT extension for Tcl written in C (development files)
-            $ sudo apt-get install libexpat1-dev
+            ┌─ (marslo@MarsloJiao ~/Marslo/Tools/git) ->
+            └─ $ sudo apt-get install libexpat1-dev
+
+
+    - For RHEL/CentOS:
+
+            ┌─ (marslo@MarsloJiao ~/Marslo/Tools/git) ->
+            └─ $ sudo yum install expat-devel
 
 ### tclsh
 - Problem:
@@ -89,6 +97,13 @@
             ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
             └─ $ sudo apt-get install asciidoc
 
+    - For RHEL/CentOS:
+
+            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+            └─ $ yum install docbook-style-xsl
+            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+            └─ $ rpm -ivh http://pkgs.repoforge.org/asciidoc/asciidoc-8.6.9-1.el6.rfx.noarch.rpm
+
 ### docbook2x-texi
 - Problem
 
@@ -104,6 +119,13 @@
 
             ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
             └─ $ sudo apt-get install docbook2x
+
+    - For RHEL/CentOS:
+
+            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+            └─ $ sudo yum -y --enablerepo=*epel* install docbook2X
+            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+            └─ $ sudo ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
 
 ### hunspell
 - Problem

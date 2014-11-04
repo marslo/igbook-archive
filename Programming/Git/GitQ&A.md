@@ -91,6 +91,21 @@
         $ yum install docbook-style-xsl
         $ rpm -ivh http://pkgs.repoforge.org/asciidoc/asciidoc-8.6.9-1.el6.rfx.noarch.rpm
 
+### docbook2x-texi
+
+- Error:
+
+        DB2TEXI user-manual.texi
+        /bin/sh: 2: docbook2x-texi: not found
+        make[1]: *** [user-manual.texi] Error 127
+        make[1]: Leaving directory `/home/marslo/Tools/Software/Programming/Git/git-master/Documentation'
+        make: *** [info] Error 2
+
+- Solution:
+
+        $ yum -y --enablerepo=*epel* install docbook2X
+        $ ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
+
 ### xmlto
 - Error:
 
