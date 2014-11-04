@@ -4,54 +4,68 @@
     #include \<openssl/ssl.h\>
     </code></pre>
 - Solution:
-    <pre><code>$ sudo apt-get install libssl-dev</code></pre>
+    - Ubuntu/Debian:
+
+        $ sudo apt-get install libssl-dev
+    - RHEL/CentOS
+
+        $ sudo yum install openssl-devel
 
 ### curl.h
 - Problem:
-    <pre><code>http.h:6:23: fatal error: curl/curl.h: No such file or directory
-    #include \<curl/curl.h\>
-    </code></pre>
+
+        http.h:6:23: fatal error: curl/curl.h: No such file or directory
+        #include \<curl/curl.h\>
+
 - Solution:
     - For OpenSuse:
-    <pre><code>$ sudo apt-get install libcurl4-openssl</code></pre>
-    - For Ubuntu:
-    <pre><code>$ sudo apt-get install libcurl4-openssl-dev</code></pre>
+
+          $ sudo apt-get install libcurl4-openssl
+
+    - For Ubuntu/Debian:
+
+          $ sudo apt-get install libcurl4-openssl-dev
+
+    - For RHEL/CentOS:
+
+         $ sudo yum install libcurl libcurl-devel
 
 - Reason:
-    `libcurl-dev` should be installed, but 
-    <pre><code>Package libcurl-dev is a virtual package provided by:
-      libcurl4-openssl-dev 7.35.0-1ubuntu2
-      libcurl4-nss-dev 7.35.0-1ubuntu2
-      libcurl4-gnutls-dev 7.35.0-1ubuntu2
-    You should explicitly select one to install.
-    </code></pre>
+    `libcurl-dev` should be installed, but
+
+        Package libcurl-dev is a virtual package provided by:
+          libcurl4-openssl-dev 7.35.0-1ubuntu2
+          libcurl4-nss-dev 7.35.0-1ubuntu2
+          libcurl4-gnutls-dev 7.35.0-1ubuntu2
+        You should explicitly select one to install.
 
 ### expat.h
 - Problem:
-    <pre><code>http-push.c:17:19: fatal error: expat.h: No such file or directory
-    #include \<expat.h\>
-    </code></pre>
+
+        http-push.c:17:19: fatal error: expat.h: No such file or directory
+        #include \<expat.h\>
+
 - Solution:
-    <pre><code>$ apt-cache search expat | grep dev
-    libexpat1-dev - XML parsing C library - development kit
-    lib64expat1-dev - XML parsing C library - development kit (64bit)
-    libexpat-ocaml-dev - OCaml expat bindings
-    lua-expat-dev - libexpat development files for the Lua language
-    tdom-dev - fast XML/DOM/XPath/XSLT extension for Tcl written in C (development files)
-    $ sudo apt-get install libexpat1-dev
-    </code></pre>
+
+        $ apt-cache search expat | grep dev
+        libexpat1-dev - XML parsing C library - development kit
+        lib64expat1-dev - XML parsing C library - development kit (64bit)
+        libexpat-ocaml-dev - OCaml expat bindings
+        lua-expat-dev - libexpat development files for the Lua language
+        tdom-dev - fast XML/DOM/XPath/XSLT extension for Tcl written in C (development files)
+        $ sudo apt-get install libexpat1-dev
 
 ### tclsh
 - Problem:
-    <pre><code>tclsh failed; using unoptimized loading
-    MSGFMT    po/de.msg make[1]: *** [po/de.msg] Error 127
-    make: *** [all] Error 2
-    </code></pre>
+
+        tclsh failed; using unoptimized loading
+        MSGFMT    po/de.msg make[1]: *** [po/de.msg] Error 127
+        make: *** [all] Error 2
 
 - Solution:
-    <pre><code>┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-    └─ $ sudo apt-get install gettext
-    </code></pre>
+
+        ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+        └─ $ sudo apt-get install gettext
 
 ### asciidoc
 - Problem
