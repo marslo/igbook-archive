@@ -91,3 +91,14 @@
         $ yum install docbook-style-xsl
         $ rpm -ivh http://pkgs.repoforge.org/asciidoc/asciidoc-8.6.9-1.el6.rfx.noarch.rpm
 
+### xmlto
+- Error:
+
+        /bin/sh: line 1: xmlto: command not found
+        make[1]: *** [git-add.1] Error 127
+        make[1]: Leaving directory `/root/Software/git-master/Documentation'
+        make: *** [doc] Error 2
+
+- Solution:
+
+        $ sudo yum install xmlto
