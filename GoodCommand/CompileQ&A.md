@@ -6,10 +6,11 @@
 - Solution:
     - Ubuntu/Debian:
 
-        $ sudo apt-get install libssl-dev
+            $ sudo apt-get install libssl-dev
+        
     - RHEL/CentOS
 
-        $ sudo yum install openssl-devel
+            $ sudo yum install openssl-devel
 
 ### curl.h
 - Problem:
@@ -20,15 +21,15 @@
 - Solution:
     - For OpenSuse:
 
-          $ sudo apt-get install libcurl4-openssl
+            $ sudo apt-get install libcurl4-openssl
 
     - For Ubuntu/Debian:
 
-          $ sudo apt-get install libcurl4-openssl-dev
+            $ sudo apt-get install libcurl4-openssl-dev
 
     - For RHEL/CentOS:
 
-         $ sudo yum install libcurl libcurl-devel
+            $ sudo yum install libcurl libcurl-devel
 
 - Reason:
     `libcurl-dev` should be installed, but
