@@ -1,13 +1,13 @@
 ### ssl.h
 - Problem:
-    <pre><code>git-compat-util.h:213:25: fatal error: openssl/ssl.h: No such file or directory
+    git-compat-util.h:213:25: fatal error: openssl/ssl.h: No such file or directory
     #include \<openssl/ssl.h\>
-    </code></pre>
+
 - Solution:
     - Ubuntu/Debian:
 
             $ sudo apt-get install libssl-dev
-        
+
     - RHEL/CentOS
 
             $ sudo yum install openssl-devel
@@ -48,13 +48,15 @@
 
 - Solution:
 
-        $ apt-cache search expat | grep dev
-        libexpat1-dev - XML parsing C library - development kit
-        lib64expat1-dev - XML parsing C library - development kit (64bit)
-        libexpat-ocaml-dev - OCaml expat bindings
-        lua-expat-dev - libexpat development files for the Lua language
-        tdom-dev - fast XML/DOM/XPath/XSLT extension for Tcl written in C (development files)
-        $ sudo apt-get install libexpat1-dev
+    - For Ubuntu/Debain:
+
+            $ apt-cache search expat | grep dev
+            libexpat1-dev - XML parsing C library - development kit
+            lib64expat1-dev - XML parsing C library - development kit (64bit)
+            libexpat-ocaml-dev - OCaml expat bindings
+            lua-expat-dev - libexpat development files for the Lua language
+            tdom-dev - fast XML/DOM/XPath/XSLT extension for Tcl written in C (development files)
+            $ sudo apt-get install libexpat1-dev
 
 ### tclsh
 - Problem:
@@ -65,81 +67,93 @@
 
 - Solution:
 
-        ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-        └─ $ sudo apt-get install gettext
+    - For Ubuntu/Debain:
+
+            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+            └─ $ sudo apt-get install gettext
 
 ### asciidoc
 - Problem
-    <pre><code>ASCIIDOC git-add.html
-    /bin/sh: 2: asciidoc: not found
-    make[1]: *** [git-add.html] Error 127
-    make[1]: Leaving directory `/home/marslo/Tools/Software/Programming/Git/git-master/Documentation'
-    make: *** [doc] Error 2
-    </code></pre>
+
+        ASCIIDOC git-add.html
+        /bin/sh: 2: asciidoc: not found
+        make[1]: *** [git-add.html] Error 127
+        make[1]: Leaving directory `/home/marslo/Tools/Software/Programming/Git/git-master/Documentation'
+        make: *** [doc] Error 2
 
 - Solution
-    <pre><code>┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-    └─ $ apt-cache search asciidoc
-    ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-    └─ $ sudo apt-get install asciidoc
-    </code></pre>
+    - For Ubuntu/Debain:
+
+            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+            └─ $ apt-cache search asciidoc
+            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+            └─ $ sudo apt-get install asciidoc
 
 ### docbook2x-texi
 - Problem
-    <pre><code>DB2TEXI user-manual.texi
-    /bin/sh: 2: docbook2x-texi: not found
-    make[1]: *** [user-manual.texi] Error 127
-    make[1]: Leaving directory `/home/marslo/Tools/Software/Programming/Git/git-master/Documentation'
-    make: *** [info] Error 2
-    </code></pre>
+
+        DB2TEXI user-manual.texi
+        /bin/sh: 2: docbook2x-texi: not found
+        make[1]: *** [user-manual.texi] Error 127
+        make[1]: Leaving directory `/home/marslo/Tools/Software/Programming/Git/git-master/Documentation'
+        make: *** [info] Error 2
 
 - Solution
-    <pre><code>┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-    └─ $ sudo apt-get install docbook2x
-    </code></pre>
+
+    - For Ubuntu/Debain:
+
+            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+            └─ $ sudo apt-get install docbook2x
 
 ### hunspell
 - Problem
-    <pre><code>┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
-    └─ $ qmake-qt4
-    Project MESSAGE: Install Prefix is: /usr/local
-    Project ERROR: Package hunspell not found
-    </code></pre>
+
+        ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+        └─ $ qmake-qt4
+        Project MESSAGE: Install Prefix is: /usr/local
+        Project ERROR: Package hunspell not found
 
 - Solution
-    <pre><code>┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
-    └─ $ sudo apt-get install hunspell
-    ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
-    └─ $ sudo apt-get install libhunspell-dev
-    </code></pre>
+
+    - For Ubuntu/Debain:
+
+            ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+            └─ $ sudo apt-get install hunspell
+            ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+            └─ $ sudo apt-get install libhunspell-dev
 
 ### ao
 - Problem
-    <pre><code>┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
-    └─ $ qmake-qt4
-    Project MESSAGE: Install Prefix is: /usr/local
-    Project ERROR: Package ao not found
-    </code></pre>
+
+        ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+        └─ $ qmake-qt4
+        Project MESSAGE: Install Prefix is: /usr/local
+        Project ERROR: Package ao not found
 
 - Solution
-    <pre><code>┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
-    └─ $ acs ao | grep dev
-    libao-dev - Cross Platform Audio Output Library Development
-    ...
-    ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
-    └─ $ sudo apt-get install libao-dev
-    </code></pre>
 
-## For CentOS
+    - For Ubuntu/Debain:
+
+            ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+            └─ $ apt-cache search ao | grep dev
+            libao-dev - Cross Platform Audio Output Library Development
+            ...
+            ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+            └─ $ sudo apt-get install libao-dev
+
+
 ### ncurses
 - Problem
-    <pre><code>no terminal library found
-    checking for tgetent()... configure: error: NOT FOUND!
-          You need to install a terminal library; for example ncurses.
-          Or specify the name of the library with --with-tlib.
-    </code></pre>
+
+        no terminal library found
+        checking for tgetent()... configure: error: NOT FOUND!
+              You need to install a terminal library; for example ncurses.
+              Or specify the name of the library with --with-tlib.
 
 - Solution
-    <pre><code>┌─ (marslo@MarsloJiao ~/Marslo/Tools/vim) ->
-    └─ $ yum install ncurses-devel
-    </code></pre>
+    - For Ubuntu/Debain:
+
+   - For RHEL/CentOS:
+
+            ┌─ (marslo@MarsloJiao ~/Marslo/Tools/vim) ->
+            └─ $ yum install ncurses-devel
