@@ -1,7 +1,8 @@
 ### ssl.h
 - Problem:
-    git-compat-util.h:213:25: fatal error: openssl/ssl.h: No such file or directory
-    #include \<openssl/ssl.h\>
+
+        git-compat-util.h:213:25: fatal error: openssl/ssl.h: No such file or directory
+        #include \<openssl/ssl.h\>
 
 - Solution:
     - Ubuntu/Debian:
