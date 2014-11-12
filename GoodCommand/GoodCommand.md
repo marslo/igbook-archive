@@ -279,3 +279,26 @@
     first line
     abc
     efg
+
+### List the command beginning with
+    ┌─ (marslo@i181-eng183 ~) ->
+    └─ $ compgen -c "system-config-"
+    system-config-authentication
+    system-config-authentication
+    system-config-date
+    system-config-firewall
+    system-config-firewall-tui
+    system-config-kdump
+    system-config-keyboard
+    system-config-keyboard
+    system-config-network
+    system-config-network
+    system-config-network-cmd
+    system-config-network-cmd
+    system-config-network-tui
+    system-config-printer
+    system-config-printer-applet
+    system-config-services
+    system-config-services
+    system-config-users
+

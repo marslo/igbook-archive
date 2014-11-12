@@ -107,11 +107,11 @@
 ### docbook2x-texi
 - Problem
 
-        DB2TEXI user-manual.texi
+        db2texi user-manual.texi
         /bin/sh: 2: docbook2x-texi: not found
-        make[1]: *** [user-manual.texi] Error 127
-        make[1]: Leaving directory `/home/marslo/Tools/Software/Programming/Git/git-master/Documentation'
-        make: *** [info] Error 2
+        make[1]: *** [user-manual.texi] error 127
+        make[1]: leaving directory `/home/marslo/tools/software/programming/git/git-master/documentation'
+        make: *** [info] error 2
 
 - Solution
 
@@ -120,7 +120,8 @@
             ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
             └─ $ sudo apt-get install docbook2x
 
-    - For RHEL/CentOS:
+    - For RHEL/CentOS (Inspired from [Git for human beings google group](https://groups.google.com/d/msg/git-users/DMaDpy8Bpww/jqXULjp8ry8J)):
+
 
             ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
             └─ $ sudo yum -y --enablerepo=*epel* install docbook2X
