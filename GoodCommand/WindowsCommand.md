@@ -8,16 +8,29 @@
     C:> regedit /e "%userprofile%\desktop\putty-sessions.reg" HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions
 
 ### Get the list of programs
-    [12:26:33.40 C:\Windows\SysWOW64]
-    $ wmic product get name,version
-    Name                                                                     Version
-    ALM-Platform Loader 11.5x                                                11.52.444.0
-    Microsoft Lync Web App Plug-in                                           15.8.8308.577
-    Google App Engine                                                        1.8.6.0
-    Microsoft Office Professional Plus 2010                                  14.0.6029.1000
-    Microsoft Office OneNote MUI (English) 2010                              14.0.6029.1000
-    ...
+
+      [12:26:33.40 C:\Windows\SysWOW64]
+      $ wmic product get name,version
+      Name                                                                     Version
+      ALM-Platform Loader 11.5x                                                11.52.444.0
+      Microsoft Lync Web App Plug-in                                           15.8.8308.577
+      Google App Engine                                                        1.8.6.0
+      Microsoft Office Professional Plus 2010                                  14.0.6029.1000
+      Microsoft Office OneNote MUI (English) 2010                              14.0.6029.1000
+      ...
 
 ### Set `%USERPROFILE` as `${HOME}` for **cygwin** (Inspired from [here](http://stackoverflow.com/questions/225764/safely-change-home-directory-in-cygwin))
-[15:55:36.30 C:\]
-$ reg add HKCU\Environment /v HOME /t REG_EXPAND_SZ /d ^%USERPROFILE^%
+
+      [15:55:36.30 C:\]
+      $ reg add HKCU\Environment /v HOME /t REG_EXPAND_SZ /d ^%USERPROFILE^%
+
+### Remove Graphics card context menu
+- Unregister igfxpph.dll
+
+        [11:39:50.61 C:\]
+        $ regsvr32 /u igfxpph.dll
+
+- Remove register
+
+        [11:47:10.20 C:\]
+        $ REG DELETE "HKEY_CLASSES_ROOT\Directory\Background\shellex\ContextMenuHandlers\igfxcui" /f
