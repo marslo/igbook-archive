@@ -34,3 +34,14 @@
 
         [11:47:10.20 C:\]
         $ REG DELETE "HKEY_CLASSES_ROOT\Directory\Background\shellex\ContextMenuHandlers\igfxcui" /f
+
+### Set Environment Variables
+- Set User Varialbe
+
+        [13:48:11.20 C:\]
+        $ setx VIM_HOME C:\Marslo\MyProgramFiles\Vim\vim74\gvim.exe
+
+- Set System Variable
+
+        [13:48:11.20 C:\]
+        $ setx /M VIM_HOME C:\Marslo\MyProgramFiles\Vim\vim74\gvim.exe
