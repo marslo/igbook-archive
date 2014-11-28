@@ -225,3 +225,19 @@
         [INFO] Finished at: 2014-11-28T19:03:44+08:00
         [INFO] Final Memory: 16M/201M
         [INFO] ------------------------------------------------------------------------
+
+- Verification
+
+        [19:09:52.90 c:\hello-world\target]
+        $ java -jar hello-world-1.0-SNAPSHOT.jar
+        Hello Maven
+        [19:09:57.52 c:\hello-world\target]
+        $ jar xf hello-world-1.0-SNAPSHOT.jar
+        [19:10:46.36 c:\hello-world\target]
+        $ cat META-INF\MANIFEST.MF
+        Manifest-Version: 1.0
+        Archiver-Version: Plexus Archiver
+        Built-By: Marslo_Jiao
+        Created-By: Apache Maven 3.2.3
+        Build-Jdk: 1.8.0_25
+        Main-Class: com.juvenxu.mvnbook.helloworld.HelloWorld
