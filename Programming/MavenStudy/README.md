@@ -241,3 +241,31 @@
         Created-By: Apache Maven 3.2.3
         Build-Jdk: 1.8.0_25
         Main-Class: com.juvenxu.mvnbook.helloworld.HelloWorld
+
+### Scaffold in Maven
+- Maven 3.x
+
+          [13:05:17.08 C:\archetype]
+          $ mvn archetype:generate
+          ...
+          Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 502:
+          Choose org.apache.maven.archetypes:maven-archetype-quickstart version:
+          1: 1.0-alpha-1
+          2: 1.0-alpha-2
+          3: 1.0-alpha-3
+          4: 1.0-alpha-4
+          5: 1.0
+          6: 1.1
+          Choose a number: 6:
+          Define value for property 'package':  com.juvenxu.mvnbook: : com.juvenxu.mvnbook.helloworld
+          Confirm properties configuration:
+          groupId: com.juvenxu.mvnbook
+          artifactId: hello-world
+          version: 1.0-SNAPSHOT
+          package: com.juvenxu.mvnbook.helloworld
+           Y: : Y
+           ...
+
+- Maven 2.x
+
+          $ mvn org.apache.maven.plugins:maven-archetype-plugin:2.0-alpha-5:generate
