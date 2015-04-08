@@ -66,3 +66,14 @@
 
         [14:31:18.67 C:\]
         $ REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /t REG_SZ /d "%path%;%M2_HOME%\bin" /f
+
+
+### whoami check SID
+
+    [15:59:24.12 C:\Windows\SysWOW64]
+    $ whoami /user
+    USER INFORMATION
+    ----------------
+    User Name        SID
+    ================ ===============================================
+    mj\marslo_jiao S-1-5-21-354581543-3608027983-2995495404-970613
