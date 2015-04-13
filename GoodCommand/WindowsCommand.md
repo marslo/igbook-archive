@@ -77,3 +77,12 @@
     User Name        SID
     ================ ===============================================
     mj\marslo_jiao S-1-5-21-354581543-3608027983-2995495404-970613
+
+
+### Fingerprint Pro
+
+    URL: www.lenovo.com
+    Help link: support.lenovo.com
+    Installation folder: C:\Program Files\Lenovo\Fingerprint Manager Pro\
+    Uninstaller: "C:\Program Files\InstallShield Installation Information\{314FAD12-F785-4471-BCE8-AB506642B9A1}\setup.exe" -runfromtemp -l0x0409 -removeonly
+    Estimated size: 70.21 MB
