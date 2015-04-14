@@ -86,3 +86,11 @@
     Installation folder: C:\Program Files\Lenovo\Fingerprint Manager Pro\
     Uninstaller: "C:\Program Files\InstallShield Installation Information\{314FAD12-F785-4471-BCE8-AB506642B9A1}\setup.exe" -runfromtemp -l0x0409 -removeonly
     Estimated size: 70.21 MB
+    
+### Enable Gadgets
+
+      Windows Registry Editor Version 5.00
+      [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Windows\Sidebar]
+"TurnOffSidebar"=-
+      [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Windows\Sidebar]
+"TurnOffSidebar"=-
