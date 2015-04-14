@@ -91,6 +91,6 @@
 
       Windows Registry Editor Version 5.00
       [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Windows\Sidebar]
-"TurnOffSidebar"=-
+      "TurnOffSidebar"=-
       [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Windows\Sidebar]
-"TurnOffSidebar"=-
+      "TurnOffSidebar"=-
