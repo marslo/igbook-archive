@@ -91,6 +91,15 @@
         $ yum install docbook-style-xsl
         $ rpm -ivh http://pkgs.repoforge.org/asciidoc/asciidoc-8.6.9-1.el6.rfx.noarch.rpm
 
+        Or
+
+        $ wget http://downloads.sourceforge.net/project/asciidoc/asciidoc/8.6.9/asciidoc-8.6.9.tar.gz
+        $ tar xf asciidoc-8.6.9.tar.gz
+        $ autoconf
+        $ ./configure
+        $ make
+        $ sudo make install
+
 ### docbook2x-texi
 
 - Error:
