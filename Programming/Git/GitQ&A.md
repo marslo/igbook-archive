@@ -117,3 +117,25 @@
 - Solution:
 
         $ sudo yum install xmlto
+
+
+
+
+### gnu/stubs-64.h
+- Error:
+
+        In file included from /usr/include/features.h:399:0,
+                         from /usr/include/unistd.h:25,
+                         from git-compat-util.h:158,
+                         from cache.h:4,
+                         from credential-store.c:1:
+        /usr/include/gnu/stubs.h:10:27: fatal error: gnu/stubs-64.h: No such file or directory
+         # include <gnu/stubs-64.h>
+                                   ^
+        compilation terminated.
+        make: *** [credential-store.o] Error 1
+
+
+- Solution:
+
+        $ sudo yum install glibc-devel
