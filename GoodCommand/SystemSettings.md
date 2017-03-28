@@ -175,30 +175,30 @@
     >>> Last update of whois database: Mon, 24 Feb 2014 17:24:05 UTC <<<
 
 ### About `whatis`
-    [marslo@MJ ~/Tools/Git/MyNotes]
+    [marslo@MJ ~/Tools/Git/MyBlog]
     $ whatis whois
     whois (1)            - client for the whois directory service
-    [marslo@MJ ~/Tools/Git/MyNotes]
+    [marslo@MJ ~/Tools/Git/MyBlog]
     $ whatis which
     which (1)            - locate a command
-    [marslo@MJ ~/Tools/Git/MyNotes]
+    [marslo@MJ ~/Tools/Git/MyBlog]
     $ whatis whereis
     whereis (1)          - locate the binary, source, and manual page files for a command
 
 ### Find the zombie process
-    [marslo@MJ ~/Tools/Git/MyNotes]
+    [marslo@MJ ~/Tools/Git/MyBlog]
     $ ps aux | awk '{ print $8 " " $2 " " $11}' | grep -w Z
 
 ### Sort process by PID
-    [marslo@MJ ~/Tools/Git/MyNotes]
+    [marslo@MJ ~/Tools/Git/MyBlog]
     $ ps -axww
 
 ### Check the group PID
-    [marslo@MJ ~/Tools/Git/MyNotes]
+    [marslo@MJ ~/Tools/Git/MyBlog]
     $ ps -xj
 
 ### dstat
-    ![dstat](https://github.com/Marslo/MyNotes/blob/master/Screenshots/dstat.png?raw=true)
+    ![dstat](https://github.com/Marslo/MyBlog/blob/master/Screenshots/dstat.png?raw=true)
 
 ### Sogou Pinyin input method
     ┌─ (marslo@MarsloJiao ~) ->
