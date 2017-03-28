@@ -11,9 +11,6 @@
     - [Timezone Setup](#timezone-setup)
     - [MOTD Upgrade Disable](#motd-upgrade-disable)
     - [Set Service Auto-Startup](#set-service-auto-startup)
-- [Network](#network)
-    - [Port Redirection](#port-redirection)
-    - [Proxy Setup](#proxy-setup)
 - [Application](#application)
     - [JDK and JAVA_HOME](#jdk-and-java_home)
     - [Groovy](#groovy)
@@ -118,48 +115,6 @@
        /etc/rc3.d/S20jenkins -> ../init.d/jenkins
        /etc/rc4.d/S20jenkins -> ../init.d/jenkins
        /etc/rc5.d/S20jenkins -> ../init.d/jenkins
-
-# Network
-## Port Redirection
-
-    # iptables -L -n
-    Chain INPUT (policy ACCEPT)
-    target     prot opt source               destination
-    Chain FORWARD (policy ACCEPT)
-    target     prot opt source               destination
-    Chain OUTPUT (policy ACCEPT)
-    target     prot opt source               destination
-
-    # iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
-    # iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
-    # iptables -A PREROUTING -t nat -i ens32 -p tcp --dport 80 -j REDIRECT --to-port 8080
-    # iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 8080
-    # iptables -t nat -I OUTPUT -p tcp -o lo --dport 80 -j REDIRECT --to-ports 8080
-
-    # iptables -L -n
-    Chain INPUT (policy ACCEPT)
-    target     prot opt source               destination
-    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:80
-    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:8080
-    Chain FORWARD (policy ACCEPT)
-    target     prot opt source               destination
-    Chain OUTPUT (policy ACCEPT)
-    target     prot opt source               destination
-
-    # netfilter-persistent save
-    run-parts: executing /usr/share/netfilter-persistent/plugins.d/15-ip4tables save
-    run-parts: executing /usr/share/netfilter-persistent/plugins.d/25-ip6tables save
-    # iptables-save > /etc/iptables/rules.v4
-
-## Proxy Setup
-* Name: `161.91.27.236`
-* Port: `8080`
-* Settings
-
-        $ grep proxy /etc/profile
-        export http_proxy=161.91.27.236:8080
-        export https_proxy=161.91.27.236:8080
-        export no_proxy=localhost,127.0.0.1,*.cdi.philips.com,*.*.cdi.philips.com,161.91.26.*,pww.jira.cdi.philips.com,161.91.26.166,pww.confluence.cdi.philips.com,161.91.26.168,pww.jenkins.cdi.philips.com,161.91.26.174,pww.sonar.cdi.philips.com,161.91.26.173,pww.artifactory.cdi.philips.com,161.91.26.171,pww.slave01.cdi.philips.com,161.91.26.175,pww.gitlab.cdi.philips.com,161.91.26.140
 
 # Application
 ## JDK and JAVA_HOME
