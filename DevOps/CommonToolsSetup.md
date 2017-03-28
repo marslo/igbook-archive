@@ -165,77 +165,77 @@
 ## JDK and JAVA_HOME
 * Download JDK 1.8.0_121
 
-    # mkdir -p /opt/java && cd /opt/java
-    # wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz
-    OR
-    # curl -L -C - -b "oraclelicense=accept-securebackup-cookie" -O http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz
-    # tar xf jdk-8u121-linux-x64.tar.gz
+        # mkdir -p /opt/java && cd /opt/java
+        # wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz
+        OR
+        # curl -L -C - -b "oraclelicense=accept-securebackup-cookie" -O http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz
+        # tar xf jdk-8u121-linux-x64.tar.gz
 
 * Setup JAVA environment
 
-    # echo 'JAVA_HOME="/opt/java/jdk1.8.0_121"' >> /etc/bash.bashrc
-    # echo 'CLASSPATH=".:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar"' >> /etc/bash.bashrc
-    # echo 'PATH=/home/appadmin/.marslo/myprograms/vim80/bin:$JAVA_HOME/bin:$PATH' >> /etc/bash.bashrc
-    # echo 'export JAVA_HOME CLASSPATH PATH' >> /etc/bash.bashcrc
+        # echo 'JAVA_HOME="/opt/java/jdk1.8.0_121"' >> /etc/bash.bashrc
+        # echo 'CLASSPATH=".:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar"' >> /etc/bash.bashrc
+        # echo 'PATH=/home/appadmin/.marslo/myprograms/vim80/bin:$JAVA_HOME/bin:$PATH' >> /etc/bash.bashrc
+        # echo 'export JAVA_HOME CLASSPATH PATH' >> /etc/bash.bashcrc
 
 * Se# tup default JDK
 
-    # update-alternatives --install /usr/bin/java java /opt/java/jdk1.8.0_121/bin/java 999999999
-    # update-alternatives --auto java
-    # update-alternatives --install /usr/bin/javac javac /opt/java/jdk1.8.0_121/bin/javac 999999999
-    # update-alternatives --auto javac
+        # update-alternatives --install /usr/bin/java java /opt/java/jdk1.8.0_121/bin/java 999999999
+        # update-alternatives --auto java
+        # update-alternatives --install /usr/bin/javac javac /opt/java/jdk1.8.0_121/bin/javac 999999999
+        # update-alternatives --auto javac
 
 ## Groovy
 * Download Groovy Binary Pakcage
 
-    # mkdir -p /opt/groovy && cd /opt/groovy
-    # wget --no-check-certificate -c https://akamai.bintray.com/1c/1c4dff3b6edf9a8ced3bca658ee1857cee90cfed1ee3474a2790045033c317a9?__gda__=exp=1490346679~hmac=6d64a1c3596da50e470fb6a46b182ba2cacab553c66843c8ea292e1e70e4e243&response-content-disposition=attachment%3Bfilename%3D%22apache-groovy-binary-2.4.10.zip%22&response-content-type=application%2Foctet-stream&requestInfo=U2FsdGVkX19cWhR3RJcR6SCy74HUcDg470ifD-nH2EiE5uxtdI5EbUiW_jGoHgZZTVR3qgks9tiU5441axygT9z3ykqpL45d_-9oyTlOp8Gild5Z7iGRzCiwf0kba9uza8iWDxnIxgnUIg5tDe6N8ZQ3R0yFCY4c4w7czwBGyK0
-    # unzip apache-groovy-binary-2.4.10.zip
+        # mkdir -p /opt/groovy && cd /opt/groovy
+        # wget --no-check-certificate -c https://akamai.bintray.com/1c/1c4dff3b6edf9a8ced3bca658ee1857cee90cfed1ee3474a2790045033c317a9?__gda__=exp=1490346679~hmac=6d64a1c3596da50e470fb6a46b182ba2cacab553c66843c8ea292e1e70e4e243&response-content-disposition=attachment%3Bfilename%3D%22apache-groovy-binary-2.4.10.zip%22&response-content-type=application%2Foctet-stream&requestInfo=U2FsdGVkX19cWhR3RJcR6SCy74HUcDg470ifD-nH2EiE5uxtdI5EbUiW_jGoHgZZTVR3qgks9tiU5441axygT9z3ykqpL45d_-9oyTlOp8Gild5Z7iGRzCiwf0kba9uza8iWDxnIxgnUIg5tDe6N8ZQ3R0yFCY4c4w7czwBGyK0
+        # unzip apache-groovy-binary-2.4.10.zip
 
 * Setup Groovy Environment
 
-    # echo 'export GROOVY_HOME="/opt/groovy/groovy-2.4.10"'
-    # echo 'export PATH=$GROOVY_HOME/bin:$PATH'
+        # echo 'export GROOVY_HOME="/opt/groovy/groovy-2.4.10"'
+        # echo 'export PATH=$GROOVY_HOME/bin:$PATH'
 
 * Set Default Groovy
 
-    # update-alternatives --install /usr/bin/groovy groovy /opt/groovy/groovy-2.4.10/bin/groovy 999999999
-    # update-alternatives --auto groovy
+        # update-alternatives --install /usr/bin/groovy groovy /opt/groovy/groovy-2.4.10/bin/groovy 999999999
+        # update-alternatives --auto groovy
 
 ## MySQL
 ### Built from Source Code
 * Build
 
-    # groupadd mysql
-    # useradd -g mysql mysql
-    $ wget http://cdn.mysql.com/archives/mysql-5.5/mysql-5.5.41.tar.gz
-    $ apt install ncurses-dev
-    $ cd myaql-5.5.41
-    $ cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
-    -DDEFAULT_CHARSET=utf8 \
-    -DDEFAULT_COLLATION=utf8_general_ci \
-    -DENABLED_LOCAL_INFILE=ON \
-    -DWITH_INNOBASE_STORAGE_ENGINE=1 \
-    -DWITH_FEDERATED_STORAGE_ENGINE=1 \
-    -DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
-    -DMYSQL_UNIX_ADDR=/tmp/mysqld.sock \
-    -DWITH_DEBUG=0 \
-    -DMYSQL_TCP_PORT=3306
-    $ make
-    $ sudo make install
-    $ sysv-rc-conf mysqld on
+        # groupadd mysql
+        # useradd -g mysql mysql
+        $ wget http://cdn.mysql.com/archives/mysql-5.5/mysql-5.5.41.tar.gz
+        $ apt install ncurses-dev
+        $ cd myaql-5.5.41
+        $ cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
+        -DDEFAULT_CHARSET=utf8 \
+        -DDEFAULT_COLLATION=utf8_general_ci \
+        -DENABLED_LOCAL_INFILE=ON \
+        -DWITH_INNOBASE_STORAGE_ENGINE=1 \
+        -DWITH_FEDERATED_STORAGE_ENGINE=1 \
+        -DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
+        -DMYSQL_UNIX_ADDR=/tmp/mysqld.sock \
+        -DWITH_DEBUG=0 \
+        -DMYSQL_TCP_PORT=3306
+        $ make
+        $ sudo make install
+        $ sysv-rc-conf mysqld on
 
 * Configure
 
-    # chown -R mysql:mysql /usr/local/mysql
-    # /usr/local/mysql/scripts/mysql_install_db --user=mysql
-    # /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
-    # chown -R root /usr/local/mysql/
-    # chown -R mysql /usr/local/mysql/data
-    # /usr/local/mysql/bin/mysqld_safe --user=mysql &
-    # /usr/local/mysql/bin/mysqladmin -u root password '<PASSWORD>'
-    OR
-    # /usr/local/mysql/bin/mysql_secure_installtion
+        # chown -R mysql:mysql /usr/local/mysql
+        # /usr/local/mysql/scripts/mysql_install_db --user=mysql
+        # /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
+        # chown -R root /usr/local/mysql/
+        # chown -R mysql /usr/local/mysql/data
+        # /usr/local/mysql/bin/mysqld_safe --user=mysql &
+        # /usr/local/mysql/bin/mysqladmin -u root password '<PASSWORD>'
+        OR
+        # /usr/local/mysql/bin/mysql_secure_installtion
 
 ### Install from APT Repo
 
@@ -256,4 +256,4 @@
 ## MySQL-Connector (JDBC)
 * Download `mysql-connector-java-*.tar.gz` at [MySQL Official Website](http://dev.mysql.com/downloads/connector/j) -> _Platform Independent_
 
-    $ wget http://cdn.mysql.com//Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz
+        $ wget http://cdn.mysql.com//Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz
