@@ -198,7 +198,7 @@
     $ ps -xj
 
 ### dstat
-  ![dstat](MyBlog/Screenshots/dstat.png)
+  ![dstat](../Screenshots/dstat.png)
 
 ### Sogou Pinyin input method
     ┌─ (marslo@MarsloJiao ~) ->
