@@ -29,6 +29,7 @@ $ nmcli connection
 NAME                UUID                                  TYPE      DEVICE
 WLAN-PUB            2cde1f25-8c28-4318-9781-b9fcdabd985d  wifi      wlan0
 Wired connection 1  f72d569d-065b-3bc8-98ae-e07f8bf46945  ethernet  eth0
+cni0                9a2d48d7-e1c7-4fe4-a164-ffde9716dbf3  bridge    cni0
 docker0             5db99dac-d17d-4765-9f38-057ff2c853ff  bridge    docker0
 ```
 ### [Temporary Solution](http://kernelpanik.net/rename-a-linux-network-interface-without-udev/)
