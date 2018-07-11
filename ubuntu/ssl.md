@@ -1,3 +1,30 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [SSL Cert](#ssl-cert)
+    - [Create Cert for server](#create-cert-for-server)
+        - [CA (root cert)](#ca-root-cert)
+        - [Cert for Server](#cert-for-server)
+        - [Sign the server cert with CA](#sign-the-server-cert-with-ca)
+        - [Cert for Client](#cert-for-client)
+        - [Update the file perm](#update-the-file-perm)
+        - [Check certs](#check-certs)
+            - [crt](#crt)
+            - [csr](#csr)
+    - [Certificate working with Nginx](#certificate-working-with-nginx)
+    - [Certificate working with Client](#certificate-working-with-client)
+        - [Add certifactory in MacOS](#add-certifactory-in-macos)
+        - [Find the added cert in MacOS](#find-the-added-cert-in-macos)
+        - [Remove the cert in MacOS](#remove-the-cert-in-macos)
+        - [Other methods](#other-methods)
+    - [If you enter '.', the field will be left blank.](#if-you-enter-the-field-will-be-left-blank)
+- [Artifactory HTTPS](#artifactory-https)
+    - [If you enter '.', the field will be left blank.](#if-you-enter-the-field-will-be-left-blank-1)
+    - [If you enter '.', the field will be left blank.](#if-you-enter-the-field-will-be-left-blank-2)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # SSL Cert
 ## Create Cert for server
 ### CA (root cert)

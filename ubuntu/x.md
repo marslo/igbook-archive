@@ -1,3 +1,31 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Enable Screensharing](#enable-screensharing)
+    - [Backup and Restore Config](#backup-and-restore-config)
+    - [Setup Screen Sharing](#setup-screen-sharing)
+        - [Reset VNC password](#reset-vnc-password)
+        - [Read all conf](#read-all-conf)
+    - [Start Application remotelly](#start-application-remotelly)
+    - [GDM](#gdm)
+        - [gnome-shell](#gnome-shell)
+        - [AutoLogin](#autologin)
+            - [Login with desired session](#login-with-desired-session)
+            - [Auto Login with GDM](#auto-login-with-gdm)
+            - [Auto Login with Delay](#auto-login-with-delay)
+    - [login session](#login-session)
+        - [Default Session](#default-session)
+    - [Process and SubProcesses](#process-and-subprocesses)
+        - [pstree](#pstree)
+        - [ps](#ps)
+            - [short](#short)
+            - [full](#full)
+    - [Wayland](#wayland)
+- [Reference](#reference)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Enable Screensharing
 
 ## Backup and Restore Config
