@@ -279,3 +279,4 @@ search cn-132.lan.philips.com
 
 # Reference
 - [ARCH NetWork Configuration](https://wiki.archlinux.org/index.php/Network_configuration#Change_device_name)
+- [How do I add a DNS server via resolv.conf?](https://askubuntu.com/a/51332/92979)
