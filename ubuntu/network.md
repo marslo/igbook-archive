@@ -22,6 +22,12 @@ vetha9ee773c  ethernet  unmanaged     --
 vethf5a48bb2  ethernet  unmanaged     --
 lo            loopback  unmanaged     --
 
+$ nmcli connection
+NAME                UUID                                  TYPE      DEVICE
+WLAN-PUB            2cde1f25-8c28-4318-9781-b9fcdabd985d  wifi      wlp2s0
+Wired connection 1  f72d569d-065b-3bc8-98ae-e07f8bf46945  ethernet  enp0s31f6
+cni0                dcfc10c6-5421-4405-9d56-b3bb595780f5  bridge    cni0
+docker0             29822e8f-772f-4e67-8052-55b9e6c9e298  bridge    docker0
 
 $ sudo ifconfig enp0s31f6 down; sudo ip link set enp0s31f6 name eth0; sudo ifconfig eth0 up
 
