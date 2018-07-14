@@ -20,7 +20,7 @@
     $ ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no user@target.server
 
 ## Get FingerPrinter from Private Key
-* SHA256: 
+* SHA256:
 
         $ ssh-keygen -l -f ~/.ssh/id_rsa
         OR
