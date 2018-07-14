@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [devops-kubernetes-master](#devops-kubernetes-master)
+- [devops-kubernetes-02](#devops-kubernetes-02)
+    - [/etc/network/interface](#etcnetworkinterface)
+    - [Route Details](#route-details)
+- [devops-kubernetes-03](#devops-kubernetes-03)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
+
+## devops-kubernetes-master
 
 
 ## devops-kubernetes-02
@@ -100,7 +115,6 @@ IP6.GATEWAY:                            --
 -------------------------------------------------------------------------------
 
 $ nmcli -p device show eno3
-
 ===============================================================================
                              Device details (eno3)
 ===============================================================================
@@ -128,7 +142,6 @@ IP6.GATEWAY:                            --
 -------------------------------------------------------------------------------
 
 $ nmcli -p device show
-
 ===============================================================================
                              Device details (eno2)
 ===============================================================================
