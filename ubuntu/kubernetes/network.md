@@ -5,7 +5,6 @@
 - [devops-kubernetes-master](#devops-kubernetes-master)
 - [devops-kubernetes-02](#devops-kubernetes-02)
     - [/etc/network/interface](#etcnetworkinterface)
-    - [network info](#network-info)
     - [Route Details](#route-details)
 - [devops-kubernetes-03](#devops-kubernetes-03)
 
@@ -107,7 +106,6 @@ IP4.ROUTE[19]:                          dst = 161.88.0.0/16, nh = 0.0.0.0, mt = 
 IP6.ADDRESS[1]:                         fe80::c634:6bff:feba:318c/64
 IP6.GATEWAY:                            --
 -------------------------------------------------------------------------------
-
 $ nmcli -p device show eno3
 ===============================================================================
                              Device details (eno3)
@@ -134,7 +132,6 @@ IP4.GATEWAY:                            192.168.10.1
 IP6.ADDRESS[1]:                         fe80::c634:6bff:feba:318e/64
 IP6.GATEWAY:                            --
 -------------------------------------------------------------------------------
-
 $ nmcli -p device show
 ===============================================================================
                              Device details (eno2)
