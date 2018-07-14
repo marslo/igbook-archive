@@ -1,109 +1,24 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-    - [devops-kubernetes-02](#devops-kubernetes-02)
-        - [/etc/network/interface](#etcnetworkinterface)
-- [broadcast 130.147.219.127](#broadcast-130147219127)
-- [network 130.147.219.0](#network-1301472190)
-- [iface eno3 inet dhcp](#iface-eno3-inet-dhcp)
-- [auto eno3](#auto-eno3)
-- [iface eno3 inet static](#iface-eno3-inet-static)
-- [address 192.168.11.121](#address-19216811121)
-- [netmask 255.255.254.0](#netmask-2552552540)
-- [gateway 192.168.10.1](#gateway-192168101)
-- [dns-nameservers 61.139.2.69 218.6.200.139](#dns-nameservers-61139269-2186200139)
-        - [network info](#network-info)
-- [<pre><code>$ nmcli -p d show eno1](#precode-nmcli-p-d-show-eno1)
-    - [GENERAL.DEVICE:                         eno1](#generaldevice-eno1)
-    - [GENERAL.TYPE:                           ethernet](#generaltype-ethernet)
-    - [GENERAL.HWADDR:                         C4:34:6B:BA:31:8C](#generalhwaddr-c4346bba318c)
-    - [GENERAL.MTU:                            1500](#generalmtu-1500)
-    - [GENERAL.STATE:                          10 (unmanaged)](#generalstate-10-unmanaged)
-    - [GENERAL.CONNECTION:                     --](#generalconnection)
-    - [GENERAL.CON-PATH:                       --](#generalcon-path)
-    - [WIRED-PROPERTIES.CARRIER:               on](#wired-propertiescarrier-on)
-    - [IP4.ROUTE[19]:                          dst = 161.88.0.0/16, nh = 0.0.0.0, mt = 0](#ip4route19-dst-161880016-nh-0000-mt-0)
-    - [IP6.GATEWAY:                            --](#ip6gateway)
-- [$ nmcli -p device show eno3](#nmcli-p-device-show-eno3)
-    - [GENERAL.DEVICE:                         eno3](#generaldevice-eno3)
-    - [GENERAL.TYPE:                           ethernet](#generaltype-ethernet-1)
-    - [GENERAL.HWADDR:                         C4:34:6B:BA:31:8E](#generalhwaddr-c4346bba318e)
-    - [GENERAL.MTU:                            1500](#generalmtu-1500-1)
-    - [GENERAL.STATE:                          10 (unmanaged)](#generalstate-10-unmanaged-1)
-    - [GENERAL.CONNECTION:                     --](#generalconnection-1)
-    - [GENERAL.CON-PATH:                       --](#generalcon-path-1)
-    - [WIRED-PROPERTIES.CARRIER:               on](#wired-propertiescarrier-on-1)
-    - [IP4.GATEWAY:                            192.168.10.1](#ip4gateway-192168101)
-    - [IP6.GATEWAY:                            --](#ip6gateway-1)
-- [$ nmcli -p device show](#nmcli-p-device-show)
-    - [GENERAL.DEVICE:                         eno2](#generaldevice-eno2)
-    - [GENERAL.TYPE:                           ethernet](#generaltype-ethernet-2)
-    - [GENERAL.HWADDR:                         C4:34:6B:BA:31:8D](#generalhwaddr-c4346bba318d)
-    - [GENERAL.MTU:                            1500](#generalmtu-1500-2)
-    - [GENERAL.STATE:                          20 (unavailable)](#generalstate-20-unavailable)
-    - [GENERAL.CONNECTION:                     --](#generalconnection-2)
-    - [GENERAL.CON-PATH:                       --](#generalcon-path-2)
-    - [WIRED-PROPERTIES.CARRIER:               off](#wired-propertiescarrier-off)
-    - [GENERAL.DEVICE:                         eno4](#generaldevice-eno4)
-    - [GENERAL.TYPE:                           ethernet](#generaltype-ethernet-3)
-    - [GENERAL.HWADDR:                         C4:34:6B:BA:31:8F](#generalhwaddr-c4346bba318f)
-    - [GENERAL.MTU:                            1500](#generalmtu-1500-3)
-    - [GENERAL.STATE:                          20 (unavailable)](#generalstate-20-unavailable-1)
-    - [GENERAL.CONNECTION:                     --](#generalconnection-3)
-    - [GENERAL.CON-PATH:                       --](#generalcon-path-3)
-    - [WIRED-PROPERTIES.CARRIER:               off](#wired-propertiescarrier-off-1)
-    - [GENERAL.DEVICE:                         eno1](#generaldevice-eno1-1)
-    - [GENERAL.TYPE:                           ethernet](#generaltype-ethernet-4)
-    - [GENERAL.HWADDR:                         C4:34:6B:BA:31:8C](#generalhwaddr-c4346bba318c-1)
-    - [GENERAL.MTU:                            1500](#generalmtu-1500-4)
-    - [GENERAL.STATE:                          10 (unmanaged)](#generalstate-10-unmanaged-2)
-    - [GENERAL.CONNECTION:                     --](#generalconnection-4)
-    - [GENERAL.CON-PATH:                       --](#generalcon-path-4)
-    - [WIRED-PROPERTIES.CARRIER:               on](#wired-propertiescarrier-on-2)
-    - [IP4.ROUTE[19]:                          dst = 161.88.0.0/16, nh = 0.0.0.0, mt = 0](#ip4route19-dst-161880016-nh-0000-mt-0-1)
-    - [IP6.GATEWAY:                            --](#ip6gateway-2)
-    - [GENERAL.DEVICE:                         eno3](#generaldevice-eno3-1)
-    - [GENERAL.TYPE:                           ethernet](#generaltype-ethernet-5)
-    - [GENERAL.HWADDR:                         C4:34:6B:BA:31:8E](#generalhwaddr-c4346bba318e-1)
-    - [GENERAL.MTU:                            1500](#generalmtu-1500-5)
-    - [GENERAL.STATE:                          10 (unmanaged)](#generalstate-10-unmanaged-3)
-    - [GENERAL.CONNECTION:                     --](#generalconnection-5)
-    - [GENERAL.CON-PATH:                       --](#generalcon-path-5)
-    - [WIRED-PROPERTIES.CARRIER:               on](#wired-propertiescarrier-on-3)
-    - [IP4.GATEWAY:                            192.168.10.1](#ip4gateway-192168101-1)
-    - [IP6.GATEWAY:                            --](#ip6gateway-3)
-    - [GENERAL.DEVICE:                         lo](#generaldevice-lo)
-    - [GENERAL.TYPE:                           loopback](#generaltype-loopback)
-    - [GENERAL.HWADDR:                         00:00:00:00:00:00](#generalhwaddr-000000000000)
-    - [GENERAL.MTU:                            65536](#generalmtu-65536)
-    - [GENERAL.STATE:                          10 (unmanaged)](#generalstate-10-unmanaged-4)
-    - [GENERAL.CONNECTION:                     --](#generalconnection-6)
-    - [GENERAL.CON-PATH:                       --](#generalcon-path-6)
-    - [IP4.GATEWAY:                            --](#ip4gateway)
-    - [IP6.GATEWAY:                            --](#ip6gateway-4)
-        - [Route Details](#route-details)
-    - [devops-kubernetes-03](#devops-kubernetes-03)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## devops-kubernetes-02
 ### /etc/network/interface
 
-    $ cat /etc/network/interfaces
-    auto lo
-    iface lo inet loopback
+```
+$ cat /etc/network/interfaces
+auto lo
+iface lo inet loopback
 
-    auto eno1
-    iface eno1 inet static
-      address 130.147.180.86
-      netmask 255.255.255.192
-      gateway 130.147.180.65
-      dns-nameservers 130.147.236.5 161.92.35.78
-      dns-search cn-132.lan.philips.com
+auto eno1
+iface eno1 inet static
+  address 130.147.180.86
+  netmask 255.255.255.192
+  gateway 130.147.180.65
+  dns-nameservers 130.147.236.5 161.92.35.78
+  dns-search cn-132.lan.philips.com
 
-    auto eno3
-      iface eno3 inet static
+# auto eno3
+#  iface eno3 inet static
+```
 
 <details><summary>Click to check details</summary>
 <pre><code>$ cat /etc/network/interfaces
