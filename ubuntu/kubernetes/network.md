@@ -18,19 +18,17 @@
 ## devops-kubernetes-02
 ### /etc/network/interface
 
-```
-$ cat /etc/network/interfaces
-auto lo
-iface lo inet loopback
+    $ cat /etc/network/interfaces
+    auto lo
+    iface lo inet loopback
 
-auto eno1
-iface eno1 inet static
-  address 130.147.180.86
-  netmask 255.255.255.192
-  gateway 130.147.180.65
-  dns-nameservers 130.147.236.5 161.92.35.78
-  dns-search cn-132.lan.philips.com
-```
+    auto eno1
+    iface eno1 inet static
+      address 130.147.180.86
+      netmask 255.255.255.192
+      gateway 130.147.180.65
+      dns-nameservers 130.147.236.5 161.92.35.78
+      dns-search cn-132.lan.philips.com
 
 <details><summary>Click to check details</summary>
 <pre><code>$ cat /etc/network/interfaces
@@ -109,6 +107,7 @@ IP4.ROUTE[19]:                          dst = 161.88.0.0/16, nh = 0.0.0.0, mt = 
 IP6.ADDRESS[1]:                         fe80::c634:6bff:feba:318c/64
 IP6.GATEWAY:                            --
 -------------------------------------------------------------------------------
+
 $ nmcli -p device show eno3
 ===============================================================================
                              Device details (eno3)
@@ -135,6 +134,7 @@ IP4.GATEWAY:                            192.168.10.1
 IP6.ADDRESS[1]:                         fe80::c634:6bff:feba:318e/64
 IP6.GATEWAY:                            --
 -------------------------------------------------------------------------------
+
 $ nmcli -p device show
 ===============================================================================
                              Device details (eno2)
