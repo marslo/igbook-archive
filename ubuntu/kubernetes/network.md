@@ -5,11 +5,11 @@
 - [devops-kubernetes-master](#devops-kubernetes-master)
 - [devops-kubernetes-02](#devops-kubernetes-02)
     - [/etc/network/interface](#etcnetworkinterface)
+    - [network info](#network-info)
     - [Route Details](#route-details)
 - [devops-kubernetes-03](#devops-kubernetes-03)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 
 
 ## devops-kubernetes-master
@@ -32,7 +32,7 @@ iface eno1 inet static
   dns-search cn-132.lan.philips.com
 ```
 
-    <details><summary>Click to check details</summary>
+<details><summary>Click to check details</summary>
     <pre><code>$ cat /etc/network/interfaces
     # interfaces(5) file used by ifup(8) and ifdown(8)
     auto lo
@@ -57,7 +57,7 @@ iface eno1 inet static
       # gateway 192.168.10.1
       # dns-nameservers 61.139.2.69 218.6.200.139
     </code></pre>
-    </details>
+</details>
 
 
 ### network info
