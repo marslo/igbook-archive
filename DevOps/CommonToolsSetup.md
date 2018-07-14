@@ -1,3 +1,32 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+    - [Content](#content)
+- [APT](#apt)
+    - [APT Configuration](#apt-configuration)
+    - [Necessory Pckages and Dependencies](#necessory-pckages-and-dependencies)
+    - [Package Auto-Upgrade Dislable](#package-auto-upgrade-dislable)
+    - [Disable Server Auto Upgrade](#disable-server-auto-upgrade)
+    - [Revert Hold Settings](#revert-hold-settings)
+    - [Show all Hold](#show-all-hold)
+    - [Complete Remove an App](#complete-remove-an-app)
+- [System](#system)
+    - [Timezone Setup](#timezone-setup)
+    - [MOTD Upgrade Disable](#motd-upgrade-disable)
+    - [Set Service Auto-Startup](#set-service-auto-startup)
+- [Application](#application)
+    - [JDK and JAVA_HOME](#jdk-and-java_home)
+    - [Groovy](#groovy)
+    - [MySQL](#mysql)
+        - [Built from Source Code](#built-from-source-code)
+        - [Install from APT Repo](#install-from-apt-repo)
+        - [Install old version](#install-old-version)
+        - [Reconfiguration](#reconfiguration)
+    - [MySQL-Connector (JDBC)](#mysql-connector-jdbc)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Content
 - [APT](#apt)
     - [APT Configuratoiin](#apt-configuration)

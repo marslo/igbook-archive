@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [For Ubuntu](#for-ubuntu)
+    - [`no refs in common and none specified; doing nothing.`](#no-refs-in-common-and-none-specified-doing-nothing)
+- [For CentOS](#for-centos)
+    - [/bin/sh: cc](#binsh-cc)
+    - [openssl/ssl.h](#opensslsslh)
+    - [expat.h](#expath)
+    - [asciidoc](#asciidoc)
+    - [docbook2x-texi](#docbook2x-texi)
+    - [xmlto](#xmlto)
+    - [gnu/stubs-64.h](#gnustubs-64h)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## For Ubuntu
 ### `no refs in common and none specified; doing nothing.`
 - Error

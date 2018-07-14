@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Install skype in Ubuntu 64bit](#install-skype-in-ubuntu-64bit)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### Install skype in Ubuntu 64bit
 - Inspired from [AskUbuntu](http://askubuntu.com/questions/215298/unable-to-install-skype-on-64bit-ubuntu)
 - Add i386 architecture

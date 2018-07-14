@@ -1,3 +1,27 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Git Command Study and practice](#git-command-study-and-practice)
+    - [Content](#content)
+    - [Appoint](#appoint)
+        - [Git Alias](#git-alias)
+        - [.marslorc](#marslorc)
+    - [Rebase](#rebase)
+        - [Without Confilite file](#without-confilite-file)
+            - [Precondiction](#precondiction)
+            - [Merge with rebase](#merge-with-rebase)
+                - [Use command: git pulll --rebase](#use-command-git-pulll-rebase)
+                - [Check the status after pull rebase](#check-the-status-after-pull-rebase)
+        - [With Confilite file](#with-confilite-file)
+            - [Precondiction](#precondiction-1)
+            - [Merge by rebase](#merge-by-rebase)
+                - [Using command: git pull --rebase](#using-command-git-pull-rebase)
+                - [Check the status after pull rebase](#check-the-status-after-pull-rebase-1)
+            - [Return to master branch](#return-to-master-branch)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Git Command Study and practice
 =======
 

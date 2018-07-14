@@ -1,3 +1,22 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [I'm very busy](#im-very-busy)
+- [Press Any Key to Continue](#press-any-key-to-continue)
+- [Simulate type mechine [Pretty Cool!!]](#simulate-type-mechine-pretty-cool)
+- [Get how many days left this years](#get-how-many-days-left-this-years)
+- [Get week number](#get-week-number)
+- [DOS tree](#dos-tree)
+- [Set Volume by command](#set-volume-by-command)
+- [cat and tac](#cat-and-tac)
+- [ASCII chart](#ascii-chart)
+- [Char chart](#char-chart)
+- [Hate someone](#hate-someone)
+- [Star war](#star-war)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### I'm very busy
     [marslo@MJ ~/GoodNote]
     $ cat /dev/urandom | hexdump -C | grep "ca fe"

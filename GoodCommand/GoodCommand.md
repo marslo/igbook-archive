@@ -1,3 +1,38 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Show Cal](#show-cal)
+- [Show some command periodically](#show-some-command-periodically)
+- [Print 50th char](#print-50th-char)
+- [Batch move](#batch-move)
+- [Show all line numbers in a file](#show-all-line-numbers-in-a-file)
+- [Clear](#clear)
+- [Encrypt bash file](#encrypt-bash-file)
+- [Get URL](#get-url)
+- [Get the count of a word in a file](#get-the-count-of-a-word-in-a-file)
+- [Download and unzip](#download-and-unzip)
+- [Get the common part](#get-the-common-part)
+- [Revert a word](#revert-a-word)
+- [Use less as tail -f](#use-less-as-tail-f)
+- [Print a file into one line](#print-a-file-into-one-line)
+- [Rename](#rename)
+- [Get the file inode](#get-the-file-inode)
+- [Format a file to a table](#format-a-file-to-a-table)
+- [Identity an image](#identity-an-image)
+- [Get cookie from firefox](#get-cookie-from-firefox)
+- [Echo 256 colors](#echo-256-colors)
+- [Directory diff](#directory-diff)
+- [Show last n lines in a file](#show-last-n-lines-in-a-file)
+- [Get 000 to 100](#get-000-to-100)
+- [Fast copy or moving or someting (Detials -> Brace Expansion)](#fast-copy-or-moving-or-someting-detials-brace-expansion)
+- [Searching for commands without knowing their exact names](#searching-for-commands-without-knowing-their-exact-names)
+- [PWD's secrets](#pwds-secrets)
+- [Insert into the first line](#insert-into-the-first-line)
+- [List the command beginning with](#list-the-command-beginning-with)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### Show Cal
     [marslo@MJ ~]
     $ cal -y | tr '\n' '|' | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed 's/./#/g') /$(date +%m | sed s/^0//)" | tr '|' '\n'

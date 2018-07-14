@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Get Package name by command](#get-package-name-by-command)
+- [Search package name for apt-get](#search-package-name-for-apt-get)
+- [Install Ubuntu Theme](#install-ubuntu-theme)
+- [Open Font Viewer and install font](#open-font-viewer-and-install-font)
+- [Show launcher icon](#show-launcher-icon)
+- [Show the softer renderer](#show-the-softer-renderer)
+- [Specified Context Menu](#specified-context-menu)
+- [Disable Ubuntu Desktop notification](#disable-ubuntu-desktop-notification)
+- [Recode activity as a GIF file (Inspired from here and here)](#recode-activity-as-a-gif-file-inspired-from-here-and-here)
+- [Goldendict Installation](#goldendict-installation)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### Get Package name by command
     [marslo@MJ ~]
     $ apt-cache search mkpasswd

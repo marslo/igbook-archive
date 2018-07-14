@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [teamviewer installation. Inspired from Official Help](#teamviewer-installation-inspired-from-official-help)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### teamviewer installation. Inspired from [Official Help](http://www.teamviewer.com/en/help/363-How-do-I-install-TeamViewer-on-my-Linux-distribution.aspx#other)
 
 - Add i386 architecture

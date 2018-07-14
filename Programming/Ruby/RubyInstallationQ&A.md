@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [openssl.h](#opensslh)
+- [thread_native.h](#thread_nativeh)
+- [sqlite3.h](#sqlite3h)
+- [libyaml-0.so.2 & psych.so](#libyaml-0so2-&-psychso)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### openssl.h
 - Error Description
     <pre><code>┌─ (marslo@MarsloJiao ~/Tools/SourceCode/Ruby/ruby-2.1.2/ext/openssl) ->

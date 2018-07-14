@@ -1,3 +1,29 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Show Path:](#show-path)
+- [Clear duplicated PATH](#clear-duplicated-path)
+- [Check CPU support 64 bit or not](#check-cpu-support-64-bit-or-not)
+- [Print memory only](#print-memory-only)
+- [Quick create bak file](#quick-create-bak-file)
+- [Get the Computer Version](#get-the-computer-version)
+- [cat /etc/cpuinfo](#cat-etccpuinfo)
+- [Set DNS for Ubuntu](#set-dns-for-ubuntu)
+- [Get all google website](#get-all-google-website)
+- [About `whatis`](#about-whatis)
+- [Find the zombie process](#find-the-zombie-process)
+- [Sort process by PID](#sort-process-by-pid)
+- [Check the group PID](#check-the-group-pid)
+- [dstat](#dstat)
+- [Sogou Pinyin input method](#sogou-pinyin-input-method)
+- [Specified terminal size](#specified-terminal-size)
+- [Get the public IP Address](#get-the-public-ip-address)
+- [Log Out](#log-out)
+- [Synchronize date and time with a server over ssh (Inspired from commandlinefu.com)](#synchronize-date-and-time-with-a-server-over-ssh-inspired-from-commandlinefucom)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### Show Path:
     [marslo@MJ ~]
     $ echo src::${PATH} | awk 'BEGIN{pwd=ENVIRON["PWD"];RS=":";FS="\n"}!$1{$1=pwd}$1!~/^\//{$1=pwd"/"$1}{print $1}'

@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Download NodeJs](#download-nodejs)
+- [Install `yo`](#install-yo)
+- [Install compass by `gem`](#install-compass-by-gem)
+- [Install `Angular`](#install-angular)
+- [Startup server](#startup-server)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### Download NodeJs
 - For 64bit
     <pre><code>┌─ (marslo@MarsloJiao ~) ->

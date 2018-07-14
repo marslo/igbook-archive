@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [ssl.h](#sslh)
+- [curl.h](#curlh)
+- [expat.h](#expath)
+- [tclsh](#tclsh)
+- [asciidoc](#asciidoc)
+- [docbook2x-texi](#docbook2x-texi)
+- [hunspell](#hunspell)
+- [ao](#ao)
+- [ncurses](#ncurses)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### ssl.h
 - Problem:
 

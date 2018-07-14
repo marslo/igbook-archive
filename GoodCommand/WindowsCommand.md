@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Backup PuTTy sessions](#backup-putty-sessions)
+- [Launchy PuTTy session as shortcut](#launchy-putty-session-as-shortcut)
+- [Backup PuTTy session](#backup-putty-session)
+- [Get the list of programs](#get-the-list-of-programs)
+- [Set `%USERPROFILE%` as `${HOME}` for **cygwin** (Inspired from here)](#set-%25userprofile%25-as-home-for-cygwin-inspired-from-here)
+- [Remove Graphics card context menu](#remove-graphics-card-context-menu)
+- [Set Environment Variables](#set-environment-variables)
+- [setx problem](#setx-problem)
+- [whoami check SID](#whoami-check-sid)
+- [Fingerprint Pro](#fingerprint-pro)
+- [Enable Gadgets](#enable-gadgets)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### Backup PuTTy sessions
 
       C:> regedit /e "%userprofile%\desktop\putty-registry.reg" HKEY_CURRENT_USER\Software\Simontatham

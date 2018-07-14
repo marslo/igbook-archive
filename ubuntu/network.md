@@ -12,6 +12,8 @@
         - [Show Route](#show-route)
 - [DNS](#dns)
     - [Permanently Add new DNS](#permanently-add-new-dns)
+- [Port Redirection](#port-redirection)
+- [Proxy Setup](#proxy-setup)
 - [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
