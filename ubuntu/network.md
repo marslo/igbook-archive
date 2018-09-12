@@ -226,6 +226,36 @@ $ sudo lshw -class network
 
 ### Show Route
 ```
+$ nslookup my.gitlab.company.com
+Server:     130.147.236.5
+Address:    130.147.236.5#53
+
+Non-authoritative answer:
+Name:   pww.gitlab.cdi.philips.com
+Address: 130.147.219.15
+
+$ $ ip route get 130.147.219.15
+130.147.219.15 dev eno1 src 130.147.182.240 uid 1000
+    cache
+
+------
+$ nslookup github.com
+Server:		130.147.236.5
+Address:	130.147.236.5#53
+
+Non-authoritative answer:
+Name:	github.com
+Address: 192.30.253.112
+Name:	github.com
+Address: 192.30.253.113
+
+$ ip route get 192.30.253.113
+192.30.253.113 via 192.168.10.1 dev wlan0 src 192.168.11.166 uid 1000
+    cache
+```
+
+OR
+```
 $ ip route show
 default via 192.168.10.1 dev wlan0 proto dhcp metric 600
 10.244.0.0/24 dev cni0 proto kernel scope link src 10.244.0.1
