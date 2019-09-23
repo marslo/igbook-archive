@@ -65,7 +65,7 @@ OR
 		Enter to keep the current selection[+], or type selection number: 3
 
 
-- [Reason](https://www.linuxquestions.org/questions/linux-newbie-8/yum-upgrading-error-4175632414/) ([failed at yum update and how to fix it](http://wenhan.blog/2018/02/18/failed-at-yum-update-and-how-to-fix-it/))
+- [Reason](https://www.linuxquestions.org/questions/linux-newbie-8/yum-upgrading-error-4175632414/) 
 
         $ ls -l /usr/bin/python*
         lrwxrwxrwx 1 root root    24 Jul 10 02:29 /usr/bin/python -> /etc/alternatives/python
@@ -77,4 +77,7 @@ OR
 
         $ ls -altrh /etc/alternatives/python
         lrwxrwxrwx 1 root root 16 Jul 10 02:29 /etc/alternatives/python -> /usr/bin/python3
-
+- reference
+    - [Yum install error file "/usr/bin/yum", line 30](http://www.programmersought.com/article/3242669414/)
+    - [failed at yum update and how to fix it](http://wenhan.blog/2018/02/18/failed-at-yum-update-and-how-to-fix-it/)
+    - [Upgraded Python, and now I can't run “yum upgrade”](https://unix.stackexchange.com/questions/524552/upgraded-python-and-now-i-cant-run-yum-upgrade)
