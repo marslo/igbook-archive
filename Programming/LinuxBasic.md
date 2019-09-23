@@ -2,8 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-# Content
-- [Content](#content)
+- [Brace Expansion](#brace-expansion)
   - [Multiple Directories Createion](#multiple-directories-createion)
   - [Copy a File to Multipule Folder](#copy-a-file-to-multipule-folder)
   - [Scp Multipule Folder/File to Target Server](#scp-multipule-folderfile-to-target-server)
