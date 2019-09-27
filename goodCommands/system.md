@@ -224,7 +224,7 @@
 
 ### Log Out
     ┌─ (marslo@MarsloJiao ~) ->
-    └─ $ pkill -KILL -u {useranme}
+    └─ $ pkill -KILL -u ${useranme}
 
 ### Synchronize date and time with a server over ssh (Inspired from [commandlinefu.com](http://www.commandlinefu.com/commands/view/9153/synchronize-date-and-time-with-a-server-over-ssh))
 
