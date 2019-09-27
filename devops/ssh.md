@@ -2,6 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+  - [Content](#content)
 - [SSH Tricky](#ssh-tricky)
   - [Generate SSH Key](#generate-ssh-key)
   - [Add into agent](#add-into-agent)
@@ -14,7 +15,8 @@
 - [SSH With Proxy](#ssh-with-proxy)
   - [Using Command Directly](#using-command-directly)
   - [Using Configure file](#using-configure-file)
-  - [Reference](#reference)
+- [Debug Git by SSH](#debug-git-by-ssh)
+- [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -182,7 +184,61 @@ Host  github.com
       ServerAliveInterval   10                      # Optional
 ```
 
-## Reference
+# Debug Git by SSH
+- GIT_SSH_COMMAND
+    ```bash
+    $ GIT_SSH_COMMAND="ssh -vvT" git clone git@github.com:Marslo/myblog.git
+    Cloning into 'myblog'...
+    OpenSSH_7.9p1, LibreSSL 2.7.3
+    debug1: Reading configuration data /Users/marslo/.ssh/config
+    debug1: /Users/marslo/.ssh/config line 1: Applying options for *
+    debug1: /Users/marslo/.ssh/config line 13: Applying options for github.com
+    debug1: Reading configuration data /etc/ssh/ssh_config
+    debug1: /etc/ssh/ssh_config line 48: Applying options for *
+    debug1: Connecting to github.com port 22.
+    ^C
+    ```
+
+- GIT_TRACE
+    ```bash
+    $ GIT_TRACE=1 git st
+    00:30:44.772137 git.c:703               trace: exec: git-st
+    00:30:44.772540 run-command.c:663       trace: run_command: git-st
+    00:30:44.772894 git.c:384               trace: alias expansion: st => status
+    00:30:44.772903 git.c:764               trace: exec: git status
+    00:30:44.772907 run-command.c:663       trace: run_command: git status
+    00:30:44.777379 git.c:440               trace: built-in: git status
+    On branch master
+    Your branch is up to date with 'origin/master'.
+
+    00:30:44.782714 run-command.c:663       trace: run_command: GIT_INDEX_FILE=.git/index git submodule summary --cached --for-status --summary-limit -1 HEAD
+    00:30:44.787490 git.c:703               trace: exec: git-submodule summary --cached --for-status --summary-limit -1 HEAD
+    00:30:44.788038 run-command.c:663       trace: run_command: git-submodule summary --cached --for-status --summary-limit -1 HEAD
+    00:30:44.838222 git.c:440               trace: built-in: git rev-parse --git-dir
+    00:30:44.845054 git.c:440               trace: built-in: git rev-parse --git-path objects
+    00:30:44.852811 git.c:440               trace: built-in: git rev-parse -q --git-dir
+    00:30:44.870362 git.c:440               trace: built-in: git rev-parse --show-prefix
+    00:30:44.878755 git.c:440               trace: built-in: git rev-parse --show-toplevel
+    00:30:44.893984 git.c:440               trace: built-in: git rev-parse -q --verify --default HEAD HEAD
+    00:30:44.899709 git.c:440               trace: built-in: git rev-parse --show-toplevel
+    00:30:44.905200 git.c:440               trace: built-in: git rev-parse --sq --prefix  --
+    00:30:44.911762 git.c:440               trace: built-in: git diff-index --cached --ignore-submodules=dirty --raw 52c94664ffc09cde2308c6bf9824ca0355ff5ff7 --
+    00:30:44.917374 run-command.c:663       trace: run_command: GIT_INDEX_FILE=.git/index git submodule summary --files --for-status --summary-limit -1
+    00:30:44.922165 git.c:703               trace: exec: git-submodule summary --files --for-status --summary-limit -1
+    00:30:44.922568 run-command.c:663       trace: run_command: git-submodule summary --files --for-status --summary-limit -1
+    00:30:44.965375 git.c:440               trace: built-in: git rev-parse --git-dir
+    00:30:44.972784 git.c:440               trace: built-in: git rev-parse --git-path objects
+    00:30:44.979117 git.c:440               trace: built-in: git rev-parse -q --git-dir
+    00:30:44.991077 git.c:440               trace: built-in: git rev-parse --show-prefix
+    00:30:44.997718 git.c:440               trace: built-in: git rev-parse --show-toplevel
+    00:30:45.012365 git.c:440               trace: built-in: git rev-parse -q --verify --default HEAD
+    00:30:45.018759 git.c:440               trace: built-in: git rev-parse --show-toplevel
+    00:30:45.024687 git.c:440               trace: built-in: git rev-parse --sq --prefix  --
+    00:30:45.031664 git.c:440               trace: built-in: git diff-files --ignore-submodules=dirty --raw --
+    nothing to commit, working tree clean
+    ```
+
+# Reference
 - [透过代理连接SSH](http://blog.csdn.net/asx20042005/article/details/7041294)
 - [SSH ProxyCommand example: Going through one host to reach another server](https://www.cyberciti.biz/faq/linux-unix-ssh-proxycommand-passing-through-one-host-gateway-server/)
 - [OpenSSH/Cookbook/Proxies and Jump Hosts](https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Proxies_and_Jump_Hosts#ProxyCommand_with_Netcat)

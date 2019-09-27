@@ -35,6 +35,7 @@ Monitoring en7...    (press CTRL-C to stop)
 --------------------------------------+------------------
   time                    10 seconds
 ```
+    ![vnstat](../Screenshots/vnstat.png)
 
 - ipcalc
 
@@ -61,11 +62,20 @@ HostMax:   10.25.131.254        00001010.00011001.1000001 1.11111110
 Broadcast: 10.25.131.255        00001010.00011001.1000001 1.11111111
 Hosts/Net: 510                   Class A, Private Internet
 ```
+    ![ipcalc](../Screenshots/ipcalc.png)
+
+- iostat
+    ```bash
+    $ iostat
+                  disk0       cpu    load average
+        KB/t  tps  MB/s  us sy id   1m   5m   15m
+       19.85   37  0.72   3  1 96  1.78 1.90 1.69
+    ```
 
 # Reference
 - [20 Command Line Tools to Monitor Linux Performance](http://www.tecmint.com/command-line-tools-to-monitor-linux-performance/)
 - [20 Linux System Monitoring Tools Every SysAdmin Should Know](http://www.cyberciti.biz/tips/top-linux-monitoring-tools.html)
-- [Top 25 Best Linux Performance Monitoring and Debugging Tools](http://www.thegeekstuff.com/2011/12/linux-performance-monitoring-tools/)
+- [Top 25 Best Linux Performance Monitoring and Debugging Tools](http://thegeekstuff.com/2011/12/linux-performance-monitoring-tools/)
 - [http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials](http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/)
 - [16 commands to check hardware information on Linux](http://www.binarytides.com/linux-commands-hardware-info/)
 - [Best UNIX shell-based tools](https://gist.github.com/mbbx6spp/1429161)
