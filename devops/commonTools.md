@@ -2,7 +2,6 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-  - [Content](#content)
 - [APT](#apt)
   - [APT Configuration](#apt-configuration)
   - [Necessory Pckages and Dependencies](#necessory-pckages-and-dependencies)

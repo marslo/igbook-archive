@@ -2,7 +2,6 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-  - [Content](#content)
 - [SSH Tricky](#ssh-tricky)
   - [Generate SSH Key](#generate-ssh-key)
   - [Add into agent](#add-into-agent)
