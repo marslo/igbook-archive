@@ -174,11 +174,11 @@ HOST  *
       # UserKnownHostsFile /dev/null
 
 Host  github.com
-      Hostname          github.com
-      User              marslo.jiao@gmail.com
-      IdentityFile      /C/Marslo/my@key
-      ProxyCommand      nc -X connect -x proxy.url.com:proxy-port %h %p
-      IdentitiesOnly    yes
+      Hostname              github.com
+      User                  marslo.jiao@gmail.com
+      IdentityFile          /C/Marslo/my@key
+      ProxyCommand          nc -X connect -x proxy.url.com:proxy-port %h %p
+      IdentitiesOnly        yes
       ServerAliveInterval   10                      # Optional
 ```
 

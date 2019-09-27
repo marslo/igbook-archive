@@ -16,24 +16,30 @@
 # [Brace Expansion](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html)
 ## Multiple Directories Createion
 
-    mkdir sa{1..50}
-    mkdir -p sa{1..50}/sax{1..50}
-    mkdir {a-z}12345
-    mkdir {1,2,3}
-    mkdir test{01..10}
-    mkdir -p `date '+%y%m%d'`/{1,2,3}
-    mkdir -p $USER/{1,2,3}
+```bash
+mkdir sa{1..50}
+mkdir -p sa{1..50}/sax{1..50}
+mkdir {a-z}12345
+mkdir {1,2,3}
+mkdir test{01..10}
+mkdir -p `date '+%y%m%d'`/{1,2,3}
+mkdir -p $USER/{1,2,3}
+```
 
 ## Copy a File to Multipule Folder
 
-    echo dir1 dir2 dir3 | xargs -n 1 cp file1
-    OR
-    echo dir{1..10} | xargs -n 1 cp file1
+```bash
+$ echo dir1 dir2 dir3 | xargs -n 1 cp file1
+# OR
+$ echo dir{1..10} | xargs -n 1 cp file1
+```
 
 
 ## Scp Multipule Folder/File to Target Server
 
-    scp -r `echo dir{1..10}` user@target.server:/target/server/path/
+```bash
+$ scp -r `echo dir{1..10}` user@target.server:/target/server/path/
+```
 
 # CentOS
 ## Yum
@@ -46,9 +52,11 @@
 
 - Solution
 
-        $ sudo update-alternatives --remove python /usr/bin/python3
-        $ realpath /usr/bin/python
-        /usr/bin/python2.7
+    ```bash
+    $ sudo update-alternatives --remove python /usr/bin/python3
+    $ realpath /usr/bin/python
+    /usr/bin/python2.7
+    ```
 
 OR
 
