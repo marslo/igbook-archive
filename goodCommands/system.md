@@ -15,7 +15,6 @@
 - [Find the zombie process](#find-the-zombie-process)
 - [Sort process by PID](#sort-process-by-pid)
 - [Check the group PID](#check-the-group-pid)
-- [dstat](#dstat)
 - [Sogou Pinyin input method](#sogou-pinyin-input-method)
 - [Specified terminal size](#specified-terminal-size)
 - [Get the public IP Address](#get-the-public-ip-address)
@@ -200,9 +199,6 @@
 
 ### Check the group PID
     $ ps -xj
-
-### dstat
-  ![dstat](../Screenshots/dstat.png)
 
 ### Sogou Pinyin input method
     ┌─ (marslo@MarsloJiao ~) ->

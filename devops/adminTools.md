@@ -149,6 +149,9 @@ Hosts/Net: 510                   Class A, Private Internet
     0 packets dropped by kernel
     ```
 
+- dstat
+![dstat](../Screenshots/dstat.png)
+
 - strace
 
 - sar
