@@ -1,5 +1,5 @@
 
-# Network
+# Network Tools
 
 - vnstat
 
@@ -8,9 +8,7 @@
 
            rx:     4.10 kbit/s   21.00 KiB          tx:         0 bit/s   6.00 KiB^C
 
-
          en7  /  traffic statistics
-
                                    rx         |       tx
         --------------------------------------+------------------
           bytes                    21.00 KiB  |        6.00 KiB
@@ -27,6 +25,19 @@
         --------------------------------------+------------------
           time                    10 seconds
 
+- ipcalc
+
+        $ ipcalc 10.25.130.2/23
+        Address:   10.25.130.2          00001010.00011001.1000001 0.00000010
+        Netmask:   255.255.254.0 = 23   11111111.11111111.1111111 0.00000000
+        Wildcard:  0.0.1.255            00000000.00000000.0000000 1.11111111
+        =>
+        Network:   10.25.130.0/23       00001010.00011001.1000001 0.00000000
+        HostMin:   10.25.130.1          00001010.00011001.1000001 0.00000001
+        HostMax:   10.25.131.254        00001010.00011001.1000001 1.11111110
+        Broadcast: 10.25.131.255        00001010.00011001.1000001 1.11111111
+        Hosts/Net: 510                   Class A, Private Internet
+
 
 # Reference
 - [20 Command Line Tools to Monitor Linux Performance](http://www.tecmint.com/command-line-tools-to-monitor-linux-performance/)
@@ -34,3 +45,4 @@
 - [Top 25 Best Linux Performance Monitoring and Debugging Tools](http://www.thegeekstuff.com/2011/12/linux-performance-monitoring-tools/)
 - [http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials](http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/)
 - [16 commands to check hardware information on Linux](http://www.binarytides.com/linux-commands-hardware-info/)
+- [Best UNIX shell-based tools](https://gist.github.com/mbbx6spp/1429161)
