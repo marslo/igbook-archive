@@ -39,7 +39,7 @@ Monitoring en7...    (press CTRL-C to stop)
 
 - ipcalc
 
-![ipcalc](../Screenshots/ipcalc.png)
+![ipcalc](../Screenshots/ipcalc.png) { width=50% }
 
 ```bash
 $ ipcalc 10.25.130.2/23
