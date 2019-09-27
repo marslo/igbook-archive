@@ -1,29 +1,31 @@
 
 # Network
 
-    $ vnstat -l 1 -i en7
-    Monitoring en7...    (press CTRL-C to stop)
+- vnstat
 
-       rx:     4.10 kbit/s   21.00 KiB          tx:         0 bit/s   6.00 KiB^C
+        $ vnstat -l 1 -i en7
+        Monitoring en7...    (press CTRL-C to stop)
+
+           rx:     4.10 kbit/s   21.00 KiB          tx:         0 bit/s   6.00 KiB^C
 
 
-     en7  /  traffic statistics
+         en7  /  traffic statistics
 
-                               rx         |       tx
-    --------------------------------------+------------------
-      bytes                    21.00 KiB  |        6.00 KiB
-    --------------------------------------+------------------
-              max           53.25 kbit/s  |    12.29 kbit/s
-          average           17.20 kbit/s  |     4.92 kbit/s
-              min                0 bit/s  |         0 bit/s
-    --------------------------------------+------------------
-      packets                         60  |              52
-    --------------------------------------+------------------
-              max                 15 p/s  |          16 p/s
-          average                  6 p/s  |           5 p/s
-              min                  2 p/s  |           0 p/s
-    --------------------------------------+------------------
-      time                    10 seconds
+                                   rx         |       tx
+        --------------------------------------+------------------
+          bytes                    21.00 KiB  |        6.00 KiB
+        --------------------------------------+------------------
+                  max           53.25 kbit/s  |    12.29 kbit/s
+              average           17.20 kbit/s  |     4.92 kbit/s
+                  min                0 bit/s  |         0 bit/s
+        --------------------------------------+------------------
+          packets                         60  |              52
+        --------------------------------------+------------------
+                  max                 15 p/s  |          16 p/s
+              average                  6 p/s  |           5 p/s
+                  min                  2 p/s  |           0 p/s
+        --------------------------------------+------------------
+          time                    10 seconds
 
 # Reference
 - [20 Command Line Tools to Monitor Linux Performance](http://www.tecmint.com/command-line-tools-to-monitor-linux-performance/)
