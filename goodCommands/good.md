@@ -36,7 +36,6 @@
 ### Show Cal
 
 ```bash
-[marslo@MJ ~]
 $ cal -y | tr '\n' '|' | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed 's/./#/g') /$(date +%m | sed s/^0//)" | tr '|' '\n'
                              2014
       January               February               March
@@ -79,31 +78,26 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 ### Show some command periodically
 
 ```bash
-[marslo@MJ ~]
 $ whatch --interval 1 ls -alt
 ```
 
 ### Print 50th char
 ```bash
-[marslo@MJ ~]
 $ awk 'BEGIN{while (a++<50) s=s "-"; print s}'
 --------------------------------------------------
 ```
 
 ### Batch move
 ```bash
-[marslo@MJ ~]
 $ mkdir backup-folder && ls | grep -Ze ".*rar" | xargs -d '\n' -I {} mv {} backup-folder
 ```
 
 ### Show all line numbers in a file
     - Method 1
         ```bash
-        [marslo@MJ ~]
         $ sudo cat /etc/passwd | wc -l
         36
         # or
-        [marslo@MJ ~]
         $ awk 'END {print NR}' /etc/passwd
         36
         ```
@@ -111,27 +105,23 @@ $ mkdir backup-folder && ls | grep -Ze ".*rar" | xargs -d '\n' -I {} mv {} backu
 ### Clear
 
 ```bash
-[marslo@MJ ~]
 $ printf "\ec"
 ```
 
 ### Encrypt bash file
 
 ```bash
-[marslo@MJ ~]
 $ echo "ls" > script.bash; gpg -c script.bash; cat script.bash.gpg | gpg -d --no-mdc-warning | bash
 ```
 
 ### Get URL
 
 ```bash
-[marslo@MJ ~]
 $ echo http://www.baidu.com | awk '{for(i=1;i<=NF;i++){if($i~/^(http|ftp):\/\//)print $i}}'http://www.baidu.com
 ```
 
 ### Get the count of a word in a file
 ```bash
-[marslo@MJ ~]
 $ cat /etc/passwd | grep marslo -o | wc -l
 3
 # or
@@ -140,26 +130,21 @@ $ find . -name file.txt | xargs -e grep "token" -o | wc -l
 
 ### Download and unzip
 ```bash
-[marslo@MJ ~]
 $ wget -O - http://example.com/a.gz | tar xz
 ```
 
 ### Get the common part
 ```bash
-[marslo@MJ ~/GoodNote]
 $ cat a.txt
 1
 2
 3
-[marslo@MJ ~/GoodNote]
 $ cat b.txt
 3
 4
 5
 9
-[marslo@MJ ~/GoodNote]
 $ comm -12 a.txt b.txt > common
-[marslo@MJ ~/GoodNote]
 $ cat common
 3
 ```
@@ -167,7 +152,6 @@ $ cat common
 ### Revert a word
 
 ```bash
-[marslo@MJ ~/GoodNote]
 $ echo linux | rev
 xunil
 ```
@@ -175,20 +159,17 @@ xunil
 ### Use less as tail -f
 
 ```bash
-[marslo@MJ ~]
 $ less +F <filename>
 ```
 
 ### Print a file into one line
 ```bash
-[marslo@MJ ~/GoodNote]
 $ cat a
 1
 2
 3
 4
 5
-[marslo@MJ ~/GoodNote]
 $ echo $(cat a)
 1 2 3 4 5
 ```
@@ -196,14 +177,11 @@ $ echo $(cat a)
 ### Rename
 
 ```bash
-[marslo@MJ ~/GoodNote]
 $ l
 total 4.0K
 -rw-r--r-- 1 marslo marslo 10 Feb 21 00:43 a.b
-[marslo@MJ ~/GoodNote]
 $ rename -v 's/\./_/g' *
 a.b renamed as a_b
-[marslo@MJ ~/GoodNote]
 $ l
 total 4.0K
 -rw-r--r-- 1 marslo marslo 10 Feb 21 00:43 a_b
@@ -212,7 +190,6 @@ total 4.0K
 ### Get the file inode
 
 ```bash
-[marslo@MJ ~/GoodNote]
 $ l -i a_b
 10224132 -rw-r--r-- 1 marslo marslo 10 Feb 21 00:43 a_b
 ```
@@ -220,12 +197,10 @@ $ l -i a_b
 ### Format a file to a table
 
 ```bash
-[marslo@MJ ~/GoodNote]
 $ cat a_b
 1:1
 2:2
 3:3
-[marslo@MJ ~/GoodNote]
 $ column -tns: a_b
 1  1
 2  2
@@ -235,8 +210,7 @@ $ column -tns: a_b
 ### Identity an image
 
 ```bash
-[marslo@MJ ~/Accessory/Images/WallPapers]
-$ identify arms009.jpg |grep -o "[[:digit:]]*x[[:digit:]]*" |tail -1
+$ identify arms009.jpg | grep -o "[[:digit:]]*x[[:digit:]]*" | tail -1
 1024x768
 ```
 
@@ -249,10 +223,8 @@ $ grep -oP '"url":"\K[^"]+' $(ls -t ~/.mozilla/firefox/*/sessionstore.js | sed q
 ### Echo 256 colors
 
 ```bash
-[marslo@MJ ~/GoodNote]
 $ for i in {0..255}; do echo -e "\e[38;05;${i}m${i}"; done | column -c 80 -s ' '; echo -e "\e[m"
 # or
-[marslo@MJ ~/GoodNote]
 $ yes "$(seq 1 255)" | while read i; do printf "\x1b[48;5;${i}m\n"; sleep .01; done
 ```
 
@@ -265,12 +237,10 @@ diff --suppress-common-lines -y <(cd path_to_dir1; find .|sort) <(cd path_to_dir
 ### Show last n lines in a file
 
 ```bash
-[marslo@MJ ~]
 $ tail /etc/passwd -n 3
 saned:x:115:123::/home/saned:/bin/false
 marslo:x:1000:1000:Marslo,,,:/home/marslo:/bin/bash
 mysql:x:1001:1001::/home/mysql:/bin/sh
-[marslo@MJ ~]
 $ tail /etc/passwd -n 2
 marslo:x:1000:1000:Marslo,,,:/home/marslo:/bin/bash
 mysql:x:1001:1001::/home/mysql:/bin/sh
@@ -279,7 +249,6 @@ mysql:x:1001:1001::/home/mysql:/bin/sh
 ### [All About {Curly Braces} In Bash](https://www.linux.com/tutorials/all-about-curly-braces-bash/)
 
 ```bash
-[marslo@MJ ~]
 $ echo 00{1..9} 0{10..99} 100
 001 002 003 004 005 006 007 008 009 010 011 012 013 014 015 016 017 018 019 020 021 022 023 024 025 026 027 028 029 030 031 032 033 034 035 036 037 038 039 040 041 042 043 044 045 046 047 048 049 050 051 052 053 054 055 056 057 058 059 060 061 062 063 064 065 066 067 068 069 070 071 072 073 074 075 076 077 078 079 080 081 082 083 084 085 086 087 088 089 090 091 092 093 094 095 096 097 098 099 100
 
@@ -306,11 +275,8 @@ $ echo {1..100..3}
     - Usage 1:
 
         ```bash
-        [marslo@MJ ~]
         $ ls | grep foo
-        [marslo@MJ ~]
         $ touch foo{1,2,3}
-        [marslo@MJ ~]
         $ ls | grep foo
         foo1
         foo2
@@ -321,11 +287,8 @@ $ echo {1..100..3}
     - Usage 2
 
         ```bash
-        [marslo@MJ ~]
         $ ls | grep foo
-        [marslo@MJ ~]
         $ touch foo-{a..d}
-        [marslo@MJ ~]
         $ ls | grep foo
         foo-a
         foo-b
@@ -336,12 +299,9 @@ $ echo {1..100..3}
     - Usage 3
 
         ```bash
-        [marslo@MJ ~]
         $ ls foo-*
         foo-a  foo-b  foo-c  foo-d
-        [marslo@MJ ~]
         $ mv foo-{a,}
-        [marslo@MJ ~]
         $ ls foo-*
         foo-  foo-b  foo-c  foo-d
         ```
@@ -350,9 +310,7 @@ $ echo {1..100..3}
     - Usage 4
 
         ```bash
-        [marslo@MJ ~]
         $ mkdir -p test/{a,b,c,d}
-        [marslo@MJ ~]
         $ tree test/
         test/
         ├── a
@@ -366,7 +324,6 @@ $ echo {1..100..3}
 ### Searching for commands without knowing their exact names
 
 ```bash
-[marslo@MJ ~]
 $ apropos editor | head
 Git::SVN::Editor (3pm) - commit driver for "git svn set-tree" and dcommit
 INIFILE (1)          - OpenLink Virtuoso Opensource ini File Editor
@@ -383,26 +340,20 @@ gedit (1)            - text editor for the GNOME Desktop
 ### PWD's secrets
 
 ```bash
-[marslo@MJ ~]
 $ l | grep bc
 lrwxrwxrwx 1 marslo marslo   37 Mar  4 00:25 bc -> /home/marslo/Tools/Git/BrowserConfig//
-[marslo@MJ ~]
 $ cd bc/
-[marslo@MJ ~/bc]
 $ pwd -L
 /home/marslo/bc
-[marslo@MJ ~/bc]
 $ pwd -P
 /home/marslo/Tools/Git/BrowserConfig
 ```
 
 ### Insert into the first line
 ```bash
-[marslo@MJ ~]
 $ cat demo.file
 abc
 efg
-[marslo@MJ ~]
 $ echo "first line" | cat - demo.file
 first line
 abc
