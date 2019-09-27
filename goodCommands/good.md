@@ -117,7 +117,8 @@ $ echo "ls" > script.bash; gpg -c script.bash; cat script.bash.gpg | gpg -d --no
 ### Get URL
 
 ```bash
-$ echo http://www.baidu.com | awk '{for(i=1;i<=NF;i++){if($i~/^(http|ftp):\/\//)print $i}}'http://www.baidu.com
+$ echo http://www.baidu.com | awk '{for(i=1;i<=NF;i++){if($i~/^(http|ftp):\/\//)print $i}}'
+http://www.baidu.com
 ```
 
 ### Get the count of a word in a file
@@ -144,6 +145,7 @@ $ cat b.txt
 4
 5
 9
+
 $ comm -12 a.txt b.txt > common
 $ cat common
 3
