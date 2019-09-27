@@ -157,16 +157,18 @@
 
 * Setup JAVA environment
 
-        # echo 'JAVA_HOME="/opt/java/jdk1.8.0_121"' >> /etc/bash.bashrc
-        # echo 'CLASSPATH=".:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar"' >> /etc/bash.bashrc
-        # echo 'PATH=/home/appadmin/.marslo/myprograms/vim80/bin:$JAVA_HOME/bin:$PATH' >> /etc/bash.bashrc
-        # echo 'export JAVA_HOME CLASSPATH PATH' >> /etc/bash.bashcrc
+        $ sudo bash -c 'cat >> /etc/bash.bashrc' << EOF
+        JAVA_HOME="/opt/java/jdk1.8.0_121"
+        CLASSPATH=".:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar"
+        PATH=/home/marslo/.marslo/myprograms/vim80/bin:$JAVA_HOME/bin:$PATH
+        export JAVA_HOME CLASSPATH PATH
+        EOF
 
-* Se# tup default JDK
+* Setup default JDK
 
-        # update-alternatives --install /usr/bin/java java /opt/java/jdk1.8.0_121/bin/java 999999999
+        # update-alternatives --install /usr/bin/java java /opt/java/jdk1.8.0_121/bin/java 999
         # update-alternatives --auto java
-        # update-alternatives --install /usr/bin/javac javac /opt/java/jdk1.8.0_121/bin/javac 999999999
+        # update-alternatives --install /usr/bin/javac javac /opt/java/jdk1.8.0_121/bin/javac 999
         # update-alternatives --auto javac
 
 ## Groovy
@@ -178,8 +180,10 @@
 
 * Setup Groovy Environment
 
-        # echo 'export GROOVY_HOME="/opt/groovy/groovy-2.4.10"'
-        # echo 'export PATH=$GROOVY_HOME/bin:$PATH'
+        $ sudo bash -c 'cat >> /etc/bash.bashrc' << EOF
+        export GROOVY_HOME="/opt/groovy/groovy-2.4.10"'
+        export PATH=$GROOVY_HOME/bin:$PATH'
+        EOF
 
 * Set Default Groovy
 
@@ -190,8 +194,8 @@
 ### Built from Source Code
 * Build
 
-        # groupadd mysql
-        # useradd -g mysql mysql
+        $ sudo groupadd mysql
+        $ sudo useradd -g mysql mysql
         $ wget http://cdn.mysql.com/archives/mysql-5.5/mysql-5.5.41.tar.gz
         $ apt install ncurses-dev
         $ cd myaql-5.5.41
@@ -207,19 +211,21 @@
         -DMYSQL_TCP_PORT=3306
         $ make
         $ sudo make install
+        $ sudo systemctl enable mysqld
+        or
         $ sysv-rc-conf mysqld on
 
 * Configure
 
-        # chown -R mysql:mysql /usr/local/mysql
-        # /usr/local/mysql/scripts/mysql_install_db --user=mysql
-        # /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
-        # chown -R root /usr/local/mysql/
-        # chown -R mysql /usr/local/mysql/data
-        # /usr/local/mysql/bin/mysqld_safe --user=mysql &
-        # /usr/local/mysql/bin/mysqladmin -u root password '<PASSWORD>'
+        $ sudo chown -R mysql:mysql /usr/local/mysql
+        $ /usr/local/mysql/scripts/mysql_install_db --user=mysql
+        $ sudo cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
+        $ sudo chown -R root /usr/local/mysql/
+        $ sudo chown -R mysql /usr/local/mysql/data
+        $ /usr/local/mysql/bin/mysqld_safe --user=mysql &
+        $ /usr/local/mysql/bin/mysqladmin -u root password '<PASSWORD>'
         OR
-        # /usr/local/mysql/bin/mysql_secure_installtion
+        $ /usr/local/mysql/bin/mysql_secure_installtion
 
 ### Install from APT Repo
 
@@ -227,15 +233,15 @@
 
 ### Install old version
 
-    # add-apt-repository 'deb http://archive.ubuntu.com/ubuntu trusty universe'
-    # apt-get update
-    # apt install mysql-server-5.6 mysql-client-5.6 -y
-    # mysql_secure_installation
+    $ sudo add-apt-repository 'deb http://archive.ubuntu.com/ubuntu trusty universe'
+    $ sudo apt update
+    $ sudo apt install mysql-server-5.6 mysql-client-5.6 -y
+    $ sudo mysql_secure_installation
 
 ### Reconfiguration
 
-    # service mysql start
-    # mysql_secure_installation
+    $ sudo service mysql start
+    $ sudo mysql_secure_installation
 
 ## MySQL-Connector (JDBC)
 * Download `mysql-connector-java-*.tar.gz` at [MySQL Official Website](http://dev.mysql.com/downloads/connector/j) -> _Platform Independent_
