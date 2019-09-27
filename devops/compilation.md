@@ -23,11 +23,15 @@
 - Solution:
     - Ubuntu/Debian:
 
-            $ sudo apt-get install libssl-dev
+    ```bash
+    $ sudo apt-get install libssl-dev
+    ```
 
     - RHEL/CentOS
 
-            $ sudo yum install openssl-devel
+    ```bash
+    $ sudo yum install openssl-devel
+    ```
 
 ### curl.h
 - Problem:
@@ -38,15 +42,21 @@
 - Solution:
     - For OpenSuse:
 
-            $ sudo apt-get install libcurl4-openssl
+    ```bash
+    $ sudo apt-get install libcurl4-openssl
+    ```
 
     - For Ubuntu/Debian:
 
-            $ sudo apt-get install libcurl4-openssl-dev
+    ```bash
+    $ sudo apt-get install libcurl4-openssl-dev
+    ```
 
     - For RHEL/CentOS:
 
-            $ sudo yum install libcurl libcurl-devel
+    ```bash
+    $ sudo yum install libcurl libcurl-devel
+    ```
 
 - Reason:
     `libcurl-dev` should be installed, but
@@ -67,21 +77,25 @@
 
     - For Ubuntu/Debain:
 
-            ┌─ (marslo@MarsloJiao ~/Marslo/Tools/git) ->
-            └─ $ apt-cache search expat | grep dev
-            libexpat1-dev - XML parsing C library - development kit
-            lib64expat1-dev - XML parsing C library - development kit (64bit)
-            libexpat-ocaml-dev - OCaml expat bindings
-            lua-expat-dev - libexpat development files for the Lua language
-            tdom-dev - fast XML/DOM/XPath/XSLT extension for Tcl written in C (development files)
-            ┌─ (marslo@MarsloJiao ~/Marslo/Tools/git) ->
-            └─ $ sudo apt-get install libexpat1-dev
+    ```bash
+    ┌─ (marslo@MarsloJiao ~/Marslo/Tools/git) ->
+    └─ $ apt-cache search expat | grep dev
+    libexpat1-dev - XML parsing C library - development kit
+    lib64expat1-dev - XML parsing C library - development kit (64bit)
+    libexpat-ocaml-dev - OCaml expat bindings
+    lua-expat-dev - libexpat development files for the Lua language
+    tdom-dev - fast XML/DOM/XPath/XSLT extension for Tcl written in C (development files)
+    ┌─ (marslo@MarsloJiao ~/Marslo/Tools/git) ->
+    └─ $ sudo apt-get install libexpat1-dev
+    ```
 
 
     - For RHEL/CentOS:
 
-            ┌─ (marslo@MarsloJiao ~/Marslo/Tools/git) ->
-            └─ $ sudo yum install expat-devel
+    ```bash
+    ┌─ (marslo@MarsloJiao ~/Marslo/Tools/git) ->
+    └─ $ sudo yum install expat-devel
+    ```
 
 ### tclsh
 - Problem:
@@ -94,8 +108,10 @@
 
     - For Ubuntu/Debain:
 
-            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-            └─ $ sudo apt-get install gettext
+    ```bash
+    ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+    └─ $ sudo apt-get install gettext
+    ```
 
 ### asciidoc
 - Problem
@@ -109,17 +125,21 @@
 - Solution
     - For Ubuntu/Debain:
 
-            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-            └─ $ apt-cache search asciidoc
-            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-            └─ $ sudo apt-get install asciidoc
+    ```bash
+    ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+    └─ $ apt-cache search asciidoc
+    ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+    └─ $ sudo apt-get install asciidoc
+    ```
 
     - For RHEL/CentOS:
 
-            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-            └─ $ yum install docbook-style-xsl
-            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-            └─ $ rpm -ivh http://pkgs.repoforge.org/asciidoc/asciidoc-8.6.9-1.el6.rfx.noarch.rpm
+    ```bash
+    ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+    └─ $ yum install docbook-style-xsl
+    ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+    └─ $ rpm -ivh http://pkgs.repoforge.org/asciidoc/asciidoc-8.6.9-1.el6.rfx.noarch.rpm
+    ```
 
 ### docbook2x-texi
 - Problem
@@ -134,52 +154,64 @@
 
     - For Ubuntu/Debain:
 
-            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-            └─ $ sudo apt-get install docbook2x
+    ```bash
+    ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+    └─ $ sudo apt-get install docbook2x
+    ```
 
     - For RHEL/CentOS (Inspired from [Git for human beings google group](https://groups.google.com/d/msg/git-users/DMaDpy8Bpww/jqXULjp8ry8J)):
 
 
-            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-            └─ $ sudo yum -y --enablerepo=*epel* install docbook2X
-            ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
-            └─ $ sudo ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
+    ```bash
+    ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+    └─ $ sudo yum -y --enablerepo=*epel* install docbook2X
+    ┌─ (marslo@MJ ~/Tools/Software/Programming/Git/git-master) ->
+    └─ $ sudo ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
+    ```
 
 ### hunspell
 - Problem
 
-        ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
-        └─ $ qmake-qt4
-        Project MESSAGE: Install Prefix is: /usr/local
-        Project ERROR: Package hunspell not found
+```bash
+┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+└─ $ qmake-qt4
+Project MESSAGE: Install Prefix is: /usr/local
+Project ERROR: Package hunspell not found
+```
 
 - Solution
 
     - For Ubuntu/Debain:
 
-            ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
-            └─ $ sudo apt-get install hunspell
-            ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
-            └─ $ sudo apt-get install libhunspell-dev
+    ```bash
+    ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+    └─ $ sudo apt-get install hunspell
+    ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+    └─ $ sudo apt-get install libhunspell-dev
+    ```
 
 ### ao
 - Problem
 
-        ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
-        └─ $ qmake-qt4
-        Project MESSAGE: Install Prefix is: /usr/local
-        Project ERROR: Package ao not found
+```bash
+┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+└─ $ qmake-qt4
+Project MESSAGE: Install Prefix is: /usr/local
+Project ERROR: Package ao not found
+```
 
 - Solution
 
     - For Ubuntu/Debain:
 
-            ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
-            └─ $ apt-cache search ao | grep dev
-            libao-dev - Cross Platform Audio Output Library Development
-            ...
-            ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
-            └─ $ sudo apt-get install libao-dev
+    ```bash
+    ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+    └─ $ apt-cache search ao | grep dev
+    libao-dev - Cross Platform Audio Output Library Development
+    ...
+    ┌─ (marslo@MarsloJiao ~/Tools/Git/goldendict) ->
+    └─ $ sudo apt-get install libao-dev
+    ```
 
 
 ### ncurses
@@ -195,5 +227,7 @@
 
    - For RHEL/CentOS:
 
-            ┌─ (marslo@MarsloJiao ~/Marslo/Tools/vim) ->
-            └─ $ yum install ncurses-devel
+    ```bash
+    ┌─ (marslo@MarsloJiao ~/Marslo/Tools/vim) ->
+    └─ $ yum install ncurses-devel
+    ```
