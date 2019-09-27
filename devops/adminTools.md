@@ -12,6 +12,7 @@
 
 - vnstat
 
+![vnstat](../Screenshots/vnstat.png)
 ```bash
 $ vnstat -l 1 -i en7
 Monitoring en7...    (press CTRL-C to stop)
@@ -35,9 +36,10 @@ Monitoring en7...    (press CTRL-C to stop)
 --------------------------------------+------------------
   time                    10 seconds
 ```
-    ![vnstat](../Screenshots/vnstat.png)
 
 - ipcalc
+
+![ipcalc](../Screenshots/ipcalc.png)
 
 ```bash
 $ ipcalc 10.25.130.2/23
@@ -62,7 +64,6 @@ HostMax:   10.25.131.254        00001010.00011001.1000001 1.11111110
 Broadcast: 10.25.131.255        00001010.00011001.1000001 1.11111111
 Hosts/Net: 510                   Class A, Private Internet
 ```
-    ![ipcalc](../Screenshots/ipcalc.png)
 
 - iostat
 
