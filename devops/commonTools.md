@@ -26,29 +26,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Content
-- [APT](#apt)
-    - [APT Configuratoiin](#apt-configuration)
-    - [Necessory Packages and Dependencies](#necessory-pckages-and-dependencies)
-    - [Package Auto-Upgrade Disable](#package-auto-upgrade-dislable)
-    - [Disable Server Auto Upgrade](#disable-server-auto-upgrade)
-    - [Revert Hold Settings](#revert-hold-settings)
-        - [Show all Hold](#show-all-hold)
-    - [Complete Remove an App](#complete-reomve-an-app)
-- [System](#system)
-    - [Timezone Setup](#timezone-setup)
-    - [MOTD Upgrade Disable](#motd-upgrade-disable)
-    - [Set Service Auto-Startup](#set-service-auto-startup)
-- [Application](#application)
-    - [JDK and JAVA_HOME](#jdk-and-java_home)
-    - [Groovy](#groovy)
-    - [MySQL](#mysql)
-        - [Build from Source Code](#built-from-source-code)
-        - [Install from APT Repo](#install-from-apt-repo)
-        - [Install Old Version](#install-old-version)
-        - [Reconfiguration](#reconfiguration)
-    - [MySQL-Connector (JDBC)](#mysql-connector-jdbc)
-
 # APT
 ## APT Configuration
 
