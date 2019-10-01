@@ -27,19 +27,18 @@ Notes about software installation or configurations
 - [Colorful Command Line](https://github.com/Marslo/MyBlog#colorful-command-line)
 
 ## [Git Command Study and Practice](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#git-command-study-and-practice)
-- [Appoint](./programming/git/gitStudy.md)
+- [Appoint](./programming/git/gitStudy.md#appoint)
     - [Git Aliases](./programming/git/gitStudy.md#git-alias)
-    - [.marslorc](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#marslorc)
+    - [.marslorc](./programming/git/gitStudy.md##marslorc)
 
-- [Rebase](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#rebase)
-    - [Without Confilite file](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#without-confilite-file)
-        - [Precondition](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#precondiction)
-        - [Merge with rebase](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#merge-with-rebase)
-    - [With Confilite file](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#with-confilite-file)
-        - [Precondicition](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#precondiction-1)
-        - [Merge by rebase](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#merge-by-rebase)
-        - [Return to master branch](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#return-to-master-branch)
-
+- [Rebase](./programming/git/gitStudy.md#rebase)
+    - [Without Confilite file](./programming/git/gitStudy.md#without-confilite-file)
+        - [Precondition](./programming/git/gitStudy.md#precondiction)
+        - [Merge with rebase](./programming/git/gitStudy.md#merge-with-rebase)
+    - [With Confilite file](#with-confilite-file)
+        - [Precondicition](./programming/git/gitStudy.md#precondiction-1)
+        - [Merge by rebase](./programming/git/gitStudy.md#merge-by-rebase)
+        - [Return to master branch](programming/git/gitStudy.md#return-to-master-branch)
 
 
 ## [INSTALL MYSQL FROM SOURCE CODE](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#install-mysql-from-source-code)
