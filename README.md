@@ -27,8 +27,8 @@ Notes about software installation or configurations
 - [Colorful Command Line](https://github.com/Marslo/MyBlog#colorful-command-line)
 
 ## [Git Command Study and Practice](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#git-command-study-and-practice)
-- [Appoint](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#appoint)
-    - [Git Aliases](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#git-alias)
+- [Appoint](./programming/git/gitStudy.md)
+    - [Git Aliases](./programming/git/gitStudy.md#git-alias)
     - [.marslorc](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#marslorc)
 
 - [Rebase](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#rebase)
