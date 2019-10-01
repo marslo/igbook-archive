@@ -17,7 +17,7 @@ My Notes
 =======
 Notes about software installation or configurations
 
-## [Git Command Study and Practice](programming/git/gitStudy.md#git-command-study-and-practice)
+## Git Command Study and Practice
 - [Appoint](programming/git/gitStudy.md#appoint)
     - [Git Aliases](programming/git/gitStudy.md#git-alias)
     - [.marslorc](programming/git/gitStudy.md##marslorc)
@@ -31,7 +31,7 @@ Notes about software installation or configurations
         - [Merge by rebase](programming/git/gitStudy.md#merge-by-rebase)
         - [Return to master branch](programming/git/gitStudy.md#return-to-master-branch)
 
-## [INSTALL MYSQL FROM SOURCE CODE](programming/mysql/mysqlInstallationBySourceCode.md#install-mysql-from-source-code)
+## INSTALL MYSQL FROM SOURCE CODE
 - [Usefull Links](programming/mysql/mysqlInstallationBySourceCode.md#usefull-links)
 - [Compile and Install](programming/mysql/mysqlInstallationBySourceCode.md#compile-and-install)
     - [Preconfiguratio setup](programming/mysql/mysqlInstallationBySourceCode.md#preconfiguration-setup)
@@ -49,39 +49,38 @@ Notes about software installation or configurations
 - [Check variables](programming/mysql/mysqlInstallationBySourceCode.md#check-variables)
 - [Make msyql as boot start](programming/mysql/mysqlInstallationBySourceCode.md#make-mysql-as-boot-start)
 
-## [Build VIM/GVIM from source code](https://github.com/marslo/myvim#compile-vimgvim-by-source-code)
+## Build VIM/GVIM from source code
 - [Compile vim/gvim by source code](https://github.com/marslo/myvim#compile-vimgvim-by-source-code)
     - [Precondiction](https://github.com/marslo/myvim#1-prepare-environment)
     - [Compile and Install](https://github.com/marslo/myvim#2-compile-and-install)
     - [Make compiled vim as default text editor](https://github.com/marslo/myvim#3-make-the-compiled-gvim-as-the-default-text-editor-in-ubunut)
     - [Q&A](https://github.com/marslo/myvim#4-qa)
 
+## Build MOCP by Source Code
+- [Precondiction](https://github.com/marslo/moc-cmus#precondiction)
+- [Error and Solucton](https://github.com/marslo/moc-cmus#errors-and-soluctions)
+    - [Error: BerkeleyDB (libdb) not found](https://github.com/marslo/moc-cmus#error-berkeleydb-libdb-not-found)
+    - [decoder.c:22:18: fatal error: ltdl.h](https://github.com/marslo/moc-cmus#decoderc2218-fatal-error-ltdlh)
+    - [FATAL_ERROR: No valid sound driver!](https://github.com/marslo/moc-cmus#fatal_error-no-valid-sound-driver)
 
-## [Build MOCP by Source Code](https://github.com/Marslo/Moc_Cmus-Config#build-moc-by-souce-code)
-- [Precondiction](https://github.com/Marslo/Moc_Cmus-Config#precondiction)
-- [Error and Solucton](https://github.com/Marslo/Moc_Cmus-Config#errors-and-soluctions)
-    - [Error: BerkeleyDB (libdb) not found](https://github.com/Marslo/Moc_Cmus-Config#error-berkeleydb-libdb-not-found)
-    - [decoder.c:22:18: fatal error: ltdl.h](https://github.com/Marslo/Moc_Cmus-Config#decoderc2218-fatal-error-ltdlh)
-    - [FATAL_ERROR: No valid sound driver!](https://github.com/Marslo/Moc_Cmus-Config#fatal_error-no-valid-sound-driver)
+## GoAgent Config
+- [Offical Website](https://github.com/marslo/myGoagent#offical-webiste)
+- [Latest Version](https://github.com/marslo/myGoagent#download-and-installation)
+    - [Install](https://github.com/marslo/myGoagent#gevent-installation)
+    - [Configuration](https://github.com/marslo/myGoagent#configuration)
+    - [Run GoAgent](https://github.com/marslo/myGoagent#run-goagent)
+- [Older Version](https://github.com/marslo/myGoagent#older-version)
+    - [How to install](https://github.com/marslo/myGoagent#how-to-install)
+    - [如何安装](https://github.com/marslo/myGoagent#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85)
+- [Q&A](https://github.com/marslo/myGoagent#qa)
 
-## [GoAgent Config](https://github.com/Marslo/GoagentConfig#goagentconfig)
-- [Offical Website](https://github.com/Marslo/GoagentConfig#offical-webiste)
-- [Latest Version](https://github.com/Marslo/GoagentConfig#latest-version)
-    - [Install](https://github.com/Marslo/GoagentConfig#install)
-    - [Configuration](https://github.com/Marslo/GoagentConfig#configuration)
-    - [Run GoAgent](https://github.com/Marslo/GoagentConfig#run-goagent)
-- [Older Version](https://github.com/Marslo/GoagentConfig#older-version)
-    - [How to install](https://github.com/Marslo/GoagentConfig#how-to-install)
-    - [如何安装](https://github.com/Marslo/GoagentConfig#如何安装)
-- [Q&A](https://github.com/Marslo/GoagentConfig#如何安装)
-
-## [Colorful Command Line](https://github.com/Marslo/Colorful_CommandLine_Windows/blob/master/README.md#default-command-line)
-- [Colorful Prompt](https://github.com/Marslo/Colorful_CommandLine_Windows#colorful-prompt)
-      - [Needed Tools and files](https://github.com/Marslo/Colorful_CommandLine_Windows#colorful-prompt)
-      - [Steps](https://github.com/Marslo/Colorful_CommandLine_Windows#steps)
-  - [Specified Font](https://github.com/Marslo/Colorful_CommandLine_Windows#change-font-in-commandline)
-      - [Add the specified font](https://github.com/Marslo/Colorful_CommandLine_Windows#add-the-customize-font)
-      - [Set code page](https://github.com/Marslo/Colorful_CommandLine_Windows#set-code-page)
-      - [Set cmd use font](https://github.com/Marslo/Colorful_CommandLine_Windows#settings)
-  - [Specified Cursor Size](https://github.com/Marslo/Colorful_CommandLine_Windows#specified-the-cursor-size)
-  - [Set aliases in cmd](https://github.com/Marslo/Colorful_CommandLine_Windows#set-aliases-in-command-linedefault-command-line)
+## Colorful Windows Command Line
+- [Colorful Prompt](https://github.com/marslo/myColorfulWinCommandLine#colorful_commandline_windows)
+      - [Needed Tools and files](https://github.com/marslo/myColorfulWinCommandLine#needed-tools-and-files)
+      - [Steps](https://github.com/marslo/myColorfulWinCommandLine#steps)
+  - [Specified Font](https://github.com/marslo/myColorfulWinCommandLine#change-font-in-commandline)
+      - [Add the specified font](https://github.com/marslo/myColorfulWinCommandLine#add-the-customize-font)
+      - [Set code page](https://github.com/marslo/myColorfulWinCommandLine#set-code-page)
+      - [Set cmd use font](https://github.com/marslo/myColorfulWinCommandLine#settings)
+  - [Specified Cursor Size](https://github.com/marslo/myColorfulWinCommandLine#specified-the-cursor-size)
+  - [Set aliases in cmd](https://github.com/marslo/myColorfulWinCommandLine#set-aliases-in-command-linedefault-command-line)
