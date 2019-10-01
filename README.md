@@ -13,51 +13,43 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-MyBlog
+My Notes
 =======
-
 Notes about software installation or configurations
 
-## Content
-- [Git Command Study and Practice](https://github.com/Marslo/MyBlog#git-command-study-and-practice)
-- [INSTALL MYSQL FROM SOURCE CODE](https://github.com/Marslo/MyBlog#install-mysql-from-source-code)
-- [Build VIM/GVIM from source code](https://github.com/Marslo/MyBlog#build-vimgvim-from-source-code)
-- [Build MOCP by Source Code](https://github.com/Marslo/MyBlog#build-mocp-by-source-code)
-- [GoAgent Config](https://github.com/Marslo/MyBlog#goagent-config)
-- [Colorful Command Line](https://github.com/Marslo/MyBlog#colorful-command-line)
+## [Git Command Study and Practice](programming/git/gitStudy.md#git-command-study-and-practice)
+- [Appoint](programming/git/gitStudy.md#appoint)
+    - [Git Aliases](programming/git/gitStudy.md#git-alias)
+    - [.marslorc](programming/git/gitStudy.md##marslorc)
 
-## [Git Command Study and Practice](https://github.com/Marslo/MyBlog/blob/master/Git/Git_Study.md#git-command-study-and-practice)
-- [Appoint](./programming/git/gitStudy.md#appoint)
-    - [Git Aliases](./programming/git/gitStudy.md#git-alias)
-    - [.marslorc](./programming/git/gitStudy.md##marslorc)
-
-- [Rebase](./programming/git/gitStudy.md#rebase)
-    - [Without Confilite file](./programming/git/gitStudy.md#without-confilite-file)
-        - [Precondition](./programming/git/gitStudy.md#precondiction)
-        - [Merge with rebase](./programming/git/gitStudy.md#merge-with-rebase)
-    - [With Confilite file](#with-confilite-file)
-        - [Precondicition](./programming/git/gitStudy.md#precondiction-1)
-        - [Merge by rebase](./programming/git/gitStudy.md#merge-by-rebase)
+- [Rebase](programming/git/gitStudy.md#rebase)
+    - [Without Confilite file](programming/git/gitStudy.md#without-confilite-file)
+        - [Precondition](programming/git/gitStudy.md#precondiction)
+        - [Merge with rebase](programming/git/gitStudy.md#merge-with-rebase)
+    - [With Confilite file](programming/git/gitStudy.md#with-confilite-file)
+        - [Precondicition](programming/git/gitStudy.md#precondiction-1)
+        - [Merge by rebase](programming/git/gitStudy.md#merge-by-rebase)
         - [Return to master branch](programming/git/gitStudy.md#return-to-master-branch)
 
 
-## [INSTALL MYSQL FROM SOURCE CODE](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#install-mysql-from-source-code)
-- [Usefull Links](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#usefull-links)
-- [Compile and Install](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#compile-and-install)
-    - [Preconfiguratio setup](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#preconfiguration-setup)
-        - [Create user and group account](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#create-user-and-group)
-        - [Extract tar.gz](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#extract-targz)
-    - [Compile and install](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#compile-and-install)
-- [Configuration and Initial](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#configuration-and-initial)
-    - [Change permission](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#permission-manager)
-    - [Initial Mysql](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#initial-mysql)
-    - [Change Permission again](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#change-permission-again)
-    - [Start mysqld_safe](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#start-mysqld_safe)
-    - [Setup root password](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#setup-root-password)
-- [Set Envionment](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#set-environment)
-- [Check the mysql port](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-the-mysql-port)
-- [Check variables](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#check-variables)
-- [Make msyql as boot start](https://github.com/Marslo/MyBlog/blob/master/MySQL/MySQL_Installation_By_SourceCode.md#make-mysql-as-boot-start)
+programming/mysql/mysqlInstallationBySourceCode.md
+## [INSTALL MYSQL FROM SOURCE CODE](programming/mysql/mysqlInstallationBySourceCode.md#install-mysql-from-source-code)
+- [Usefull Links](programming/mysql/mysqlInstallationBySourceCode.md#usefull-links)
+- [Compile and Install](programming/mysql/mysqlInstallationBySourceCode.md#compile-and-install)
+    - [Preconfiguratio setup](programming/mysql/mysqlInstallationBySourceCode.md#preconfiguration-setup)
+        - [Create user and group account](programming/mysql/mysqlInstallationBySourceCode.md#create-user-and-group)
+        - [Extract tar.gz](programming/mysql/mysqlInstallationBySourceCode.md#extract-targz)
+    - [Compile and install](programming/mysql/mysqlInstallationBySourceCode.md#compile-and-install)
+- [Configuration and Initial](programming/mysql/mysqlInstallationBySourceCode.md#configuration-and-initial)
+    - [Change permission](programming/mysql/mysqlInstallationBySourceCode.md#permission-manager)
+    - [Initial Mysql](programming/mysql/mysqlInstallationBySourceCode.md#initial-mysql)
+    - [Change Permission again](programming/mysql/mysqlInstallationBySourceCode.md#change-permission-again)
+    - [Start mysqld_safe](programming/mysql/mysqlInstallationBySourceCode.md#start-mysqld_safe)
+    - [Setup root password](programming/mysql/mysqlInstallationBySourceCode.md#setup-root-password)
+- [Set Envionment](programming/mysql/mysqlInstallationBySourceCode.md#set-environment)
+- [Check the mysql port](programming/mysql/mysqlInstallationBySourceCode.md#check-the-mysql-port)
+- [Check variables](programming/mysql/mysqlInstallationBySourceCode.md#check-variables)
+- [Make msyql as boot start](programming/mysql/mysqlInstallationBySourceCode.md#make-mysql-as-boot-start)
 
 ## [Build VIM/GVIM from source code](https://github.com/Marslo/VimConfig#compile-vimgvim-by-source-code-on-linuxubuntu)
 - [Compile vim/gvim by source code](https://github.com/Marslo/VimConfig#compile-vimgvim-by-source-code-on-linuxubuntu)
