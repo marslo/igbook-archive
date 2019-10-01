@@ -31,8 +31,6 @@ Notes about software installation or configurations
         - [Merge by rebase](programming/git/gitStudy.md#merge-by-rebase)
         - [Return to master branch](programming/git/gitStudy.md#return-to-master-branch)
 
-
-programming/mysql/mysqlInstallationBySourceCode.md
 ## [INSTALL MYSQL FROM SOURCE CODE](programming/mysql/mysqlInstallationBySourceCode.md#install-mysql-from-source-code)
 - [Usefull Links](programming/mysql/mysqlInstallationBySourceCode.md#usefull-links)
 - [Compile and Install](programming/mysql/mysqlInstallationBySourceCode.md#compile-and-install)
@@ -51,12 +49,12 @@ programming/mysql/mysqlInstallationBySourceCode.md
 - [Check variables](programming/mysql/mysqlInstallationBySourceCode.md#check-variables)
 - [Make msyql as boot start](programming/mysql/mysqlInstallationBySourceCode.md#make-mysql-as-boot-start)
 
-## [Build VIM/GVIM from source code](https://github.com/Marslo/VimConfig#compile-vimgvim-by-source-code-on-linuxubuntu)
-- [Compile vim/gvim by source code](https://github.com/Marslo/VimConfig#compile-vimgvim-by-source-code-on-linuxubuntu)
-    - [Precondiction](https://github.com/Marslo/VimConfig#1-prepare-environment)
-    - [Compile and Install](https://github.com/Marslo/VimConfig#2-compile-and-install)
-    - [Make compiled vim as default text editor](https://github.com/Marslo/VimConfig#3-make-the-compiled-gvim-as-the-default-text-editor-in-ubunut)
-    - [Q&A](https://github.com/Marslo/VimConfig#4-qa)
+## [Build VIM/GVIM from source code](https://github.com/marslo/myvim#compile-vimgvim-by-source-code)
+- [Compile vim/gvim by source code](https://github.com/marslo/myvim#compile-vimgvim-by-source-code)
+    - [Precondiction](https://github.com/marslo/myvim#1-prepare-environment)
+    - [Compile and Install](https://github.com/marslo/myvim#2-compile-and-install)
+    - [Make compiled vim as default text editor](https://github.com/marslo/myvim#3-make-the-compiled-gvim-as-the-default-text-editor-in-ubunut)
+    - [Q&A](https://github.com/marslo/myvim#4-qa)
 
 
 ## [Build MOCP by Source Code](https://github.com/Marslo/Moc_Cmus-Config#build-moc-by-souce-code)
