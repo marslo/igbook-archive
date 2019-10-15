@@ -21,7 +21,7 @@
 # Interface
 ## Change Interface Name
 ### [Permanent Solution](https://wiki.archlinux.org/index.php/Network_configuration#Change_interface_name)
-```
+``` bash
 $ sudo touch /etc/udev/rules.d/10-network.rules
 $ sudo bash -c "cat > /etc/udev/rules.d/10-network.rules" << EOF
 SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="<INTERFACE_MAC_ADDRESS>", KERNEL=="<ORIGINAL_INTERFACE_NAME>", NAME="<NEW_INTERFACE_NAME>"
@@ -29,7 +29,7 @@ EOF
 ```
 
 E.g.:
-```
+```bash
 $ nmcli connection
 NAME                UUID                                  TYPE      DEVICE
 WLAN-PUB            2cde1f25-8c28-4318-9781-b9fcdabd985d  wifi      wlp2s0
@@ -52,14 +52,14 @@ cni0                9a2d48d7-e1c7-4fe4-a164-ffde9716dbf3  bridge    cni0
 docker0             5db99dac-d17d-4765-9f38-057ff2c853ff  bridge    docker0
 ```
 ### [Temporary Solution](http://kernelpanik.net/rename-a-linux-network-interface-without-udev/)
-```
-sudo ifconfig <ORIGINAL_INTERFACE_NAME> down
-sudo ip link set <ORIGINAL_INTERFACE_NAME> name <NEW_INTERFACE_NAME>
-sudo ifconfig <NEW_INTERFACE_NAME>
+```bash
+$ sudo ifconfig <ORIGINAL_INTERFACE_NAME> down
+$ sudo ip link set <ORIGINAL_INTERFACE_NAME> name <NEW_INTERFACE_NAME>
+$ sudo ifconfig <NEW_INTERFACE_NAME>
 ```
 
 E.g.:
-```
+```bash
 $ nmcli dev
 DEVICE        TYPE      STATE         CONNECTION
 wlp2s0        wifi      connected     WLAN-PUB
@@ -101,13 +101,12 @@ WLAN-PUB            2cde1f25-8c28-4318-9781-b9fcdabd985d  wifi      wlp2s0
 Wired connection 1  f72d569d-065b-3bc8-98ae-e07f8bf46945  ethernet  eth0
 cni0                e557e9bc-754e-4dc9-b9db-4519a7b15c33  bridge    cni0
 docker0             47c195b8-4867-40d3-acec-c28223e2b013  bridge    docker0
-
 ```
 
 ## Show
 ### ethtool
-```
- $ sudo ethtool eth0
+```bash
+$ sudo ethtool eth0
 Settings for eth0:
     Supported ports: [ TP ]
     Supported link modes:   10baseT/Half 10baseT/Full
@@ -137,7 +136,7 @@ Settings for eth0:
 ```
 
 ### List Hardware
-```
+```bash
 $ sudo lshw -class network
   *-network
        description: Wireless interface
@@ -225,7 +224,7 @@ $ sudo lshw -class network
 ```
 
 ### Show Route
-```
+```bash
 $ nslookup my.gitlab.company.com
 Server:     130.147.236.5
 Address:    130.147.236.5#53
@@ -240,13 +239,13 @@ $ $ ip route get 130.147.219.15
 
 ------
 $ nslookup github.com
-Server:		130.147.236.5
-Address:	130.147.236.5#53
+Server:     130.147.236.5
+Address:    130.147.236.5#53
 
 Non-authoritative answer:
-Name:	github.com
+Name:   github.com
 Address: 192.30.253.112
-Name:	github.com
+Name:   github.com
 Address: 192.30.253.113
 
 $ ip route get 192.30.253.113
@@ -255,7 +254,7 @@ $ ip route get 192.30.253.113
 ```
 
 OR
-```
+```bash
 $ ip route show
 default via 192.168.10.1 dev wlan0 proto dhcp metric 600
 10.244.0.0/24 dev cni0 proto kernel scope link src 10.244.0.1
@@ -278,7 +277,7 @@ default via 192.168.10.1 dev wlan0 proto dhcp metric 600
 ```
 
 OR
-```
+```bash
 $ route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
@@ -304,7 +303,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 
 # DNS
 ## Permanently Add new DNS
-```
+```bash
 $ sudo apt install resolvconf
 $ sudo cp /etc/resolvconf/resolv.conf.d/head{,.org}
 $ sudo bash -c "cat > /etc/resolvconf/resolv.conf.d/head" << EOF
@@ -328,47 +327,48 @@ search cn-132.lan.philips.com
 ```
 
 # Port Redirection
+```bash
+$ sudo iptables -L -n
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
 
-    # iptables -L -n
-    Chain INPUT (policy ACCEPT)
-    target     prot opt source               destination
-    Chain FORWARD (policy ACCEPT)
-    target     prot opt source               destination
-    Chain OUTPUT (policy ACCEPT)
-    target     prot opt source               destination
+$ sudo iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
+$ sudo iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
+$ sudo iptables -A PREROUTING -t nat -i ens32 -p tcp --dport 80 -j REDIRECT --to-port 8080
+$ sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 8080
+$ sudo iptables -t nat -I OUTPUT -p tcp -o lo --dport 80 -j REDIRECT --to-ports 8080
 
-    # iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
-    # iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
-    # iptables -A PREROUTING -t nat -i ens32 -p tcp --dport 80 -j REDIRECT --to-port 8080
-    # iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 8080
-    # iptables -t nat -I OUTPUT -p tcp -o lo --dport 80 -j REDIRECT --to-ports 8080
+$ sudo iptables -L -n
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:80
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:8080
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
 
-    # iptables -L -n
-    Chain INPUT (policy ACCEPT)
-    target     prot opt source               destination
-    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:80
-    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:8080
-    Chain FORWARD (policy ACCEPT)
-    target     prot opt source               destination
-    Chain OUTPUT (policy ACCEPT)
-    target     prot opt source               destination
-
-    # netfilter-persistent save
-    run-parts: executing /usr/share/netfilter-persistent/plugins.d/15-ip4tables save
-    run-parts: executing /usr/share/netfilter-persistent/plugins.d/25-ip6tables save
-    # iptables-save > /etc/iptables/rules.v4
+$ sudo netfilter-persistent save
+run-parts: executing /usr/share/netfilter-persistent/plugins.d/15-ip4tables save
+run-parts: executing /usr/share/netfilter-persistent/plugins.d/25-ip6tables save
+$ sudo iptables-save > /etc/iptables/rules.v4
+```
 
 # Proxy Setup
 * Name: `x.x.x.x`
 * Port: `80`
 * Settings
 
-    ```
-    $ grep proxy /etc/profile
-    export http_proxy=x.x.x.x:80
-    export https_proxy=x.x.x.x:80
-    export no_proxy=localhost,127.0.0.1,*.google.com
-    ```
+```bash
+$ grep proxy /etc/profile
+export http_proxy=x.x.x.x:80
+export https_proxy=x.x.x.x:80
+export no_proxy=localhost,127.0.0.1,*.google.com
+```
 
 # Reference
 - [ARCH NetWork Configuration](https://wiki.archlinux.org/index.php/Network_configuration#Change_device_name)
