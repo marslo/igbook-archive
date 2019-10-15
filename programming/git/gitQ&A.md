@@ -87,16 +87,20 @@ $ sudo yum install expat-devel
 ```
 
 ### asciidoc
--Error:
+
+
+- Error:
 
 ```bash
 /bin/sh: line 1: asciidoc: command not found
+
 make[1]: *** [git-add.html] Error 127
 make[1]: Leaving directory `/root/Software/git-master/Documentation'
 make: *** [doc] Error 2
 ```
 
 - Solution:
+
 ```bash
 $ sudo yum install docbook-style-xsl
 $ sudo rpm -ivh http://pkgs.repoforge.org/asciidoc/asciidoc-8.6.9-1.el6.rfx.noarch.rpm
