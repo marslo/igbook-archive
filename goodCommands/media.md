@@ -2,15 +2,9 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [Highly Recommanded](#highly-recommanded)
 - [Video](#video)
-  - [Get Audio from video](#get-audio-from-video)
-  - [Convert flv to mp4](#convert-flv-to-mp4)
-    - [convert to 5 mins (300 sec)](#convert-to-5-mins-300-sec)
-    - [sequence convert (every 5 mins ~> 300 secs)](#sequence-convert-every-5-mins--300-secs)
-  - [Combine video and audio](#combine-video-and-audio)
 - [Image](#image)
-  - [Identity an image](#identity-an-image)
-  - [Convert HEIC/HEIF to PNG](#convert-heicheif-to-png)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

@@ -2,11 +2,16 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [devops-kubernetes-master](#devops-kubernetes-master)
-- [devops-kubernetes-02](#devops-kubernetes-02)
-    - [/etc/network/interface](#etcnetworkinterface)
-    - [Route Details](#route-details)
-- [devops-kubernetes-03](#devops-kubernetes-03)
+  - [devops-kubernetes-master](#devops-kubernetes-master)
+  - [devops-kubernetes-02](#devops-kubernetes-02)
+- [iface eno3 inet dhcp](#iface-eno3-inet-dhcp)
+- [auto eno3](#auto-eno3)
+- [iface eno3 inet static](#iface-eno3-inet-static)
+- [address 192.168.11.121](#address-19216811121)
+- [netmask 255.255.254.0](#netmask-2552552540)
+- [gateway 192.168.10.1](#gateway-192168101)
+- [dns-nameservers 61.139.2.69 218.6.200.139](#dns-nameservers-61139269-2186200139)
+  - [devops-kubernetes-03](#devops-kubernetes-03)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

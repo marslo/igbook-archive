@@ -18,10 +18,6 @@
   - [JDK and JAVA_HOME](#jdk-and-java_home)
   - [Groovy](#groovy)
   - [MySQL](#mysql)
-    - [Built from Source Code](#built-from-source-code)
-    - [Install from APT Repo](#install-from-apt-repo)
-    - [Install old version](#install-old-version)
-    - [Reconfiguration](#reconfiguration)
   - [MySQL-Connector (JDBC)](#mysql-connector-jdbc)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

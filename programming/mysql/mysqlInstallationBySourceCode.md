@@ -3,25 +3,6 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Install MySQL from Source code](#install-mysql-from-source-code)
-    - [Contact](#contact)
-    - [Usefull Links](#usefull-links)
-    - [Compile and Install](#compile-and-install)
-        - [Preconfiguration Setup](#preconfiguration-setup)
-            - [Create user and group](#create-user-and-group)
-            - [Extract tar.gz](#extract-targz)
-        - [Compile and Install](#compile-and-install-1)
-            - [cmake logs](#cmake-logs)
-    - [Configuration and Initial](#configuration-and-initial)
-        - [Permission Manager](#permission-manager)
-        - [Initial MySQL](#initial-mysql)
-            - [Log of mysql_install_db --user=mysql](#log-of-mysql_install_db-usermysql)
-        - [Change Permission again](#change-permission-again)
-        - [Start mysqld_safe](#start-mysqld_safe)
-        - [Setup root password](#setup-root-password)
-            - [Log of mysql_secure_installatioin](#log-of-mysql_secure_installatioin)
-    - [Set Environment](#set-environment)
-    - [Check the mysql port](#check-the-mysql-port)
-    - [Check variables](#check-variables)
 - [Make mysql as boot start](#make-mysql-as-boot-start)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

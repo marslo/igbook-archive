@@ -3,12 +3,11 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Ubuntu 17.10 bootup setings](#ubuntu-1710-bootup-setings)
-    - [Create Script](#create-script)
-    - [Create <name>.service](#create-nameservice)
-    - [Enable the service](#enable-the-service)
-    - [Disable the service](#disable-the-service)
-        - [Re-enable the service](#re-enable-the-service)
-    - [Route FLags](#route-flags)
+  - [Create Script](#create-script)
+  - [Create <name>.service](#create-nameservice)
+  - [Enable the service](#enable-the-service)
+  - [Disable the service](#disable-the-service)
+  - [Route FLags](#route-flags)
 - [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

@@ -2,7 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [The log of scripts/mysql_install_db --user=mysql](#the-log-of-scriptsmysql_install_db-usermysql)
+- [The log of scripts/mysql_install_db --user=mysql](#the-log-of-scriptsmysql_install_db---usermysql)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

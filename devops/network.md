@@ -3,15 +3,10 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Interface](#interface)
-    - [Change Interface Name](#change-interface-name)
-        - [Permanent Solution](#permanent-solution)
-        - [Temporary Solution](#temporary-solution)
-    - [Show](#show)
-        - [ethtool](#ethtool)
-        - [List Hardware](#list-hardware)
-        - [Show Route](#show-route)
+  - [Change Interface Name](#change-interface-name)
+  - [Show](#show)
 - [DNS](#dns)
-    - [Permanently Add new DNS](#permanently-add-new-dns)
+  - [Permanently Add new DNS](#permanently-add-new-dns)
 - [Port Redirection](#port-redirection)
 - [Proxy Setup](#proxy-setup)
 - [Reference](#reference)
