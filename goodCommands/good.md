@@ -272,9 +272,9 @@ $ echo {1..100..3}
 1 4 7 10 13 16 19 22 25 28 31 34 37 40 43 46 49 52 55 58 61 64 67 70 73 76 79 82 85 88 91 94 97 100
 ```
 
-### Fast copy or moving or someting ([Detials](http://www.manpager.com/linux/man1/bash.1.html) -> Brace Expansion)
+#### Fast copy or moving or someting ([Detials](http://www.manpager.com/linux/man1/bash.1.html) -> Brace Expansion)
 
-    - Usage 1:
+    - Example 1:
 
         ```bash
         $ ls | grep foo
@@ -286,7 +286,7 @@ $ echo {1..100..3}
         ```
 
 
-    - Usage 2
+    - Example 2
 
         ```bash
         $ ls | grep foo
@@ -298,7 +298,7 @@ $ echo {1..100..3}
         foo-d
         ```
 
-    - Usage 3
+    - Example 3
 
         ```bash
         $ ls foo-*
@@ -309,7 +309,7 @@ $ echo {1..100..3}
         ```
 
 
-    - Usage 4
+    - Example 4
 
         ```bash
         $ mkdir -p test/{a,b,c,d}
@@ -323,7 +323,7 @@ $ echo {1..100..3}
         4 directories, 0 files
         ```
 
-### Searching for commands without knowing their exact names
+#### Searching for commands without knowing their exact names
 
 ```bash
 $ apropos editor | head
@@ -356,6 +356,7 @@ $ pwd -P
 $ cat demo.file
 abc
 efg
+
 $ echo "first line" | cat - demo.file
 first line
 abc
@@ -365,8 +366,7 @@ efg
 ### List the command beginning with
 
 ```bash
-┌─ (marslo@i181-eng183 ~) ->
-└─ $ compgen -c "system-config-"
+$ compgen -c "system-config-"
 system-config-authentication
 system-config-authentication
 system-config-date
