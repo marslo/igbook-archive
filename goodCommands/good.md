@@ -25,11 +25,12 @@
 - [Directory diff](#directory-diff)
 - [Show last n lines in a file](#show-last-n-lines-in-a-file)
 - [All About {Curly Braces} In Bash](#all-about-curly-braces-in-bash)
-- [Fast copy or moving or someting (Detials -> Brace Expansion)](#fast-copy-or-moving-or-someting-detials---brace-expansion)
-- [Searching for commands without knowing their exact names](#searching-for-commands-without-knowing-their-exact-names)
+  - [Fast copy or moving or someting (Detials -> Brace Expansion)](#fast-copy-or-moving-or-someting-detials---brace-expansion)
 - [PWD's secrets](#pwds-secrets)
 - [Insert into the first line](#insert-into-the-first-line)
-- [List the command beginning with](#list-the-command-beginning-with)
+- [Commands](#commands)
+  - [List the command beginning with](#list-the-command-beginning-with)
+  - [Searching for commands without knowing their exact names](#searching-for-commands-without-knowing-their-exact-names)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -323,22 +324,6 @@ $ echo {1..100..3}
         4 directories, 0 files
         ```
 
-#### Searching for commands without knowing their exact names
-
-```bash
-$ apropos editor | head
-Git::SVN::Editor (3pm) - commit driver for "git svn set-tree" and dcommit
-INIFILE (1)          - OpenLink Virtuoso Opensource ini File Editor
-atobm (1)            - bitmap editor and converter utilities for the X Window System
-bitmap (1)           - bitmap editor and converter utilities for the X Window System
-bmtoa (1)            - bitmap editor and converter utilities for the X Window System
-ed (1)               - line-oriented text editor
-editor (1)           - Nano's ANOther editor, an enhanced free Pico clone
-editres (1)          - a dynamic resource editor for X Toolkit applications
-ex (1)               - Vi IMproved, a programmers text editor
-gedit (1)            - text editor for the GNOME Desktop
-```
-
 ### PWD's secrets
 
 ```bash
@@ -363,7 +348,9 @@ abc
 efg
 ```
 
-### List the command beginning with
+### Commands
+
+#### List the command beginning with
 
 ```bash
 $ compgen -c "system-config-"
@@ -386,3 +373,20 @@ system-config-services
 system-config-services
 system-config-users
 ```
+
+#### Searching for commands without knowing their exact names
+
+```bash
+$ apropos editor | head
+Git::SVN::Editor (3pm) - commit driver for "git svn set-tree" and dcommit
+INIFILE (1)          - OpenLink Virtuoso Opensource ini File Editor
+atobm (1)            - bitmap editor and converter utilities for the X Window System
+bitmap (1)           - bitmap editor and converter utilities for the X Window System
+bmtoa (1)            - bitmap editor and converter utilities for the X Window System
+ed (1)               - line-oriented text editor
+editor (1)           - Nano's ANOther editor, an enhanced free Pico clone
+editres (1)          - a dynamic resource editor for X Toolkit applications
+ex (1)               - Vi IMproved, a programmers text editor
+gedit (1)            - text editor for the GNOME Desktop
+```
+
