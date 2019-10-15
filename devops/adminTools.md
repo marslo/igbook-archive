@@ -96,6 +96,7 @@ E..GP....._.
 ```
 
 - dstat
+
 ![dstat](../screenshot/dstat.png)
 
 - strace
