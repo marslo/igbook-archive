@@ -1,20 +1,5 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [My Notes](#my-notes)
-  - [Git Command Study and Practice](#git-command-study-and-practice)
-  - [INSTALL MYSQL FROM SOURCE CODE](#install-mysql-from-source-code)
-  - [Build VIM/GVIM from source code](#build-vimgvim-from-source-code)
-  - [Build MOCP by Source Code](#build-mocp-by-source-code)
-  - [GoAgent Config](#goagent-config)
-  - [Colorful Windows Command Line](#colorful-windows-command-line)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-My Notes
+life is hard, make it easier
 =======
-Notes about software installation or configurations
 
 ## Git Command Study and Practice
 - [Appoint](programming/git/gitStudy.md#appoint)

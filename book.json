@@ -1,8 +1,8 @@
 {
-    "title": "my handbook",
+    "title": "I, marslo",
     "author" : "marslo",
-    "description" : "handbook for devops",
-    "language" : "zh-hans",
+    "description" : "my gitbook",
+    "language" : "en",
     "plugins": [
         "-lunr",
         "-search",
@@ -14,19 +14,11 @@
         "accordion",
         "code",
         "pageview-count",
-        "page-toc-button",
-        "page-treeview"
+        "page-toc-button"
     ],
     "pluginsConfig": {
       "anchor-navigation-ex": {
         "isShowTocTitleIcon": true
-      },
-      "pluginsConfig": {
-        "page-treeview": {
-            "copyright": "Copyright &#169; aleen42",
-            "minHeaderCount": "2",
-            "minHeaderDeep": "2"
-        }
       },
       "page-toc-button": {
           "maxTocDepth": 2,

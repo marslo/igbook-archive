@@ -45,7 +45,7 @@
 * ubuntu
     * [apps](ubuntu/apps.md)
     * [installation](ubuntu/installation.md)
-    * [k8s](ubuntu/kubernetes)
+    * kubernetes
         * [kubeadm](ubuntu/kubernetes/kubeadm.md)
         * [network](ubuntu/kubernetes/network.md)
     * [repo](ubuntu/repo.md)
