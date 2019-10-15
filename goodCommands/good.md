@@ -20,7 +20,6 @@
 - [Print a file into one line](#print-a-file-into-one-line)
 - [Rename](#rename)
 - [Get the file inode](#get-the-file-inode)
-- [Identity an image](#identity-an-image)
 - [Get cookie from firefox](#get-cookie-from-firefox)
 - [Echo 256 colors](#echo-256-colors)
 - [Directory diff](#directory-diff)
@@ -216,13 +215,6 @@ total 4.0K
 ```bash
 $ l -i a_b
 10224132 -rw-r--r-- 1 marslo marslo 10 Feb 21 00:43 a_b
-```
-
-### Identity an image
-
-```bash
-$ identify arms009.jpg | grep -o "[[:digit:]]*x[[:digit:]]*" | tail -1
-1024x768
 ```
 
 ### Get cookie from firefox

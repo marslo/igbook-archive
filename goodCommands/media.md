@@ -2,10 +2,61 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Get Audio from video](#get-audio-from-video)
+- [Video](#video)
+  - [Get Audio from video](#get-audio-from-video)
+  - [Convert flv to mp4](#convert-flv-to-mp4)
+    - [convert to 5 mins (300 sec)](#convert-to-5-mins-300-sec)
+    - [sequence convert (every 5 mins ~> 300 secs)](#sequence-convert-every-5-mins--300-secs)
+- [Image](#image)
+  - [Identity an image](#identity-an-image)
+  - [Convert HEIC/HEIF to PNG](#convert-heicheif-to-png)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+## Video
 ### Get Audio from video
-    ┌─ (marslo@MarsloJiao ~/Desktop) ->
-    └─ $ ffmpeg -i source.mpg -f s16le -acodec pcm_s16le audio.raw
+```bash
+$ ffmpeg -i source.mpg -f s16le -acodec pcm_s16le audio.raw
+```
+
+### Convert flv to mp4
+```bash
+$ ffmpeg -i name.flv -qscale 0 name.mp4
+```
+#### convert to 5 mins (300 sec)
+```bash
+$ ffmpeg -i name.mp4 -ss 0 -t 300 name-5m.mp4
+```
+#### sequence convert (every 5 mins ~> 300 secs)
+- first 5 mins (0 ~> 300)
+    ```bash
+    $ ffmpeg -i name.mp4 -ss 0 -t 300 name-5m.mp4
+    ```
+- second 5 mins (300*1 ~> 300)
+    ```bash
+    $ ffmpeg -i name.mp4 -ss 300 -t 300 name-5m.mp4
+    ```
+- third 5 mins (300*2 ~> 300)
+    ```bash
+    $ ffmpeg -i name.mp4 -ss 600 -t 300 name-5m.mp4
+    ```
+
+## Image
+### Identity an image
+```bash
+$ identify arms009.jpg | grep -o "[[:digit:]]*x[[:digit:]]*" | tail -1
+1024x768
+```
+
+### Convert HEIC/HEIF to PNG
+```bash
+$ brew install imagemagick --with-libheif
+
+# for single convert
+$ magick convert [-monitor] <name>.HEIC <new-name>.png
+
+# for batch convert
+$ magick mogrify [-monitor] -format png *.HEIC.
+```
+
+
