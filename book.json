@@ -3,9 +3,6 @@
     "author" : "marslo",
     "description" : "handbook for devops",
     "language" : "zh-hans",
-    "structure": {
-        "readme": "README.md"
-    },
     "plugins": [
         "-lunr",
         "-search",
