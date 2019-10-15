@@ -282,95 +282,95 @@ $ sudo apt install gnome-panel gnome-settings-daemon metacity nautilus gnome-ter
 ## Create Cert for server
 ### CA (root cert)
 ```bash
-$ openssl genrsa -aes256 -out pww.artifactory.cdi.philips.com-ca.key 2048
-$ openssl req -new -x509 -days 365 -key pww.artifactory.cdi.philips.com-ca.key -sha256 -out pww.artifactory.cdi.philips.com-ca.crt -subj "/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com"
+$ openssl genrsa -aes256 -out pww.artifactory.cdi.mycompany.com-ca.key 2048
+$ openssl req -new -x509 -days 365 -key pww.artifactory.cdi.mycompany.com-ca.key -sha256 -out pww.artifactory.cdi.mycompany.com-ca.crt -subj "/C=CN/ST=Sichuan/L=Chengdu/O=mycompany/OU=CDI/CN=pww.artifactory.cdi.mycompany.com"
 ```
 
 <details><summary>Click to check details</summary>
-<pre><code>$ openssl genrsa -aes256 -out pww.artifactory.cdi.philips.com-ca.key 2048
+<pre><code>$ openssl genrsa -aes256 -out pww.artifactory.cdi.mycompany.com-ca.key 2048
 Generating RSA private key, 2048 bit long modulus
 ....................................................................+++
 ...................................................+++
 unable to write 'random state'
 e is 65537 (0x10001)
-Enter pass phrase for pww.artifactory.cdi.philips.com-ca.key:artifactory
-Verifying - Enter pass phrase for pww.artifactory.cdi.philips.com-ca.key:artifactory
-$ openssl req -new -x509 -days 365 -key pww.artifactory.cdi.philips.com-ca.key -sha256 -out pww.artifactory.cdi.philips.com-ca.crt -subj "/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com"
-Enter pass phrase for pww.artifactory.cdi.philips.com-ca.key:artifactory
+Enter pass phrase for pww.artifactory.cdi.mycompany.com-ca.key:artifactory
+Verifying - Enter pass phrase for pww.artifactory.cdi.mycompany.com-ca.key:artifactory
+$ openssl req -new -x509 -days 365 -key pww.artifactory.cdi.mycompany.com-ca.key -sha256 -out pww.artifactory.cdi.mycompany.com-ca.crt -subj "/C=CN/ST=Sichuan/L=Chengdu/O=mycompany/OU=CDI/CN=pww.artifactory.cdi.mycompany.com/emailAddress=marslo.jiao@mycompany.com"
+Enter pass phrase for pww.artifactory.cdi.mycompany.com-ca.key:artifactory
 </code></pre>
 </details>
 
 ### Cert for Server
 ```bash
-$ openssl genrsa -out  pww.artifactory.cdi.philips.com-server.key 2048
-$ openssl req -sha256 -new -key pww.artifactory.cdi.philips.com-server.key -out pww.artifactory.cdi.philips.com-server.csr -subj "/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com"
+$ openssl genrsa -out  pww.artifactory.cdi.mycompany.com-server.key 2048
+$ openssl req -sha256 -new -key pww.artifactory.cdi.mycompany.com-server.key -out pww.artifactory.cdi.mycompany.com-server.csr -subj "/C=CN/ST=Sichuan/L=Chengdu/O=mycompany/OU=CDI/CN=pww.artifactory.cdi.mycompany.com/emailAddress=marslo.jiao@mycompany.com"
 ```
 
 <details><summary>Click to check details</summary>
-<pre><code>$ openssl genrsa -out  pww.artifactory.cdi.philips.com-server.key 2048
+<pre><code>$ openssl genrsa -out  pww.artifactory.cdi.mycompany.com-server.key 2048
 Generating RSA private key, 2048 bit long modulus
 ......................................................................+++
 ............................................................................................................................................................................................................................+++
 unable to write 'random state'
 e is 65537 (0x10001)
-$ openssl req -sha256 -new -key pww.artifactory.cdi.philips.com-server.key -out pww.artifactory.cdi.philips.com-server.csr -subj "/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com"
+$ openssl req -sha256 -new -key pww.artifactory.cdi.mycompany.com-server.key -out pww.artifactory.cdi.mycompany.com-server.csr -subj "/C=CN/ST=Sichuan/L=Chengdu/O=mycompany/OU=CDI/CN=pww.artifactory.cdi.mycompany.com/emailAddress=marslo.jiao@mycompany.com"
 </code></pre>
 </details>
 
 ### Sign the server cert with CA
 ```bash
-$ echo subjectAltName = DNS:pww.artifactory.cdi.philips.com,IP:130.147.219.19 >> extfile.cnf
+$ echo subjectAltName = DNS:pww.artifactory.cdi.mycompany.com,IP:130.147.219.19 >> extfile.cnf
 $ echo extendedKeyUsage = serverAuth >> extfile.cnf
 
-$ openssl x509 -req -days 365 -sha256 -in pww.artifactory.cdi.philips.com-server.csr -CA pww.artifactory.cdi.philips.com-ca.crt -CAkey pww.artifactory.cdi.philips.com-ca.key -CAcreateserial -out pww.artifactory.cdi.philips.com-server.crt -extfile extfile.cnf
+$ openssl x509 -req -days 365 -sha256 -in pww.artifactory.cdi.mycompany.com-server.csr -CA pww.artifactory.cdi.mycompany.com-ca.crt -CAkey pww.artifactory.cdi.mycompany.com-ca.key -CAcreateserial -out pww.artifactory.cdi.mycompany.com-server.crt -extfile extfile.cnf
 ```
 
 <details><summary>Click to check details</summary>
-<pre><code>$ echo subjectAltName = DNS:pww.artifactory.cdi.philips.com,IP:130.147.219.19 >> extfile.cnf
+<pre><code>$ echo subjectAltName = DNS:pww.artifactory.cdi.mycompany.com,IP:130.147.219.19 >> extfile.cnf
 $ echo extendedKeyUsage = serverAuth >> extfile.cnf
-$ openssl x509 -req -days 365 -sha256 -in pww.artifactory.cdi.philips.com-server.csr -CA pww.artifactory.cdi.philips.com-ca.crt -CAkey pww.artifactory.cdi.philips.com-ca.key -CAcreateserial -out pww.artifactory.cdi.philips.com-server.crt -extfile extfile.cnf
+$ openssl x509 -req -days 365 -sha256 -in pww.artifactory.cdi.mycompany.com-server.csr -CA pww.artifactory.cdi.mycompany.com-ca.crt -CAkey pww.artifactory.cdi.mycompany.com-ca.key -CAcreateserial -out pww.artifactory.cdi.mycompany.com-server.crt -extfile extfile.cnf
 Signature ok
-subject=/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com
+subject=/C=CN/ST=Sichuan/L=Chengdu/O=mycompany/OU=CDI/CN=pww.artifactory.cdi.mycompany.com/emailAddress=marslo.jiao@mycompany.com
 Getting CA Private Key
-Enter pass phrase for pww.artifactory.cdi.philips.com-ca.key:artifactory
+Enter pass phrase for pww.artifactory.cdi.mycompany.com-ca.key:artifactory
 unable to write 'random state'
 
 $ ls
-extfile.cnf                             pww.artifactory.cdi.philips.com-ca.key      pww.artifactory.cdi.philips.com-server.csr  pww.srl
-pww.artifactory.cdi.philips.com-ca.crt  pww.artifactory.cdi.philips.com-server.crt  pww.artifactory.cdi.philips.com-server.key
+extfile.cnf                             pww.artifactory.cdi.mycompany.com-ca.key      pww.artifactory.cdi.mycompany.com-server.csr  pww.srl
+pww.artifactory.cdi.mycompany.com-ca.crt  pww.artifactory.cdi.mycompany.com-server.crt  pww.artifactory.cdi.mycompany.com-server.key
 </code></pre>
 </details>
 
 
 ### Create client cert and signed by CA
 ```bash
-$ openssl genrsa -out pww.artifactory.cdi.philips.com-client.key
-$ openssl req -subj "/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com" -new -key pww.artifactory.cdi.philips.com-client.key -out pww.artifactory.cdi.philips.com-client.csr
+$ openssl genrsa -out pww.artifactory.cdi.mycompany.com-client.key
+$ openssl req -subj "/C=CN/ST=Sichuan/L=Chengdu/O=mycompany/OU=CDI/CN=pww.artifactory.cdi.mycompany.com/emailAddress=marslo.jiao@mycompany.com" -new -key pww.artifactory.cdi.mycompany.com-client.key -out pww.artifactory.cdi.mycompany.com-client.csr
 $ echo extendedKeyUsage = clientAuth >> extfile.cnf
-$ openssl x509 -req -days 365 -sha256 -in pww.artifactory.cdi.philips.com-client.csr -CA pww.artifactory.cdi.philips.com-ca.crt -CAkey pww.artifactory.cdi.philips.com-ca.key -CAcreateserial -out pww.artifactory.cdi.philips.com-client.cert -extfile extfile.cnf
+$ openssl x509 -req -days 365 -sha256 -in pww.artifactory.cdi.mycompany.com-client.csr -CA pww.artifactory.cdi.mycompany.com-ca.crt -CAkey pww.artifactory.cdi.mycompany.com-ca.key -CAcreateserial -out pww.artifactory.cdi.mycompany.com-client.cert -extfile extfile.cnf
 ```
 
 <details><summary>Click to check details</summary>
-<pre><code>$ openssl genrsa -out pww.artifactory.cdi.philips.com-client.key 2048
+<pre><code>$ openssl genrsa -out pww.artifactory.cdi.mycompany.com-client.key 2048
 Generating RSA private key, 2048 bit long modulus
 ................................................+++
 .......................+++
 unable to write 'random state'
 e is 65537 (0x10001)
 
-$ openssl req -subj "/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com" -new -key pww.artifactory.cdi.philips.com-client.key -out pww.artifactory.cdi.philips.com-client.csr
+$ openssl req -subj "/C=CN/ST=Sichuan/L=Chengdu/O=mycompany/OU=CDI/CN=pww.artifactory.cdi.mycompany.com/emailAddress=marslo.jiao@mycompany.com" -new -key pww.artifactory.cdi.mycompany.com-client.key -out pww.artifactory.cdi.mycompany.com-client.csr
 
 $ echo extendedKeyUsage = clientAuth >> extfile.cnf
 $ cat extfile.cnf
-subjectAltName = DNS:pww.artifactory.cdi.philips.com,IP:130.147.219.19
+subjectAltName = DNS:pww.artifactory.cdi.mycompany.com,IP:130.147.219.19
 extendedKeyUsage = serverAuth
 extendedKeyUsage = clientAuth
 
-$ openssl x509 -req -days 365 -sha256 -in pww.artifactory.cdi.philips.com-client.csr -CA pww.artifactory.cdi.philips.com-ca.crt -CAkey pww.artifactory.cdi.philips.com-ca.key -CAcreateserial -out pww.artifactory.cdi.philips.com-client.cert -extfile extfile.cnf
+$ openssl x509 -req -days 365 -sha256 -in pww.artifactory.cdi.mycompany.com-client.csr -CA pww.artifactory.cdi.mycompany.com-ca.crt -CAkey pww.artifactory.cdi.mycompany.com-ca.key -CAcreateserial -out pww.artifactory.cdi.mycompany.com-client.cert -extfile extfile.cnf
 Signature ok
-subject=/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com
+subject=/C=CN/ST=Sichuan/L=Chengdu/O=mycompany/OU=CDI/CN=pww.artifactory.cdi.mycompany.com/emailAddress=marslo.jiao@mycompany.com
 Getting CA Private Key
-Enter pass phrase for pww.artifactory.cdi.philips.com-ca.key:artifactor
+Enter pass phrase for pww.artifactory.cdi.mycompany.com-ca.key:artifactor
 unable to write 'random state'
 </code></pre>
 </details>
@@ -378,28 +378,28 @@ unable to write 'random state'
 
 ### Update the file perm
 ```bash
-$ sudo chmod -v 0444 pww.artifactory.cdi.philips.com-ca.crt pww.artifactory.cdi.philips.com-server.crt client.cert
-$ sudo chmod -v 0400 pww.artifactory.cdi.philips.com-ca.key client.key pww.artifactory.cdi.philips.com-server.key
+$ sudo chmod -v 0444 pww.artifactory.cdi.mycompany.com-ca.crt pww.artifactory.cdi.mycompany.com-server.crt client.cert
+$ sudo chmod -v 0400 pww.artifactory.cdi.mycompany.com-ca.key client.key pww.artifactory.cdi.mycompany.com-server.key
 ```
 
 ### Check certs
 #### crt
 ```bash
-$ openssl x509 -noout -text -in pww.artifactory.cdi.philips.com-server.crt
+$ openssl x509 -noout -text -in pww.artifactory.cdi.mycompany.com-server.crt
 ```
 
 <details><summary>openssl x509 ca.crt</summary>
-<pre><code>$ openssl x509 -noout -text -in pww.artifactory.cdi.philips.com-ca.crt
+<pre><code>$ openssl x509 -noout -text -in pww.artifactory.cdi.mycompany.com-ca.crt
 Certificate:
     Data:
         Version: 3 (0x2)
         Serial Number: 15145698426239402702 (0xd23054792b3142ce)
     Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=CN, ST=Sichuan, L=Chengdu, O=Philips, OU=CDI, CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com
+        Issuer: C=CN, ST=Sichuan, L=Chengdu, O=mycompany, OU=CDI, CN=pww.artifactory.cdi.mycompany.com/emailAddress=marslo.jiao@mycompany.com
         Validity
             Not Before: Jan  2 11:35:31 2018 GMT
             Not After : Jan  2 11:35:31 2019 GMT
-        Subject: C=CN, ST=Sichuan, L=Chengdu, O=Philips, OU=CDI, CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com
+        Subject: C=CN, ST=Sichuan, L=Chengdu, O=mycompany, OU=CDI, CN=pww.artifactory.cdi.mycompany.com/emailAddress=marslo.jiao@mycompany.com
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (2048 bit)
@@ -453,17 +453,17 @@ Certificate:
 </details>
 
 <details><summary>openssl x509 server.crt</summary>
-<pre><code>$ openssl x509 -noout -text -in pww.artifactory.cdi.philips.com-server.crt
+<pre><code>$ openssl x509 -noout -text -in pww.artifactory.cdi.mycompany.com-server.crt
 Certificate:
     Data:
         Version: 3 (0x2)
         Serial Number: 12625600037876864867 (0xaf37245755cf1763)
     Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=CN, ST=Sichuan, L=Chengdu, O=Philips, OU=CDI, CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com
+        Issuer: C=CN, ST=Sichuan, L=Chengdu, O=mycompany, OU=CDI, CN=pww.artifactory.cdi.mycompany.com/emailAddress=marslo.jiao@mycompany.com
         Validity
             Not Before: Jan  2 11:39:47 2018 GMT
             Not After : Jan  2 11:39:47 2019 GMT
-        Subject: C=CN, ST=Sichuan, L=Chengdu, O=Philips, OU=CDI, CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com
+        Subject: C=CN, ST=Sichuan, L=Chengdu, O=mycompany, OU=CDI, CN=pww.artifactory.cdi.mycompany.com/emailAddress=marslo.jiao@mycompany.com
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (2048 bit)
@@ -489,7 +489,7 @@ Certificate:
                 Exponent: 65537 (0x10001)
         X509v3 extensions:
             X509v3 Subject Alternative Name:
-                DNS:pww.artifactory.cdi.philips.com, IP Address:130.147.219.19
+                DNS:pww.artifactory.cdi.mycompany.com, IP Address:130.147.219.19
             X509v3 Extended Key Usage:
                 TLS Web Server Authentication
     Signature Algorithm: sha256WithRSAEncryption
@@ -513,15 +513,15 @@ Certificate:
 
 #### csr
 ```bash
-$ openssl req -noout -text -in pww.artifactory.cdi.philips.com-server.csr
+$ openssl req -noout -text -in pww.artifactory.cdi.mycompany.com-server.csr
 ```
 
 <details><summary>openss req</summary>
-<pre><code>$ openssl req -noout -text -in pww.artifactory.cdi.philips.com-server.csr
+<pre><code>$ openssl req -noout -text -in pww.artifactory.cdi.mycompany.com-server.csr
 Certificate Request:
     Data:
         Version: 0 (0x0)
-        Subject: C=CN, ST=Sichuan, L=Chengdu, O=Philips, OU=CDI, CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com
+        Subject: C=CN, ST=Sichuan, L=Chengdu, O=mycompany, OU=CDI, CN=pww.artifactory.cdi.mycompany.com/emailAddress=marslo.jiao@mycompany.com
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (2048 bit)
@@ -569,14 +569,14 @@ Certificate Request:
 ## Certificate working with Nginx
 ```bash
 $ grep ssl_certificate /etc/nginx/sites-enabled/artifactory.v2.conf
-ssl_certificate       /etc/nginx/certs/pww.artifactory.cdi.philips.com/pww.artifactory.cdi.philips.com-server.crt;
-ssl_certificate_key   /etc/nginx/certs/pww.artifactory.cdi.philips.com/pww.artifactory.cdi.philips.com-server.key;
+ssl_certificate       /etc/nginx/certs/pww.artifactory.cdi.mycompany.com/pww.artifactory.cdi.mycompany.com-server.crt;
+ssl_certificate_key   /etc/nginx/certs/pww.artifactory.cdi.mycompany.com/pww.artifactory.cdi.mycompany.com-server.key;
 ```
 
 ## Certificate working with Client
 ### Add certifactory in MacOS
 ```bash
-$ sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "/Users/marslo/Downloads/pww.artifactory.cdi.philips.com-ca.crt"
+$ sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "/Users/marslo/Downloads/pww.artifactory.cdi.mycompany.com-ca.crt"
 ```
 
 ### Find the added cert in MacOS
@@ -597,19 +597,19 @@ keychain: "/Library/Keychains/System.keychain"
 version: 256
 class: 0x80001000
 attributes:
-    "alis"<blob>="marslo.jiao@philips.com"
+    "alis"<blob>="marslo.jiao@mycompany.com"
     "cenc"<uint32>=0x00000003
     "ctyp"<uint32>=0x00000001
     "hpky"<blob>=0x2332BC619E518E9422305BAE688A7E8E53D2457C  "#2\274a\236Q\216\224"0[\256h\212~\216S\322E|"
-    "issu"<blob>=0x3081A3310B300906035504061302434E3110300E06035504080C075369636875616E3110300E06035504070C074368656E6764753110300E060355040A0C075068696C697073310C300A060355040B0C034344493128302606035504030C1F7077772E61727469666163746F72792E6364692E7068696C6970732E636F6D3126302406092A864886F70D01090116176D6172736C6F2E6A69616F407068696C6970732E636F6D  "0\201\2431\0130\011\006\003U\004\006\023\002CN1\0200\016\006\003U\004\010\014\007Sichuan1\0200\016\006\003U\004\007\014\007Chengdu1\0200\016\006\003U\004\012\014\007Philips1\0140\012\006\003U\004\013\014\003CDI1(0&\006\003U\004\003\014\037pww.artifactory.cdi.philips.com1&0$\006\011*\206H\206\367\015\001\011\001\026\027marslo.jiao@philips.com"
-    "labl"<blob>="pww.artifactory.cdi.philips.com"
+    "issu"<blob>=0x3081A3310B300906035504061302434E3110300E06035504080C075369636875616E3110300E06035504070C074368656E6764753110300E060355040A0C075068696C697073310C300A060355040B0C034344493128302606035504030C1F7077772E61727469666163746F72792E6364692E7068696C6970732E636F6D3126302406092A864886F70D01090116176D6172736C6F2E6A69616F407068696C6970732E636F6D  "0\201\2431\0130\011\006\003U\004\006\023\002CN1\0200\016\006\003U\004\010\014\007Sichuan1\0200\016\006\003U\004\007\014\007Chengdu1\0200\016\006\003U\004\012\014\007mycompany1\0140\012\006\003U\004\013\014\003CDI1(0&\006\003U\004\003\014\037pww.artifactory.cdi.mycompany.com1&0$\006\011*\206H\206\367\015\001\011\001\026\027marslo.jiao@mycompany.com"
+    "labl"<blob>="pww.artifactory.cdi.mycompany.com"
     "skid"<blob>=0x2332BC619E518E9422305BAE688A7E8E53D2457C  "#2\274a\236Q\216\224"0[\256h\212~\216S\322E|"
     "snbr"<blob>=0x00D23054792B3142CE  "\000\3220Ty+1B\316"
-    "subj"<blob>=0x3081A3310B300906035504061302434E3110300E06035504080C075369636875616E3110300E06035504070C074368656E6764753110300E060355040A0C075068696C697073310C300A060355040B0C034344493128302606035504030C1F7077772E61727469666163746F72792E6364692E7068696C6970732E636F6D3126302406092A864886F70D01090116176D6172736C6F2E6A69616F407068696C6970732E636F6D  "0\201\2431\0130\011\006\003U\004\006\023\002CN1\0200\016\006\003U\004\010\014\007Sichuan1\0200\016\006\003U\004\007\014\007Chengdu1\0200\016\006\003U\004\012\014\007Philips1\0140\012\006\003U\004\013\014\003CDI1(0&\006\003U\004\003\014\037pww.artifactory.cdi.philips.com1&0$\006\011*\206H\206\367\015\001\011\001\026\027marslo.jiao@philips.com"
+    "subj"<blob>=0x3081A3310B300906035504061302434E3110300E06035504080C075369636875616E3110300E06035504070C074368656E6764753110300E060355040A0C075068696C697073310C300A060355040B0C034344493128302606035504030C1F7077772E61727469666163746F72792E6364692E7068696C6970732E636F6D3126302406092A864886F70D01090116176D6172736C6F2E6A69616F407068696C6970732E636F6D  "0\201\2431\0130\011\006\003U\004\006\023\002CN1\0200\016\006\003U\004\010\014\007Sichuan1\0200\016\006\003U\004\007\014\007Chengdu1\0200\016\006\003U\004\012\014\007mycompany1\0140\012\006\003U\004\013\014\003CDI1(0&\006\003U\004\003\014\037pww.artifactory.cdi.mycompany.com1&0$\006\011*\206H\206\367\015\001\011\001\026\027marslo.jiao@mycompany.com"
 
 $ security find-certificate -a -c artifactor -Z -p -m
 SHA-1 hash: 915D019F0993F369C09D75C6B8DA201B8DE2636E
-email addresses: marslo.jiao@philips.com
+email addresses: marslo.jiao@mycompany.com
 -----BEGIN CERTIFICATE-----
 MIIELDCCAxSgAwIBAgIJANIwVHkrMULOMA0GCSqGSIb3DQEBCwUAMIGjMQswCQYD
 VQQGEwJDTjEQMA4GA1UECAwHU2ljaHVhbjEQMA4GA1UEBwwHQ2hlbmdkdTEQMA4G
@@ -695,15 +695,15 @@ If you enter '.', the field will be left blank.
 Country Name (2 letter code) [AU]:CN
 State or Province Name (full name) [Some-State]:Sichuan
 Locality Name (eg, city) []:Chengdu
-Organization Name (eg, company) [Internet Widgits Pty Ltd]:Philips
-Organizational Unit Name (eg, section) []:Philips
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:mycompany
+Organizational Unit Name (eg, section) []:mycompany
 Common Name (e.g. server FQDN or YOUR name) []:docker-2.artifactory
-Email Address []:marslo.jiao@philips.com
+Email Address []:marslo.jiao@mycompany.com
 
 Please enter the following 'extra' attributes
 to be sent with your certificate request
 A challenge password []:artifactory
-An optional company name []:Philips
+An optional company name []:mycompany
 
 $ ls -Altrh
 total 80K
@@ -734,17 +734,17 @@ writing RSA key
 
 $ sudo openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 Signature ok
-subject=/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=Philips/CN=docker-2.artifactory/emailAddress=marslo.jiao@philips.com
+subject=/C=CN/ST=Sichuan/L=Chengdu/O=mycompany/OU=mycompany/CN=docker-2.artifactory/emailAddress=marslo.jiao@mycompany.com
 Getting Private key
 </code></pre>
 </details>
 
 <li>Others 2:</li>
-<pre><code>/etc/nginx$ sudo openssl req -newkey rsa:2048 -nodes -sha256 -keyout certs/pww.artifactory.cdi.philips.com.key -x509 -days 365 -out certs/pww.artifactory.cdi.philips.com.crt
+<pre><code>/etc/nginx$ sudo openssl req -newkey rsa:2048 -nodes -sha256 -keyout certs/pww.artifactory.cdi.mycompany.com.key -x509 -days 365 -out certs/pww.artifactory.cdi.mycompany.com.crt
 Generating a 2048 bit RSA private key
 ........+++
 ..............................................................+++
-writing new private key to 'certs/pww.artifactory.cdi.philips.com.key'
+writing new private key to 'certs/pww.artifactory.cdi.mycompany.com.key'
 -----
 You are about to be asked to enter information that will be incorporated
 into your certificate request.
@@ -756,10 +756,10 @@ If you enter '.', the field will be left blank.
 Country Name (2 letter code) [AU]:CN
 State or Province Name (full name) [Some-State]:Sichuan
 Locality Name (eg, city) []:Chengdu
-Organization Name (eg, company) [Internet Widgits Pty Ltd]:Philips
-Organizational Unit Name (eg, section) []:Philips
-Common Name (e.g. server FQDN or YOUR name) []:pww.artifactory.cdi.philips.com
-Email Address []:marslo.jiao@philips.com
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:mycompany
+Organizational Unit Name (eg, section) []:mycompany
+Common Name (e.g. server FQDN or YOUR name) []:pww.artifactory.cdi.mycompany.com
+Email Address []:marslo.jiao@mycompany.com
 </code></pre>
 </details>
 
@@ -794,7 +794,7 @@ If you enter '.', the field will be left blank.
 Country Name (2 letter code) [AU]:CN
 State or Province Name (full name) [Some-State]:Sichuan
 Locality Name (eg, city) []:Chengdu
-Organization Name (eg, company) [Internet Widgits Pty Ltd]:Philips Ltd
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:mycompany Ltd
 Organizational Unit Name (eg, section) []:.
 Common Name (e.g. server FQDN or YOUR name) []:192.168.1.102
 Email Address []:.
@@ -813,7 +813,7 @@ writing RSA key
 
 $ sudo openssl x509 -req -days 365 -in artifactory.csr -signkey artifactory.key -out artifactory.crt
 Signature ok
-subject=/C=CN/ST=Sichuan/L=Chengdu/O=Philips Ltd/CN=192.168.1.102
+subject=/C=CN/ST=Sichuan/L=Chengdu/O=mycompany Ltd/CN=192.168.1.102
 Getting Private key
 
 $ openssl x509 -text -noout -in ssl_ip/artifactory.crt
@@ -822,11 +822,11 @@ Certificate:
         Version: 1 (0x0)
         Serial Number: 9804858425156156035 (0x8811daca106dba83)
     Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=CN, ST=Sichuan, L=Chengdu, O=Philips Ltd, CN=192.168.1.102
+        Issuer: C=CN, ST=Sichuan, L=Chengdu, O=mycompany Ltd, CN=192.168.1.102
         Validity
             Not Before: Dec 26 16:23:15 2017 GMT
             Not After : Dec 26 16:23:15 2018 GMT
-        Subject: C=CN, ST=Sichuan, L=Chengdu, O=Philips Ltd, CN=192.168.1.102
+        Subject: C=CN, ST=Sichuan, L=Chengdu, O=mycompany Ltd, CN=192.168.1.102
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (2048 bit)
@@ -890,8 +890,8 @@ If you enter '.', the field will be left blank.
 Country Name (2 letter code) [AU]:CN
 State or Province Name (full name) [Some-State]:Sichuan
 Locality Name (eg, city) []:Chengdu
-Organization Name (eg, company) [Internet Widgits Pty Ltd]:Philips Ltd
-Organizational Unit Name (eg, section) []:Philips CDI
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:mycompany Ltd
+Organizational Unit Name (eg, section) []:mycompany CDI
 Common Name (e.g. server FQDN or YOUR name) []:docker-1.artifactory
 Email Address []:.
 
@@ -908,7 +908,7 @@ writing RSA key
 
 $ sudo openssl x509 -req -days 365 -in artifactory.csr -signkey artifactory.key -out artifactory.crt
 Signature ok
-subject=/C=CN/ST=Sichuan/L=Chengdu/O=Philips Ltd/OU=Philips CDI/CN=docker-1.artifactory
+subject=/C=CN/ST=Sichuan/L=Chengdu/O=mycompany Ltd/OU=mycompany CDI/CN=docker-1.artifactory
 Getting Private key
 
 $ openssl x509 -text -noout -in ssl/artifactory.crt
@@ -917,11 +917,11 @@ Certificate:
         Version: 1 (0x0)
         Serial Number: 15006671364169185053 (0xd0426818d254b71d)
     Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=CN, ST=Sichuan, L=Chengdu, O=Philips Ltd, OU=Philips CDI, CN=docker-1.artifactory
+        Issuer: C=CN, ST=Sichuan, L=Chengdu, O=mycompany Ltd, OU=mycompany CDI, CN=docker-1.artifactory
         Validity
             Not Before: Dec 26 16:02:10 2017 GMT
             Not After : Dec 26 16:02:10 2018 GMT
-        Subject: C=CN, ST=Sichuan, L=Chengdu, O=Philips Ltd, OU=Philips CDI, CN=docker-1.artifactory
+        Subject: C=CN, ST=Sichuan, L=Chengdu, O=mycompany Ltd, OU=mycompany CDI, CN=docker-1.artifactory
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (2048 bit)
@@ -971,7 +971,7 @@ $ cat ~/.docker/daemon.json
 {
   "debug" : true,
   "experimental" : true,
-  "insecure-registries" : ["pww.artifactory.cdi.philips.com", "pww.artifactory.cdi.philips.com:2500", "pww.artifactory.cdi.philips.com:2501", "docker-1.artifactory", "docker-1.artifactory:443"]
+  "insecure-registries" : ["pww.artifactory.cdi.mycompany.com", "pww.artifactory.cdi.mycompany.com:2500", "pww.artifactory.cdi.mycompany.com:2501", "docker-1.artifactory", "docker-1.artifactory:443"]
 }
 
 $ sudo systemctl daemon-reload
