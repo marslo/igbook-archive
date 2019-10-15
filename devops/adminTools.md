@@ -12,7 +12,7 @@
 
 - vnstat
 
-![vnstat](../Screenshots/vnstat.png)
+![vnstat](../screenshot/vnstat.png)
 ```bash
 $ vnstat -l 1 -i en7
 Monitoring en7...    (press CTRL-C to stop)
@@ -39,7 +39,7 @@ Monitoring en7...    (press CTRL-C to stop)
 
 - ipcalc
 
-![ipcalc](../Screenshots/ipcalc.png)
+![ipcalc](../screenshot/ipcalc.png)
 
 ```bash
 $ ipcalc 10.25.130.2/23
@@ -96,7 +96,7 @@ E..GP....._.
 ```
 
 - dstat
-![dstat](../Screenshots/dstat.png)
+![dstat](../screenshot/dstat.png)
 
 - strace
 
