@@ -60,7 +60,7 @@ $ identify arms009.jpg | grep -o "[[:digit:]]*x[[:digit:]]*" | tail -1
 
 ### Convert HEIC/HEIF to PNG
 
-![magick](../screenshot/heic.gif)
+![magick](../screenshot/heic-1.gif)
 
 ```bash
 $ brew install imagemagick --with-libheif
