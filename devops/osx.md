@@ -9,7 +9,7 @@
     * right click and select **Copy Link Address**
     ![download cookies.txt](../../screenshot/cookies.txt-2.png)
 
-* download xcode
+* download xcode (inspired from [here](https://stackoverflow.com/a/4089758/2940319) and [here](https://stackoverflow.com/a/46020878/2940319))
     ```bash
     $ wget --cookies=on \
            --load-cookies=cookies.txt \
