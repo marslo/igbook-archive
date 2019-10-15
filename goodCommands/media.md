@@ -41,6 +41,12 @@ $ ffmpeg -i name.mp4 -ss 0 -t 300 name-5m.mp4
     $ ffmpeg -i name.mp4 -ss 600 -t 300 name-5m.mp4
     ```
 
+### Combine video and audio
+```bash
+$ ffmpeg -i <origin-video> -i <origin-audio> -c copy -map 0:0 -map 1:0 -shortest <new-video>
+```
+![combine](../screenshot/ffmpeg-combine.jpg)
+
 ## Image
 ### Identity an image
 ```bash
