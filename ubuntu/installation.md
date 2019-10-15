@@ -59,92 +59,107 @@
 
 # Preconfig
 ## Setup dependencies
-
-    $ sudo apt install -y bash-completion* tree dos2unix iptables-persistent mailutils policycoreutils build-essential gcc g++ make cmake liblxc1 lxc-common lxcfs landscape-common update-motd update-notifier-common apt-file netfilter-persistent ncurses-doc binutils cpp cpp-5 dpkg-dev fakeroot g++-5 gcc gcc-5 libasan2 libatomic1 libc-dev-bin libc6-dev libcc1-0 libcilkrts5 libexpat1-dev libfakeroot libisl15 libitm1 liblsan0 libmpc3 libmpx0 libquadmath0 libstdc++-5-dev libtsan0 libubsan0 linux-libc-dev manpages-dev libssl-dev jq htop dstat ifstat libncurses5-dev libncursesw5-dev libpython-all-dev python-pip binutils-doc cpp-doc gcc-5-locales debian-keyring g++-multilib g++-5-multilib gcc-5-doc libstdc++6-5-dbg gcc-multilib autoconf automake libtool flex bison gdb gcc-doc gcc-5-multilib libgcc1-dbg libgomp1-dbg libitm1-dbg libatomic1-dbg libasan2-dbg liblsan0-dbg libtsan0-dbg libubsan0-dbg libcilkrts5-dbg libmpx0-dbg libquadmath0-dbg libstdc++-5-doc python-setuptools-doc libpython2.7 dlocate python-docutils curl git m4 ruby texinfo libbz2-dev libexpat-dev libncurses-dev zlib1g-dev iftop libsensors4 sysstat traceroute net-tools
+```bash
+$ sudo apt install -y apt-file autoconf automake bash-completion* binutils binutils-doc bison build-essential cmake cpp cpp-5 cpp-doc curl debian-keyring dlocate dos2unix dpkg-dev dstat fakeroot flex g++ g++-5 g++-5-multilib g++-multilib gcc gcc-5 gcc-5-doc gcc-5-locales gcc-5-multilib gcc-doc gcc-multilib gdb git htop ifstat iftop iptables-persistent jq landscape-common libasan2 libasan2-dbg libatomic1 libatomic1-dbg libbz2-dev libc-dev-bin libc6-dev libcc1-0 libcilkrts5 libcilkrts5-dbg libexpat-dev libexpat1-dev libfakeroot libgcc1-dbg libgomp1-dbg libisl15 libitm1 libitm1-dbg liblsan0 liblsan0-dbg liblxc1 libmpc3 libmpx0 libmpx0-dbg libncurses-dev libncurses5-dev libncursesw5-dev libpython-all-dev libpython2.7 libquadmath0 libquadmath0-dbg libsensors4 libssl-dev libstdc++-5-dev libstdc++-5-doc libstdc++6-5-dbg libtool libtsan0 libtsan0-dbg libubsan0 libubsan0-dbg linux-libc-dev lxc-common lxcfs m4 mailutils make manpages-dev ncurses-doc net-tools netfilter-persistent policycoreutils python-docutils python-pip python-setuptools-doc ruby sysstat texinfo traceroute tree update-motd update-notifier-common zlib1g-dev 
+```
 
 ## Setup account
-
-    $ sudo usermod -a -G sudo,adm,root,docker devops
+```bash
+$ sudo usermod -a -G sudo,adm,root,docker devops
+```
 
 ## Setup MOTD
+```bash
+$ sudo chmod -x /etc/update-motd.d/00-header \
+                /etc/update-motd.d/10-help-text \
+                /etc/update-motd.d/50-motd-news
 
-    $ sudo chmod -x /etc/update-motd.d/00-header
-    $ sudo chmod -x /etc/update-motd.d/10-help-text
-    $ sudo chmod -x /etc/update-motd.d/50-motd-news
-
-    $ cat << 'EOF' > /etc/landscape/client.conf
-    [sysinfo]
-    exclude_sysinfo_plugins = Temperature, LandscapeLink
-    EOF
+$ cat << 'EOF' > /etc/landscape/client.conf
+[sysinfo]
+exclude_sysinfo_plugins = Temperature, LandscapeLink
+EOF
+```
 
 ## Get subnet ip address
-
-    $ ip addr show eno1 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
-    192.168.1.105
-    fe80::e5ca:1027:b572:9998
+```bash
+$ ip addr show eno1 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+192.168.1.105
+fe80::e5ca:1027:b572:9998
+```
 
 ## Get Public Ip address
-
-    $ curl -4 icanhazip.com
-    182.150.46.248
+```bash
+$ curl -4 icanhazip.com
+182.150.46.248
+```
 
 # Applications
 ## ShadowSocks Server
+```bash
+$ sudo apt install m2crypto git python-pip
+$ pip install --upgrade pip
+$ pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 
-    $ sudo apt install m2crypto git python-pip
-    $ pip install --upgrade pip
-    $ pip install git+https://github.com/shadowsocks/shadowsocks.git@master
-
-    $ sudo ln -sf /home/marslo/.local/bin/ssserver /usr/local/bin/ssserver
+$ sudo ln -sf /home/marslo/.local/bin/ssserver /usr/local/bin/ssserver
+```
 
 ### Start
-
-    $ cat /etc/rc.local
-    # ssserver -c /etc/shadowsocks.json -d start
-    sudo /home/marslo/.local/bin/ssserver -c /etc/shadowsocks.json -d start
+```bash
+$ sudo bash -c 'cat > /etc/rc.local' << EOF
+# ssserver -c /etc/shadowsocks.json -d start
+sudo /home/marslo/.local/bin/ssserver -c /etc/shadowsocks.json -d start
+EOF
+```
 
 ## ShadowSocks Client
 ### Ubuntu
+```bash
+$ sudo add-apt-repository ppa:hzwhuang/ss-qt5
+ Shadowsocks-Qt5 is a cross-platform Shadowsocks GUI client.
 
-    $ sudo add-apt-repository ppa:hzwhuang/ss-qt5
-     Shadowsocks-Qt5 is a cross-platform Shadowsocks GUI client.
+Shadowsocks is a lightweight tool that helps you bypass firewall(s).
 
-    Shadowsocks is a lightweight tool that helps you bypass firewall(s).
+This PPA mainly includes packages for Shadowsocks-Qt5, which means it also includes libQtShadowsocks packages.
+ More info: https://launchpad.net/~hzwhuang/+archive/ubuntu/ss-qt5
+Press [ENTER] to continue or Ctrl-c to cancel adding it.
 
-    This PPA mainly includes packages for Shadowsocks-Qt5, which means it also includes libQtShadowsocks packages.
-     More info: https://launchpad.net/~hzwhuang/+archive/ubuntu/ss-qt5
-    Press [ENTER] to continue or Ctrl-c to cancel adding it.
+gpg: keybox '/tmp/tmpaegs6_x4/pubring.gpg' created
+gpg: /tmp/tmpaegs6_x4/trustdb.gpg: trustdb created
+gpg: key 6DA746A05F00FA99: public key "Launchpad PPA for Symeon Huang" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+OK
 
-    gpg: keybox '/tmp/tmpaegs6_x4/pubring.gpg' created
-    gpg: /tmp/tmpaegs6_x4/trustdb.gpg: trustdb created
-    gpg: key 6DA746A05F00FA99: public key "Launchpad PPA for Symeon Huang" imported
-    gpg: Total number processed: 1
-    gpg:               imported: 1
-    OK
-
-    $ sudo apt update
-    $ sudo apt install shadowsocks-qt5
+$ sudo apt update
+$ sudo apt install shadowsocks-qt5
+```
 
 - Others:
-
-        $ sudo apt install python-pip
-        $ sudo pip install genpac
+```bash
+$ sudo apt install python-pip
+$ sudo pip install genpac
+```
 
 ## Backup terminal configurations
 - Backup
-
-        $ dconf dump /org/gnome/terminal/ > ubuntu1710_terminal_backup.bak
+```bash
+$ dconf dump /org/gnome/terminal/ > ubuntu1710_terminal_backup.bak
+```
 
 - Restore
-
-        $ dconf load /org/gnome/terminal/ < ubuntu1710_terminal_backup.bak
+```bash
+$ dconf load /org/gnome/terminal/ < ubuntu1710_terminal_backup.bak
+```
 
 - Reset
+```bash
+$ dconf reset -f /org/gnome/terminal
+```
 
-        $ dconf reset -f /org/gnome/terminal
 - List
-
-        $ gsettings list-recursively | grep -i org.gnome.Terminal
+```bash
+$ gsettings list-recursively | grep -i org.gnome.Terminal
+```
 
 <details><summary>Click to check details</summary>
 <pre><code>$ gsettings list-recursively | grep -i org.gnome.Terminal
