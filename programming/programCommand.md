@@ -14,6 +14,7 @@ $ (pv -n ~/database.sql | mysql -u root -pPASSWORD -D database_name) 2>&1 | zeni
 ```
 
 ### Get the cnf file location for MySQL
+
 ```bash
 $ mysql - ? | grep ".cnf" -C 1
 Default options are read from the following files in the given order:
@@ -22,6 +23,10 @@ The following groups are read: mysql client
 ```
 
 ### Get the git change from .git/objects
+
 ```bash
-$ find .git/objects -type f -printf "%P\n" | sed s,/,, | while read object; do echo "=== $obj $(git cat-file -t $object) ==="; git cat-file -p $object; done
+$ find .git/objects -type f -printf "%P\n" | sed s,/,, | while read object; do
+    echo "=== $obj $(git cat-file -t $object) ==="
+    git cat-file -p $object
+done
 ```
