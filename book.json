@@ -1,0 +1,51 @@
+{
+    "title": "my handbook",
+    "author" : "marslo",
+    "description" : "handbook for devops",
+    "language" : "zh-hans",
+    "structure": {
+        "readme": "README.md"
+    },
+    "plugins": [
+        "-lunr",
+        "-search",
+        "search-pro",
+        "back-to-top-button",
+        "expandable-chapters",
+        "chapter-fold",
+        "splitter",
+        "accordion",
+        "code",
+        "pageview-count",
+        "page-toc-button",
+        "page-treeview"
+    ],
+    "pluginsConfig": {
+      "anchor-navigation-ex": {
+        "isShowTocTitleIcon": true
+      },
+      "pluginsConfig": {
+        "page-treeview": {
+            "copyright": "Copyright &#169; aleen42",
+            "minHeaderCount": "2",
+            "minHeaderDeep": "2"
+        }
+      },
+      "page-toc-button": {
+          "maxTocDepth": 2,
+          "minTocSize": 2
+      }
+    },
+    "links" : {
+        "sidebar" : {
+            "I, Marslo" : "https://marslo.github.io/"
+        }
+    },
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css",
+        "pdf": "styles/pdf.css",
+        "mobi": "styles/mobi.css",
+        "epub": "styles/epub.css"
+    }
+}
