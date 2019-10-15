@@ -7,22 +7,54 @@
         "-lunr",
         "-search",
         "search-pro",
-        "back-to-top-button",
+        "back-to-top-button" ,
         "expandable-chapters",
         "chapter-fold",
         "splitter",
         "accordion",
         "code",
         "pageview-count",
-        "page-toc-button"
+        "page-toc-button",
+        "expandable-chapters-small",
+        "anchors",
+        "include-codeblock",
+        "simple-page-toc",
+        "github",
+        "github-buttons",
+        "advanced-emoji",
+        "chart"
     ],
     "pluginsConfig": {
-      "anchor-navigation-ex": {
-        "isShowTocTitleIcon": true
-      },
       "page-toc-button": {
           "maxTocDepth": 2,
           "minTocSize": 2
+      },
+      "fontsettings": {
+          "theme": "white",
+          "family": "serif",
+          "size":  4
+      },
+      "github": {
+            "url": "https://github.com/marslo/igbook"
+      },
+      "github-buttons": {
+          "repo": "marslo/igbook",
+          "types": [
+              "star"
+          ],
+          "size": "small"
+      },
+      "include-codeblock": {
+          "template": "ace",
+          "unindent": true,
+          "theme": "monokai",
+          "edit": true
+      },
+      "anchor-navigation-ex": {
+          "isRewritePageTitle": true,
+          "tocLevel1Icon": "fa fa-hand-o-right",
+          "tocLevel2Icon": "fa fa-hand-o-right",
+          "tocLevel3Icon": "fa fa-hand-o-right"
       }
     },
     "links" : {
