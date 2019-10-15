@@ -1,3 +1,6 @@
+Git Command Study and practice
+=======
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -8,25 +11,6 @@
   - [Rebase](#rebase)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-Git Command Study and practice
-=======
-
-## Content
-
-- [Appoint](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#appoint)
-    - [Git Aliases](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#git-alias)
-    - [.marslorc](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#marslorc)
-
-- [Rebase](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#rebase)
-    - [Without Confilite file](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#without-confilite-file)
-        - [Precondition](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#precondiction)
-        - [Merge with rebase](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#merge-with-rebase)
-    - [With Confilite file](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#with-confilite-file)
-        - [Precondicition](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#precondiction-1)
-        - [Merge by rebase](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#merge-by-rebase)
-        - [Return to master branch](https://github.com/Marslo/MyNotes/blob/master/Git/Git_Study.md#return-to-master-branch)
-
 
 ## Appoint
 ### [Git Alias](https://github.com/Marslo/LinuxStuff/blob/master/Configs/HOME/Git/.gitconfig)

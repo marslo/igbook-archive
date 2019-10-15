@@ -24,79 +24,95 @@
 ### Compile and Install
 #### Preconfiguration Setup
 ##### Create user and group
-
-    # groupadd mysql
-    # useradd -r -g mysql mysql
+```bash
+$ sudo groupadd mysql
+$ sudo useradd -r -g mysql mysql
+```
 
 ##### Extract tar.gz
-
-    # tar xf mysql-5.7.3-m13.tar.gz
-    # cd mysql-5.7.3-m13
+```bash
+$ tar xf mysql-5.7.3-m13.tar.gz
+$ cd mysql-5.7.3-m13
+```
 
 #### Compile and Install
-
-    # cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
-    > -DDEFAULT_CHARSET=gbk \
-    > -DDEFAULT_COLLATION=gbk_chinese_ci \
-    > -DENABLED_LOCAL_INFILE=ON \
-    > -DWITH_INNOBASE_STORAGE_ENGINE=1 \
-    > -DWITH_FEDERATED_STORAGE_ENGINE=1 \
-    > -DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
-    > -DMYSQL_UNIX_ADDR=/tmp/mysqld.sock \
-    > -DWITH_DEBUG=0 \
-    > -DMYSQL_TCP_PORT=3306
-    # make
-    # make install
+```bash
+$ cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
+> -DDEFAULT_CHARSET=gbk \
+> -DDEFAULT_COLLATION=gbk_chinese_ci \
+> -DENABLED_LOCAL_INFILE=ON \
+> -DWITH_INNOBASE_STORAGE_ENGINE=1 \
+> -DWITH_FEDERATED_STORAGE_ENGINE=1 \
+> -DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
+> -DMYSQL_UNIX_ADDR=/tmp/mysqld.sock \
+> -DWITH_DEBUG=0 \
+> -DMYSQL_TCP_PORT=3306
+$ make
+$ sudo make install
+```
 
 ##### [cmake logs](https://github.com/Marslo/MyNotes/blob/master/MySQL/MySQL_Cmake_Logs.md)
 
 ### Configuration and Initial
 #### Permission Manager
-
-    # chown -R mysql:mysql /usr/local/mysql
+```bash
+$ sudo chown -R mysql:mysql /usr/local/mysql
+```
 
 #### Initial MySQL
-
-    # scripts/mysql_install_db --user=mysql
-    # cp support-files/mysql.server /etc/init.d/mysqld
+```bash
+$ scripts/mysql_install_db --user=mysql
+$ cp support-files/mysql.server /etc/init.d/mysqld
+```
 
 ##### [Log of mysql_install_db --user=mysql](https://github.com/Marslo/MyNotes/blob/master/MySQL/mysql_install_db.md)
 
 #### Change Permission again
 
-    # chown -R root .
-    # chown -R mysql data
+```bash
+$ sudo chown -R root .
+$ sudo chown -R mysql data
+```
 
 #### Start mysqld_safe
 
-    # bin/mysqld_safe --user=mysql &
+```bash
+$ sudo bin/mysqld_safe --user=mysql &
+```
 
 #### Setup root password
 
-    # ./bin/mysqladmin -u root password '<PASSWORDHERE>'
-Or
-
-    # ./bin/mysql_secure_installation
+```bash
+$ sudo ./bin/mysqladmin -u root password '<PASSWORDHERE>'
+# Or
+$ sudo ./bin/mysql_secure_installation
+```
 
 ##### [Log of mysql_secure_installatioin](https://github.com/Marslo/MyNotes/blob/master/MySQL/mysql_secure_installation.md)
 
 ### Set Environment
-
-    # cat >> /etc/bash.bashrc << EOF
-    > export PATH=/usr/local/mysql/bin:$PATH
-    > EOF
+```bash
+$ sudo bash -c 'cat >> /etc/bash.bashrc' << EOF
+> export PATH=/usr/local/mysql/bin:$PATH
+> EOF
+```
 
 ### Check the mysql port
-
-    sudo netstat -tunlp  | grep 3306
-    tcp6       0      0 :::3306                 :::*                    LISTEN      21712/mysqld
+```bash
+$ sudo netstat -tunlp  | grep 3306
+tcp6       0      0 :::3306                 :::*                    LISTEN      21712/mysqld
+```
 
 ### Check variables
 
-    # mysqladmin variables -p
-    Enter password:
+```bash
+$ mysqladmin variables -p
+Enter password:
+```
 
 ## Make mysql as boot start
 
-    chkconfig --add mysqld
-    chkconfig --level 345 mysqld on
+```bash
+$ sudo chkconfig --add mysqld
+$ sudo chkconfig --level 345 mysqld on
+```
