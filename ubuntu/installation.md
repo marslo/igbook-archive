@@ -242,47 +242,49 @@ org.gnome.Terminal.Legacy.Keybindings switch-to-tab-18 'disabled'
 org.gnome.Terminal.Legacy.Keybindings switch-to-tab-19 'disabled'
 org.gnome.Terminal.Legacy.Keybindings profile-preferences 'disabled'
 org.gnome.Terminal.Legacy.Keybindings next-tab '<Control>Page_Down'
-
 </code></pre>
 </details>
 
 ## Nginx
 ### Installation
-
-    $ sudo apt udpate
-    $ sudo apt install nginx
+```bash
+$ sudo apt udpate
+$ sudo apt install nginx
+```
 
 ### Configuration
-
-    $ sudo ufw app list
-    Available applications:
-      CUPS
-      Nginx Full
-      Nginx HTTP
-      Nginx HTTPS
-      OpenSSH
-      Postfix
-      Postfix SMTPS
-      Postfix Submission
+```bash
+$ sudo ufw app list
+Available applications:
+  CUPS
+  Nginx Full
+  Nginx HTTP
+  Nginx HTTPS
+  OpenSSH
+  Postfix
+  Postfix SMTPS
+  Postfix Submission
+```
 
 - OR
-
-        $ sudo ufw allow 'Nginx HTTP'
+```bash
+$ sudo ufw allow 'Nginx HTTP'
+```
 
 ## VNCServer
 ### Installation
-
-    $ sudo apt install vnc4server
-    $ sudo apt install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
-
-
+```bash
+$ sudo apt install vnc4server
+$ sudo apt install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
+```
 
 # SSL Cert
 ## Create Cert for server
 ### CA (root cert)
-
-    $ openssl genrsa -aes256 -out pww.artifactory.cdi.philips.com-ca.key 2048
-    $ openssl req -new -x509 -days 365 -key pww.artifactory.cdi.philips.com-ca.key -sha256 -out pww.artifactory.cdi.philips.com-ca.crt -subj "/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com"
+```bash
+$ openssl genrsa -aes256 -out pww.artifactory.cdi.philips.com-ca.key 2048
+$ openssl req -new -x509 -days 365 -key pww.artifactory.cdi.philips.com-ca.key -sha256 -out pww.artifactory.cdi.philips.com-ca.crt -subj "/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com"
+```
 
 <details><summary>Click to check details</summary>
 <pre><code>$ openssl genrsa -aes256 -out pww.artifactory.cdi.philips.com-ca.key 2048
@@ -299,9 +301,10 @@ Enter pass phrase for pww.artifactory.cdi.philips.com-ca.key:artifactory
 </details>
 
 ### Cert for Server
-
-    $ openssl genrsa -out  pww.artifactory.cdi.philips.com-server.key 2048
-    $ openssl req -sha256 -new -key pww.artifactory.cdi.philips.com-server.key -out pww.artifactory.cdi.philips.com-server.csr -subj "/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com"
+```bash
+$ openssl genrsa -out  pww.artifactory.cdi.philips.com-server.key 2048
+$ openssl req -sha256 -new -key pww.artifactory.cdi.philips.com-server.key -out pww.artifactory.cdi.philips.com-server.csr -subj "/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com"
+```
 
 <details><summary>Click to check details</summary>
 <pre><code>$ openssl genrsa -out  pww.artifactory.cdi.philips.com-server.key 2048
@@ -315,11 +318,12 @@ $ openssl req -sha256 -new -key pww.artifactory.cdi.philips.com-server.key -out 
 </details>
 
 ### Sign the server cert with CA
+```bash
+$ echo subjectAltName = DNS:pww.artifactory.cdi.philips.com,IP:130.147.219.19 >> extfile.cnf
+$ echo extendedKeyUsage = serverAuth >> extfile.cnf
 
-    $ echo subjectAltName = DNS:pww.artifactory.cdi.philips.com,IP:130.147.219.19 >> extfile.cnf
-    $ echo extendedKeyUsage = serverAuth >> extfile.cnf
-
-    $ openssl x509 -req -days 365 -sha256 -in pww.artifactory.cdi.philips.com-server.csr -CA pww.artifactory.cdi.philips.com-ca.crt -CAkey pww.artifactory.cdi.philips.com-ca.key -CAcreateserial -out pww.artifactory.cdi.philips.com-server.crt -extfile extfile.cnf
+$ openssl x509 -req -days 365 -sha256 -in pww.artifactory.cdi.philips.com-server.csr -CA pww.artifactory.cdi.philips.com-ca.crt -CAkey pww.artifactory.cdi.philips.com-ca.key -CAcreateserial -out pww.artifactory.cdi.philips.com-server.crt -extfile extfile.cnf
+```
 
 <details><summary>Click to check details</summary>
 <pre><code>$ echo subjectAltName = DNS:pww.artifactory.cdi.philips.com,IP:130.147.219.19 >> extfile.cnf
@@ -339,11 +343,12 @@ pww.artifactory.cdi.philips.com-ca.crt  pww.artifactory.cdi.philips.com-server.c
 
 
 ### Create client cert and signed by CA
-
-    $ openssl genrsa -out pww.artifactory.cdi.philips.com-client.key
-    $ openssl req -subj "/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com" -new -key pww.artifactory.cdi.philips.com-client.key -out pww.artifactory.cdi.philips.com-client.csr
-    $ echo extendedKeyUsage = clientAuth >> extfile.cnf
-    $ openssl x509 -req -days 365 -sha256 -in pww.artifactory.cdi.philips.com-client.csr -CA pww.artifactory.cdi.philips.com-ca.crt -CAkey pww.artifactory.cdi.philips.com-ca.key -CAcreateserial -out pww.artifactory.cdi.philips.com-client.cert -extfile extfile.cnf
+```bash
+$ openssl genrsa -out pww.artifactory.cdi.philips.com-client.key
+$ openssl req -subj "/C=CN/ST=Sichuan/L=Chengdu/O=Philips/OU=CDI/CN=pww.artifactory.cdi.philips.com/emailAddress=marslo.jiao@philips.com" -new -key pww.artifactory.cdi.philips.com-client.key -out pww.artifactory.cdi.philips.com-client.csr
+$ echo extendedKeyUsage = clientAuth >> extfile.cnf
+$ openssl x509 -req -days 365 -sha256 -in pww.artifactory.cdi.philips.com-client.csr -CA pww.artifactory.cdi.philips.com-ca.crt -CAkey pww.artifactory.cdi.philips.com-ca.key -CAcreateserial -out pww.artifactory.cdi.philips.com-client.cert -extfile extfile.cnf
+```
 
 <details><summary>Click to check details</summary>
 <pre><code>$ openssl genrsa -out pww.artifactory.cdi.philips.com-client.key 2048
@@ -372,14 +377,16 @@ unable to write 'random state'
 
 
 ### Update the file perm
-
-    $ sudo chmod -v 0444 pww.artifactory.cdi.philips.com-ca.crt pww.artifactory.cdi.philips.com-server.crt client.cert
-    $ sudo chmod -v 0400 pww.artifactory.cdi.philips.com-ca.key client.key pww.artifactory.cdi.philips.com-server.key
+```bash
+$ sudo chmod -v 0444 pww.artifactory.cdi.philips.com-ca.crt pww.artifactory.cdi.philips.com-server.crt client.cert
+$ sudo chmod -v 0400 pww.artifactory.cdi.philips.com-ca.key client.key pww.artifactory.cdi.philips.com-server.key
+```
 
 ### Check certs
 #### crt
-
-    $ openssl x509 -noout -text -in pww.artifactory.cdi.philips.com-server.crt
+```bash
+$ openssl x509 -noout -text -in pww.artifactory.cdi.philips.com-server.crt
+```
 
 <details><summary>openssl x509 ca.crt</summary>
 <pre><code>$ openssl x509 -noout -text -in pww.artifactory.cdi.philips.com-ca.crt
@@ -505,8 +512,10 @@ Certificate:
 </details>
 
 #### csr
+```bash
+$ openssl req -noout -text -in pww.artifactory.cdi.philips.com-server.csr
+```
 
-    $ openssl req -noout -text -in pww.artifactory.cdi.philips.com-server.csr
 <details><summary>openss req</summary>
 <pre><code>$ openssl req -noout -text -in pww.artifactory.cdi.philips.com-server.csr
 Certificate Request:
@@ -554,32 +563,32 @@ Certificate Request:
          2e:7f:8d:bf:44:29:83:fa:89:b3:b8:3c:13:98:20:76:6c:d3:
          67:ce:03:9e:15:ea:3e:9d:4b:cb:c2:78:ab:57:1d:b7:e8:9e:
          81:1b:b5:1f
-
-
 </code></pre>
 </details>
 
 ## Certificate working with Nginx
-
-    $ grep ssl_certificate /etc/nginx/sites-enabled/artifactory.v2.conf
-    ssl_certificate       /etc/nginx/certs/pww.artifactory.cdi.philips.com/pww.artifactory.cdi.philips.com-server.crt;
-    ssl_certificate_key   /etc/nginx/certs/pww.artifactory.cdi.philips.com/pww.artifactory.cdi.philips.com-server.key;
-
+```bash
+$ grep ssl_certificate /etc/nginx/sites-enabled/artifactory.v2.conf
+ssl_certificate       /etc/nginx/certs/pww.artifactory.cdi.philips.com/pww.artifactory.cdi.philips.com-server.crt;
+ssl_certificate_key   /etc/nginx/certs/pww.artifactory.cdi.philips.com/pww.artifactory.cdi.philips.com-server.key;
+```
 
 ## Certificate working with Client
 ### Add certifactory in MacOS
-
-    $ sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "/Users/marslo/Downloads/pww.artifactory.cdi.philips.com-ca.crt"
+```bash
+$ sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "/Users/marslo/Downloads/pww.artifactory.cdi.philips.com-ca.crt"
+```
 
 ### Find the added cert in MacOS
+```bash
+$ security find-certificate -a -c <artifactory> -Z
+$ security find-certificate -a -c artifactor -Z | grep SHA-1
+SHA-1 hash: 915D019F0993F369C09D75C6B8DA201B8DE2636E
 
-    $ security find-certificate -a -c <artifactory> -Z
-    $ security find-certificate -a -c artifactor -Z | grep SHA-1
-    SHA-1 hash: 915D019F0993F369C09D75C6B8DA201B8DE2636E
-
-    $ security list-keychain
-        "/Users/marslo/Library/Keychains/login.keychain-db"
-        "/Library/Keychains/System.keychain"
+$ security list-keychain
+    "/Users/marslo/Library/Keychains/login.keychain-db"
+    "/Library/Keychains/System.keychain"
+```
 
 <details><summary>Click to check details</summary>
 <pre><code>$ security find-certificate -a -c artifactor -Z
@@ -631,7 +640,9 @@ CGevHC+7SVQbF5WJsy3JXw==
 
 
 ### Remove the cert in MacOS
-    $ sudo security delete-certificate -Z 915D019F0993F369C09D75C6B8DA201B8DE2636E
+```bash
+$ sudo security delete-certificate -Z 915D019F0993F369C09D75C6B8DA201B8DE2636E
+```
 
 ### Others
 <details><summary>Click to check details</summary>
