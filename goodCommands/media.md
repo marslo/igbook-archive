@@ -7,6 +7,7 @@
   - [Convert flv to mp4](#convert-flv-to-mp4)
     - [convert to 5 mins (300 sec)](#convert-to-5-mins-300-sec)
     - [sequence convert (every 5 mins ~> 300 secs)](#sequence-convert-every-5-mins--300-secs)
+  - [Combine video and audio](#combine-video-and-audio)
 - [Image](#image)
   - [Identity an image](#identity-an-image)
   - [Convert HEIC/HEIF to PNG](#convert-heicheif-to-png)
