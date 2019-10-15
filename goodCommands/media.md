@@ -30,17 +30,20 @@ $ ffmpeg -i name.mp4 -ss 0 -t 300 name-5m.mp4
 ```
 #### sequence convert (every 5 mins ~> 300 secs)
 - first 5 mins (0 ~> 300)
-    ```bash
-    $ ffmpeg -i name.mp4 -ss 0 -t 300 name-5m.mp4
-    ```
+
+```bash
+$ ffmpeg -i name.mp4 -ss 0 -t 300 name-5m.mp4
+```
 - second 5 mins (300*1 ~> 300)
-    ```bash
-    $ ffmpeg -i name.mp4 -ss 300 -t 300 name-5m.mp4
-    ```
+
+```bash
+$ ffmpeg -i name.mp4 -ss 300 -t 300 name-5m.mp4
+```
 - third 5 mins (300*2 ~> 300)
-    ```bash
-    $ ffmpeg -i name.mp4 -ss 600 -t 300 name-5m.mp4
-    ```
+
+```bash
+$ ffmpeg -i name.mp4 -ss 600 -t 300 name-5m.mp4
+```
 
 ### Combine video and audio
 ```bash
