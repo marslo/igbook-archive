@@ -3,27 +3,27 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Show Cal](#show-cal)
-- [Show some command periodically](#show-some-command-periodically)
+- [files & chars](#files--chars)
+  - [Show all line numbers in a file](#show-all-line-numbers-in-a-file)
+  - [Encrypt bash file](#encrypt-bash-file)
+  - [Get the count of a word in a file](#get-the-count-of-a-word-in-a-file)
 - [Print 50th char](#print-50th-char)
+  - [Get the common part](#get-the-common-part)
+  - [Revert a word](#revert-a-word)
+  - [Format a file to a table](#format-a-file-to-a-table)
+  - [Show last n lines in a file](#show-last-n-lines-in-a-file)
 - [Batch move](#batch-move)
-- [Show all line numbers in a file](#show-all-line-numbers-in-a-file)
 - [Clear](#clear)
-- [Encrypt bash file](#encrypt-bash-file)
 - [Get URL](#get-url)
-- [Get the count of a word in a file](#get-the-count-of-a-word-in-a-file)
 - [Download and unzip](#download-and-unzip)
-- [Get the common part](#get-the-common-part)
-- [Revert a word](#revert-a-word)
 - [Use less as tail -f](#use-less-as-tail--f)
 - [Print a file into one line](#print-a-file-into-one-line)
 - [Rename](#rename)
 - [Get the file inode](#get-the-file-inode)
-- [Format a file to a table](#format-a-file-to-a-table)
 - [Identity an image](#identity-an-image)
 - [Get cookie from firefox](#get-cookie-from-firefox)
 - [Echo 256 colors](#echo-256-colors)
 - [Directory diff](#directory-diff)
-- [Show last n lines in a file](#show-last-n-lines-in-a-file)
 - [All About {Curly Braces} In Bash](#all-about-curly-braces-in-bash)
   - [Fast copy or moving or someting (Detials -> Brace Expansion)](#fast-copy-or-moving-or-someting-detials---brace-expansion)
 - [PWD's secrets](#pwds-secrets)
@@ -31,6 +31,7 @@
 - [Commands](#commands)
   - [List the command beginning with](#list-the-command-beginning-with)
   - [Searching for commands without knowing their exact names](#searching-for-commands-without-knowing-their-exact-names)
+  - [Show some command periodically](#show-some-command-periodically)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -76,24 +77,8 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
                       30
 ```
 
-### Show some command periodically
-
-```bash
-$ whatch --interval 1 ls -alt
-```
-
-### Print 50th char
-```bash
-$ awk 'BEGIN{while (a++<50) s=s "-"; print s}'
---------------------------------------------------
-```
-
-### Batch move
-```bash
-$ mkdir backup-folder && ls | grep -Ze ".*rar" | xargs -d '\n' -I {} mv {} backup-folder
-```
-
-### Show all line numbers in a file
+### files & chars
+#### Show all line numbers in a file
     - Method 1
         ```bash
         $ sudo cat /etc/passwd | wc -l
@@ -103,26 +88,13 @@ $ mkdir backup-folder && ls | grep -Ze ".*rar" | xargs -d '\n' -I {} mv {} backu
         36
         ```
 
-### Clear
-
-```bash
-$ printf "\ec"
-```
-
-### Encrypt bash file
+#### Encrypt bash file
 
 ```bash
 $ echo "ls" > script.bash; gpg -c script.bash; cat script.bash.gpg | gpg -d --no-mdc-warning | bash
 ```
 
-### Get URL
-
-```bash
-$ echo http://www.baidu.com | awk '{for(i=1;i<=NF;i++){if($i~/^(http|ftp):\/\//)print $i}}'
-http://www.baidu.com
-```
-
-### Get the count of a word in a file
+#### Get the count of a word in a file
 ```bash
 $ cat /etc/passwd | grep marslo -o | wc -l
 3
@@ -130,12 +102,13 @@ $ cat /etc/passwd | grep marslo -o | wc -l
 $ find . -name file.txt | xargs -e grep "token" -o | wc -l
 ```
 
-### Download and unzip
+### Print 50th char
 ```bash
-$ wget -O - http://example.com/a.gz | tar xz
+$ awk 'BEGIN{while (a++<50) s=s "-"; print s}'
+--------------------------------------------------
 ```
 
-### Get the common part
+#### Get the common part
 ```bash
 $ cat a.txt
 1
@@ -152,11 +125,59 @@ $ cat common
 3
 ```
 
-### Revert a word
+#### Revert a word
 
 ```bash
 $ echo linux | rev
 xunil
+```
+
+#### Format a file to a table
+
+```bash
+$ cat a_b
+1:1
+2:2
+3:3
+$ column -tns: a_b
+1  1
+2  2
+3  3
+```
+
+#### Show last n lines in a file
+
+```bash
+$ tail /etc/passwd -n 3
+saned:x:115:123::/home/saned:/bin/false
+marslo:x:1000:1000:Marslo,,,:/home/marslo:/bin/bash
+mysql:x:1001:1001::/home/mysql:/bin/sh
+$ tail /etc/passwd -n 2
+marslo:x:1000:1000:Marslo,,,:/home/marslo:/bin/bash
+mysql:x:1001:1001::/home/mysql:/bin/sh
+```
+
+### Batch move
+```bash
+$ mkdir backup-folder && ls | grep -Ze ".*rar" | xargs -d '\n' -I {} mv {} backup-folder
+```
+
+### Clear
+
+```bash
+$ printf "\ec"
+```
+
+### Get URL
+
+```bash
+$ echo http://www.baidu.com | awk '{for(i=1;i<=NF;i++){if($i~/^(http|ftp):\/\//)print $i}}'
+http://www.baidu.com
+```
+
+### Download and unzip
+```bash
+$ wget -O - http://example.com/a.gz | tar xz
 ```
 
 ### Use less as tail -f
@@ -197,19 +218,6 @@ $ l -i a_b
 10224132 -rw-r--r-- 1 marslo marslo 10 Feb 21 00:43 a_b
 ```
 
-### Format a file to a table
-
-```bash
-$ cat a_b
-1:1
-2:2
-3:3
-$ column -tns: a_b
-1  1
-2  2
-3  3
-```
-
 ### Identity an image
 
 ```bash
@@ -235,18 +243,6 @@ $ yes "$(seq 1 255)" | while read i; do printf "\x1b[48;5;${i}m\n"; sleep .01; d
 
 ```bash
 diff --suppress-common-lines -y <(cd path_to_dir1; find .|sort) <(cd path_to_dir2; find .|sort)
-```
-
-### Show last n lines in a file
-
-```bash
-$ tail /etc/passwd -n 3
-saned:x:115:123::/home/saned:/bin/false
-marslo:x:1000:1000:Marslo,,,:/home/marslo:/bin/bash
-mysql:x:1001:1001::/home/mysql:/bin/sh
-$ tail /etc/passwd -n 2
-marslo:x:1000:1000:Marslo,,,:/home/marslo:/bin/bash
-mysql:x:1001:1001::/home/mysql:/bin/sh
 ```
 
 ### [All About {Curly Braces} In Bash](https://www.linux.com/tutorials/all-about-curly-braces-bash/)
@@ -349,7 +345,6 @@ efg
 ```
 
 ### Commands
-
 #### List the command beginning with
 
 ```bash
@@ -388,5 +383,11 @@ editor (1)           - Nano's ANOther editor, an enhanced free Pico clone
 editres (1)          - a dynamic resource editor for X Toolkit applications
 ex (1)               - Vi IMproved, a programmers text editor
 gedit (1)            - text editor for the GNOME Desktop
+```
+
+#### Show some command periodically
+
+```bash
+$ whatch --interval 1 ls -alt
 ```
 
