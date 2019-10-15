@@ -3,56 +3,56 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Preconfig](#preconfig)
-    - [Setup dependencies](#setup-dependencies)
-    - [Setup account](#setup-account)
-    - [Setup MOTD](#setup-motd)
-    - [Get subnet ip address](#get-subnet-ip-address)
-    - [Get Public Ip address](#get-public-ip-address)
+  - [Setup dependencies](#setup-dependencies)
+  - [Setup account](#setup-account)
+  - [Setup MOTD](#setup-motd)
+  - [Get subnet ip address](#get-subnet-ip-address)
+  - [Get Public Ip address](#get-public-ip-address)
 - [Applications](#applications)
-    - [ShadowSocks Server](#shadowsocks-server)
-        - [Start](#start)
-    - [ShadowSocks Client](#shadowsocks-client)
-        - [Ubuntu](#ubuntu)
-    - [Backup terminal configurations](#backup-terminal-configurations)
-    - [Nginx](#nginx)
-        - [Installation](#installation)
-        - [Configuration](#configuration)
-    - [VNCServer](#vncserver)
-        - [Installation](#installation-1)
+  - [ShadowSocks Server](#shadowsocks-server)
+    - [Start](#start)
+  - [ShadowSocks Client](#shadowsocks-client)
+    - [Ubuntu](#ubuntu)
+  - [Backup terminal configurations](#backup-terminal-configurations)
+  - [Nginx](#nginx)
+    - [Installation](#installation)
+    - [Configuration](#configuration)
+  - [VNCServer](#vncserver)
+    - [Installation](#installation-1)
 - [SSL Cert](#ssl-cert)
-    - [Create Cert for server](#create-cert-for-server)
-        - [CA (root cert)](#ca-root-cert)
-        - [Cert for Server](#cert-for-server)
-        - [Sign the server cert with CA](#sign-the-server-cert-with-ca)
-        - [Create client cert and signed by CA](#create-client-cert-and-signed-by-ca)
-        - [Update the file perm](#update-the-file-perm)
-        - [Check certs](#check-certs)
-            - [crt](#crt)
-            - [csr](#csr)
-    - [Certificate working with Nginx](#certificate-working-with-nginx)
-    - [Certificate working with Client](#certificate-working-with-client)
-        - [Add certifactory in MacOS](#add-certifactory-in-macos)
-        - [Find the added cert in MacOS](#find-the-added-cert-in-macos)
-        - [Remove the cert in MacOS](#remove-the-cert-in-macos)
-        - [Others](#others)
-    - [If you enter '.', the field will be left blank.](#if-you-enter-the-field-will-be-left-blank)
+  - [Create Cert for server](#create-cert-for-server)
+    - [CA (root cert)](#ca-root-cert)
+    - [Cert for Server](#cert-for-server)
+    - [Sign the server cert with CA](#sign-the-server-cert-with-ca)
+    - [Create client cert and signed by CA](#create-client-cert-and-signed-by-ca)
+    - [Update the file perm](#update-the-file-perm)
+    - [Check certs](#check-certs)
+      - [crt](#crt)
+      - [csr](#csr)
+  - [Certificate working with Nginx](#certificate-working-with-nginx)
+  - [Certificate working with Client](#certificate-working-with-client)
+    - [Add certifactory in MacOS](#add-certifactory-in-macos)
+    - [Find the added cert in MacOS](#find-the-added-cert-in-macos)
+    - [Remove the cert in MacOS](#remove-the-cert-in-macos)
+    - [Others](#others)
+  - [If you enter '.', the field will be left blank.](#if-you-enter--the-field-will-be-left-blank)
 - [Artifactory HTTPS](#artifactory-https)
-    - [General SSL certs](#general-ssl-certs)
-    - [If you enter '.', the field will be left blank.](#if-you-enter-the-field-will-be-left-blank-1)
-    - [If you enter '.', the field will be left blank.](#if-you-enter-the-field-will-be-left-blank-2)
+  - [General SSL certs](#general-ssl-certs)
+  - [If you enter '.', the field will be left blank.](#if-you-enter--the-field-will-be-left-blank-1)
+  - [If you enter '.', the field will be left blank.](#if-you-enter--the-field-will-be-left-blank-2)
 - [Artifactory Repo](#artifactory-repo)
-    - [Add insecure-regiestry](#add-insecure-regiestry)
-    - [docker login & logout](#docker-login-&-logout)
-    - [docker pull](#docker-pull)
-    - [docker push](#docker-push)
+  - [Add insecure-regiestry](#add-insecure-regiestry)
+  - [docker login & logout](#docker-login--logout)
+  - [docker pull](#docker-pull)
+  - [docker push](#docker-push)
 - [X Windows](#x-windows)
-    - [Check Screen Solution](#check-screen-solution)
-    - [Desktop Sharing](#desktop-sharing)
-        - [Enable Desktop Sharing](#enable-desktop-sharing)
-        - [Start Server](#start-server)
-        - [Reset vnc password](#reset-vnc-password)
-        - [Wayland known error](#wayland-known-error)
-        - [Check using Wayland or Xorg](#check-using-wayland-or-xorg)
+  - [Check Screen Solution](#check-screen-solution)
+  - [Desktop Sharing](#desktop-sharing)
+    - [Enable Desktop Sharing](#enable-desktop-sharing)
+    - [Start Server](#start-server)
+    - [Reset vnc password](#reset-vnc-password)
+    - [Wayland known error](#wayland-known-error)
+    - [Check using Wayland or Xorg](#check-using-wayland-or-xorg)
 - [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -966,113 +966,122 @@ Certificate:
 
 # Artifactory Repo
 ## Add insecure-regiestry
+```bash
+$ cat ~/.docker/daemon.json
+{
+  "debug" : true,
+  "experimental" : true,
+  "insecure-registries" : ["pww.artifactory.cdi.philips.com", "pww.artifactory.cdi.philips.com:2500", "pww.artifactory.cdi.philips.com:2501", "docker-1.artifactory", "docker-1.artifactory:443"]
+}
 
-    $ cat ~/.docker/daemon.json
-    {
-      "debug" : true,
-      "experimental" : true,
-      "insecure-registries" : ["pww.artifactory.cdi.philips.com", "pww.artifactory.cdi.philips.com:2500", "pww.artifactory.cdi.philips.com:2501", "docker-1.artifactory", "docker-1.artifactory:443"]
-    }
-
-    $ sudo systemctl daemon-reload
-    $ sudo systemctl restart docker
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
+```
 
 ## docker login & logout
+```bash
+$ docker --debug -l debug login --username admin  https://docker-1.artifactory
+Password:
+Login Succeeded
 
-    $ docker --debug -l debug login --username admin  https://docker-1.artifactory
-    Password:
-    Login Succeeded
-
-    $ docker --debug -l debug logout docker-1.artifactory
-    Removing login credentials for docker-1.artifactory
+$ docker --debug -l debug logout docker-1.artifactory
+Removing login credentials for docker-1.artifactory
+```
 
 ## docker pull
-
-    $ docker pull docker-1.artifactory/nginx:latest
-    latest: Pulling from nginx
-    e7bb522d92ff: Pull complete
-    0f4d7753723e: Pulling fs layer
-    91470a14d63f: Download complete
-    0f4d7753723e: Pull complete
-    91470a14d63f: Pull complete
-    Digest: sha256:3eff18554e47c4177a09cea5d460526cbb4d3aff9fd1917d7b1372da1539694a
-    Status: Downloaded newer image for docker-1.artifactory/nginx:latest
+```bash
+$ docker pull docker-1.artifactory/nginx:latest
+latest: Pulling from nginx
+e7bb522d92ff: Pull complete
+0f4d7753723e: Pulling fs layer
+91470a14d63f: Download complete
+0f4d7753723e: Pull complete
+91470a14d63f: Pull complete
+Digest: sha256:3eff18554e47c4177a09cea5d460526cbb4d3aff9fd1917d7b1372da1539694a
+Status: Downloaded newer image for docker-1.artifactory/nginx:latest
+```
 
 ## docker push
-
-    $ docker pull hello-world
-    $ docker tag hello-world docker-1.artifactory/bello-marslo:2.0
-    $ docker login --username admin docker-1.artifactory
-    $ docker push docker-1.artifactory/bello-marslo:2.0
-
+```bash
+$ docker pull hello-world
+$ docker tag hello-world docker-1.artifactory/bello-marslo:2.0
+$ docker login --username admin docker-1.artifactory
+$ docker push docker-1.artifactory/bello-marslo:2.0
+```
 
 # X Windows
 ## Check Screen Solution
-
-    $ xrandr --verbose
-    Screen 0: minimum 320 x 200, current 1920 x 1080, maximum 8192 x 8192
-    XWAYLAND0 connected 1920x1080+0+0 (0x22) normal (normal left inverted right x axis y axis) 480mm x 270mm
-        Identifier: 0x21
-        Timestamp:  3807
-        Subpixel:   unknown
-        Gamma:      1.0:1.0:1.0
-        Brightness: 0.0
-        Clones:
-        CRTC:       0
-        CRTCs:      0
-        Transform:  1.000000 0.000000 0.000000
-                    0.000000 1.000000 0.000000
-                    0.000000 0.000000 1.000000
-                   filter:
-      1920x1080 (0x22) 173.000MHz -HSync +VSync *current +preferred
-            h: width  1920 start 2048 end 2248 total 2576 skew    0 clock  67.16KHz
-            v: height 1080 start 1083 end 1088 total 1120           clock  59.96Hz
-
+```bash
+$ xrandr --verbose
+Screen 0: minimum 320 x 200, current 1920 x 1080, maximum 8192 x 8192
+XWAYLAND0 connected 1920x1080+0+0 (0x22) normal (normal left inverted right x axis y axis) 480mm x 270mm
+    Identifier: 0x21
+    Timestamp:  3807
+    Subpixel:   unknown
+    Gamma:      1.0:1.0:1.0
+    Brightness: 0.0
+    Clones:
+    CRTC:       0
+    CRTCs:      0
+    Transform:  1.000000 0.000000 0.000000
+                0.000000 1.000000 0.000000
+                0.000000 0.000000 1.000000
+               filter:
+  1920x1080 (0x22) 173.000MHz -HSync +VSync *current +preferred
+        h: width  1920 start 2048 end 2248 total 2576 skew    0 clock  67.16KHz
+        v: height 1080 start 1083 end 1088 total 1120           clock  59.96Hz
+```
 
 ## Desktop Sharing
 ### Enable Desktop Sharing
-
-    #!/bin/bash
-    export DISPLAY=:0
-    read -e -p "VNC Password: " -i "ubuntu" password
-    dconf write /org/gnome/desktop/remote-access/enabled true
-    dconf write /org/gnome/desktop/remote-access/prompt-enabled false
-    dconf write /org/gnome/desktop/remote-access/authentication-methods "['vnc']"
-    dconf write /org/gnome/desktop/remote-access/require-encryption false08/03/2018
-    dconf write /org/gnome/desktop/remote-access/vnc-password \"\'$(echo -n $password | base64)\'\"
-    dconf dump /org/gnome/desktop/remote-access/
-    # sudo service lightdm restart
+```bash
+#!/bin/bash
+export DISPLAY=:0
+read -e -p "VNC Password: " -i "ubuntu" password
+dconf write /org/gnome/desktop/remote-access/enabled true
+dconf write /org/gnome/desktop/remote-access/prompt-enabled false
+dconf write /org/gnome/desktop/remote-access/authentication-methods "['vnc']"
+dconf write /org/gnome/desktop/remote-access/require-encryption false08/03/2018
+dconf write /org/gnome/desktop/remote-access/vnc-password \"\'$(echo -n $password | base64)\'\"
+dconf dump /org/gnome/desktop/remote-access/
+# sudo service lightdm restart
+```
 
 OR
-
-    $ vino-preference
-    $ dconf-editor
+```bash
+$ vino-preference
+$ dconf-editor
+```
 
 ### Start Server
-
-    $ export DISPLAY=:0
-    $ /usr/lib/vino/vino-server --display=:0 &
+```bash
+$ export DISPLAY=:0
+$ /usr/lib/vino/vino-server --display=:0 &
+```
 
 ### [Reset vnc password](https://access.redhat.com/solutions/346033)
-
-    $ echo -n 'awesome' | base64
-    $ gconftool-2 -s -t string /desktop/gnome/remote_access/vnc_password $(echo -n "<YOURPASSWORD>" | base64)
-    $ gconftool-2 --type string --set /desktop/gnome/remote_acess/vnc_password '123456'
+```bash
+$ echo -n 'awesome' | base64
+$ gconftool-2 -s -t string /desktop/gnome/remote_access/vnc_password $(echo -n "<YOURPASSWORD>" | base64)
+$ gconftool-2 --type string --set /desktop/gnome/remote_acess/vnc_password '123456'
+```
 
 ### [Wayland known error](https://askubuntu.com/a/967538)
-
-    cat <<EOF | sudo tee /etc/xdg/autostart/xhost.desktop
-    [Desktop Entry]
-    Name=xhost
-    Comment=Fix graphical root applications
-    Exec="xhost +si:localuser:root"
-    Terminal=false
-    Type=Application
-    EOF
+```bash
+cat <<EOF | sudo tee /etc/xdg/autostart/xhost.desktop
+[Desktop Entry]
+Name=xhost
+Comment=Fix graphical root applications
+Exec="xhost +si:localuser:root"
+Terminal=false
+Type=Application
+EOF
+```
 
 ### Check using Wayland or Xorg
-
-    $ echo $XDG_SESSION_TYPE
+```bash
+$ echo $XDG_SESSION_TYPE
+```
 
 - Ubuntu: Wayland (Wayland)
 - Ubuntu on Xorg: Xorg (X11)
