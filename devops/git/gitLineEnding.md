@@ -12,14 +12,23 @@
 ```bash
 $ git config --global core.autocrlf true
 ```
+    - Text files checked-out from the repository that have only `LF` characters are normalized to CRLF in your working tree; files that contain `CRLF` in the repository will not be touched
+    - Text files that have only `LF` characters in the repository, are normalized from CRLF to LF when committed back to the repository. Files that contain CRLF in the repository will be committed untouched.
+
 - Checkout as-is, commit Unix-Style line endings:
 ```bash
 $ git config --global core.autocrlf input
 ```
+    - Text files checked-out from the repository will keep original `EOL` characters in your working tree.
+    - Text files in your working tree with `CRLF `characters are normalized to `LF` when committed back to the repository.
+
 - Checkout as-is, commit as-is:
 ```bash
 $ git config --global core.autocrlf false
 ```
+    - `core.eol` dictates `EOL` characters in the text files of your working tree.
+    - `core.eol = native` by default, which means Windows `EOLs` are `CRLF` and *nix `EOLs` are `LF` in working trees.
+    - Repository gitattributes settings determines `EOL` character normalization for commits to the repository (default is normalization to `LF` characters).
 
 ### [please notice](https://git-scm.com/docs/gitattributes#gitattributes-Settostringvalueauto)
 > `eol`
