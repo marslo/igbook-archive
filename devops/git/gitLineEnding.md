@@ -6,6 +6,17 @@
 |   git commit  | `lf > lf` <br>`cr > cr` <br> `crlf > crlf` |  `lf > lf` <br> `cr > cr` <br> `crlf > lf`  |  `lf > lf` <br> `cr > cr` <br> `crlf > lf`  |
 |  git checkout | `lf > lf` <br>`cr > cr` <br> `crlf > crlf` | `lf > lf` <br> `cr > cr` <br> `crlf > crlf` | `lf > lf` <br> `cr > cr` <br> `crlf > crlf` |
 
+[normally, it will looks like](https://stackoverflow.com/a/20653073/2940319)
+```bash
+core.autocrlf=true:      core.autocrlf=input:     core.autocrlf=false:
+
+        repo                     repo                     repo
+      ^      V                 ^      V                 ^      V
+     /        \               /        \               /        \
+crlf->lf    lf->crlf     crlf->lf       \             /          \
+   /            \           /            \           /            \
+```
+
 #### set in GUI
 ![git line ending setup](../../screenshot/git-eol.png)
 - checkout Windows-style, commit Unix-style line endings:
