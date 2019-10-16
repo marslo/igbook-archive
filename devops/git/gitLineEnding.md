@@ -1,5 +1,6 @@
 ### core.autocrlf
 
+#### [parameters](https://stackoverflow.com/a/41282375/2940319)
 | core.autocrlf |                    false                   |                    input                    |                     true                    |
 |:-------------:|:------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 |   git commit  | `lf > lf` <br>`cr > cr` <br> `crlf > crlf` |  `lf > lf` <br> `cr > cr` <br> `crlf > lf`  |  `lf > lf` <br> `cr > cr` <br> `crlf > lf`  |
@@ -22,4 +23,5 @@ $ git config --global core.autocrlf false
 
 ### [please notice](https://git-scm.com/docs/gitattributes#gitattributes-Settostringvalueauto)
 > eol
+>
 > This attribute sets a specific line-ending style to be used in the working directory. It enables end-of-line conversion without any content checks, effectively setting the text attribute. Note that setting this attribute on paths which are in the index with CRLF line endings may make the paths to be considered dirty. Adding the path to the index again will normalize the line endings in the index.
