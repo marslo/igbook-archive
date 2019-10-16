@@ -2,18 +2,14 @@ life is hard, make it easier
 =======
 
 ## Git Command Study and Practice
-- [Appoint](programming/git/gitStudy.md#appoint)
-    - [Git Aliases](programming/git/gitStudy.md#git-alias)
-    - [.marslorc](programming/git/gitStudy.md##marslorc)
+- [Appoint](devops/git/gitStudy.md#appoint)
+    - [Git Aliases](devops/git/gitStudy.md#git-alias)
+    - [.marslorc](devops/git/gitStudy.md##marslorc)
 
-- [Rebase](programming/git/gitStudy.md#rebase)
-    - [Without Confilite file](programming/git/gitStudy.md#without-confilite-file)
-        - [Precondition](programming/git/gitStudy.md#precondiction)
-        - [Merge with rebase](programming/git/gitStudy.md#merge-with-rebase)
-    - [With Confilite file](programming/git/gitStudy.md#with-confilite-file)
-        - [Precondicition](programming/git/gitStudy.md#precondiction-1)
-        - [Merge by rebase](programming/git/gitStudy.md#merge-by-rebase)
-        - [Return to master branch](programming/git/gitStudy.md#return-to-master-branch)
+- [Rebase](devops/git/gitStudy.md#rebase)
+    - [Without Confilite file](devops/git/gitStudy.md#without-confilite-file)
+    - [With Confilite file](devops/git/gitStudy.md#with-confilite-file)
+- [Line Ending](devops/git/gitLineEnding.md)
 
 ## INSTALL MYSQL FROM SOURCE CODE
 - [Usefull Links](programming/mysql/mysqlInstallationBySourceCode.md#usefull-links)

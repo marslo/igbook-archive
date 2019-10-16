@@ -9,6 +9,10 @@
     * [network](devops/network.md)
     * [osx](devops/osx.md)
     * [ssh](devops/ssh.md)
+    * git
+        * [q&a](devops/git/gitQ&A.md)
+        * [study](devops/git/gitStudy.md)
+        * [line-ending](devops/git/gitLineEnding.md)
 
 * goodCommands
     * [funny](goodCommands/funny.md)
@@ -26,9 +30,6 @@
     * [command](programming/programCommand.md)
     * angular
         * [configuration](programming/angular/angularConfiguraion.md)
-    * git
-        * [q&a](programming/git/gitQ&A.md)
-        * [study](programming/git/gitStudy.md)
     * mysql
         * [cmake logs](programming/mysql/mysqlCmakeLogs.md)
         * [mysql install DB](programming/mysql/mysqlInstallDB.md)
