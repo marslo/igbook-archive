@@ -19,3 +19,7 @@ $ git config --global core.autocrlf input
 ```bash
 $ git config --global core.autocrlf false
 ```
+
+### [please notice](https://git-scm.com/docs/gitattributes#gitattributes-Settostringvalueauto)
+> eol
+> This attribute sets a specific line-ending style to be used in the working directory. It enables end-of-line conversion without any content checks, effectively setting the text attribute. Note that setting this attribute on paths which are in the index with CRLF line endings may make the paths to be considered dirty. Adding the path to the index again will normalize the line endings in the index.
