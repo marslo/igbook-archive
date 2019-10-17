@@ -106,13 +106,16 @@ $ k -n ingress-nginx get secrets my-certs -o yaml --export | k apply -n devops -
 
 ### token
 #### check token
+
 ```bash
 $ sudo kubeadm token list
 TOKEN                     TTL         EXPIRES                     USAGES                   DESCRIPTION   EXTRA GROUPS
 bop765.brol9nsrw820gmbi   <forever>   <never>                     authentication,signing   <none>        system:bootstrappers:kubeadm:default-node-token
 khhfwa.jvkvrpiknx4o6ffy   19h         2018-07-13T11:37:43+08:00   authentication,signing   <none>        system:bootstrappers:kubeadm:default-node-token
 ```
+
 #### generate token
+
 ```bash
 $ sudo kubeadm token create --print-join-command
 kubeadm join 192.168.1.100:6443 --token lhb1ln.oj0fqwgd1yl7l9xp --discovery-token-ca-cert-hash sha256:cba8df87dcb70c83c19af72c02e4886fcc7b0cf05319084751e6ece688443bde

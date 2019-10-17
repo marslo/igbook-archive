@@ -101,7 +101,7 @@ $ cat /etc/passwd | grep marslo -o | wc -l
 $ find . -name file.txt | xargs -e grep "token" -o | wc -l
 ```
 
-### Print 50th char
+#### Print 50th char
 ```bash
 $ awk 'BEGIN{while (a++<50) s=s "-"; print s}'
 --------------------------------------------------

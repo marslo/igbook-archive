@@ -5,10 +5,8 @@ Git Command Study and practice
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Git Command Study and practice](#git-command-study-and-practice)
-  - [Content](#content)
-  - [Appoint](#appoint)
-  - [Rebase](#rebase)
+- [Appoint](#appoint)
+- [Rebase](#rebase)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
