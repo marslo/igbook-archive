@@ -11,3 +11,93 @@ interface=$(ip route get $(nslookup github.com | grep Server | awk -F' ' '{print
 ipAddr=$(ip a s "${interface}" | sed -rn 's|.*inet ([0-9\.]{7,15})/[0-9]{2} brd.*$|\1|p')
 ```
 
+### findout commands from
+```bash
+$ type which
+which is aliased to `alias | which -a --tty-only --read-alias --show-dot --show-tilde'
+
+$ type bello
+bello is a function
+bello ()
+{
+    source "${iRCHOME}/.imac"
+}
+```
+
+### Get all google website
+```bash
+$ whois www.google.com
+
+Whois Server Version 2.0
+
+Domain names in the .com and .net domains can now be registered
+with many different competing registrars. Go to http://www.internic.net
+for detailed information.
+
+  Server Name: WWW.GOOGLE.COM.VN
+  Registrar: ENOM, INC.
+  Whois Server: whois.enom.com
+  Referral URL: http://www.enom.com
+
+  Server Name: WWW.GOOGLE.COM.TW
+  Registrar: ENOM, INC.
+  Whois Server: whois.enom.com
+  Referral URL: http://www.enom.com
+
+  Server Name: WWW.GOOGLE.COM.TR
+  Registrar: TUCOWS DOMAINS INC.
+  Whois Server: whois.tucows.com
+  Referral URL: http://domainhelp.opensrs.net
+
+  Server Name: WWW.GOOGLE.COM.SA
+  Registrar: OMNIS NETWORK, LLC
+  Whois Server: whois.omnis.com
+  Referral URL: http://domains.omnis.com
+
+  Server Name: WWW.GOOGLE.COM.PK
+  Registrar: INTERNET.BS CORP.
+  Whois Server: whois.internet.bs
+  Referral URL: http://www.internet.bs
+
+  Server Name: WWW.GOOGLE.COM.PE
+  Registrar: HOSTOPIA.COM INC. D/B/A APLUS.NET
+  Whois Server: whois.names4ever.com
+  Referral URL: http://www.aplus.net
+
+  Server Name: WWW.GOOGLE.COM.MX
+  Registrar: ENOM, INC.
+  Whois Server: whois.enom.com
+  Referral URL: http://www.enom.com
+
+  Server Name: WWW.GOOGLE.COM.HK
+  Registrar: GKG.NET, INC.
+  Whois Server: whois.gkg.net
+  Referral URL: http://www.gkg.net
+
+  Server Name: WWW.GOOGLE.COM.DO
+  Registrar: ENOM, INC.
+  Whois Server: whois.enom.com
+  Referral URL: http://www.enom.com
+
+  Server Name: WWW.GOOGLE.COM.CO
+  Registrar: ENOM, INC.
+  Whois Server: whois.enom.com
+  Referral URL: http://www.enom.com
+
+  Server Name: WWW.GOOGLE.COM.BR
+  Registrar: ENOM, INC.
+  Whois Server: whois.enom.com
+  Referral URL: http://www.enom.com
+
+  Server Name: WWW.GOOGLE.COM.AU
+  Registrar: MELBOURNE IT, LTD. D/B/A INTERNET NAMES WORLDWIDE
+  Whois Server: whois.melbourneit.com
+  Referral URL: http://www.melbourneit.com
+
+  Server Name: WWW.GOOGLE.COM.AR
+  Registrar: ENOM, INC.
+  Whois Server: whois.enom.com
+  Referral URL: http://www.enom.com
+
+>>> Last update of whois database: Mon, 24 Feb 2014 17:24:05 UTC <<<
+```
