@@ -29,7 +29,12 @@
 
 
 ### system info
-#### show path:
+#### get hardware uuid
+```bash
+$ sudo dmidecode | grep -i uuid | awk '{print $2}' | tr '[:upper:]' '[:lower:]'
+```
+
+#### show PATH
 ```bash
 $ echo src::${PATH} | awk 'BEGIN{pwd=ENVIRON["PWD"];RS=":";FS="\n"}!$1{$1=pwd}$1!~/^\//{$1=pwd"/"$1}{print $1}'
 /home/marslo/src
