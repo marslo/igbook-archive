@@ -1,4 +1,4 @@
-### kubectl alias
+### [kubectl alias](https://learnk8s.io/blog/kubectl-productivity/)
 #### `__start_kubectl`
 ```bash
 echo 'source <(kubectl completion bash)' >> ~/.bashrc
