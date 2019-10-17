@@ -1,14 +1,13 @@
 # I, marslo
 
-- cmd
-  * [cheatsheet](cmd/cheatsheet.md)
-  * [funny](cmd/funny.md)
-  * [good](cmd/good.md)
-  * [linuxBasic](cmd/linuxBasic.md)
-  * [media](cmd/media.md)
-  * [system](cmd/system.md)
-  * [ubuntu](cmd/ubuntu.md)
-  * [windows](cmd/windows.md)
+- [cheatsheet](cheatsheet/cheatsheet.md)
+  * [funny](cheatsheet/funny.md)
+  * [good](cheatsheet/good.md)
+  * [linuxBasic](cheatsheet/linuxBasic.md)
+  * [media](cheatsheet/media.md)
+  * [system](cheatsheet/system.md)
+  * [ubuntu](cheatsheet/ubuntu.md)
+  * [windows](cheatsheet/windows.md)
 - devops
   - git
     * [gitLineEnding](devops/git/gitLineEnding.md)

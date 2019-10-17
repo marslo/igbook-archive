@@ -253,3 +253,48 @@ $ pkill -KILL -u ${useranme}
 ```bash
 $ date --set="$(ssh [username]@[sshserver] date)"
 ```
+
+### disable firewall
+```bash
+$ sudo systemctl stop firewalld
+$ sudo systemctl disable firewalld
+$ sudo systemctl mask firewalld
+```
+
+- check result
+```bash
+$ sudo systemctl is-enabled firewalld
+$ sudo systemctl is-active firewalld
+$ sudo firewall-cmd --state
+```
+
+### change net.bridge
+```bash
+$ sudo modprobe br_netfilter
+$ sudo sysctl net.bridge.bridge-nf-call-iptables=1
+$ sudo sysctl net.bridge.bridge-nf-call-ip6tables=1
+
+# OR
+
+$ sudo bash -c "cat >  /etc/sysctl.d/k8s.conf" << EOF
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+```
+- check status
+```bash
+$ sudo sysctl --system
+```
+
+### off swap
+
+```bash
+$ sudo swapoff -a
+$ sudo bash -c "/usr/bin/sed -e 's:^\\(.*swap.*\\)$:# \\1:' -i /etc/fstab"
+```
+
+### disable selinux
+```bash
+$ setenforce 0
+$ sudo bash -c "/usr/bin/sed 's/^SELINUX=enforcing$/SELINUX=permissive/' -i /etc/selinux/config"
+```
