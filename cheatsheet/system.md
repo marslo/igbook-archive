@@ -147,7 +147,7 @@ On-line CPU(s) list:   0-3
 
 ### process
 
-### find the zombie process
+#### find the zombie process
 ```bash
 $ ps aux | awk '{ print $8 " " $2 " " $11}' | grep -w Z
 ```
