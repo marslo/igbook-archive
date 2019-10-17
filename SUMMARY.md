@@ -14,14 +14,14 @@
         * [study](devops/git/gitStudy.md)
         * [line-ending](devops/git/gitLineEnding.md)
 
-* goodCommands
-    * [funny](goodCommands/funny.md)
-    * [good](goodCommands/good.md)
-    * [linux basic](goodCommands/linuxBasic.md)
-    * [media](goodCommands/media.md)
-    * [system](goodCommands/system.md)
-    * [ubuntu](goodCommands/ubuntu.md)
-    * [windows](goodCommands/windows.md)
+* command lines
+    * [funny](cmd/funny.md)
+    * [good](cmd/good.md)
+    * [linux basic](cmd/linuxBasic.md)
+    * [media](cmd/media.md)
+    * [system](cmd/system.md)
+    * [ubuntu](cmd/ubuntu.md)
+    * [windows](cmd/windows.md)
 
 * jenkins
     * [configuration](jenkins/configuration.md)
@@ -39,9 +39,9 @@
         * [install from source code](programming/ruby/rubyInstallationBySourceCode.md)
         * [q&a](programming/ruby/rubyInstallationQ&A.md)
 
-* tools
-    * [skype](tools/skype.md)
-    * [teamviewer](tools/teamviewer.md)
+* tool
+    * [skype](tool/skype.md)
+    * [teamviewer](tool/teamviewer.md)
 
 * ubuntu
     * [apps](ubuntu/apps.md)
