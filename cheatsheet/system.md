@@ -3,7 +3,8 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [system info](#system-info)
-  - [show path:](#show-path)
+  - [get hardware uuid](#get-hardware-uuid)
+  - [show PATH](#show-path)
   - [clear duplicated PATH](#clear-duplicated-path)
   - [set DNS for ubuntu](#set-dns-for-ubuntu)
   - [disable firewall](#disable-firewall)
