@@ -1,12 +1,13 @@
 # I, marslo
 
-- [cheatsheet](cheatsheet/cheatsheet.md)
-  * [funny](cheatsheet/funny.md)
+- cheatsheet
   * [good](cheatsheet/good.md)
+  * [havefun](cheatsheet/havefun.md)
   * [linuxBasic](cheatsheet/linuxBasic.md)
   * [media](cheatsheet/media.md)
   * [system](cheatsheet/system.md)
   * [ubuntu](cheatsheet/ubuntu.md)
+  * [utils](cheatsheet/utils.md)
   * [windows](cheatsheet/windows.md)
 - devops
   - git
