@@ -8,6 +8,7 @@
   - [Scp Multipule Folder/File to Target Server](#scp-multipule-folderfile-to-target-server)
 - [CentOS](#centos)
   - [Yum](#yum)
+- [Utils](#utils)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -143,11 +144,11 @@ $ sudo sysctl --system
 
 ```bash
 $ sudo swapoff -a
-$ sudo bash -c "${SED} -e 's:^\\(.*swap.*\\)$:# \\1:' -i /etc/fstab"
+$ sudo bash -c "/usr/bin/sed -e 's:^\\(.*swap.*\\)$:# \\1:' -i /etc/fstab"
 ```
 
 ### disable selinux
 ```bash
 $ setenforce 0
-$ sudo bash -c "${SED} 's/^SELINUX=enforcing$/SELINUX=permissive/' -i /etc/selinux/config"
+$ sudo bash -c "/usr/bin/sed 's/^SELINUX=enforcing$/SELINUX=permissive/' -i /etc/selinux/config"
 ```
