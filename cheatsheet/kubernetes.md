@@ -42,6 +42,7 @@ $ k -n devops set image deployments/devops-jenkins devops-jenkins=jenkins/jenkin
 deployment.extensions/devops-jenkins image updated
 ```
 - result
+
 ```bash
 $ k -n devops get pods -w
 NAME                              READY   STATUS    RESTARTS   AGE
@@ -74,5 +75,6 @@ Flag --export has been deprecated, This flag is deprecated and will be removed i
 ```bash
 $ k -n ingress-nginx get secrets my-certs -o yaml --export | k apply -n devops -f -
 ```
+
 - [others](https://github.com/jetstack/cert-manager/issues/494)
 - [Pro-Tip – Copying Kubernetes Secrets Between Namespaces](https://www.revsys.com/tidbits/copying-kubernetes-secrets-between-namespaces/)
