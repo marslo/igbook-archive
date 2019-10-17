@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [core.autocrlf](#coreautocrlf)
+  - [parameters](#parameters)
+  - [set in GUI](#set-in-gui)
+- [please notice](#please-notice)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### core.autocrlf
 
 #### [parameters](https://stackoverflow.com/a/41282375/2940319)

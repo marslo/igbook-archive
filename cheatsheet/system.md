@@ -23,7 +23,6 @@
 - [sogou Pinyin input method](#sogou-pinyin-input-method)
 - [specified terminal size](#specified-terminal-size)
 - [logout](#logout)
-- [Synchronize date and time with a server over ssh (Inspired from commandlinefu.com)](#synchronize-date-and-time-with-a-server-over-ssh-inspired-from-commandlinefucom)
 - [about `whatis`](#about-whatis)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

@@ -5,7 +5,7 @@
 - [openssl.h](#opensslh)
 - [thread_native.h](#thread_nativeh)
 - [sqlite3.h](#sqlite3h)
-- [libyaml-0.so.2 & psych.so](#libyaml-0so2-&-psychso)
+- [libyaml-0.so.2 & psych.so](#libyaml-0so2--psychso)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

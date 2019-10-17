@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [.gitconfig](#gitconfig)
+- [project.config](#projectconfig)
+  - [get project.config](#get-projectconfig)
+  - [publish to remote](#publish-to-remote)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### .gitconfig
 ```bash
 $ git config --global gitreview.username <UserName>
