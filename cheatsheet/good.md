@@ -34,7 +34,8 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-### Show Cal
+### time & date
+#### Show Cal
 
 ```bash
 $ cal -y | tr '\n' '|' | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed 's/./#/g') /$(date +%m | sed s/^0//)" | tr '|' '\n'
@@ -76,6 +77,11 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
                       30
 ```
 
+#### Synchronize date and time with a server over ssh (Inspired from [commandlinefu.com](http://www.commandlinefu.com/commands/view/9153/synchronize-date-and-time-with-a-server-over-ssh))
+```bash
+$ date --set="$(ssh [username]@[sshserver] date)"
+```
+
 ### files & chars
 #### Show all line numbers in a file
     - Method 1
@@ -86,6 +92,20 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
         $ awk 'END {print NR}' /etc/passwd
         36
         ```
+
+#### Insert into the first line
+
+```bash
+$ cat demo.file
+abc
+efg
+
+$ echo "first line" | cat - demo.file
+first line
+abc
+efg
+```
+
 
 #### Encrypt bash file
 
@@ -156,15 +176,16 @@ marslo:x:1000:1000:Marslo,,,:/home/marslo:/bin/bash
 mysql:x:1001:1001::/home/mysql:/bin/sh
 ```
 
-### Batch move
+#### Print a file into one line
 ```bash
-$ mkdir backup-folder && ls | grep -Ze ".*rar" | xargs -d '\n' -I {} mv {} backup-folder
-```
-
-### Clear
-
-```bash
-$ printf "\ec"
+$ cat a
+1
+2
+3
+4
+5
+$ echo $(cat a)
+1 2 3 4 5
 ```
 
 ### Get URL
@@ -177,37 +198,6 @@ http://www.baidu.com
 ### Download and unzip
 ```bash
 $ wget -O - http://example.com/a.gz | tar xz
-```
-
-### Use less as tail -f
-
-```bash
-$ less +F <filename>
-```
-
-### Print a file into one line
-```bash
-$ cat a
-1
-2
-3
-4
-5
-$ echo $(cat a)
-1 2 3 4 5
-```
-
-### Rename
-
-```bash
-$ l
-total 4.0K
--rw-r--r-- 1 marslo marslo 10 Feb 21 00:43 a.b
-$ rename -v 's/\./_/g' *
-a.b renamed as a_b
-$ l
-total 4.0K
--rw-r--r-- 1 marslo marslo 10 Feb 21 00:43 a_b
 ```
 
 ### Get the file inode
@@ -312,7 +302,8 @@ $ echo {1..100..3}
         4 directories, 0 files
         ```
 
-### PWD's secrets
+### Commands
+#### PWD's secrets
 
 ```bash
 $ l | grep bc
@@ -324,19 +315,6 @@ $ pwd -P
 /home/marslo/Tools/Git/BrowserConfig
 ```
 
-### Insert into the first line
-```bash
-$ cat demo.file
-abc
-efg
-
-$ echo "first line" | cat - demo.file
-first line
-abc
-efg
-```
-
-### Commands
 #### List the command beginning with
 
 ```bash
@@ -381,5 +359,35 @@ gedit (1)            - text editor for the GNOME Desktop
 
 ```bash
 $ whatch --interval 1 ls -alt
+```
+
+#### Rename
+
+```bash
+$ l
+total 4.0K
+-rw-r--r-- 1 marslo marslo 10 Feb 21 00:43 a.b
+$ rename -v 's/\./_/g' *
+a.b renamed as a_b
+$ l
+total 4.0K
+-rw-r--r-- 1 marslo marslo 10 Feb 21 00:43 a_b
+```
+
+#### Clear
+
+```bash
+$ printf "\ec"
+```
+
+#### Use less as tail -f
+
+```bash
+$ less +F <filename>
+```
+
+#### Batch move
+```bash
+$ mkdir backup-folder && ls | grep -Ze ".*rar" | xargs -d '\n' -I {} mv {} backup-folder
 ```
 

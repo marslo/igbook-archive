@@ -210,11 +210,6 @@ $ gnome-terminal --geometry=123x42+0+0
 $ pkill -KILL -u ${useranme}
 ```
 
-### Synchronize date and time with a server over ssh (Inspired from [commandlinefu.com](http://www.commandlinefu.com/commands/view/9153/synchronize-date-and-time-with-a-server-over-ssh))
-```bash
-$ date --set="$(ssh [username]@[sshserver] date)"
-```
-
 ### about `whatis`
 ```bash
 $ whatis whois
