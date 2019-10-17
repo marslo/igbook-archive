@@ -3,6 +3,7 @@
 - cheatsheet
   * [good](cheatsheet/good.md)
   * [havefun](cheatsheet/havefun.md)
+  * [kubernetes](cheatsheet/kubernetes.md)
   * [linuxBasic](cheatsheet/linuxBasic.md)
   * [media](cheatsheet/media.md)
   * [system](cheatsheet/system.md)
