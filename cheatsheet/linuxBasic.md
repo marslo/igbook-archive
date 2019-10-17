@@ -8,7 +8,6 @@
   - [Scp Multipule Folder/File to Target Server](#scp-multipule-folderfile-to-target-server)
 - [CentOS](#centos)
   - [Yum](#yum)
-- [Utils](#utils)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
