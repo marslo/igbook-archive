@@ -3,9 +3,15 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [xcode](#xcode)
+  - [downlaod xcode by wget](#downlaod-xcode-by-wget)
+  - [Appendix](#appendix)
+  - [accpet license from cmd](#accpet-license-from-cmd)
+  - [commandline tools and compoents installation](#commandline-tools-and-compoents-installation)
+  - [enable dev mode](#enable-dev-mode)
 - [system info](#system-info)
 - [system](#system)
 - [app](#app)
+  - [java](#java)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

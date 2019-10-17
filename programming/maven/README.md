@@ -4,6 +4,7 @@
 
 - [Compile and Execute java file by manual](#compile-and-execute-java-file-by-manual)
 - [Compile and Execute by maven](#compile-and-execute-by-maven)
+  - [Scaffold in Maven](#scaffold-in-maven)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

@@ -3,8 +3,6 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [core.autocrlf](#coreautocrlf)
-  - [parameters](#parameters)
-  - [set in GUI](#set-in-gui)
 - [please notice](#please-notice)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

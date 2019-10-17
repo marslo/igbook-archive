@@ -3,15 +3,9 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [kubectl alias](#kubectl-alias)
-  - [`__start_kubectl`](#__start_kubectl)
-  - [`_complete_alias`](#_complete_alias)
 - [update image for deploy](#update-image-for-deploy)
 - [secrets](#secrets)
-  - [create secrets](#create-secrets)
-  - [duplicate secrets to the other ns](#duplicate-secrets-to-the-other-ns)
 - [token](#token)
-  - [check token](#check-token)
-  - [generate token](#generate-token)
 - [tear down](#tear-down)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

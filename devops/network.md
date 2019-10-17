@@ -4,7 +4,12 @@
 
 - [Interface](#interface)
   - [Change Interface Name](#change-interface-name)
+    - [Permanent Solution](#permanent-solution)
+    - [Temporary Solution](#temporary-solution)
   - [Show](#show)
+    - [ethtool](#ethtool)
+    - [List Hardware](#list-hardware)
+    - [Show Route](#show-route)
 - [DNS](#dns)
   - [Permanently Add new DNS](#permanently-add-new-dns)
 - [Port Redirection](#port-redirection)

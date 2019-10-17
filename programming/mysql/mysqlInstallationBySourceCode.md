@@ -3,6 +3,12 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Install MySQL from Source code](#install-mysql-from-source-code)
+  - [Usefull Links](#usefull-links)
+  - [Compile and Install](#compile-and-install)
+  - [Configuration and Initial](#configuration-and-initial)
+  - [Set Environment](#set-environment)
+  - [Check the mysql port](#check-the-mysql-port)
+  - [Check variables](#check-variables)
 - [Make mysql as boot start](#make-mysql-as-boot-start)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

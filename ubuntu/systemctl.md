@@ -7,6 +7,7 @@
   - [Create <name>.service](#create-nameservice)
   - [Enable the service](#enable-the-service)
   - [Disable the service](#disable-the-service)
+    - [Re-enable the service](#re-enable-the-service)
   - [Route FLags](#route-flags)
 - [Reference](#reference)
 

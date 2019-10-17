@@ -4,7 +4,12 @@
 
 - [Highly Recommanded](#highly-recommanded)
 - [Video](#video)
+  - [Get Audio from video](#get-audio-from-video)
+  - [Convert flv to mp4](#convert-flv-to-mp4)
+  - [Combine video and audio](#combine-video-and-audio)
 - [Image](#image)
+  - [Identity an image](#identity-an-image)
+  - [Convert HEIC/HEIF to PNG](#convert-heicheif-to-png)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

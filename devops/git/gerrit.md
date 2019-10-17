@@ -4,8 +4,6 @@
 
 - [.gitconfig](#gitconfig)
 - [project.config](#projectconfig)
-  - [get project.config](#get-projectconfig)
-  - [publish to remote](#publish-to-remote)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

@@ -3,6 +3,10 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Utils](#utils)
+    - [Get Interface by command](#get-interface-by-command)
+    - [get ipv4 address](#get-ipv4-address)
+    - [findout commands from](#findout-commands-from)
+    - [Get all google website](#get-all-google-website)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

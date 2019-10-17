@@ -3,19 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [time & date](#time--date)
-  - [Show Cal](#show-cal)
-  - [Synchronize date and time with a server over ssh (Inspired from commandlinefu.com)](#synchronize-date-and-time-with-a-server-over-ssh-inspired-from-commandlinefucom)
 - [files & chars](#files--chars)
-  - [Show all line numbers in a file](#show-all-line-numbers-in-a-file)
-  - [Insert into the first line](#insert-into-the-first-line)
-  - [Encrypt bash file](#encrypt-bash-file)
-  - [Get the count of a word in a file](#get-the-count-of-a-word-in-a-file)
-  - [Print 50th char](#print-50th-char)
-  - [Get the common part](#get-the-common-part)
-  - [Revert a word](#revert-a-word)
-  - [Format a file to a table](#format-a-file-to-a-table)
-  - [Show last n lines in a file](#show-last-n-lines-in-a-file)
-  - [Print a file into one line](#print-a-file-into-one-line)
 - [Get URL](#get-url)
 - [Download and unzip](#download-and-unzip)
 - [Get the file inode](#get-the-file-inode)
@@ -23,16 +11,7 @@
 - [Echo 256 colors](#echo-256-colors)
 - [Directory diff](#directory-diff)
 - [All About {Curly Braces} In Bash](#all-about-curly-braces-in-bash)
-  - [Fast copy or moving or someting (Detials -> Brace Expansion)](#fast-copy-or-moving-or-someting-detials---brace-expansion)
 - [Commands](#commands)
-  - [PWD's secrets](#pwds-secrets)
-  - [List the command beginning with](#list-the-command-beginning-with)
-  - [Searching for commands without knowing their exact names](#searching-for-commands-without-knowing-their-exact-names)
-  - [Show some command periodically](#show-some-command-periodically)
-  - [Rename](#rename)
-  - [Clear](#clear)
-  - [Use less as tail -f](#use-less-as-tail--f)
-  - [Batch move](#batch-move)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

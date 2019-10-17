@@ -6,7 +6,11 @@ Git Command Study and practice
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Appoint](#appoint)
+  - [Git Alias](#git-alias)
+  - [.marslorc](#marslorc)
 - [Rebase](#rebase)
+  - [Without Confilite file](#without-confilite-file)
+  - [With Confilite file](#with-confilite-file)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
