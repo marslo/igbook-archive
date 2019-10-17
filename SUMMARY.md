@@ -11,6 +11,7 @@
   * [windows](cheatsheet/windows.md)
 - devops
   - git
+    * [gerrit](devops/git/gerrit.md)
     * [gitLineEnding](devops/git/gitLineEnding.md)
     * [gitQ&A](devops/git/gitQ&A.md)
     * [gitStudy](devops/git/gitStudy.md)
@@ -19,6 +20,7 @@
   * [compilation](devops/compilation.md)
   * [network](devops/network.md)
   * [osx](devops/osx.md)
+  * [python](devops/python.md)
   * [ssh](devops/ssh.md)
 - jenkins
   * [configuration](jenkins/configuration.md)
