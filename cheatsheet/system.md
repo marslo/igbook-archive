@@ -1,3 +1,33 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [system info](#system-info)
+  - [show path:](#show-path)
+  - [clear duplicated PATH](#clear-duplicated-path)
+  - [set DNS for ubuntu](#set-dns-for-ubuntu)
+  - [disable firewall](#disable-firewall)
+  - [change net.bridge](#change-netbridge)
+  - [off swap](#off-swap)
+  - [disable selinux](#disable-selinux)
+  - [Get the public IP Address](#get-the-public-ip-address)
+- [check hardware](#check-hardware)
+  - [check CPU support 64 bit or not](#check-cpu-support-64-bit-or-not)
+  - [get the computer version](#get-the-computer-version)
+  - [print memory only](#print-memory-only)
+  - [cat /etc/cpuinfo](#cat-etccpuinfo)
+- [process](#process)
+  - [find the zombie process](#find-the-zombie-process)
+  - [sort process by PID](#sort-process-by-pid)
+  - [check the group PID](#check-the-group-pid)
+- [sogou Pinyin input method](#sogou-pinyin-input-method)
+- [specified terminal size](#specified-terminal-size)
+- [logout](#logout)
+- [Synchronize date and time with a server over ssh (Inspired from commandlinefu.com)](#synchronize-date-and-time-with-a-server-over-ssh-inspired-from-commandlinefucom)
+- [about `whatis`](#about-whatis)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 ### system info
 #### show path:
