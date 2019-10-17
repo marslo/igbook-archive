@@ -2,12 +2,12 @@
 * get cookies.txt
     * install google chrome extension from [official website](https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg?hl=en)
     * login [developer.apple.com](https://developer.apple.com/download/more/)
-    * select cookies.txt and download <br>
-    <a href="../../screenshot/cookies.txt-1.png "><img src="../../screenshot/cookies.txt-1.png " title="download cookies.txt" alt="download cookies.txt" width="666"></a>
+    * select cookies.txt and download
 
-* get xcode download url
-    * right click and select **Copy Link Address** <br>
-    <img src="../../screenshot/cookies.txt-2.png" alt="get url" title="get url" width="666">
+![download cookies.txt](../../screenshot/cookies.txt-1.png )
+
+* get xcode download url and right click and select **Copy Link Address** <br>
+![get url](../../screenshot/cookies.txt-2.png)
 
 * download xcode (inspired from [here](https://stackoverflow.com/a/4089758/2940319) and [here](https://stackoverflow.com/a/46020878/2940319))
     ```bash
