@@ -6,9 +6,9 @@
 
 ![download cookies.txt](../../screenshot/cookies.txt-1.png)
 
-* get xcode download url and right click and select **Copy Link Address** <br>
+* get xcode download url and right click and select **Copy Link Address**:
 
-![get url](../../screenshot/cookies.txt-2.png)
+![copy link address](../../screenshot/cookies.txt-2.png)
 
 * download xcode (inspired from [here](https://stackoverflow.com/a/4089758/2940319) and [here](https://stackoverflow.com/a/46020878/2940319))
     ```bash
