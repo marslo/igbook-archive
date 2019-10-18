@@ -38,10 +38,27 @@ $ git push origin HEAD:refs/meta/config
 - submit review
 ```bash
 $ git push origin HEAD:refs/for/refs/meta/config
+# or
+$ git push origin meta/config:refs/for/refs/meta/config
 ```
 
 #### update meta/config if remotes update
 ```bash
 $ git fetch origin --force refs/meta/config:refs/remotes/origin/meta/config
+
 $ git pull origin refs/meta/config
+# or
+$ git merge meta/config
 ```
+
+#### useful refs
+- `refs/heads/sandbox/${username}/*`
+- `refs/heads/jira/jira-[0-9]{1,5}(_.*)?`
+- freeze `master` branch
+    ```bash
+    [access "refs/for/refs/heads/master"]
+    push = block group user/Marslo Jiao (marslo)
+    submit = block group group user/Marslo Jiao (marslo)
+    addPatchSet = block group user/Marslo Jiao (marslo)
+    pushMerge = block group user/Marslo Jiao (marslo)
+    ```
