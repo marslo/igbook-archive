@@ -165,3 +165,6 @@ pushMerge = block group user/Marslo Jiao (marslo)
 
 ## reference
 - [project owner guide](https://www.gerritcodereview.com/intro-project-owner.html)
+- [Gerrit Code Review - Uploading Changes](https://www.gerritcodereview.com/user-upload.html)
+- [gerrit/gerrit/refs/meta/config](https://gerrit.googlesource.com/gerrit/+/refs/meta/config)
+- [gerrit 权限控制](https://blog.csdn.net/chenjh213/article/details/50571190)
