@@ -23,6 +23,7 @@ $ git pull [--rebase]
 $ git fetch origin refs/meta/config:refs/remotes/origin/meta/config
 $ git checkout meta/config
 ```
+
 #### publish to remote
 ```bash
 $ git add --all .
@@ -37,4 +38,10 @@ $ git push origin HEAD:refs/meta/config
 - submit review
 ```bash
 $ git push origin HEAD:refs/for/refs/meta/config
+```
+
+#### update meta/config if remotes update
+```bash
+$ git fetch origin --force refs/meta/config:refs/remotes/origin/meta/config
+$ git pull origin refs/meta/config
 ```
