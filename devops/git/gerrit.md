@@ -51,6 +51,17 @@ $ git pull origin refs/meta/config
 $ git merge meta/config
 ```
 
+#### refs for Verified
+```bash
+[label "Verified"]
+    function = MaxWithBlock
+    defaultValue = 0
+    copyAllScoresIfNoCodeChange = true
+    value = -1 Fails
+    value =  0 No score
+    value = +1 Verified
+```
+
 #### useful refs
 - `refs/heads/sandbox/${username}/*`
 - `refs/heads/jira/jira-[0-9]{1,5}(_.*)?`
