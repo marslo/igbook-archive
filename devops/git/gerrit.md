@@ -108,6 +108,7 @@ $ git config --global gitreview.remote origin
 
 
 ### [refs/meta/config](https://gerrit-review.googlesource.com/Documentation/config-project-config.html#_the_refs_meta_config_namespace)
+
 #### get project.config
 ```bash
 $ git clone <repo url>
@@ -116,6 +117,10 @@ $ git pull [--rebase]
 
 $ git fetch origin refs/meta/config:refs/remotes/origin/meta/config
 $ git checkout meta/config
+
+# or
+$ git fetch ssh://localhost:29418/project refs/meta/config
+$ git checkout FETCH_HEAD
 ```
 
 #### publish to remote
@@ -157,3 +162,6 @@ submit = block group group user/Marslo Jiao (marslo)
 addPatchSet = block group user/Marslo Jiao (marslo)
 pushMerge = block group user/Marslo Jiao (marslo)
 ```
+
+## reference
+- [project owner guide](https://www.gerritcodereview.com/intro-project-owner.html)
