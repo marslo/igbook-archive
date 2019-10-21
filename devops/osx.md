@@ -204,6 +204,7 @@ $ chflags -R nouchg <PATH of folder>
 ```
 
     - example
+
         ```bash
         $ find /usr -flags +sunlnk -print
         /usr/libexec/cups
