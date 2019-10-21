@@ -232,6 +232,7 @@ $ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.ser
     $ sudo chflags restricted Firefox.app
     $ /bin/ls -lO /Applications | grep firefox
     drwxr-xr-x   3 marslo  staff  restricted  96 Dec  7 03:14 Firefox.app
+
     ```
 
 ## app
