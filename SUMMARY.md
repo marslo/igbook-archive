@@ -15,7 +15,7 @@
     * [gerrit](devops/git/gerrit.md)
     * [gitLineEnding](devops/git/gitLineEnding.md)
     * [gitQ&A](devops/git/gitQ&A.md)
-    * [gitStudy](devops/git/gitStudy.md)
+    * [git](devops/git/git.md)
   * [adminTools](devops/adminTools.md)
   * [commonTools](devops/commonTools.md)
   * [compilation](devops/compilation.md)
