@@ -186,56 +186,53 @@ $ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.ser
 ![csrutil](../screenshot/csrutil.png)
 
 - [System Integrity Protection](https://derflounder.wordpress.com/2015/10/01/system-integrity-protection-adding-another-layer-to-apples-security-model/)
-
-```bash
-$ csrutil disable
-Successfully disabled System Integrity Protection. Please restart the machine for the changes to take effect.
-$ csrutil clear
-Successfully cleared System Integrity Proteciton. Please restart the machine for the changes to take effect.
-$ sudo chflags restricted /usr/local
-```
+    ```bash
+    $ csrutil disable
+    Successfully disabled System Integrity Protection. Please restart the machine for the changes to take effect.
+    $ csrutil clear
+    Successfully cleared System Integrity Proteciton. Please restart the machine for the changes to take effect.
+    $ sudo chflags restricted /usr/local
+    ```
 
 - Remove file lock (uchg) flag
+    ```bash
+    $ chflags -R nouchg *
+    # or
+    $ chflags -R nouchg <PATH of folder>
+    ```
 
-```bash
-$ chflags -R nouchg *
-# or
-$ chflags -R nouchg <PATH of folder>
-```
-
-    - example
-
-        ```bash
-        $ find /usr -flags +sunlnk -print
-        /usr/libexec/cups
-        find: /usr/sbin/authserver: Permission denied
-        /usr/local
-        /usr/share/man
-        /usr/share/snmp
-        $ /bin/ls -lO /usr
-        total 0
-        drwxr-xr-x  976 root  wheel  restricted 31232 Oct 28 19:17 bin/
-        drwxr-xr-x  292 root  wheel  restricted  9344 Oct 28 10:04 lib/
-        drwxr-xr-x  234 root  wheel  restricted  7488 Oct 28 19:17 libexec/
-        drwxr-xr-x   16 root  wheel  sunlnk       512 Oct 28 19:26 local/
-        drwxr-xr-x  246 root  wheel  restricted  7872 Oct 28 09:55 sbin/
-        drwxr-xr-x   46 root  wheel  restricted  1472 Oct 28 09:55 share/
-        drwxr-xr-x    5 root  wheel  restricted   160 Oct  3 13:48 standalone/
+- example
+    ```bash
+    $ find /usr -flags +sunlnk -print
+    /usr/libexec/cups
+    find: /usr/sbin/authserver: Permission denied
+    /usr/local
+    /usr/share/man
+    /usr/share/snmp
+    $ /bin/ls -lO /usr
+    total 0
+    drwxr-xr-x  976 root  wheel  restricted 31232 Oct 28 19:17 bin/
+    drwxr-xr-x  292 root  wheel  restricted  9344 Oct 28 10:04 lib/
+    drwxr-xr-x  234 root  wheel  restricted  7488 Oct 28 19:17 libexec/
+    drwxr-xr-x   16 root  wheel  sunlnk       512 Oct 28 19:26 local/
+    drwxr-xr-x  246 root  wheel  restricted  7872 Oct 28 09:55 sbin/
+    drwxr-xr-x   46 root  wheel  restricted  1472 Oct 28 09:55 share/
+    drwxr-xr-x    5 root  wheel  restricted   160 Oct  3 13:48 standalone/
 
 
-        $ csrutil status
-        System Integrity Protection status: enabled.
+    $ csrutil status
+    System Integrity Protection status: enabled.
 
-        $ sudo csrutil disable
-        csrutil: failed to modify system integrity configuration. This tool needs to be executed from the Recovery OS
+    $ sudo csrutil disable
+    csrutil: failed to modify system integrity configuration. This tool needs to be executed from the Recovery OS
 
-        $ cat /System/Library/Sandbox/rootless.conf
-        $ /bin/ls -lO /Applications | grep firefox
-        22:drwxr-xr-x   3 marslo  staff  -           96 Dec  7 03:14 Firefox.app
-        $ sudo chflags restricted Firefox.app
-        $ /bin/ls -lO /Applications | grep firefox
-        drwxr-xr-x   3 marslo  staff  restricted  96 Dec  7 03:14 Firefox.app
-        ```
+    $ cat /System/Library/Sandbox/rootless.conf
+    $ /bin/ls -lO /Applications | grep firefox
+    22:drwxr-xr-x   3 marslo  staff  -           96 Dec  7 03:14 Firefox.app
+    $ sudo chflags restricted Firefox.app
+    $ /bin/ls -lO /Applications | grep firefox
+    drwxr-xr-x   3 marslo  staff  restricted  96 Dec  7 03:14 Firefox.app
+    ```
 
 ## app
 ### java
