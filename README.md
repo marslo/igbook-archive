@@ -2,21 +2,14 @@ life is hard, make it easier
 =======
 
 ## Git Command Study and Practice
-- [Appoint](devops/git/gitStudy.md#appoint)
-    - [Git Aliases](devops/git/gitStudy.md#git-alias)
-    - [.marslorc](devops/git/gitStudy.md##marslorc)
-
-- [Rebase](devops/git/gitStudy.md#rebase)
-    - [Without Confilite file](devops/git/gitStudy.md#without-confilite-file)
-    - [With Confilite file](devops/git/gitStudy.md#with-confilite-file)
-- [Line Ending](devops/git/gitLineEnding.md)
+- [Git Aliases](devops/git/git.md#git-alias)
+- [Rebase](devops/git/git.md#rebase)
+- [Line Ending](devops/git/lineEnding.md)
 
 ## INSTALL MYSQL FROM SOURCE CODE
 - [Usefull Links](programming/mysql/mysqlInstallationBySourceCode.md#usefull-links)
 - [Compile and Install](programming/mysql/mysqlInstallationBySourceCode.md#compile-and-install)
     - [Preconfiguratio setup](programming/mysql/mysqlInstallationBySourceCode.md#preconfiguration-setup)
-        - [Create user and group account](programming/mysql/mysqlInstallationBySourceCode.md#create-user-and-group)
-        - [Extract tar.gz](programming/mysql/mysqlInstallationBySourceCode.md#extract-targz)
     - [Compile and install](programming/mysql/mysqlInstallationBySourceCode.md#compile-and-install)
 - [Configuration and Initial](programming/mysql/mysqlInstallationBySourceCode.md#configuration-and-initial)
     - [Change permission](programming/mysql/mysqlInstallationBySourceCode.md#permission-manager)
@@ -59,8 +52,5 @@ life is hard, make it easier
     - [Needed Tools and files](https://github.com/marslo/myColorfulWinCommandLine#needed-tools-and-files)
     - [Steps](https://github.com/marslo/myColorfulWinCommandLine#steps)
     - [Specified Font](https://github.com/marslo/myColorfulWinCommandLine#change-font-in-commandline)
-        - [Add the specified font](https://github.com/marslo/myColorfulWinCommandLine#add-the-customize-font)
-        - [Set code page](https://github.com/marslo/myColorfulWinCommandLine#set-code-page)
-        - [Set cmd use font](https://github.com/marslo/myColorfulWinCommandLine#settings)
     - [Specified Cursor Size](https://github.com/marslo/myColorfulWinCommandLine#specified-the-cursor-size)
     - [Set aliases in cmd](https://github.com/marslo/myColorfulWinCommandLine#set-aliases-in-command-linedefault-command-line)
