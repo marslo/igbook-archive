@@ -20,26 +20,21 @@ Git Command Study and practice
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Appoint
-### [Git Alias](https://github.com/Marslo/LinuxStuff/blob/master/Configs/HOME/Git/.gitconfig)
+### [Git Alias](https://raw.githubusercontent.com/marslo/mylinux/master/confs/home/git/.gitconfig)
 ```bash
-st = status
-ci = commit -am
-br = branch
-plog = log --max-count=3 --color --graph
- --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset'
- --abbrev-commit --date=relative
-plogs = log --color --graph
- --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset'
- --abbrev-commit --date=relative
-rlog = !bash -c 'git fetch && git plog remotes/origin/master'
-rlogs = !bash -c 'git fetch && git plogs remotes/origin/master'
-info = !bash -c '. ~/.marslo/.marslorc && gitinfo'
+br          = branch
+bra         = branch -a
+coa         = commit --amend --no-edit
+plog        = !git --no-pager log --color --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative --max-count=3
+plogs       = log --color --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+fplog       = log --color --graph --pretty=tformat:'%Cred%H%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+flog        = log -p --graph --color --graph
+rlog        = "!bash -c 'while read branch; do \n\
+               git fetch --all --force; \n\
+               git plog remotes/origin/$branch; \n\
+             done < <(git rev-parse --abbrev-ref HEAD) '"
 ```
-
-### .marslorc
-- [.marslorc](https://raw.githubusercontent.com/marslo/mylinux/master/Configs/HOME/.marslo/.marslorc)
-
-## log
+## git log
 ### show files and status without comments
 ```bash
 $ git log --color --stat --abbrev-commit --date=relative --graph --submodule --format="%H"
@@ -48,114 +43,54 @@ $ git log --color --stat --abbrev-commit --date=relative --graph --submodule --f
 $ git log --color --stat --abbrev-commit --date=relative --graph --submodule --format="%h %ad- %s [%an]"
 ```
 
-## update
-### fetch merge all
+- e.g.:
+
 ```bash
-$ cat ~/.gitconfig
-...
-[alias]
-  fma         = "!bash -c 'while read branch; do \n\
-                   git fetch --all --force; \n\
-                   git rebase -v refs/remotes/origin/${branch}; \n\
-                   git merge --all --progress refs/remotes/origin/${branch}; \n\
-                   git remote prune origin; \n\
-                   if git --no-pager config --file $(git rev-parse --show-toplevel)/.gitmodules --get-regexp url; then \n\
-                     git submodule sync --recursive; \n\
-                     git submodule update --init --recursive \n\
-                   fi \n\
-                 done < <(git rev-parse --abbrev-ref HEAD) '"
-...
+$ git log -3 --color --stat --abbrev-commit --date=relative --graph --submodule --format="%H"
+* 50ede51fcc3cf0311fd85b3e9c4a36d4beb89e69
+|
+|  devops/git/gerrit.md | 6 ++++--
+|  devops/git/git.md    | 5 +++++
+|  2 files changed, 9 insertions(+), 2 deletions(-)
+* 41d58dabcd0aaee33edd1de7793ffd82c7cffa89
+|
+|  SUMMARY.md | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+* 4460a32d8fddbe7c5c434947aea153273ce215d4
+|
+|  devops/git/{gitStudy.md => git.md} | 117 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+|  1 file changed, 116 insertions(+), 1 deletion(-)
 ```
 
-### fetchall <branch>
+## git mv
+### case sensitive
+- error with regular `git mv`
 ```bash
-$ cat ~/.marslorc
-...
-function fetchall()
-{
-  if [ 1 -eq $# ]; then
-    brName=$1
-  else
-    brName="development"
-  fi
-  for i in $(${LS} -1d */); do
-    gitFetch "$i" "$brName"
-  done
-}
+$ git mv Tig tig
+fatal: renaming 'confs/home/Tig' failed: Invalid argument
+```
 
-function gitFetch() {
-  GITDIR=${1%%/}
-  GITBRANCH=$2
-  ISStashed=false
-  pushd . > /dev/null
-  cd "${GITDIR}"
-  echo -e "\\033[34m=== ${GITDIR} ===\\033[0m"
+- renmae
 
-  if git rev-parse --git-dir > /dev/null 2>&1; then
-    utFiles=$(git ls-files --others --exclude-standard)
-    mdFiles=$(git ls-files --modified)
-    cBranch=$(git rev-parse --abbrev-ref HEAD)
-    [ ! -z "${utFiles}" ] && echo -e "\\033[35mUNTRACKED FILES in ${cBranch}: ${utFiles}\\033[0m"
+```bash
+$ git mv Tig temp
+$ git aa
+$ git mv temp tig
+$ git aa
+$ git st
+On branch master
+Your branch is up to date with 'origin/master'.
 
-    if ! git branch -a | ${GREP} "${GITBRANCH}" > /dev/null 2>&1; then
-      GITBRANCH=master
-    fi
-    echo -e "\\033[33m~> ${GITBRANCH}\\033[0m"
-
-    # checkout branch to $GITBRANCH
-    if [ ! "${cBranch}" = "${GITBRANCH}" ]; then
-      if [ ! -z "${mdFiles}" ]; then
-        echo -e "\\033[31mGIT STASH: ${GITDIR} : ${cBranch} !!\\033[0m"
-        git stash save "auto-stashed by gitFetch command"
-        ISStashed=true
-      fi
-      git checkout "${GITBRANCH}"
-    fi
-
-    # remove the local branch if the branch has been deleted in remote
-    if git remote prune origin --dry-run | ${GREP} prune; then
-      prBranch=$(git remote prune origin --dry-run | ${GREP} prune | awk -F'origin/' '{print $NF}')
-      if [ "${cBranch}" = "${prBranch}" ] && [ -z "${mdFiles}" ]; then
-        echo -e "\\033[32mThe current branch ${cBranch} has been rmeoved in remote. And the current branch has no modified files!\\033[0m"
-        ISStashed=false
-      fi
-
-      if git branch | ${GREP} "${prBranch}"; then
-        echo -e "\\033[35mREMOVE LOCAL BRNACH ${prBranch}, due to ${prBranch} has been rmeoved in remote.\\033[0m"
-        if ! git branch -D "${prBranch}"; then
-          echo -e "\\033[32mWARNING: REMOVE LOCAL BRANCH ${prBranch} failed!!\\033[0m"
-        fi
-      fi
-    fi
-
-    # git fetchall on ${GITBRANCH}
-    git fetch origin --prune
-    git fetch --all --force
-    git rebase -v --all refs/remotes/origin/${GITBRANCH}
-    git merge --all --progress refs/remotes/origin/${GITBRANCH}
-    git remote prune origin
-
-    if git --no-pager config --file "$(git rev-parse --show-toplevel)/.gitmodules" --get-regexp url; then
-      git submodule sync --recursive
-      git submodule update --init --recursive
-    fi
-
-    # restore the current working branch
-    if ${ISStashed}; then
-      git checkout "${cBranch}"
-      git stash pop
-      echo -e "\\033[35mGIT STASH POP: ${GITDIR} : ${cBranch}\\033[0m"
-    fi
-  else
-    echo -e "\\033[33mNOT Git Repo!!\\033[0m"
-  fi
-  popd > /dev/null
-}
-...
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+    renamed:    Tig/.tig/marslo.tigrc -> tig/.tig/marslo.tigrc
+    renamed:    Tig/.tigrc -> tig/.tigrc
+    renamed:    Tig/.tigrc_latest -> tig/.tigrc_latest
+    renamed:    Tig/tigrc_2.4.1_1_example -> tig/tigrc_2.4.1_1_example
+    renamed:    Tig/tigrc_Marslo -> tig/tigrc_Marslo
 ```
 
 ## Rebase
-
 ### Without Confilite file
 #### Precondiction
 ```bash
@@ -369,3 +304,112 @@ Applying: 2: 1
     $ git br
       master
     ```
+
+## trick and scripts
+### fetch merge all
+```bash
+$ cat ~/.gitconfig
+...
+[alias]
+  fma         = "!bash -c 'while read branch; do \n\
+                   git fetch --all --force; \n\
+                   git rebase -v refs/remotes/origin/${branch}; \n\
+                   git merge --all --progress refs/remotes/origin/${branch}; \n\
+                   git remote prune origin; \n\
+                   if git --no-pager config --file $(git rev-parse --show-toplevel)/.gitmodules --get-regexp url; then \n\
+                     git submodule sync --recursive; \n\
+                     git submodule update --init --recursive \n\
+                   fi \n\
+                 done < <(git rev-parse --abbrev-ref HEAD) '"
+...
+```
+
+### fetchall <branch>
+```bash
+$ cat ~/.marslorc
+...
+function fetchall()
+{
+  if [ 1 -eq $# ]; then
+    brName=$1
+  else
+    brName="development"
+  fi
+  for i in $(${LS} -1d */); do
+    gitFetch "$i" "$brName"
+  done
+}
+
+function gitFetch() {
+  GITDIR=${1%%/}
+  GITBRANCH=$2
+  ISStashed=false
+  pushd . > /dev/null
+  cd "${GITDIR}"
+  echo -e "\\033[34m=== ${GITDIR} ===\\033[0m"
+
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    utFiles=$(git ls-files --others --exclude-standard)
+    mdFiles=$(git ls-files --modified)
+    cBranch=$(git rev-parse --abbrev-ref HEAD)
+    [ ! -z "${utFiles}" ] && echo -e "\\033[35mUNTRACKED FILES in ${cBranch}: ${utFiles}\\033[0m"
+
+    if ! git branch -a | ${GREP} "${GITBRANCH}" > /dev/null 2>&1; then
+      GITBRANCH=master
+    fi
+    echo -e "\\033[33m~> ${GITBRANCH}\\033[0m"
+
+    # checkout branch to $GITBRANCH
+    if [ ! "${cBranch}" = "${GITBRANCH}" ]; then
+      if [ ! -z "${mdFiles}" ]; then
+        echo -e "\\033[31mGIT STASH: ${GITDIR} : ${cBranch} !!\\033[0m"
+        git stash save "auto-stashed by gitFetch command"
+        ISStashed=true
+      fi
+      git checkout "${GITBRANCH}"
+    fi
+
+    # remove the local branch if the branch has been deleted in remote
+    if git remote prune origin --dry-run | ${GREP} prune; then
+      prBranch=$(git remote prune origin --dry-run | ${GREP} prune | awk -F'origin/' '{print $NF}')
+      if [ "${cBranch}" = "${prBranch}" ] && [ -z "${mdFiles}" ]; then
+        echo -e "\\033[32mThe current branch ${cBranch} has been rmeoved in remote. And the current branch has no modified files!\\033[0m"
+        ISStashed=false
+      fi
+
+      if git branch | ${GREP} "${prBranch}"; then
+        echo -e "\\033[35mREMOVE LOCAL BRNACH ${prBranch}, due to ${prBranch} has been rmeoved in remote.\\033[0m"
+        if ! git branch -D "${prBranch}"; then
+          echo -e "\\033[32mWARNING: REMOVE LOCAL BRANCH ${prBranch} failed!!\\033[0m"
+        fi
+      fi
+    fi
+
+    # git fetchall on ${GITBRANCH}
+    git fetch origin --prune
+    git fetch --all --force
+    git rebase -v --all refs/remotes/origin/${GITBRANCH}
+    git merge --all --progress refs/remotes/origin/${GITBRANCH}
+    git remote prune origin
+
+    if git --no-pager config --file "$(git rev-parse --show-toplevel)/.gitmodules" --get-regexp url; then
+      git submodule sync --recursive
+      git submodule update --init --recursive
+    fi
+
+    # restore the current working branch
+    if ${ISStashed}; then
+      git checkout "${cBranch}"
+      git stash pop
+      echo -e "\\033[35mGIT STASH POP: ${GITDIR} : ${cBranch}\\033[0m"
+    fi
+  else
+    echo -e "\\033[33mNOT Git Repo!!\\033[0m"
+  fi
+  popd > /dev/null
+}
+...
+```
+
+### .marslorc
+- [.marslorc](https://raw.githubusercontent.com/marslo/mylinux/master/Configs/HOME/.marslo/.marslorc)
