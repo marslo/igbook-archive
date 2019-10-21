@@ -2,7 +2,6 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-  - [Content](#content)
 - [SSH Tricky](#ssh-tricky)
   - [Generate SSH Key](#generate-ssh-key)
   - [Add into agent](#add-into-agent)
@@ -20,13 +19,8 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Content
-- [SSH Tricky](#ssh-tricky)
-- [SSH With Proxy](#ssh-with-proxy)
-
-
 # SSH Tricky
-## Generate SSH Key
+## [Generate SSH Key](https://gist.githubusercontent.com/risan/7c84941067171cef79944978f42b77c6/raw/4c14ef4d660ec84ba48af88c534b7a15439a643d/generate-ed25519-ssh-key.sh)
 
 ```bash
 $ keyname='marslo@china'
@@ -43,7 +37,7 @@ $ ssh-keygen -t ed25519 -o -a 100 -C "${keyname}" -f "~/.ssh/${keyname}" -P '' -
 $ ssh-add ~/.ssh/${keyname}
 
 # e.g.:
-$ ssh-add ~/.ssh/id_ed25519 
+$ ssh-add ~/.ssh/id_ed25519
 Identity added: /Users/marslo/.ssh/id_ed25519 (marslo@devops)
 
 $ ssh-agent -s
@@ -66,7 +60,7 @@ Doing 2048 bit sign dsa's for 10s: 30010 2048 bit DSA signs in 9.99s
 Doing 2048 bit verify dsa's for 10s: 33202 2048 bit DSA verify in 9.98s
 OpenSSL 1.0.2t  10 Sep 2019
 built on: reproducible build, date unspecified
-options:bn(64,64) rc4(ptr,int) des(idx,cisc,16,int) aes(partial) idea(int) blowfish(idx) 
+options:bn(64,64) rc4(ptr,int) des(idx,cisc,16,int) aes(partial) idea(int) blowfish(idx)
 compiler: clang -I. -I.. -I../include  -fPIC -fno-common -DOPENSSL_PIC -DOPENSSL_THREADS -D_REENTRANT -DDSO_DLFCN -DHAVE_DLFCN_H -arch x86_64 -O3 -DL_ENDIAN -Wall -DOPENSSL_IA32_SSE2 -DOPENSSL_BN_ASM_MONT -DOPENSSL_BN_ASM_MONT5 -DOPENSSL_BN_ASM_GF2m -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DMD5_ASM -DAES_ASM -DVPAES_ASM -DBSAES_ASM -DWHIRLPOOL_ASM -DGHASH_ASM -DECP_NISTZ256_ASM
                   sign    verify    sign/s verify/s
 rsa 1024 bits 0.000109s 0.000009s   9148.5 116964.9
@@ -142,11 +136,9 @@ $ ssh -o 'ProxyCommand corkscrew proxy.url.com proxy-port %h %p' -vT user@target
     ```bash
     $ apt-cyg install corkscrew
     $ ssh -o 'ProxyCommand corkscrew proxy.url.com proxy-port %h %p' user@target.server
-    ```
 
-    OR
+    # OR
 
-    ```bash
     $ apt-cyg install nc
     $ ssh -o 'ProxyCommand nc -X connect -x proxy.url.com:proxy-port %h %p' -vT git@github.com
     ```
@@ -158,12 +150,14 @@ HOST  *
       GSSAPIAuthentication no
       StrictHostKeyChecking no
       # UserKnownHostsFile /dev/null
+      IdentityFile ~/.ssh/id_ed25519
+      IdentityFile ~/.ssh/id_rsa # keep the older key if necessary
 
 Host  github.com
       Hostname          github.com
       User              marslo.jiao@gmail.com
       IdentityFile      /C/Marslo/my@key
-      ProxyCommand      connect -H http://185.46.212.34:10015 %h %p
+      ProxyCommand      connect -H http://127.0.0.1:8000 %h %p
       IdentitiesOnly    yes
 ```
 OR
@@ -174,6 +168,8 @@ HOST  *
       GSSAPIAuthentication no
       StrictHostKeyChecking no
       # UserKnownHostsFile /dev/null
+      IdentityFile ~/.ssh/id_ed25519
+      IdentityFile ~/.ssh/id_rsa # keep the older key if necessary
 
 Host  github.com
       Hostname              github.com
@@ -245,3 +241,4 @@ Host  github.com
 - [Tunneling SSH over PageKite](https://pagekite.net/wiki/Howto/SshOverPageKite/#wrongnetcat)
 - [Transparent Multi-hop SSH](http://sshmenu.sourceforge.net/articles/transparent-mulithop.html)
 - [SSH via HTTP proxy in OSX](http://www.perkin.org.uk/posts/ssh-via-http-proxy-in-osx.html)
+- [ssh key](https://wiki.archlinux.org/index.php/SSH_keys)

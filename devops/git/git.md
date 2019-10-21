@@ -70,6 +70,9 @@ $ git submodule status
 $ git log -- <submodule name>
 ```
 
+## git commit
+### [emoji](https://gist.github.com/risan/41a0e4a462477875217346027879f618)
+
 ## git mv
 ### case sensitive
 - error with regular `git mv`
