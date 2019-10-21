@@ -1,4 +1,4 @@
-# I, marslo
+# [I, marslo](https://marslo.github.io/)
 
 - cheatsheet
   * [good](cheatsheet/good.md)
