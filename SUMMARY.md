@@ -15,6 +15,7 @@
     * [gerrit](devops/git/gerrit.md)
     * [lineEnding](devops/git/lineEnding.md)
     * [q&a](devops/git/q&a.md)
+    * [git](devops/git/git.md)
   * [adminTools](devops/adminTools.md)
   * [commonTools](devops/commonTools.md)
   * [compilation](devops/compilation.md)
