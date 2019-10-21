@@ -182,7 +182,8 @@ $ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.ser
      -bash-3.2# csrutil disable
      Successfully disabled System Integrity Protection. Please restart the machine for the changes to take effect.
     ```
-    ![csrutil](../screenshot/csrutil.HEIC)
+
+    ![csrutil](../screenshot/csrutil.png)
 
 - [System Integrity Protection](https://derflounder.wordpress.com/2015/10/01/system-integrity-protection-adding-another-layer-to-apples-security-model/)
 
