@@ -102,6 +102,7 @@ ProductVersion: 10.15
 BuildVersion:   19A602
 ```
 - hardware
+
 ```bash
 $ /usr/sbin/system_profiler SPHardwareDataType
 Hardware:
@@ -133,6 +134,7 @@ Camera:
 ```
 
 - cpu
+
 ```bash
 $ sysctl -n machdep.cpu.brand_string
 Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz
@@ -150,6 +152,7 @@ machdep.cpu.model: 158
 
 ## system
 - setup hostname
+
 ```bash
 $ sudo scutil --set HostName [HOSTNAME]
 $ sudo scutil --set LocalHostName [HOSTNAME]
@@ -235,6 +238,7 @@ $ chflags -R nouchg <PATH of folder>
 ## app
 ### java
     - setup java home
+
     ```bash
     $ /usr/libexec/java_home -v 1.8.0.162 -exec javac -versioin
     ```
