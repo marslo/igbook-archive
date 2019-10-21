@@ -84,6 +84,30 @@ ChallengeResponseAuthentication no
 PasswordAuthentication no
 UsePAM no
 ```
+- scripts:
+    ```bash
+    TIMESTAMPE=$(date +"%Y%m%d%H%M%S")
+    SSHDFILE="/etc/ssh/sshd_config"
+    sudo cp "${SSHDFILE}{,.org.${TIMESTAMPE}}"
+
+    sudo bash -c '/bin/sed -i -e "s:^\(UsePAM.*$\):# \1:" ${SSHDFILE}'
+    sudo bash -c '/bin/sed -i -e "s:^\(PermitRootLogin.*$\):# \1:" ${SSHDFILE}'
+    sudo bash -c '/bin/sed -i -e "s:^\(ChallengeResponseAuthentication.*$\):# \1:" ${SSHDFILE}'
+    sudo bash -c '/bin/sed -i -e "s:^\(PasswordAuthentication.*$\):# \1:" ${SSHDFILE}'
+
+    if ! grep 'Add my marslo' ${SSHDFILE} > /dev/null 2>&1; then
+    sudo bash -c "cat >> ${SSHDFILE}" << EOF
+
+    # Add my marslo
+    PermitRootLogin no
+    UsePAM no
+    ChallengeResponseAuthentication no
+    PasswordAuthentication no
+    PrintMotd yes
+    Banner /etc/ssh/server.banner
+    EOF
+    fi
+    ```
 
 ## Force Use Password
 
