@@ -96,16 +96,16 @@ UsePAM no
     sudo bash -c '/bin/sed -i -e "s:^\(PasswordAuthentication.*$\):# \1:" ${SSHDFILE}'
 
     if ! grep 'Add my marslo' ${SSHDFILE} > /dev/null 2>&1; then
-    sudo bash -c "cat >> ${SSHDFILE}" << EOF
+        sudo bash -c "cat >> ${SSHDFILE}" << EOF
 
-    # Add my marslo
-    PermitRootLogin no
-    UsePAM no
-    ChallengeResponseAuthentication no
-    PasswordAuthentication no
-    PrintMotd yes
-    Banner /etc/ssh/server.banner
-    EOF
+        # Add my marslo
+        PermitRootLogin no
+        UsePAM no
+        ChallengeResponseAuthentication no
+        PasswordAuthentication no
+        PrintMotd yes
+        Banner /etc/ssh/server.banner
+        EOF
     fi
     ```
 
