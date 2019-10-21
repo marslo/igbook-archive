@@ -42,7 +42,6 @@ $ git log --color --stat --abbrev-commit --date=relative --graph --submodule --f
 # or
 $ git log --color --stat --abbrev-commit --date=relative --graph --submodule --format="%h %ad- %s [%an]"
 ```
-
 - e.g.:
 
 ```bash
@@ -62,6 +61,12 @@ $ git log -3 --color --stat --abbrev-commit --date=relative --graph --submodule 
 |  1 file changed, 116 insertions(+), 1 deletion(-)
 ```
 
+### show submodule changes
+```bash
+$ git submodule status
+$ git log -- <submodule name>
+```
+
 ## git mv
 ### case sensitive
 - error with regular `git mv`
@@ -70,7 +75,6 @@ $ git config --global core.ignorecase true
 $ git mv Tig tig
 fatal: renaming 'confs/home/Tig' failed: Invalid argument
 ```
-
 - renmae
 
 ```bash
