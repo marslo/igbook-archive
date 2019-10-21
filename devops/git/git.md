@@ -66,6 +66,7 @@ $ git log -3 --color --stat --abbrev-commit --date=relative --graph --submodule 
 ### case sensitive
 - error with regular `git mv`
 ```bash
+$ git config --global core.ignorecase true
 $ git mv Tig tig
 fatal: renaming 'confs/home/Tig' failed: Invalid argument
 ```
