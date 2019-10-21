@@ -2,8 +2,10 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [.gitconfig](#gitconfig)
-- [project.config](#projectconfig)
+  - [.gitconfig](#gitconfig)
+  - [project.config](#projectconfig)
+  - [refs/meta/config](#refsmetaconfig)
+- [reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
