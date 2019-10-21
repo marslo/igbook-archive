@@ -7,15 +7,18 @@ Git Command Study and practice
 
 - [Appoint](#appoint)
   - [Git Alias](#git-alias)
-  - [.marslorc](#marslorc)
-- [log](#log)
+- [git log](#git-log)
   - [show files and status without comments](#show-files-and-status-without-comments)
-- [update](#update)
-  - [fetch merge all](#fetch-merge-all)
-  - [fetchall <branch>](#fetchall-branch)
+  - [show submodule changes](#show-submodule-changes)
+- [git mv](#git-mv)
+  - [case sensitive](#case-sensitive)
 - [Rebase](#rebase)
   - [Without Confilite file](#without-confilite-file)
   - [With Confilite file](#with-confilite-file)
+- [trick and scripts](#trick-and-scripts)
+  - [fetch merge all](#fetch-merge-all)
+  - [fetchall <branch>](#fetchall-branch)
+  - [.marslorc](#marslorc)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
