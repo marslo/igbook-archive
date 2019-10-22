@@ -64,6 +64,31 @@ $ date --set="$(ssh [username]@[sshserver] date)"
 ```
 
 ### files & chars
+#### find out the file is ending by crlf or lf
+- `cat -e`
+    ```bash
+    $ cat -e <file>
+
+    # e.g.
+    $ cat -e windows.txt
+    test^M$
+    windows^M$
+    format
+
+    $ cat -e linux.txt
+    test$
+    windows$
+    format
+    ```
+- `file`
+    ```bash
+    $ file windows.txt
+    windows.txt: ASCII text, with CRLF line terminators
+
+    $ file windows.txt
+    windows.txt: ASCII text
+    ```
+
 #### Show all line numbers in a file
     - Method 1
         ```bash
