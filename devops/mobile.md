@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [ios](#ios)
+  - [get info](#get-info)
+  - [idevice](#idevice)
+  - [list install app](#list-install-app)
+  - [install app](#install-app)
+  - [idevicediagnostics](#idevicediagnostics)
+- [andriod](#andriod)
+  - [environment](#environment)
+  - [get info](#get-info-1)
+  - [show list](#show-list)
+  - [install & uninstall](#install--uninstall)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 ## ios
 ### get info
