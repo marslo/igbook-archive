@@ -35,7 +35,7 @@
       netmask 255.255.255.192
       gateway 130.147.180.65
       dns-nameservers 130.147.236.5 161.92.35.78
-      dns-search cn-132.lan.philips.com
+      dns-search cn-132.lan.mycompany.com
 
 <details><summary>Click to check details</summary>
 <pre><code>$ cat /etc/network/interfaces
@@ -49,7 +49,7 @@ iface eno1 inet static
   netmask 255.255.255.192
   gateway 130.147.180.65
   dns-nameservers 130.147.236.5 161.92.35.78
-  dns-search cn-132.lan.philips.com
+  dns-search cn-132.lan.mycompany.com
   broadcast 130.147.219.127
   network 130.147.219.0
 
