@@ -19,6 +19,7 @@
   * [adminTools](devops/adminTools.md)
   * [commonTools](devops/commonTools.md)
   * [compilation](devops/compilation.md)
+  * [mobile](devops/mobile.md)
   * [network](devops/network.md)
   * [nginx&cert](devops/nginx&cert.md)
   * [osx](devops/osx.md)
