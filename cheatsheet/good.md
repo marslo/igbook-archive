@@ -112,6 +112,23 @@ abc
 efg
 ```
 
+#### [backup and restore filer & folder permission](https://unix.stackexchange.com/a/128499/29178)
+- backup
+    ```bash
+    $ find . -printf '%m\t%u\t%g\t%p\0' > file.perm
+    ```
+- restore
+    ```bash
+    while read -rd $'\0' perms user group file; do
+      if [ -e "$file" ]; then
+        chown "$user:$group" "$file"
+        chmod "$perms" "$file"
+      else
+        echo "warning: $file not found"
+      fi
+    done < file.perm
+    ```
+
 
 #### Encrypt bash file
 
