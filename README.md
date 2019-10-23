@@ -2,6 +2,7 @@ life is hard, make it easier
 =======
 
 ## in the book
+
 - cheatsheet
   * [files&chars](cheatsheet/files&chars.md)
   * [good](cheatsheet/good.md)
@@ -22,6 +23,7 @@ life is hard, make it easier
   * [commonTools](devops/commonTools.md)
   * [compilation](devops/compilation.md)
   * [network](devops/network.md)
+  * [nginx&cert](devops/nginx&cert.md)
   * [osx](devops/osx.md)
   * [python](devops/python.md)
   * [ssh](devops/ssh.md)
