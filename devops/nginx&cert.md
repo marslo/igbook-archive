@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+  - [nginx](#nginx)
+- [ssl cert](#ssl-cert)
+  - [generate cert for server](#generate-cert-for-server)
+  - [cert working with Nginx](#cert-working-with-nginx)
+  - [certificate working with client](#certificate-working-with-client)
+- [If you enter '.', the field will be left blank.](#if-you-enter--the-field-will-be-left-blank)
+- [artifactory https](#artifactory-https)
+  - [general SSL certs](#general-ssl-certs)
+- [If you enter '.', the field will be left blank.](#if-you-enter--the-field-will-be-left-blank-1)
+- [If you enter '.', the field will be left blank.](#if-you-enter--the-field-will-be-left-blank-2)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 ### nginx
 #### installation

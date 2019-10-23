@@ -2,15 +2,24 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Preconfig](#preconfig)
-- [Applications](#applications)
-- [SSL Cert](#ssl-cert)
-- [If you enter '.', the field will be left blank.](#if-you-enter--the-field-will-be-left-blank)
-- [Artifactory HTTPS](#artifactory-https)
-- [If you enter '.', the field will be left blank.](#if-you-enter--the-field-will-be-left-blank-1)
-- [If you enter '.', the field will be left blank.](#if-you-enter--the-field-will-be-left-blank-2)
-- [Artifactory Repo](#artifactory-repo)
+- [preconfig](#preconfig)
+  - [install dependencies](#install-dependencies)
+  - [setup account](#setup-account)
+  - [setup MOTD](#setup-motd)
+  - [get subnet ip address](#get-subnet-ip-address)
+  - [get public IP address](#get-public-ip-address)
+- [applications](#applications)
+  - [shadowsocks](#shadowsocks)
+  - [terminal configurations](#terminal-configurations)
+  - [vncserver](#vncserver)
+- [artifactory](#artifactory)
+  - [add insecure-regiestry](#add-insecure-regiestry)
+  - [docker login & logout](#docker-login--logout)
+  - [docker pull](#docker-pull)
+  - [docker push](#docker-push)
 - [X Windows](#x-windows)
+  - [get screen solution](#get-screen-solution)
+  - [desktop sharing](#desktop-sharing)
 - [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

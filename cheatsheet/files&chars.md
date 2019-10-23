@@ -1,3 +1,25 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [find out the file is ending by crlf or lf](#find-out-the-file-is-ending-by-crlf-or-lf)
+- [Show all line numbers in a file](#show-all-line-numbers-in-a-file)
+- [Insert into the first line](#insert-into-the-first-line)
+- [backup and restore filer & folder permission](#backup-and-restore-filer--folder-permission)
+- [Encrypt bash file](#encrypt-bash-file)
+- [Get the count of a word in a file](#get-the-count-of-a-word-in-a-file)
+- [Print 50th char](#print-50th-char)
+- [Get the common part](#get-the-common-part)
+- [Revert a word](#revert-a-word)
+- [Format a file to a table](#format-a-file-to-a-table)
+- [Show last n lines in a file](#show-last-n-lines-in-a-file)
+- [Print a file into one line](#print-a-file-into-one-line)
+- [Get the file inode](#get-the-file-inode)
+- [All About {Curly Braces} In Bash](#all-about-curly-braces-in-bash)
+- [find and replace](#find-and-replace)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### find out the file is ending by crlf or lf
 - `cat -e`
     ```bash
