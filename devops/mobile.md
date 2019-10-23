@@ -1,16 +1,16 @@
 
-### ios
+## ios
+### get info
 #### [get info from *.plist](https://stackoverflow.com/questions/11307275/how-can-i-find-the-version-number-of-an-iphone-app-from-the-ipa)
 ```bash
 $ /usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" package/Info.plist
-com.mycompany.iam.demo
+com.mycompany.myapp.demo
 
 $ /usr/libexec/PlistBuddy -c print package/Info.plist | grep CFBundleVersion
     CFBundleVersion = 185
 ```
 
 #### get ipa file information
-
 ```bash
 $ gem install shenzhen
 $ ipa info myapp-0.3.0/myapp.ipa
@@ -192,6 +192,130 @@ $ ideviceprovision list -u ${DEVICEID}
 Device has 4 provisioning profiles installed:
 4b73738f-d730-49e4-a8eb-0031275cdee4 - myappPilotAppDistribution
 b84ef185-a387-4a1d-8a41-3230708c6b31 - iOS Team Provisioning Profile: com.mycompany.cdtest.WebDriverAgentRunner
-59ecee46-f43f-4a87-a89e-f9b03f14cf01 - XC iOS: com.mycompany.iam.demo
-83d90272-79fe-4f8f-8ea5-8f18f60b5683 - IAMDemoDev
+59ecee46-f43f-4a87-a89e-f9b03f14cf01 - XC iOS: com.mycompany.myapp.demo
+83d90272-79fe-4f8f-8ea5-8f18f60b5683 - myappDemoDev
+```
+
+## [andriod](https://gist.github.com/Pulimet/5013acf2cd5b28e55036c82c91bd56d8)
+### environment
+```bash
+$ ln -sf /opt/android/platform-tools/adb /usr/local/bin/adb
+$ ln -sf /opt/android/build-tools/27.0.3/aapt /usr/local/bin/aapt
+$ ln -sf /opt/android/build-tools/27.0.3/aapt2 /usr/local/bin/aapt2
+```
+### get info
+#### [get bundle id from *.ipa](http://www.growingwiththeweb.com/2014/01/handy-adb-commands-for-android.html)
+```bash
+$ aapt dump badging ${apkFile} | grep package | sed -r -e "s:^.*name='([^']*).*$:\\1:"
+$ aapt dump badging package/myapp-1.3.85.apk | grep package | sed -r -e "s:^.*name='([^']*).*$:\\1:"
+com.mycompany.myapp.demo
+
+$ aapt dump badging package/myapp-1.3.85.apk | grep package
+package: name='com.mycompany.myapp.demo' versionCode='1030085' versionName='1.3.85' platformBuildVersionName='8.0.0'
+$ aapt dump badging package/myapp-1.3.85.apk
+package: name='com.mycompany.myapp.demo' versionCode='1030085' versionName='1.3.85' platformBuildVersionName='8.0.0'
+sdkVersion:'19'
+targetSdkVersion:'26'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='android.permission.ACCESS_NETWORK_STATE'
+uses-permission: name='android.permission.ACCESS_WIFI_STATE'
+uses-permission: name='android.permission.READ_PHONE_STATE'
+uses-permission: name='android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission: name='android.permission.READ_EXTERNAL_STORAGE'
+...
+```
+
+#### [get imei](https://stackoverflow.com/questions/6852106/is-there-an-android-shell-or-adb-command-that-i-could-use-to-get-a-devices-imei)
+```bash
+$ adb shell service call iphonesubinfo 1 | awk -F "'" '{print $2}' | sed '1 d' | tr -d '.' | awk '{print}' ORS=
+864226033999836
+
+$ echo "[device.imei]: [$(adb shell service call iphonesubinfo 1 | awk -F "'" '{print $2}' | sed '1 d'| tr -d '\n' | tr -d '.' | tr -d ' ')]"
+[device.imei]: [864226033999836]
+
+$ echo "[device.imei]: [$(adb shell service call iphonesubinfo 1 | awk -F "'" '{print $2}' | sed '1 d'| tr -d '\n' | tr -d '.' | tr -d ' ')]"; adb shell getprop | grep "model\|version.sdk\|manufacturer\|ro.serialno\|product.name\|brand\|version.release\|build.id\|security_patch" | sed 's/ro\.//g'
+[device.imei]: [864226033999836]
+[persist.sys.modelnumber]: [NX569H]
+[build.id]: [MMB29M]
+[build.version.release]: [6.0.1]
+[build.version.sdk]: [23]
+[build.version.security_patch]: [2017-02-01]
+[product.brand]: [nubia]
+[product.manufacturer]: [nubia]
+[product.model]: [NX569H]
+[product.name]: [NX569H]
+[serialno]: [fac7ea46]
+```
+
+#### get andriod version
+```bash
+$ adb shell getprop ro.build.version.release
+6.0.1
+```
+
+### show list
+#### [list installed apps](http://www.growingwiththeweb.com/2014/01/handy-adb-commands-for-android.html)
+```bash
+$ adb -s fac7ea46 shell 'pm list packages' | grep 'com.mycompany.myapp.demo'
+package:com.mycompany.myapp.demo
+```
+
+#### list all apps
+```bash
+$ adb -s ${DEVICEID} shell 'pm list packages -f' | sed -e 's/.*=//' | sed 's/\r//g' | sort
+android
+cn.nubia.accounts
+cn.nubia.aftersale
+cn.nubia.applockmanager
+cn.nubia.apps
+cn.nubia.appsettingsinfoproviders
+cn.nubia.autoagingtest
+cn.nubia.bbs
+cn.nubia.bootanimationinfo
+...
+```
+
+#### [list connected device](http://www.growingwiththeweb.com/2014/01/handy-adb-commands-for-android.html)
+```bash
+$ adb devices
+List of devices attached
+fac7ea46    device
+
+$ adb devices -l
+List of devices attached
+fac7ea46               device usb:343089152X product:NX569H model:NX569H device:NX569H transport_id:2
+```
+
+### install & uninstall
+#### install
+```bash
+$ adb -s ${DEVICEID} install -r "$(find . -name '*.apk')"
+
+$ adb -s fac7ea46 install ${WORKSPACE}/package/myapp-1.3.84.apk
+[  0%] /data/local/tmp/myapp-1.3.84.apk
+[  1%] /data/local/tmp/myapp-1.3.84.apk
+[  2%] /data/local/tmp/myapp-1.3.84.apk
+[  3%] /data/local/tmp/myapp-1.3.84.apk
+[  3%] /data/local/tmp/myapp-1.3.84.apk
+[  4%] /data/local/tmp/myapp-1.3.84.apk
+[  5%] /data/local/tmp/myapp-1.3.84.apk
+[  6%] /data/local/tmp/myapp-1.3.84.apk
+[  7%] /data/local/tmp/myapp-1.3.84.apk
+[  7%] /data/local/tmp/myapp-1.3.84.apk
+...
+```
+
+#### uninstall
+```bash
+$ adb -s ${DEVICEID} uninstall ${BUNDLEID}
+```
+
+e.g.:
+```bash
+$ adb -s fac7ea46 uninstall com.mycompany.myapp.demo
+Success
+
+$ if adb -s fac7ea46 shell 'pm list packages' | grep 'com.mycompany.myapp.demo'; then
+> adb -s fac7ea46 uninstall com.mycompany.myapp.demo
+> fi
 ```
