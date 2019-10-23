@@ -1,7 +1,58 @@
 life is hard, make it easier
 =======
 
-## [git](devops/git/git.md)
+## in the book
+- cheatsheet
+  * [files&chars](cheatsheet/files&chars.md)
+  * [good](cheatsheet/good.md)
+  * [havefun](cheatsheet/havefun.md)
+  * [kubernetes](cheatsheet/kubernetes.md)
+  * [linuxBasic](cheatsheet/linuxBasic.md)
+  * [media](cheatsheet/media.md)
+  * [system](cheatsheet/system.md)
+  * [ubuntu](cheatsheet/ubuntu.md)
+  * [utils](cheatsheet/utils.md)
+  * [windows](cheatsheet/windows.md)
+- devops
+  - [git](devops/git/git.md)
+    * [gerrit](devops/git/gerrit.md)
+    * [lineEnding](devops/git/lineEnding.md)
+    * [q&a](devops/git/q&a.md)
+  * [adminTools](devops/adminTools.md)
+  * [commonTools](devops/commonTools.md)
+  * [compilation](devops/compilation.md)
+  * [network](devops/network.md)
+  * [osx](devops/osx.md)
+  * [python](devops/python.md)
+  * [ssh](devops/ssh.md)
+- jenkins
+  * [configuration](jenkins/configuration.md)
+- programming
+  - angular
+    * [angularConfiguraion](programming/angular/angularConfiguraion.md)
+  - [maven](programming/maven/README.md)
+  - mysql
+    * [mysqlCmakeLogs](programming/mysql/mysqlCmakeLogs.md)
+    * [mysqlInstallationBySourceCode](programming/mysql/mysqlInstallationBySourceCode.md)
+    * [mysqlInstallDB](programming/mysql/mysqlInstallDB.md)
+    * [mysqlSecureInstallation](programming/mysql/mysqlSecureInstallation.md)
+  - ruby
+    * [rubyInstallationBySourceCode](programming/ruby/rubyInstallationBySourceCode.md)
+    * [rubyInstallationQ&A](programming/ruby/rubyInstallationQ&A.md)
+  * [programCommand](programming/programCommand.md)
+- tool
+  * [skype](tool/skype.md)
+  * [teamviewer](tool/teamviewer.md)
+- ubuntu
+  - kubernetes
+    * [kubeadm](ubuntu/kubernetes/kubeadm.md)
+    * [network](ubuntu/kubernetes/network.md)
+  * [apps](ubuntu/apps.md)
+  * [installation](ubuntu/installation.md)
+  * [repo](ubuntu/repo.md)
+  * [ssl](ubuntu/ssl.md)
+  * [systemctl](ubuntu/systemctl.md)
+  * [x](ubuntu/x.md)
 
 ## build mocp from Source Code
 - [Precondiction](https://github.com/marslo/moc-cmus#precondiction)
