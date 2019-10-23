@@ -6,7 +6,7 @@
   - [list](#list)
   - [download sdk while building](#download-sdk-while-building)
   - [debug](#debug)
-- [install](#install)
+  - [install](#install)
 - [android package management](#android-package-management)
   - [list remote sdk](#list-remote-sdk)
   - [list local sdk](#list-local-sdk)
@@ -111,7 +111,7 @@ GRADLE_OPTS='-Dorg.gradle.daemon=false -Dandroid.builder.sdkDownload=true -Dorg.
 $ strace -e trace=network -y -s 256 -f -o strace.log tools/bin/sdkmanager --update
 ```
 
-## install
+### install
 ```bash
 $  sdkmanager "platform-tools" "platforms;android-26"  --no_https --proxy=http --proxy_host=192.168.1.100 --proxy_port=8000 --verbose
 Info: Parsing legacy package: /opt/android-sdk/android-ndk
