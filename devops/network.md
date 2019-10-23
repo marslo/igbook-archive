@@ -395,15 +395,10 @@ $ ifstat -n -i en7
     ```bash
     $ sudo iwlist scan
     docker0   Interface doesn't support scanning.
-
     eno1      Interface doesn't support scanning.
-
     lo        Interface doesn't support scanning.
-
     cni0      Interface doesn't support scanning.
-
-    flannel.1  Interface doesn't support scanning.
-
+    flannel.1  Interface doesnt support scanning.
     wlx24050f15c19b  Scan completed :
               Cell 01 - Address: 50:3A:A0:CB:07:FA
                         Channel:1
@@ -418,7 +413,6 @@ $ ifstat -n -i en7
     ...
 
     # or
-
     $ nmcli --show-secrets connection show 'MERCURY_07FA'
     connection.id:                          MERCURY_07FA
     connection.uuid:                        8e362f4a-d3a3-4147-b31e-4519954b55ef
