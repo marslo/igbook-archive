@@ -17,6 +17,7 @@
     * [lineEnding](devops/git/lineEnding.md)
     * [q&a](devops/git/q&a.md)
   * [adminTools](devops/adminTools.md)
+  * [android](devops/android.md)
   * [commonTools](devops/commonTools.md)
   * [compilation](devops/compilation.md)
   * [mobile](devops/mobile.md)
