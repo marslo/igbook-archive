@@ -66,7 +66,6 @@ build-tools;25.0.3
 build-tools;23.0.1
 ...
 
-
 $ sdkmanager --list --verbose
 Info: Parsing legacy package: /opt/android-sdk/android-ndk
 Info: Parsing /opt/android-sdk/build-tools/19.1.0/package.xml
@@ -113,7 +112,7 @@ $ strace -e trace=network -y -s 256 -f -o strace.log tools/bin/sdkmanager --upda
 
 ### install
 ```bash
-$  sdkmanager "platform-tools" "platforms;android-26"  --no_https --proxy=http --proxy_host=192.168.1.100 --proxy_port=8000 --verbose
+$ sdkmanager "platform-tools" "platforms;android-26"  --no_https --proxy=http --proxy_host=192.168.1.100 --proxy_port=8000 --verbose
 Info: Parsing legacy package: /opt/android-sdk/android-ndk
 Info: Parsing /opt/android-sdk/build-tools/19.1.0/package.xml
 Info: Parsing /opt/android-sdk/build-tools/20.0.0/package.xml
@@ -208,114 +207,113 @@ Refresh Sources:
 ```
 
 ## manual download
-- Download URL
-    ```bash
-    https://dl.google.com/android/repository/
-    https://dl.google.com/android/repository/tools_r25.2.5-linux.zip
+```bash
+https://dl.google.com/android/repository/
+https://dl.google.com/android/repository/tools_r25.2.5-linux.zip
 
-    Tools:
-        Android SDK Platform-tools
-            https://dl.google.com/android/repository/platform-tools_r25.0.3-linux.zip
-            https://dl.google.com/android/repository/platform-tools_r25.0.3-linux.zip
+Tools:
+    Android SDK Platform-tools
+        https://dl.google.com/android/repository/platform-tools_r25.0.3-linux.zip
+        https://dl.google.com/android/repository/platform-tools_r25.0.3-linux.zip
 
-        Android SDK Build-tools:
-            - https://dl.google.com/android/repository/build-tools_r25.0.2-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r25.0.1-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r25-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r24.0.3-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r24.0.2-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r24.0.1-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r24-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r23.0.3-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r23.0.2-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r23.0.1-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r22.0.1-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r21.1.2-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r20-linux.zip
-            - https://dl.google.com/android/repository/build-tools_r19.1-linux.zip
+    Android SDK Build-tools:
+        - https://dl.google.com/android/repository/build-tools_r25.0.2-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r25.0.1-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r25-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r24.0.3-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r24.0.2-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r24.0.1-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r24-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r23.0.3-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r23.0.2-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r23.0.1-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r22.0.1-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r21.1.2-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r20-linux.zip
+        - https://dl.google.com/android/repository/build-tools_r19.1-linux.zip
 
-        Android 7.1.1 (API 25)
-            - SDK Platform:
-            https://dl.google.com/android/repository/platform-25_r03.zip
-            platforms/android-25
+    Android 7.1.1 (API 25)
+        - SDK Platform:
+        https://dl.google.com/android/repository/platform-25_r03.zip
+        platforms/android-25
 
-        Android 7.0 (API 24)
-            - SDK Platform:
-            https://dl.google.com/android/repository/platform-24_r02.zip
-            platforms/android-24
+    Android 7.0 (API 24)
+        - SDK Platform:
+        https://dl.google.com/android/repository/platform-24_r02.zip
+        platforms/android-24
 
-            - Document:
-            https://dl.google.com/android/repository/docs-24_r01.zip
-            docs/
+        - Document:
+        https://dl.google.com/android/repository/docs-24_r01.zip
+        docs/
 
-            - Google APIs
-            https://dl.google.com/android/repository/google_apis-24_r1.zip
-            add-ons/addon-google_apis-google-24
+        - Google APIs
+        https://dl.google.com/android/repository/google_apis-24_r1.zip
+        add-ons/addon-google_apis-google-24
 
-        Android 6.0  (API 23)
-            - SDK Platform
-            https://dl.google.com/android/repository/platform-23_r03.zip
-            platforms/android-23
+    Android 6.0  (API 23)
+        - SDK Platform
+        https://dl.google.com/android/repository/platform-23_r03.zip
+        platforms/android-23
 
-            - Document:
-            https://dl.google.com/android/repository/docs-23_r01.zip
-            docs/
+        - Document:
+        https://dl.google.com/android/repository/docs-23_r01.zip
+        docs/
 
-            - Google APIs
-            https://dl.google.com/android/repository/google_apis-23_r01.zip
-            add-ons/addon-google_apis-google-23
+        - Google APIs
+        https://dl.google.com/android/repository/google_apis-23_r01.zip
+        add-ons/addon-google_apis-google-23
 
-        Android 5.1.1 (API 22)
-            - SDK Platform
-            https://dl.google.com/android/repository/android-22_r02.zip
-            platforms/android-23
+    Android 5.1.1 (API 22)
+        - SDK Platform
+        https://dl.google.com/android/repository/android-22_r02.zip
+        platforms/android-23
 
-            - Google APIs
-            https://dl.google.com/android/repository/google_apis-22_r01.zip
-            add-ons/addon-google_apis-google-22
+        - Google APIs
+        https://dl.google.com/android/repository/google_apis-22_r01.zip
+        add-ons/addon-google_apis-google-22
 
-        Extra:
-            - Android Support Repository
-            https://dl.google.com/android/repository/android_m2repository_r44.zip
-            extras/android/m2repository
+    Extra:
+        - Android Support Repository
+        https://dl.google.com/android/repository/android_m2repository_r44.zip
+        extras/android/m2repository
 
-            - Android Auto Desktop Head Unit emulator
-            https://dl.google.com/android/repository/desktop-head-unit-linux_r01.1.zip
-            extras/google/auto
+        - Android Auto Desktop Head Unit emulator
+        https://dl.google.com/android/repository/desktop-head-unit-linux_r01.1.zip
+        extras/google/auto
 
-            - Google Play Services
-            https://dl.google.com/android/repository/google_play_services_v9_rc41.zip
-            extras/google/google_play_services
+        - Google Play Services
+        https://dl.google.com/android/repository/google_play_services_v9_rc41.zip
+        extras/google/google_play_services
 
-            - Google Repository
-            https://dl.google.com/android/repository/google_m2repository_gms_v9_rc41_wear_2_0_rc6.zip
-            extras/google/m2repository
+        - Google Repository
+        https://dl.google.com/android/repository/google_m2repository_gms_v9_rc41_wear_2_0_rc6.zip
+        extras/google/m2repository
 
 
-            - Google Play APK Expansion library
-            https://dl.google.com/android/repository/market_apk_expansion-r03.zip
-            extras/google/market_apk_expansion
+        - Google Play APK Expansion library
+        https://dl.google.com/android/repository/market_apk_expansion-r03.zip
+        extras/google/market_apk_expansion
 
-            - Google Play Licensing Library
-            https://dl.google.com/android/repository/market_licensing-r02.zip
-            extras/google/market_licensing
+        - Google Play Licensing Library
+        https://dl.google.com/android/repository/market_licensing-r02.zip
+        extras/google/market_licensing
 
-            - Google Play Billing Library
-            https://dl.google.com/android/repository/play_billing_r05.zip
-            extras/google/play_billing
+        - Google Play Billing Library
+        https://dl.google.com/android/repository/play_billing_r05.zip
+        extras/google/play_billing
 
-            - Android Auto API Simulators
-            https://dl.google.com/android/repository/simulator_r01.zip
-            extras/google/simulators
+        - Android Auto API Simulators
+        https://dl.google.com/android/repository/simulator_r01.zip
+        extras/google/simulators
 
-            - Google USD Driver
-            https://dl.google.com/android/repository/usb_driver_r11-windows.zip
-            extras/google/usb_driver
+        - Google USD Driver
+        https://dl.google.com/android/repository/usb_driver_r11-windows.zip
+        extras/google/usb_driver
 
-            - Google Web Driver
-            https://dl.google.com/android/repository/webdriver_r02.zip
-            extras/google/webdriver
+        - Google Web Driver
+        https://dl.google.com/android/repository/webdriver_r02.zip
+        extras/google/webdriver
 
-            - Intel x86 Emulator Accelerator (HAXM Installer)
-            http://mirrors.neusoft.edu.cn/android/repository/extras/intel/
-    ```
+        - Intel x86 Emulator Accelerator (HAXM Installer)
+        http://mirrors.neusoft.edu.cn/android/repository/extras/intel/
+```
