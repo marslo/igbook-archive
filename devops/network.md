@@ -433,9 +433,6 @@ $ ifstat -n -i en7
 ![nmcli-1](../screenshot/nmcli-1.png)
 
 - show available wifi
-
-![nmcli-2](../screenshot/nmcli-2.png)
-
     ```bash
     $ sudo nmcli device wifi rescan
     $ nmcli dev wifi list
@@ -456,6 +453,8 @@ $ ifstat -n -i en7
             56qq-guest        Infra  1     195 Mbit/s  22      ▂___  WPA2
             HCB               Infra  1     195 Mbit/s  19      ▂___  WPA2 802.1X
     ```
+
+![nmcli-2](../screenshot/nmcli-2.png)
 
 - show saved wifi list
     ```bash
