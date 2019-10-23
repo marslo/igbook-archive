@@ -230,7 +230,7 @@ Server:     130.147.236.5
 Address:    130.147.236.5#53
 
 Non-authoritative answer:
-Name:   pww.gitlab.cdi.philips.com
+Name:   pww.gitlab.cdi.mycompany.com
 Address: 130.147.219.15
 
 $ $ ip route get 130.147.219.15
@@ -309,7 +309,7 @@ $ sudo cp /etc/resolvconf/resolv.conf.d/head{,.org}
 $ sudo bash -c "cat > /etc/resolvconf/resolv.conf.d/head" << EOF
 nameserver 130.147.236.5
 nameserver 161.92.35.78
-search cn-132.lan.philips.com
+search cn-132.lan.mycompany.com
 EOF
 
 $ sudo resolvconf -u
@@ -323,7 +323,7 @@ $ cat /etc/resolv.conf
 nameserver 130.147.236.5
 nameserver 161.92.35.78
 nameserver 127.0.0.53
-search cn-132.lan.philips.com
+search cn-132.lan.mycompany.com
 ```
 
 # Port Redirection
