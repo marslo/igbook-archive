@@ -27,21 +27,21 @@ Installed packages:=====================] 100% Computing updates...
   tools   | 26.1.1  | Android SDK Tools 26.1.1 | tools/
 
 Available Packages:
-  Path                                                                                     | Version      | Description
-  -------                                                                                  | -------      | -------
-  add-ons;addon-google_apis-google-15                                                      | 3            | Google APIs
-  add-ons;addon-google_apis-google-16                                                      | 4            | Google APIs
-  add-ons;addon-google_apis-google-17                                                      | 4            | Google APIs
-  add-ons;addon-google_apis-google-18                                                      | 4            | Google APIs
-  add-ons;addon-google_apis-google-19                                                      | 20           | Google APIs
-  add-ons;addon-google_apis-google-21                                                      | 1            | Google APIs
-  add-ons;addon-google_apis-google-22                                                      | 1            | Google APIs
-  add-ons;addon-google_apis-google-23                                                      | 1            | Google APIs
-  add-ons;addon-google_apis-google-24                                                      | 1            | Google APIs
-  add-ons;addon-google_gdk-google-19                                                       | 11           | Glass Development Kit Preview
-  build-tools;19.1.0                                                                       | 19.1.0       | Android SDK Build-Tools 19.1
-  build-tools;20.0.0                                                                       | 20.0.0       | Android SDK Build-Tools 20
-  build-tools;21.1.2                                                                       | 21.1.2       | Android SDK Build-Tools 21.1.2
+  Path                                    | Version      | Description
+  -------                                 | -------      | -------
+  add-ons;addon-google_apis-google-15     | 3            | Google APIs
+  add-ons;addon-google_apis-google-16     | 4            | Google APIs
+  add-ons;addon-google_apis-google-17     | 4            | Google APIs
+  add-ons;addon-google_apis-google-18     | 4            | Google APIs
+  add-ons;addon-google_apis-google-19     | 20           | Google APIs
+  add-ons;addon-google_apis-google-21     | 1            | Google APIs
+  add-ons;addon-google_apis-google-22     | 1            | Google APIs
+  add-ons;addon-google_apis-google-23     | 1            | Google APIs
+  add-ons;addon-google_apis-google-24     | 1            | Google APIs
+  add-ons;addon-google_gdk-google-19      | 11           | Glass Development Kit Preview
+  build-tools;19.1.0                      | 19.1.0       | Android SDK Build-Tools 19.1
+  build-tools;20.0.0                      | 20.0.0       | Android SDK Build-Tools 20
+  build-tools;21.1.2                      | 21.1.2       | Android SDK Build-Tools 21.1.2
   ...
 ```
 
