@@ -2,18 +2,12 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Interface](#interface)
-  - [Change Interface Name](#change-interface-name)
-    - [Permanent Solution](#permanent-solution)
-    - [Temporary Solution](#temporary-solution)
-  - [Show](#show)
-    - [ethtool](#ethtool)
-    - [List Hardware](#list-hardware)
-    - [Show Route](#show-route)
+- [interface](#interface)
 - [DNS](#dns)
-  - [Permanently Add new DNS](#permanently-add-new-dns)
 - [Port Redirection](#port-redirection)
 - [Proxy Setup](#proxy-setup)
+- [network speed](#network-speed)
+- [wifi](#wifi)
 - [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
