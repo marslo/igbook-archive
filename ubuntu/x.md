@@ -147,7 +147,7 @@ $ grep -i time /etc/gdm3/custom.conf
 
 ### login session
 
-![desktop styles](1.marslo_env/ubuntu/logs/screenshots/desktop-style-2.jpeg)
+![desktop styles](screenshots/desktop-style-2.jpeg)
 
 #### Default Session
 ```bash
