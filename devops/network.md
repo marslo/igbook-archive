@@ -466,7 +466,9 @@ $ ifstat -n -i en7
     ```
 
 #### nmtui
+
 ![nmtui-1](../screenshot/nmtui-1.png)
+
 ![nmtui-2](../screenshot/nmtui-2.png)
 
 ### Reference
