@@ -433,7 +433,9 @@ $ ifstat -n -i en7
 ![nmcli-1](../screenshot/nmcli-1.png)
 
 - show available wifi
+
 ![nmcli-2](../screenshot/nmcli-2.png)
+
     ```bash
     $ sudo nmcli device wifi rescan
     $ nmcli dev wifi list
