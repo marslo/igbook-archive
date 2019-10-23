@@ -24,12 +24,13 @@
     ```
 
 ### Show all line numbers in a file
-- Method 1
+- `cat`
     ```bash
     $ sudo cat /etc/passwd | wc -l
     36
     ```
-- method 2
+
+- `awk`
     ```bash
     $ awk 'END {print NR}' /etc/passwd
     36
