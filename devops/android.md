@@ -3,24 +3,22 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [sdkmanager](#sdkmanager)
-  - [list available package](#list-available-package)
+  - [list](#list)
   - [download sdk while building](#download-sdk-while-building)
   - [debug](#debug)
+- [install](#install)
 - [android package management](#android-package-management)
   - [list remote sdk](#list-remote-sdk)
   - [list local sdk](#list-local-sdk)
   - [update sdk](#update-sdk)
-- [SDKManager](#sdkmanager)
-  - [list](#list)
-  - [list target](#list-target)
-  - [install](#install)
-  - [Plugin Installation by using SDKManager](#plugin-installation-by-using-sdkmanager)
 - [manual download](#manual-download)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## sdkmanager
-### list available package
+
+### list
+#### list available package
 ```bash
 $ sdkmanager --no_https --proxy=socks --proxy_port=1880 --proxy_host=localhost --list
 Installed packages:=====================] 100% Computing updates...
@@ -47,6 +45,62 @@ Available Packages:
   ...
 ```
 
+#### list
+```bash
+$  find /opt/android-sdk/ -name package.xml -exec sh -c 'eval $(xmllint --xpath "//*[local-name()='\'localPackage\'']/@path" $0) && echo $path' {} \;
+platforms;android-26
+platforms;android-17
+platforms;android-22
+platforms;android-23
+platforms;android-24
+platforms;android-18
+platforms;android-21
+platforms;android-19
+platforms;android-25
+platforms;android-16
+docs
+build-tools;24.0.1
+build-tools;22.0.1
+build-tools;25.0.2
+build-tools;25.0.3
+build-tools;23.0.1
+...
+
+
+$ sdkmanager --list --verbose
+Info: Parsing legacy package: /opt/android-sdk/android-ndk
+Info: Parsing /opt/android-sdk/build-tools/19.1.0/package.xml
+Info: Parsing /opt/android-sdk/build-tools/20.0.0/package.xml
+Info: Parsing /opt/android-sdk/build-tools/21.1.2/package.xml
+Info: Parsing /opt/android-sdk/build-tools/22.0.1/package.xml
+Info: Parsing /opt/android-sdk/build-tools/23.0.1/package.xml
+...
+```
+
+#### list target
+```bash
+$  android list target
+Available Android targets:
+----------
+id: 1 or "android-15"
+     Name: Android 4.0.3
+     Type: Platform
+     API level: 15
+     Revision: 5
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800
+ Tag/ABIs : no ABIs.
+----------
+id: 2 or "android-16"
+     Name: Android 4.1.2
+     Type: Platform
+     API level: 16
+     Revision: 5
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
+ Tag/ABIs : no ABIs.
+----------
+...
+```
+
 ### [download sdk while building](https://discuss.gradle.org/t/http-s-proxy-problem/23427/2)
 ```bash
 GRADLE_OPTS='-Dorg.gradle.daemon=false -Dandroid.builder.sdkDownload=true -Dorg.gradle.jvmargs=-Xmx2048M -Dhttp.proxyHost=sample.localnet -Dhttp.proxyPort=80 -Dhttps.proxyHost=sample.localnet -Dhttps.proxyPort=80' HTTPS_PROXY=http://sample.localnet:80 HTTP_PROXY=http://sample.localnet:80 _JAVA_OPTIONS='-Dhttp.proxyHost=sample.localnet -Dhttp.proxyPort=80 -Dhttps.proxyHost=sample.localnet -Dhttps.proxyPort=80' http_proxy=http://sample.localnet:80 https_proxy=http://sample.localnet:80
@@ -55,6 +109,39 @@ GRADLE_OPTS='-Dorg.gradle.daemon=false -Dandroid.builder.sdkDownload=true -Dorg.
 ### [debug](https://stackoverflow.com/a/48810497)
 ```bash
 $ strace -e trace=network -y -s 256 -f -o strace.log tools/bin/sdkmanager --update
+```
+
+## install
+```bash
+$  sdkmanager "platform-tools" "platforms;android-26"  --no_https --proxy=http --proxy_host=192.168.1.100 --proxy_port=8000 --verbose
+Info: Parsing legacy package: /opt/android-sdk/android-ndk
+Info: Parsing /opt/android-sdk/build-tools/19.1.0/package.xml
+Info: Parsing /opt/android-sdk/build-tools/20.0.0/package.xml
+Info: Parsing /opt/android-sdk/build-tools/21.1.2/package.xml
+Info: Parsing /opt/android-sdk/build-tools/22.0.1/package.xml
+Info: Parsing /opt/android-sdk/build-tools/23.0.1/package.xml
+Info: Parsing /opt/android-sdk/build-tools/23.0.2/package.xml
+Info: Parsing /opt/android-sdk/build-tools/23.0.3/package.xml
+Info: Parsing /opt/android-sdk/build-tools/24.0.0/package.xml
+Info: Parsing /opt/android-sdk/build-tools/24.0.1/package.xml
+Info: Parsing /opt/android-sdk/build-tools/24.0.2/package.xml
+Info: Parsing /opt/android-sdk/build-tools/24.0.3/pac kage.xml
+...
+
+```
+
+#### plugin installation
+```bash
+$ sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" --no_https --proxy=http --proxy_host=192.168.1.100 --proxy_port=8000
+    /opt/android-sdk/extras/m2repository/com/android/support/constraint/constraint-layout/1.0.2/constraint-layout-1.0.2.aar
+
+$ sdkmanager "extras;android;m2repository;com;android;support;multidex;1.0.2" --no_https --proxy=http --proxy_host=192.168.1.100 --proxy_port=8000
+    /opt/android-sdk/extras/android/m2repository/com/android/support/multidex/1.0.1/multidex-1.0.1.aar
+"extras;android;m2repository;com;android;support;multidex;1.0.2"
+
+$ sdkmanager "add-ons;addon-google_apis-google-21" --no_https --proxy=http --proxy_host=192.168.1.100 --proxy_port=8000
+Done
+/opt/android-sdk/add-ons/addon-google_apis-google-21
 ```
 
 ## android package management
@@ -118,96 +205,6 @@ Refresh Sources:
   Fetching URL: http://dl.google.com/android/repository/extras/intel/addon.xml
   Validate XML: http://dl.google.com/android/repository/extras/intel/addon.xml
   ...
-```
-
-## SDKManager
-### list
-```bash
-$  find /opt/android-sdk/ -name package.xml -exec sh -c 'eval $(xmllint --xpath "//*[local-name()='\'localPackage\'']/@path" $0) && echo $path' {} \;
-platforms;android-26
-platforms;android-17
-platforms;android-22
-platforms;android-23
-platforms;android-24
-platforms;android-18
-platforms;android-21
-platforms;android-19
-platforms;android-25
-platforms;android-16
-docs
-build-tools;24.0.1
-build-tools;22.0.1
-build-tools;25.0.2
-build-tools;25.0.3
-build-tools;23.0.1
-...
-
-
-$ sdkmanager --list --verbose
-Info: Parsing legacy package: /opt/android-sdk/android-ndk
-Info: Parsing /opt/android-sdk/build-tools/19.1.0/package.xml
-Info: Parsing /opt/android-sdk/build-tools/20.0.0/package.xml
-Info: Parsing /opt/android-sdk/build-tools/21.1.2/package.xml
-Info: Parsing /opt/android-sdk/build-tools/22.0.1/package.xml
-Info: Parsing /opt/android-sdk/build-tools/23.0.1/package.xml
-...
-```
-
-### list target
-```bash
-$  android list target
-Available Android targets:
-----------
-id: 1 or "android-15"
-     Name: Android 4.0.3
-     Type: Platform
-     API level: 15
-     Revision: 5
-     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800
- Tag/ABIs : no ABIs.
-----------
-id: 2 or "android-16"
-     Name: Android 4.1.2
-     Type: Platform
-     API level: 16
-     Revision: 5
-     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
- Tag/ABIs : no ABIs.
-----------
-...
-```
-
-### install
-```bash
-$  sdkmanager "platform-tools" "platforms;android-26"  --no_https --proxy=http --proxy_host=192.168.1.100 --proxy_port=8000 --verbose
-Info: Parsing legacy package: /opt/android-sdk/android-ndk
-Info: Parsing /opt/android-sdk/build-tools/19.1.0/package.xml
-Info: Parsing /opt/android-sdk/build-tools/20.0.0/package.xml
-Info: Parsing /opt/android-sdk/build-tools/21.1.2/package.xml
-Info: Parsing /opt/android-sdk/build-tools/22.0.1/package.xml
-Info: Parsing /opt/android-sdk/build-tools/23.0.1/package.xml
-Info: Parsing /opt/android-sdk/build-tools/23.0.2/package.xml
-Info: Parsing /opt/android-sdk/build-tools/23.0.3/package.xml
-Info: Parsing /opt/android-sdk/build-tools/24.0.0/package.xml
-Info: Parsing /opt/android-sdk/build-tools/24.0.1/package.xml
-Info: Parsing /opt/android-sdk/build-tools/24.0.2/package.xml
-Info: Parsing /opt/android-sdk/build-tools/24.0.3/pac kage.xml
-...
-
-```
-
-### Plugin Installation by using SDKManager
-```bash
-$ sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" --no_https --proxy=http --proxy_host=192.168.1.100 --proxy_port=8000
-    /opt/android-sdk/extras/m2repository/com/android/support/constraint/constraint-layout/1.0.2/constraint-layout-1.0.2.aar
-
-$ sdkmanager "extras;android;m2repository;com;android;support;multidex;1.0.2" --no_https --proxy=http --proxy_host=192.168.1.100 --proxy_port=8000
-    /opt/android-sdk/extras/android/m2repository/com/android/support/multidex/1.0.1/multidex-1.0.1.aar
-"extras;android;m2repository;com;android;support;multidex;1.0.2"
-
-$ sdkmanager "add-ons;addon-google_apis-google-21" --no_https --proxy=http --proxy_host=192.168.1.100 --proxy_port=8000
-Done
-/opt/android-sdk/add-ons/addon-google_apis-google-21
 ```
 
 ## manual download
