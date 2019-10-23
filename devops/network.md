@@ -474,3 +474,4 @@ $ ifstat -n -i en7
 ### Reference
 - [ARCH NetWork Configuration](https://wiki.archlinux.org/index.php/Network_configuration#Change_device_name)
 - [How do I add a DNS server via resolv.conf?](https://askubuntu.com/a/51332/92979)
+- [How to Configure and Manage Network Connections Using ‘nmcli’ Tool](https://www.tecmint.com/configure-network-connections-using-nmcli-tool-in-linux/)
