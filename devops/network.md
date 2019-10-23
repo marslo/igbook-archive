@@ -59,7 +59,6 @@ $ sudo ip link set <ORIGINAL_INTERFACE_NAME> name <NEW_INTERFACE_NAME>
 $ sudo ifconfig <NEW_INTERFACE_NAME>
 ```
 
-![nmcli-1](../screenshot/nmcli-1.png)
 E.g.:
 ```bash
 $ nmcli dev
@@ -441,9 +440,10 @@ $ ifstat -n -i en7
     ...
     ```
 
-
-
 #### [nmcli](https://askubuntu.com/a/461831/92979)
+
+![nmcli-1](../screenshot/nmcli-1.png)
+
 - show available wifi
 ![nmcli-2](../screenshot/nmcli-2.png)
     ```bash
