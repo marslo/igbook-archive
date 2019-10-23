@@ -14,9 +14,76 @@
 
 
 ### system info
-#### get hardware uuid
+#### get hardware info
+- more
+    ```bash
+    $ sudo dmidecode -s
+    ```
+
+- System Information
+    ```bash
+    $ sudo dmidecode | grep -A3 '^System Information'
+        System Information
+                Manufacturer: HPE
+                Product Name: ProLiant DL380 Gen10
+            Version: Not Specified
+    # or
+    $ inxi -M
+        Machine:   Type: Server Mobo: HPE model: ProLiant DL380 Gen10 serial: <root required> UEFI: HPE v: U30
+                   date: 06/15/2018
+    # or
+    $ sudo inxi --dmidecode -Mxxx
+        Machine:   Type: Rack Mount Chassis Mobo: HPE model: ProLiant DL380 Gen10 serial: PFARA%%LMAZ6XB BIOS: HPE
+               v: U30 rev: 1.40 date: 06/15/2018 rom size: 16384 kB
+    ```
+
+- Manufacturer
+    ```bash
+    $ sudo dmidecode -s system-manufacturer
+        HPE
+
+    # or
+    $ sudo dmidecode -s baseboard-manufacturer
+    HPE
+
+    # or
+    $ cat /sys/devices/virtual/dmi/id/sys_vendor
+    HPE
+    ```
+
+- uuid
+    ```bash
+    $ sudo dmidecode | grep -i uuid | awk '{print $2}' | tr '[:upper:]' '[:lower:]'
+    ```
+
+- Product Name
+    ```bash
+    $ sudo dmidecode -s system-product-name
+        ProLiant DL380 Gen10
+
+    # or
+    $ sudo dmidecode -s baseboard-product-name
+    ProLiant DL380 Gen10
+
+    # or
+    $ cat /sys/devices/virtual/dmi/id/product_name
+    ProLiant DL380 Gen10
+    ```
+- [cpu cores](https://www.ryadel.com/en/cpu-cores-threads-number-linux-centos-virtual-machine/)
+    ```bash
+    $ cat /proc/cpuinfo | egrep "core id|physical id" | tr -d "\n" | sed s/physical/\\nphysical/g | grep -v ^$ | sort | uniq | wc -l
+    36
+    ```
+
+#### network speed
 ```bash
-$ sudo dmidecode | grep -i uuid | awk '{print $2}' | tr '[:upper:]' '[:lower:]'
+$ ifstat -n -i en7
+       en7
+ KB/s in  KB/s out
+    7.35      1.15
+    4.91      1.02
+    6.05      0.80
+    8.36      1.78
 ```
 
 #### show PATH

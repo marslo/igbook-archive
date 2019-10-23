@@ -18,9 +18,9 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Interface
-## Change Interface Name
-### [Permanent Solution](https://wiki.archlinux.org/index.php/Network_configuration#Change_interface_name)
+### interface
+#### Change Interface Name
+##### [Permanent Solution](https://wiki.archlinux.org/index.php/Network_configuration#Change_interface_name)
 ``` bash
 $ sudo touch /etc/udev/rules.d/10-network.rules
 $ sudo bash -c "cat > /etc/udev/rules.d/10-network.rules" << EOF
@@ -51,13 +51,15 @@ Wired connection 1  f72d569d-065b-3bc8-98ae-e07f8bf46945  ethernet  eth0
 cni0                9a2d48d7-e1c7-4fe4-a164-ffde9716dbf3  bridge    cni0
 docker0             5db99dac-d17d-4765-9f38-057ff2c853ff  bridge    docker0
 ```
-### [Temporary Solution](http://kernelpanik.net/rename-a-linux-network-interface-without-udev/)
+
+##### [Temporary Solution](http://kernelpanik.net/rename-a-linux-network-interface-without-udev/)
 ```bash
 $ sudo ifconfig <ORIGINAL_INTERFACE_NAME> down
 $ sudo ip link set <ORIGINAL_INTERFACE_NAME> name <NEW_INTERFACE_NAME>
 $ sudo ifconfig <NEW_INTERFACE_NAME>
 ```
 
+![nmcli-1](../screenshot/nmcli-1.png)
 E.g.:
 ```bash
 $ nmcli dev
@@ -103,8 +105,8 @@ cni0                e557e9bc-754e-4dc9-b9db-4519a7b15c33  bridge    cni0
 docker0             47c195b8-4867-40d3-acec-c28223e2b013  bridge    docker0
 ```
 
-## Show
-### ethtool
+#### Show
+##### ethtool
 ```bash
 $ sudo ethtool eth0
 Settings for eth0:
@@ -135,7 +137,7 @@ Settings for eth0:
     Link detected: yes
 ```
 
-### List Hardware
+##### List Hardware
 ```bash
 $ sudo lshw -class network
   *-network
@@ -223,7 +225,7 @@ $ sudo lshw -class network
        configuration: autonegotiation=off broadcast=yes driver=veth driverversion=1.0 duplex=full link=yes multicast=yes port=twisted pair speed=10Gbit/s
 ```
 
-### Show Route
+##### Show Route
 ```bash
 $ nslookup my.gitlab.company.com
 Server:     130.147.236.5
@@ -301,8 +303,8 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 192.168.10.0    0.0.0.0         255.255.254.0   U     600    0        0 wlan0
 ```
 
-# DNS
-## Permanently Add new DNS
+### DNS
+#### Permanently Add new DNS
 ```bash
 $ sudo apt install resolvconf
 $ sudo cp /etc/resolvconf/resolv.conf.d/head{,.org}
@@ -326,7 +328,7 @@ nameserver 127.0.0.53
 search cn-132.lan.mycompany.com
 ```
 
-# Port Redirection
+### Port Redirection
 ```bash
 $ sudo iptables -L -n
 Chain INPUT (policy ACCEPT)
@@ -358,7 +360,7 @@ run-parts: executing /usr/share/netfilter-persistent/plugins.d/25-ip6tables save
 $ sudo iptables-save > /etc/iptables/rules.v4
 ```
 
-# Proxy Setup
+### Proxy Setup
 * Name: `x.x.x.x`
 * Port: `80`
 * Settings
@@ -370,6 +372,114 @@ export https_proxy=x.x.x.x:80
 export no_proxy=localhost,127.0.0.1,*.google.com
 ```
 
-# Reference
+### network speed
+```bash
+$ ifstat -n -i en7
+       en7
+ KB/s in  KB/s out
+    7.35      1.15
+    4.91      1.02
+    6.05      0.80
+    8.36      1.78
+```
+
+### wifi
+#### `iwconfig`
+- installation
+    ```bash
+    $ sudo apt install wireless-tools
+    ```
+
+- get wireless card
+    ```bash
+    $ WIRELESSCARD="$(iwconfig 2>/dev/null | /bin/grep ESSID | awk -F' ' '{print $1}')"
+
+    $ iwconfig 2>/dev/null | \grep ESSID
+    wlx24050f15c19b  IEEE 802.11  ESSID:"MERCURY_07FA"
+    ```
+
+- wireless network details
+    ```bash
+    $ sudo iwlist scan
+    docker0   Interface doesn't support scanning.
+
+    eno1      Interface doesn't support scanning.
+
+    lo        Interface doesn't support scanning.
+
+    cni0      Interface doesn't support scanning.
+
+    flannel.1  Interface doesn't support scanning.
+
+    wlx24050f15c19b  Scan completed :
+              Cell 01 - Address: 50:3A:A0:CB:07:FA
+                        Channel:1
+                        Frequency:2.412 GHz (Channel 1)
+                        Quality=55/70  Signal level=-55 dBm
+                        Encryption key:on
+                        ESSID:"MERCURY_07FA"
+                        Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 9 Mb/s
+                                  18 Mb/s; 36 Mb/s; 54 Mb/s
+                        Bit Rates:6 Mb/s; 12 Mb/s; 24 Mb/s; 48 Mb/s
+                        Mode:Master
+    ...
+
+    # or
+
+    $ nmcli --show-secrets connection show 'MERCURY_07FA'
+    connection.id:                          MERCURY_07FA
+    connection.uuid:                        8e362f4a-d3a3-4147-b31e-4519954b55ef
+    connection.stable-id:                   --
+    connection.type:                        802-11-wireless
+    connection.interface-name:              --
+    connection.autoconnect:                 yes
+    connection.autoconnect-priority:        0
+    connection.autoconnect-retries:         -1 (default)
+    connection.auth-retries:                -1
+    connection.timestamp:                   1530689982
+    connection.read-only:                   no
+    ...
+    ```
+
+
+
+#### [nmcli](https://askubuntu.com/a/461831/92979)
+- show available wifi
+![nmcli-2](../screenshot/nmcli-2.png)
+    ```bash
+    $ sudo nmcli device wifi rescan
+    $ nmcli dev wifi list
+    IN-USE  SSID              MODE   CHAN  RATE        SIGNAL  BARS  SECURITY
+            CDI_TP-LINK       Infra  11    405 Mbit/s  100     ▂▄▆█  WPA1 WPA2
+            TP-LINK_CDI       Infra  1     270 Mbit/s  82      ▂▄▆█  WPA1 WPA2
+            WLAN-PUB          Infra  4     54 Mbit/s   82      ▂▄▆█  WPA1 WPA2
+            HiWiFi_Pins       Infra  7     270 Mbit/s  82      ▂▄▆█  WPA1 WPA2
+            --                Infra  1     54 Mbit/s   59      ▂▄▆_  --
+    *       MERCURY_07FA      Infra  1     270 Mbit/s  55      ▂▄__  WPA1 WPA2
+            Automation-Local  Infra  9     195 Mbit/s  55      ▂▄__  WPA2
+            ChinaUnicom       Infra  1     54 Mbit/s   42      ▂▄__  --
+            61-PUB            Infra  1     270 Mbit/s  29      ▂___  WPA2
+            HC_Guest          Infra  6     405 Mbit/s  29      ▂___  WPA1 WPA2
+            HuaCloud_AP       Infra  6     405 Mbit/s  29      ▂___  WPA1 WPA2
+            56qq-guest        Infra  6     195 Mbit/s  25      ▂___  WPA2
+            56qq-sec          Infra  1     195 Mbit/s  22      ▂___  WPA2 802.1X
+            56qq-guest        Infra  1     195 Mbit/s  22      ▂___  WPA2
+            HCB               Infra  1     195 Mbit/s  19      ▂___  WPA2 802.1X
+    ```
+
+- show saved wifi list
+    ```bash
+    $ nmcli c ( = $ nmcli connection)
+    NAME                UUID                                  TYPE      DEVICE
+    WLAN-PUB            545d5d95-723f-4e1b-b764-8e9bd2fe6a9f  wifi      wlp2s0
+    Wired connection 1  a2a10a61-4519-3380-9301-c6e2a592eaa7  ethernet  enp0s31f6
+    CDI_TP-LINK_5G      cb00cf00-58ca-4668-9b4c-e1fb3b18c932  wifi      --
+    ```
+
+#### nmtui
+![nmtui-1](../screenshot/nmtui-1.png)
+![nmtui-2](../screenshot/nmtui-2.png)
+
+### Reference
 - [ARCH NetWork Configuration](https://wiki.archlinux.org/index.php/Network_configuration#Change_device_name)
 - [How do I add a DNS server via resolv.conf?](https://askubuntu.com/a/51332/92979)
