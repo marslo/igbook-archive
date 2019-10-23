@@ -1,10 +1,7 @@
 life is hard, make it easier
 =======
 
-## git
-- [Git Aliases](devops/git/git.md#git-alias)
-- [Rebase](devops/git/git.md#rebase)
-- [Line Ending](devops/git/lineEnding.md)
+## [git](devops/git/git.md)
 
 ## build mocp from Source Code
 - [Precondiction](https://github.com/marslo/moc-cmus#precondiction)
