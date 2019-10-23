@@ -250,3 +250,7 @@ $ echo dir1 dir2 dir3 | xargs -n 1 cp file1
 $ echo dir{1..10} | xargs -n 1 cp file1
 ```
 
+### find and replace
+```bash
+$ find . -type f -name '*.md' -exec sed -i 's/<string1>/<string2>/g' {} +
+```
