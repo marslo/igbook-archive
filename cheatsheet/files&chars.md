@@ -24,14 +24,16 @@
     ```
 
 ### Show all line numbers in a file
-    - Method 1
-        ```bash
-        $ sudo cat /etc/passwd | wc -l
-        36
-        # or
-        $ awk 'END {print NR}' /etc/passwd
-        36
-        ```
+- Method 1
+    ```bash
+    $ sudo cat /etc/passwd | wc -l
+    36
+    ```
+- method 2
+    ```bash
+    $ awk 'END {print NR}' /etc/passwd
+    36
+    ```
 
 ### Insert into the first line
 
