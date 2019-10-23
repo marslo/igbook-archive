@@ -2,28 +2,28 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Enable Screensharing](#enable-screensharing)
-  - [Backup and Restore Config](#backup-and-restore-config)
-  - [Setup Screen Sharing](#setup-screen-sharing)
-    - [Reset VNC password](#reset-vnc-password)
-    - [Read all conf](#read-all-conf)
-  - [Start Application remotelly](#start-application-remotelly)
-  - [GDM](#gdm)
-    - [gnome-shell](#gnome-shell)
-    - [AutoLogin](#autologin)
-  - [login session](#login-session)
-    - [Default Session](#default-session)
-  - [Process and SubProcesses](#process-and-subprocesses)
-    - [pstree](#pstree)
-    - [ps](#ps)
-  - [Wayland](#wayland)
-- [Reference](#reference)
+- [Enable Screensharing](##enable-screensharing)
+  - [Backup and Restore Config](##backup-and-restore-config)
+  - [Setup Screen Sharing](##setup-screen-sharing)
+    - [Reset VNC password](##reset-vnc-password)
+    - [Read all conf](##read-all-conf)
+  - [Start Application remotelly](##start-application-remotelly)
+  - [GDM](##gdm)
+    - [gnome-shell](##gnome-shell)
+    - [AutoLogin](##autologin)
+  - [login session](##login-session)
+    - [Default Session](##default-session)
+  - [Process and SubProcesses](##process-and-subprocesses)
+    - [pstree](##pstree)
+    - [ps](##ps)
+  - [Wayland](##wayland)
+- [Reference](##reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Enable Screensharing
+## enable screensharing
 
-## Backup and Restore Config
+### backup and restore config
 ```bash
 $ dconf dump /org/gnome/desktop/remote-access/ > ubuntu1804_remoteaccess
 $ cat ubuntu1804_remoteaccess
@@ -35,7 +35,7 @@ prompt-enabled=false
 $ dconf load /org/gnome/desktop/remote-access/ < ubuntu1804_remoteaccess
 ```
 
-## Setup Screen Sharing
+### setup screen sharing
 ```bash
 $ read -e -p "VNC Password: " -i "ubuntu" VNCPASSWORD
 $ dconf write /org/gnome/desktop/remote-access/enabled true
@@ -46,13 +46,13 @@ $ dconf write /org/gnome/desktop/remote-access/vnc-password \"\'$(echo -n $VNCPA
 $ sudo service lightdm restart
 ```
 
-### Reset VNC password
+#### reset VNC password
 ```bash
 $ echo -n "marslo" | base64
 bWFyc2xv
 ```
 
-### Read all conf
+#### read all conf
 ```bash
 $ for i in $(gsettings list-keys org.gnome.Vino); do echo -e "$i:\t --> "$(dconf read /org/gnome/desktop/remote-access/$i); done
 notify-on-connect:   -->
@@ -72,34 +72,34 @@ lock-screen-on-disconnect:   -->
 vnc-password:    --> 'bWFyc2xv'
 ```
 
-## Start Application remotelly
+### start application remotelly
 ```bash
 $ export DISPLAY=:0
 $ gnome-terminal
 ```
 
-## [GDM](https://wiki.archlinux.org/index.php/GDM)
+### [GDM](https://wiki.archlinux.org/index.php/GDM)
 ```bash
 $ cat /lib/systemd/system/gdm.service
 [Unit]
 Description=GNOME Display Manager
 
-# replaces the getty
+## replaces the getty
 Conflicts=getty@tty1.service
 After=getty@tty1.service
 
-# replaces plymouth-quit since it quits plymouth on its own
+## replaces plymouth-quit since it quits plymouth on its own
 Conflicts=plymouth-quit.service
 After=plymouth-quit.service
 
-# Needs all the dependencies of the services it's replacing
-# pulled from getty@.service and plymouth-quit.service
-# (except for plymouth-quit-wait.service since it waits until
-# plymouth is quit, which we do)
+## Needs all the dependencies of the services it's replacing
+## pulled from getty@.service and plymouth-quit.service
+## (except for plymouth-quit-wait.service since it waits until
+## plymouth is quit, which we do)
 After=rc-local.service plymouth-start.service systemd-user-sessions.service
 
-# GDM takes responsibility for stopping plymouth, so if it fails
-# for any reason, make sure plymouth still stops
+## GDM takes responsibility for stopping plymouth, so if it fails
+## for any reason, make sure plymouth still stops
 OnFailure=plymouth-quit.service
 
 [Service]
@@ -117,11 +117,11 @@ ExecReload=/usr/share/gdm/generate-config
 ExecReload=/bin/kill -SIGHUP $MAINPID
 ```
 
-### [gnome-shell](https://www.archlinux.org/packages/extra/x86_64/gnome-shell/)
+#### [gnome-shell](https://www.archlinux.org/packages/extra/x86_64/gnome-shell/)
 
-### [AutoLogin](https://wiki.archlinux.org/index.php/GDM#Users_and_login)
+#### [AutoLogin](https://wiki.archlinux.org/index.php/GDM##Users_and_login)
 
-#### Login with desired session
+##### Login with desired session
 ```bash
 $ cat /var/lib/AccountsService/users/devops
 [User]
@@ -133,37 +133,37 @@ SystemAccount=false
 xkb=us
 ```
 
-#### Auto Login with GDM
+##### Auto Login with GDM
 ```bash
 $ grep -i auto /etc/gdm3/custom.conf
 [daemon]
-# Enabling automatic login
+## Enabling automatic login
 AutomaticLoginEnable = true
 AutomaticLogin = devops
 ```
 
-#### Auto Login with Delay
+##### Auto Login with Delay
 ```bash
 $ grep -i time /etc/gdm3/custom.conf
 [daemon]
-# Enabling timed login
-#  TimedLoginEnable = true
-#  TimedLogin = user1
-#  TimedLoginDelay = 10
+## Enabling timed login
+##  TimedLoginEnable = true
+##  TimedLogin = user1
+##  TimedLoginDelay = 10
 ```
 
-## login session
+### login session
 
 ![desktop styles](1.marslo_env/ubuntu/logs/screenshots/desktop-style-2.jpeg)
 
-### Default Session
+#### Default Session
 ```bash
 $ cat /etc/X11/default-display-manager
 /usr/sbin/gdm3
 ```
 
-## Process and SubProcesses
-### pstree
+### Process and SubProcesses
+#### pstree
 ```bash
 $ pstree 1391
 gdm3─┬─gdm-session-wor─┬─gdm-x-session─┬─Xorg───{Xorg}
@@ -196,9 +196,9 @@ gdm3─┬─gdm-session-wor─┬─gdm-x-session─┬─Xorg───{Xorg}
      └─2*[{gdm3}]
 ```
 
-### ps
+#### ps
 
-#### short
+##### short
 ```bash
 $ ps auxwwf
 /usr/sbin/gdm3
@@ -231,7 +231,7 @@ $ ps auxwwf
              \_ /usr/lib/deja-dup/deja-dup-monitor
 ```
 
-#### full
+##### full
 ```bash
 $ ps auxwwf
 root      1391  0.0  0.1 308176  8340 ?        Ssl  16:58   0:00 /usr/sbin/gdm3
@@ -264,9 +264,9 @@ devops    3686  0.0  0.3 605436 28680 tty1     Sl+  16:59   0:00              \_
 devops    4017  0.0  0.4 118225468 32448 tty1  Sl+  17:00   0:00              \_ /usr/lib/deja-dup/deja-dup-monitor
 ```
 
-## [Wayland](https://wiki.archlinux.org/index.php/Wayland)
+### [Wayland](https://wiki.archlinux.org/index.php/Wayland)
 
-# Reference
+## Reference
 - [GDM Reference Manual](https://help.gnome.org/admin/gdm/stable/index.html.en)
 - [GNOME](https://wiki.archlinux.org/index.php/GNOME)
 - [How to configure Vino for remote desktop access using command line](https://access.redhat.com/solutions/346033)
