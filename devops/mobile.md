@@ -102,26 +102,26 @@ uuid=$(/usr/libexec/PlistBuddy -c 'Print :Entitlements:application-identifier' /
 
 ### idevice
 - list real devices
+    ```bash
+    $ idevice_id -l
+    02be8bb96f479db9ff691f7e57c2344d170b363c
+    521d2bba6b5da32ad61aa7ea516fc45e31300a0f
+    ```
 
-```bash
-$ idevice_id -l
-02be8bb96f479db9ff691f7e57c2344d170b363c
-521d2bba6b5da32ad61aa7ea516fc45e31300a0f
-```
 - list simulator & devices
+    ```bash
+    $ instruments -s devices
+    Known Devices:
+    devops-slave08 [BEFBB759-F3EF-5053-94B4-EC21E6F032F7]
+    devops-iphone (11.2.6) [521d2bba6b5da32ad61aa7ea516fc45e31300a0f]
+    devops-ipad (11.2.6) [02be8bb96f479db9ff691f7e57c2344d170b363c]
+    Apple TV 1080p (10.2) [F546057D-6F75-40C6-ADB2-958ED8ACAF45] (Simulator)
+    iPad (5th generation) (10.3.1) [7D221270-6E99-4C25-B3F0-FD3ABF4ADE38] (Simulator)
+    iPad Air (10.3.1) [C4AC315A-FD89-4D6B-B7B9-3CDA2088A36E] (Simulator)
+    iPad Air 2 (10.3.1) [01F1D17D-5666-4B40-A8DC-F38FB7E3A266] (Simulator)
+    ...
+    ```
 
-```bash
-$ instruments -s devices
-Known Devices:
-devops-slave08 [BEFBB759-F3EF-5053-94B4-EC21E6F032F7]
-devops-iphone (11.2.6) [521d2bba6b5da32ad61aa7ea516fc45e31300a0f]
-devops-ipad (11.2.6) [02be8bb96f479db9ff691f7e57c2344d170b363c]
-Apple TV 1080p (10.2) [F546057D-6F75-40C6-ADB2-958ED8ACAF45] (Simulator)
-iPad (5th generation) (10.3.1) [7D221270-6E99-4C25-B3F0-FD3ABF4ADE38] (Simulator)
-iPad Air (10.3.1) [C4AC315A-FD89-4D6B-B7B9-3CDA2088A36E] (Simulator)
-iPad Air 2 (10.3.1) [01F1D17D-5666-4B40-A8DC-F38FB7E3A266] (Simulator)
-...
-```
 ### list install app
 ```bash
 $ ideviceinstaller -u ${DEVICEID} --list-apps
