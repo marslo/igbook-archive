@@ -58,49 +58,53 @@ security: SecPolicySetValue: One or more parameters passed to a function were no
 ```
 
 #### check version
+- `mobileprovision`
+    ```bash
+    $ unzip -l myapp-0.3.0/myapp.ipa  | grep mobileprovision
+                                     7589  06-30-2017 17:29   Payload/myapp.app/embedded.mobileprovision
+    ```
 
-```bash
-$ unzip -l myapp-0.3.0/myapp.ipa  | grep mobileprovision
-                                 7589  06-30-2017 17:29   Payload/myapp.app/embedded.mobileprovision
+- get version
+    ```bash
+    $ unzip -p myapp-0.3.0/myapp.ipa "Payload/myapp.app/embedded.mobileprovision" | security cms -D | egrep \<key.*Version -A 1 | egrep \<integer | sed -r -e 's:^.*integer>(.*)<.*$:\1:'
+    security: SecPolicySetValue: One or more parameters passed to a function were not valid.
+    1
+    ```
 
+- details
+    ```bash
+    $ unzip -p myapp-0.3.0/myapp.ipa "Payload/myapp.app/embedded.mobileprovision" | security cms -D | grep version
+    security: SecPolicySetValue: One or more parameters passed to a function were not valid.
+    <?xml version="1.0" encoding="UTF-8"?>
+    <plist version="1.0">
 
-$ unzip -p myapp-0.3.0/myapp.ipa "Payload/myapp.app/embedded.mobileprovision" | security cms -D | grep version
-security: SecPolicySetValue: One or more parameters passed to a function were not valid.
-<?xml version="1.0" encoding="UTF-8"?>
-<plist version="1.0">
+    $ unzip -p myapp-0.3.0/myapp.ipa "Payload/myapp.app/embedded.mobileprovision" | security cms -D | egrep \<key.*Version -A 1 | egrep \<integer
+    security: SecPolicySetValue: One or more parameters passed to a function were not valid.
+            <integer>1</integer>
 
-$ unzip -p myapp-0.3.0/myapp.ipa "Payload/myapp.app/embedded.mobileprovision" | security cms -D | egrep \<key.*Version -A 1 | egrep \<integer
-security: SecPolicySetValue: One or more parameters passed to a function were not valid.
-        <integer>1</integer>
-
-$ unzip -p myapp-0.3.0/myapp.ipa "Payload/myapp.app/embedded.mobileprovision" | security cms -D | egrep \<key.*Version -A 1 | egrep \<integer | sed -r -e 's:^.*integer>(.*)<.*$:\1:'
-security: SecPolicySetValue: One or more parameters passed to a function were not valid.
-1
-
-$ unzip -p myapp-0.3.0/myapp.ipa "Payload/myapp.app/embedded.mobileprovision" | security cms -D
-security: SecPolicySetValue: One or more parameters passed to a function were not valid.
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-        <key>AppIDName</key>
-        <string>myapp</string>
-        <key>ApplicationIdentifierPrefix</key>
-        <array>
-        <string>9BXY7H1234</string>
-        </array>
-...
-
-```
+    $ unzip -p myapp-0.3.0/myapp.ipa "Payload/myapp.app/embedded.mobileprovision" | security cms -D
+    security: SecPolicySetValue: One or more parameters passed to a function were not valid.
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+            <key>AppIDName</key>
+            <string>myapp</string>
+            <key>ApplicationIdentifierPrefix</key>
+            <array>
+            <string>9BXY7H1234</string>
+            </array>
+    ...
+    ```
 
 #### [get uuid](https://gist.github.com/benvium/2568707)
-
 ```bash
 uuid=$(/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i ${mp})_)
 uuid=$(/usr/libexec/PlistBuddy -c 'Print :Entitlements:application-identifier' /dev/stdin <<< $(security cms -D -i ${mp})_)
 ```
 
 ### idevice
+
 - list real devices
     ```bash
     $ idevice_id -l
@@ -122,7 +126,7 @@ uuid=$(/usr/libexec/PlistBuddy -c 'Print :Entitlements:application-identifier' /
     ...
     ```
 
-### list install app
+### list apps
 ```bash
 $ ideviceinstaller -u ${DEVICEID} --list-apps
 CFBundleIdentifier, CFBundleVersion, CFBundleDisplayName
