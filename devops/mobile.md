@@ -5,7 +5,7 @@
 - [ios](#ios)
   - [get info](#get-info)
   - [idevice](#idevice)
-  - [list install app](#list-install-app)
+  - [list apps](#list-apps)
   - [install app](#install-app)
   - [idevicediagnostics](#idevicediagnostics)
 - [andriod](#andriod)
