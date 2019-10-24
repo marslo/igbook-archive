@@ -37,6 +37,7 @@ rlog        = "!bash -c 'while read branch; do \n\
                git plog remotes/origin/$branch; \n\
              done < <(git rev-parse --abbrev-ref HEAD) '"
 ```
+
 ## git log
 ### show files and status without comments
 ```bash
@@ -46,23 +47,22 @@ $ git log --color --stat --abbrev-commit --date=relative --graph --submodule --f
 $ git log --color --stat --abbrev-commit --date=relative --graph --submodule --format="%h %ad- %s [%an]"
 ```
 - e.g.:
-
-```bash
-$ git log -3 --color --stat --abbrev-commit --date=relative --graph --submodule --format="%H"
-* 50ede51fcc3cf0311fd85b3e9c4a36d4beb89e69
-|
-|  devops/git/gerrit.md | 6 ++++--
-|  devops/git/git.md    | 5 +++++
-|  2 files changed, 9 insertions(+), 2 deletions(-)
-* 41d58dabcd0aaee33edd1de7793ffd82c7cffa89
-|
-|  SUMMARY.md | 2 +-
-|  1 file changed, 1 insertion(+), 1 deletion(-)
-* 4460a32d8fddbe7c5c434947aea153273ce215d4
-|
-|  devops/git/{gitStudy.md => git.md} | 117 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
-|  1 file changed, 116 insertions(+), 1 deletion(-)
-```
+    ```bash
+    $ git log -3 --color --stat --abbrev-commit --date=relative --graph --submodule --format="%H"
+    * 50ede51fcc3cf0311fd85b3e9c4a36d4beb89e69
+    |
+    |  devops/git/gerrit.md | 6 ++++--
+    |  devops/git/git.md    | 5 +++++
+    |  2 files changed, 9 insertions(+), 2 deletions(-)
+    * 41d58dabcd0aaee33edd1de7793ffd82c7cffa89
+    |
+    |  SUMMARY.md | 2 +-
+    |  1 file changed, 1 insertion(+), 1 deletion(-)
+    * 4460a32d8fddbe7c5c434947aea153273ce215d4
+    |
+    |  devops/git/{gitStudy.md => git.md} | 117 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+    |  1 file changed, 116 insertions(+), 1 deletion(-)
+    ```
 
 ### show submodule changes
 ```bash
@@ -76,30 +76,68 @@ $ git log -- <submodule name>
 ## git mv
 ### case sensitive
 - error with regular `git mv`
-```bash
-$ git config --global core.ignorecase true
-$ git mv Tig tig
-fatal: renaming 'confs/home/Tig' failed: Invalid argument
-```
+    ```bash
+    $ git config --global core.ignorecase true
+    $ git mv Tig tig
+    fatal: renaming 'confs/home/Tig' failed: Invalid argument
+    ```
+
 - renmae
+    ```bash
+    $ git mv Tig temp
+    $ git aa
+    $ git mv temp tig
+    $ git aa
+    $ git st
+    On branch master
+    Your branch is up to date with 'origin/master'.
 
+    Changes to be committed:
+      (use "git restore --staged <file>..." to unstage)
+        renamed:    Tig/.tig/marslo.tigrc -> tig/.tig/marslo.tigrc
+        renamed:    Tig/.tigrc -> tig/.tigrc
+        renamed:    Tig/.tigrc_latest -> tig/.tigrc_latest
+        renamed:    Tig/tigrc_2.4.1_1_example -> tig/tigrc_2.4.1_1_example
+        renamed:    Tig/tigrc_Marslo -> tig/tigrc_Marslo
+    ```
+
+## undo
+### [delete after push](https://ncona.com/2011/07/how-to-delete-a-commit-in-git-local-and-remote/)
+#### delete only 1 commit
 ```bash
-$ git mv Tig temp
-$ git aa
-$ git mv temp tig
-$ git aa
-$ git st
-On branch master
-Your branch is up to date with 'origin/master'.
+$ git push origin +<hash_for_delete>^:<branch>
 
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-    renamed:    Tig/.tig/marslo.tigrc -> tig/.tig/marslo.tigrc
-    renamed:    Tig/.tigrc -> tig/.tigrc
-    renamed:    Tig/.tigrc_latest -> tig/.tigrc_latest
-    renamed:    Tig/tigrc_2.4.1_1_example -> tig/tigrc_2.4.1_1_example
-    renamed:    Tig/tigrc_Marslo -> tig/tigrc_Marslo
+# e.g.:
+$ git plog --pretty=format:"%h" --no-patch
+* cb46bdc
+* 936543c
+* a83ac6b
+
+# delete cb46bdc
+$ git push origin +cb46bdc^:master
 ```
+
+#### delete multple commits
+- revert local
+    ```bash
+    $ git reset --hard HEAD~
+
+    # or
+    $ git revert --hard HEAD^^^
+
+    # or
+    $ git revert <commit_hash>
+
+    # or
+    $ git rebase -i HEAD~<n>
+    ```
+
+- push to remote
+    ```bash
+    $ git push [--force] origin +<branch>
+    # e.g.:
+    $ git push [--force] origin +master
+    ```
 
 ## Rebase
 ### Without Confilite file
