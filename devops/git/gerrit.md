@@ -156,14 +156,27 @@ $ git merge meta/config
 - `refs/heads/sandbox/${username}/*`
 - `refs/heads/jira/jira-[0-9]{1,5}(_.*)?`
 - freeze `master` branch
-
-```bash
-[access "refs/for/refs/heads/master"]
-push = block group user/Marslo Jiao (marslo)
-submit = block group group user/Marslo Jiao (marslo)
-addPatchSet = block group user/Marslo Jiao (marslo)
-pushMerge = block group user/Marslo Jiao (marslo)
-```
+    - `project.config`
+        ```bash
+        [access "refs/for/refs/heads/master"]
+        push = block group user/Marslo Jiao (marslo)
+        push = block group Registered Users
+        submit = block group Registered Users
+        submit = block group group user/Marslo Jiao (marslo)
+        addPatchSet = block group user/Marslo Jiao (marslo)
+        addPatchSet = block group Registered Users
+        pushMerge = block group user/Marslo Jiao (marslo)
+        pushMerge = block group Registered Users
+        ```
+    - `groups`
+        ```bash
+        ...
+        global:Project-Owners      Project Owners
+        global:Registered-Users    Registered Users
+        ...
+        user:marslo                user/Marslo Jiao(marslo)
+        ...
+        ```
 
 ## reference
 - [project owner guide](https://www.gerritcodereview.com/intro-project-owner.html)
