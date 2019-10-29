@@ -172,6 +172,11 @@ $ git push origin +cb46bdc^:master
     $ git push [--force] origin +master
     ```
 
+### change comments in local
+```bash
+$ git commit --amend
+```
+
 ### change comments in remote
 ```bash
 $ git plog
