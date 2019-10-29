@@ -101,6 +101,32 @@ $ git log -- <submodule name>
         renamed:    Tig/tigrc_Marslo -> tig/tigrc_Marslo
     ```
 
+## clean
+### clean untracked directory and item in `.gitignore`
+```bash
+$ git clean -dfx
+```
+
+#### using `-f` twice if you really want to remove such a directory
+```bash
+$ git st
+On branch meta/config
+Your branch is based on 'origin/meta/config', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+    my-sbumodule/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git clean -dfx
+Skipping repository my-submodule/
+
+$ git clean -dffx
+Removing my-submodule/
+```
+
 ## undo
 ### [delete after push](https://ncona.com/2011/07/how-to-delete-a-commit-in-git-local-and-remote/)
 #### delete only 1 commit
