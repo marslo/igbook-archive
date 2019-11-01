@@ -136,7 +136,7 @@ Removing my-submodule/
 
 ## undo
 ### [delete after push](https://ncona.com/2011/07/how-to-delete-a-commit-in-git-local-and-remote/)
-#### delete only 1 commit
+#### delete only the latest commit
 ```bash
 $ git push origin +<hash_for_delete>^:<branch>
 
@@ -156,10 +156,10 @@ $ git push origin +cb46bdc^:master
     $ git reset --hard HEAD~
 
     # or
-    $ git revert --hard HEAD^^^
+    $ git reset --hard HEAD^^^
 
     # or
-    $ git revert <commit_hash>
+    $ git reset --hard <commit_hash>
 
     # or
     $ git rebase -i HEAD~<n>
@@ -171,6 +171,40 @@ $ git push origin +cb46bdc^:master
     # e.g.:
     $ git push [--force] origin +master
     ```
+
+#### change remote comments
+```bash
+$ git rebase -i HEAD~<n>
+
+```
+And then change `pick` to `reword`
+
+- example
+    ```bash
+    $ git plogs
+    * 1e7d979 - (HEAD -> master, origin/master, origin/HEAD) f (24 seconds ago) <marslo>
+    * 9b89ed7 - c (40 seconds ago) <marslo>
+    * beb575f - d (51 seconds ago) <marslo>
+    * 25d010d - e (57 seconds ago) <marslo>
+    * c502e34 - b (64 seconds ago) <marslo>
+    * 8890288 - init commit (4 minutes ago) <Marslo Jiao>
+
+    $ git rebase -i HEAD~5
+    reword c502e34 b
+    pick 25d010d e
+    pick beb575f d
+    reword 9b89ed7 c
+    pick 1e7d979 f
+
+    $ git push --force origin master
+    # or
+    $ git push origin +master
+    ```
+
+#### change remote root comments
+```bash
+$ git rebase -i --root
+```
 
 ### change comments in local
 ```bash
