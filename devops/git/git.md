@@ -172,6 +172,39 @@ $ git push origin +cb46bdc^:master
     $ git push [--force] origin +master
     ```
 
+### change latest comments in local
+```bash
+$ git commit --amend
+```
+
+- change comments in remote
+    ```bash
+    $ git plog
+    * a79d384 - (HEAD -> master, origin/master, origin/HEAD) update (11 seconds ago) <marslo>
+    * 7cef7c7 - update (7 hours ago) <marslo>
+    * e1d7a64 - update (7 hours ago) <marslo>
+
+    # change comments on a79d384
+    $ git commit --amend
+    $ git push --force-with-lease origin master
+
+    # result
+    $ git fetch --all --force
+    $ git plog remotes/origin/master
+    Fetching origin
+    * ba49259 - (HEAD -> master, origin/master, origin/HEAD) update a79d384 for change comments (24 seconds ago) <marslo>
+    * 7cef7c7 - update (7 hours ago) <marslo>
+    * e1d7a64 - update (7 hours ago) <marslo>
+    ```
+
+#### change remote root comments
+```bash
+$ git rebase -i --root
+$ git push origin +<branch>
+```
+
+![rebase -i --root](../../screenshot/rebase-i-root.gif)
+
 #### change remote comments
 ```bash
 $ git rebase -i HEAD~<n>
@@ -201,35 +234,6 @@ And then change `pick` to `reword`
     $ git push origin +master
     ```
 
-#### change remote root comments
-```bash
-$ git rebase -i --root
-```
-
-### change comments in local
-```bash
-$ git commit --amend
-```
-
-### change comments in remote
-```bash
-$ git plog
-* a79d384 - (HEAD -> master, origin/master, origin/HEAD) update (11 seconds ago) <marslo>
-* 7cef7c7 - update (7 hours ago) <marslo>
-* e1d7a64 - update (7 hours ago) <marslo>
-
-# change comments on a79d384
-$ git commit --amend
-$ git push --force-with-lease origin master
-
-# result
-$ git fetch --all --force
-$ git plog remotes/origin/master
-Fetching origin
-* ba49259 - (HEAD -> master, origin/master, origin/HEAD) update a79d384 for change comments (24 seconds ago) <marslo>
-* 7cef7c7 - update (7 hours ago) <marslo>
-* e1d7a64 - update (7 hours ago) <marslo>
-```
 
 ## Rebase
 ### Without Confilite file
