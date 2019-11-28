@@ -234,6 +234,27 @@ And then change `pick` to `reword`
     $ git push origin +master
     ```
 
+## checkout
+### checkout specific commit
+```bash
+# credit belongs to https://stackoverflow.com/a/3489576/2940319
+
+# make a new blank repository in the current directory
+git init
+
+# add a remote
+git remote add origin url://to/source/repository
+
+# fetch a commit (or branch or tag) of interest
+# Note: the full history up to this commit will be retrieved unless
+#       you limit it with '--depth=...' or '--shallow-since=...'
+git fetch origin <sha1-of-commit-of-interest>
+
+# reset this repository's master branch to the commit of interest
+git reset --hard FETCH_HEAD
+```
+
+
 
 ## Rebase
 ### Without Confilite file
