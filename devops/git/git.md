@@ -254,6 +254,10 @@ git fetch origin <sha1-of-commit-of-interest>
 git reset --hard FETCH_HEAD
 ```
 
+### checkout single branch
+```bash
+$ git clone --single-branch --branch <branch name> url://to/source/repository [target dir]
+```
 
 
 ## Rebase
