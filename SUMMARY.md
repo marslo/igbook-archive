@@ -28,6 +28,10 @@
   * [ssh](devops/ssh.md)
 - jenkins
   * [configuration](jenkins/configuration.md)
+  * [kubernetes-plugin](jenkins/kubernetes-plugin.md)
+- kubernetes
+  * [kubeadm](kubernetes/kubeadm.md)
+  * [network](kubernetes/network.md)
 - programming
   - angular
     * [angularConfiguraion](programming/angular/angularConfiguraion.md)
@@ -45,9 +49,6 @@
   * [skype](tool/skype.md)
   * [teamviewer](tool/teamviewer.md)
 - ubuntu
-  - kubernetes
-    * [kubeadm](ubuntu/kubernetes/kubeadm.md)
-    * [network](ubuntu/kubernetes/network.md)
   * [apps](ubuntu/apps.md)
   * [installation](ubuntu/installation.md)
   * [repo](ubuntu/repo.md)

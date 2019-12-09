@@ -2,6 +2,8 @@
 #### ca.crt
 ```bash
 $ grep certificate-authority-data ~/.kube/config | awk -F': ' '{print $NF}' |  base64 -d > ca.crt
+OR
+$ sudo cat /etc/kubernetes/pki/ca.crt
 ```
 
 #### client.crt & client.key
