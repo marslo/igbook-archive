@@ -18,10 +18,19 @@ properties([
 ])
 ```
 
-- Dec
+- declarative:
 
     ```groovy
     triggers {
         pollSCM ignorePostCommitHooks: true, scmpoll_spec: 'H H * * *'
     }
     ```
+
+### Triggered by
+
+- [gitlab](https://stackoverflow.com/a/55366682/2940319)
+```groovy
+currentBuild.rawBuild.getCause(com.dabsquared.gitlabjenkins.cause.GitLabWebHookCause).getData()
+// or
+commit = currentBuild.rawBuild.getCause(com.dabsquared.gitlabjenkins.cause.GitLabWebHookCause).getData().getLastCommit()
+```
