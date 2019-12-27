@@ -16,7 +16,7 @@
     pod/kube-controller-manager-dc5-ssdfw3
     ```
 
-- `--template`
+- `--template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}'`
 
     ```bash
     $ kubectl -n kube-system get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | head
