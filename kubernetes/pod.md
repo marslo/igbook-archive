@@ -7,13 +7,13 @@
     pod/coredns-c7ddbcccb-5cj5z
     pod/coredns-c7ddbcccb-lxsw6
     pod/coredns-c7ddbcccb-prjfk
-    pod/etcd-dc5-ssdfw3
-    pod/etcd-dc5-ssdfw4
-    pod/etcd-ir-ssdfw1
-    pod/kube-apiserver-dc5-ssdfw3
-    pod/kube-apiserver-dc5-ssdfw4
-    pod/kube-apiserver-ir-ssdfw1
-    pod/kube-controller-manager-dc5-ssdfw3
+    pod/etcd-node03
+    pod/etcd-node04
+    pod/etcd-node01
+    pod/kube-apiserver-node03
+    pod/kube-apiserver-node04
+    pod/kube-apiserver-node01
+    pod/kube-controller-manager-node03
     ```
 
 - `--template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}'`
@@ -23,13 +23,13 @@
     coredns-c7ddbcccb-5cj5z
     coredns-c7ddbcccb-lxsw6
     coredns-c7ddbcccb-prjfk
-    etcd-dc5-ssdfw3
-    etcd-dc5-ssdfw4
-    etcd-ir-ssdfw1
-    kube-apiserver-dc5-ssdfw3
-    kube-apiserver-dc5-ssdfw4
-    kube-apiserver-ir-ssdfw1
-    kube-controller-manager-dc5-ssdfw3
+    etcd-node03
+    etcd-node04
+    etcd-node01
+    kube-apiserver-node03
+    kube-apiserver-node04
+    kube-apiserver-node01
+    kube-controller-manager-node03
 
     # OR
 
@@ -37,11 +37,11 @@
     coredns-c7ddbcccb-5cj5z
     coredns-c7ddbcccb-lxsw6
     coredns-c7ddbcccb-prjfk
-    etcd-dc5-ssdfw3
-    etcd-dc5-ssdfw4
-    etcd-ir-ssdfw1
-    kube-apiserver-dc5-ssdfw3
-    kube-apiserver-dc5-ssdfw4
-    kube-apiserver-ir-ssdfw1
-    kube-controller-manager-dc5-ssdfw3
+    etcd-node03
+    etcd-node04
+    etcd-node01
+    kube-apiserver-node03
+    kube-apiserver-node04
+    kube-apiserver-node01
+    kube-controller-manager-node03
     ```
