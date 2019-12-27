@@ -1,7 +1,6 @@
-### [List Pods name](https://stackoverflow.com/a/51612372/2940319)
+### List Pods name [details](https://stackoverflow.com/a/51612372/2940319)
 
 - `-o name`
-
     ```bash
     $ k -n kube-system get pods -o name | head
     pod/coredns-c7ddbcccb-5cj5z
@@ -17,7 +16,6 @@
     ```
 
 - `--template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}'`
-
     ```bash
     $ k -n kube-system get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | head
     coredns-c7ddbcccb-5cj5z
@@ -47,7 +45,6 @@
     ```
 
 - `-o custom-columns=":metadata.name"`
-
     ```bash
     # https://stackoverflow.com/a/52691455/2940319
 
@@ -65,7 +62,6 @@
     ```
 
 - `jsonpath={.items..metadata.name}`
-
     ```bash
     $ k -n kube-system get pods --output=jsonpath={.items..metadata.name}
     coredns-c7ddbcccb-5cj5z coredns-c7ddbcccb-lxsw6 coredns-c7ddbcccb-prjfk ...
