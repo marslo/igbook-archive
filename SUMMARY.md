@@ -33,6 +33,7 @@
 - kubernetes
   * [kubeadm](kubernetes/kubeadm.md)
   * [network](kubernetes/network.md)
+  * [pod](kubernetes/pod.md)
 - programming
   - angular
     * [angularConfiguraion](programming/angular/angularConfiguraion.md)
