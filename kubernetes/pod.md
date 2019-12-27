@@ -1,4 +1,5 @@
-### List Pods name [details](https://stackoverflow.com/a/51612372/2940319)
+### List Pods name
+[Inspired from here](https://stackoverflow.com/a/51612372/2940319)
 
 - `-o name`
     ```bash
