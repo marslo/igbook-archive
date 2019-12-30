@@ -1,5 +1,6 @@
 # I, marslo
 
+- [artifactory](artifactory/artifactory.md)
 - cheatsheet
   * [files&chars](cheatsheet/files&chars.md)
   * [good](cheatsheet/good.md)
