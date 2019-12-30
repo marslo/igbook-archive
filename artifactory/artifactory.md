@@ -28,7 +28,7 @@ Time periods are specified with a number and one of the following suffixes:
 
 - e.g. find root folder &&  4 weeks ago
 
-    ```json
+    ```bash
     items.find(
       {
         "repo": "my-repo",
@@ -39,10 +39,20 @@ Time periods are specified with a number and one of the following suffixes:
         }
       }
     )
+
+    $ curl -X POST -uadmin:password https://my.artifactory.com/artifactory/api/search/aql -T find.aql 
     ```
 
+- e.g.: delete all in `my-repo` 4 weeks ago
+
     ```bash
-    $ for _i in $(curl -X POST -uadmin:password https://my.artifactory.com/artifactory/api/search/aql -T find.aql | jq .results[].name); do
+    username='admin'
+    password='password'
+    curlOpt= "-u${username}:${password}"
+    rtURL='https://my.artifactory.com/artifactory'
+
+    for _i in $(curl -s -X POST ${curlOpt} ${rtURL}/api/search/aql -T find.aql | jq --raw-output .results[].name); do
         echo ${_i}
+        curl -X DELETE ${curlOpt} ${rtURL}'/my-repo/'${_i}
     done
     ```
