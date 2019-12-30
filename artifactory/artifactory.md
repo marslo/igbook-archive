@@ -50,11 +50,12 @@ Time periods are specified with a number and one of the following suffixes:
     password='password'
     rtURL='https://my.artifactory.com/artifactory'
     cibuild='my-jenkins-build'
+    reponame='my-rt-repo'
     curlOpt= "-g -u${username}:${password}"
 
     for _i in $(curl -s -X POST ${curlOpt} ${rtURL}/api/search/aql -T find.aql | jq --raw-output .results[].name); do
         echo ${_i}
-        curl -X DELETE ${curlOpt} ${rtURL}'/my-repo/'${_i}
-        curl -X DELETE ${rtURL}"/api/build/${cibuild}?buildNumbers="${_i}'&artifacts=1'
+        curl -X DELETE ${curlOpt} "${rtURL}/${reponame}/${_i}"
+        curl -X DELETE ${curlOpt} "${rtURL}/api/build/${cibuild}?buildNumbers=${_i}&artifacts=1"
     done
     ```
