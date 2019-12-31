@@ -29,6 +29,7 @@
   * [ssh](devops/ssh.md)
 - jenkins
   - [jenkinsfile](jenkins/jenkinsfile/jenkinsfile.md)
+    * [lockable-resource](jenkins/jenkinsfile/lockable-resource.md)
   * [configuration](jenkins/configuration.md)
   * [kubernetes-plugin](jenkins/kubernetes-plugin.md)
 - kubernetes
