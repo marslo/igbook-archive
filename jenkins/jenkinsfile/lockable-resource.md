@@ -158,3 +158,6 @@ all_lockable_resources.each { r->
     }
 }
 ```
+
+## reference
+    - [javadoc](https://javadoc.jenkins.io/plugin/lockable-resources/org/jenkins/plugins/lockableresources/LockableResource.html)
