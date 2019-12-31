@@ -161,3 +161,11 @@ all_lockable_resources.each { r->
 
 ## reference
     - [javadoc](https://javadoc.jenkins.io/plugin/lockable-resources/org/jenkins/plugins/lockableresources/LockableResource.html)
+    - [configure-lockable-resources.groovy](https://gist.github.com/ansig/d7edafe38fbfc13c5b3cd15351849804)
+    - [collect-resources-data-for-graphite.groovy](https://gist.github.com/ansig/c9f2ac8e291d5dcb854d49f691f6c7e8)
+    - [LockableResourcesHelper.groovy](https://gist.github.com/glance-/aaa3c037757895798d4e1be5134bb843)
+    - [lockable_resources_from_json.groovy](https://gist.github.com/evidex/520d7a096929bdda1779a51e380819be)
+    - [list_lockable_resources.groovy](https://gist.github.com/evidex/925fbc47a871141070b81e7dbbcf713f)
+    - [JenkinsJobDslCleanupLockableResources.groovy](https://gist.github.com/marcusphi/3380f83964249b1250a6d5230be741e5)
+    - [JenkinsScriptedPipelineCleanupLockableResources.groovy](https://gist.github.com/marcusphi/d5a5d5769b69627a5169dc440d52a223)
+    - [jenkins-remove-lockable-resources.groovy](https://gist.github.com/hrickmachado/86683781f700ea2b5a5012ad1d22b54)
