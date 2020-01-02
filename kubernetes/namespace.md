@@ -1,5 +1,3 @@
-
-
 ## remove stuck namespace
 ### check which item occupied the resource
 
