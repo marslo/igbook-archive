@@ -34,8 +34,9 @@
   * [kubernetes-plugin](jenkins/kubernetes-plugin.md)
 - kubernetes
   * [kubeadm](kubernetes/kubeadm.md)
-  * [network](kubernetes/network.md)
+  * [monitor](kubernetes/monitor.md)
   * [namespace](kubernetes/namespace.md)
+  * [network](kubernetes/network.md)
   * [pod](kubernetes/pod.md)
 - programming
   - angular
