@@ -35,7 +35,7 @@
 - kubernetes
   * [kubeadm](kubernetes/kubeadm.md)
   * [network](kubernetes/network.md)
-  * [ns](kubernetes/ns.md)
+  * [namespace](kubernetes/namespace.md)
   * [pod](kubernetes/pod.md)
 - programming
   - angular
