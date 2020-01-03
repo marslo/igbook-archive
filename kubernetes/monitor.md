@@ -235,6 +235,9 @@ $ cat ~/.kube/config | grep client-certificate-data | awk '{print $2}' | base64 
 $ cat ~/.kube/config | grep client-key-data | awk '{print $2}' | base64 -d
 ```
 
+- dashboard (315)
+![grafana-315](../screenshot/grafana-315.mp4)
+
 ## Reference
 - [Scaling out Grafana with Kubernetes and AWS](https://medium.com/@fcgravalos/scaling-out-grafana-with-kubernetes-and-aws-62745257df10)
 - [How To Setup Grafana On Kubernetes](https://devopscube.com/setup-grafana-kubernetes/)
