@@ -10,9 +10,38 @@ $ curl -X PUT -H "Content-Type: application/json" -d '{
 ```
 
 ### Setup
-```bash
+- ns
+    ```bash
+    $ cat << EOF | kubectl apply -f -
+    ---
+    kind: Namespace
+    apiVersion: v1
+    metadata:
+      name: kubernetes-dashboard
+      labels:
+        name: kubernetes-dashboard
+    EOF
+    ```
+- sa
+    ```bash
 
-```
+    ```
+- pv & pvc
+    ```bash
+
+    ```
+- deploy
+    ```bash
+
+    ```
+- svc
+    ```bash
+
+    ```
+- ing
+    ```bash
+
+    ```
 
 ## Reference
 - [Scaling out Grafana with Kubernetes and AWS](https://medium.com/@fcgravalos/scaling-out-grafana-with-kubernetes-and-aws-62745257df10)

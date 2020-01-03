@@ -152,3 +152,4 @@ devops@devops-kubernetes-master:/etc/apt$
 - [1 - Kubernetes Objects](https://codefarm.me/2019/02/22/kubernetes-crash-course-1/)
 - [2 - Kubernetes Pods](https://codefarm.me/2019/03/04/kubernetes-crash-course-2/)
 - [3 - Kubernetes Services and Ingress](https://codefarm.me/2019/03/04/kubernetes-crash-course-3/)
+- [4 - Kubernetes Storage](https://codefarm.me/2019/03/25/kubernetes-crash-course-4/)
