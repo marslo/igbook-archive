@@ -33,6 +33,7 @@
   * [configuration](jenkins/configuration.md)
   * [kubernetes-plugin](jenkins/kubernetes-plugin.md)
 - kubernetes
+  * [certificates](kubernetes/certificates.md)
   * [kubeadm](kubernetes/kubeadm.md)
   * [monitor](kubernetes/monitor.md)
   * [namespace](kubernetes/namespace.md)
