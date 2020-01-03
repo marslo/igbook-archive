@@ -9,6 +9,23 @@ $ curl -X PUT -H "Content-Type: application/json" -d '{
 }' http://admin:admin@<your_grafana_host>:3000/api/user/password
 ```
 
+### Environment
+```bash
+# for pvc
+$ mkdir -p /opt/grafana/plugins
+$ sudo chwon -R 472:472 $_
+
+# https://grafana.com/docs/grafana/latest/installation/docker/#migration-from-a-previous-version-of-the-docker-container-to-5-1-or-later
+# 104:104 for version < 5.1
+```
+- [User ID changes](https://grafana.com/docs/grafana/latest/installation/docker/#user-id-changes)
+
+|  Version |   User  | User ID |
+|:--------:|:-------:|:-------:|
+|  `< 5.1` | grafana |  `104`  |
+| `>= 5.1` | grafana |  `472`  |
+
+
 ### Setup
 - ns
     ```bash
