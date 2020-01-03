@@ -1,0 +1,13 @@
+heic-1.gif filter=lfs diff=lfs merge=lfs -text
+heic.gif filter=lfs diff=lfs merge=lfs -text
+rebase-i-root.gif filter=lfs diff=lfs merge=lfs -text
+grafana-315.gif filter=lfs diff=lfs merge=lfs -text
+grafana-plugin-1.gif filter=lfs diff=lfs merge=lfs -text
+grafana-plugin-2.gif filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+screenshot/grafana-plugin-1.gif filter=lfs diff=lfs merge=lfs -text
+screenshot/grafana-plugin-2.gif filter=lfs diff=lfs merge=lfs -text
+screenshot/heic-1.gif filter=lfs diff=lfs merge=lfs -text
+screenshot/heic.gif filter=lfs diff=lfs merge=lfs -text
+screenshot/rebase-i-root.gif filter=lfs diff=lfs merge=lfs -text
+screenshot/grafana-315.gif filter=lfs diff=lfs merge=lfs -text

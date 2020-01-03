@@ -235,9 +235,12 @@ $ cat ~/.kube/config | grep client-certificate-data | awk '{print $2}' | base64 
 $ cat ~/.kube/config | grep client-key-data | awk '{print $2}' | base64 -d
 ```
 
+![grafana-plugin-1.gif](../screenshot/grafana-plugin-1.gif)
+![grafana-plugin-2.gif](../screenshot/grafana-plugin-2.gif)
+
 #### dashboard (315)
 
-![grafana-315](../screenshot/grafana-315.gif)
+![grafana-315.gif](../screenshot/grafana-315.gif)
 
 ## Reference
 - [Scaling out Grafana with Kubernetes and AWS](https://medium.com/@fcgravalos/scaling-out-grafana-with-kubernetes-and-aws-62745257df10)
