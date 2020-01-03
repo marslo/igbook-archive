@@ -12,8 +12,8 @@ $ curl -X PUT -H "Content-Type: application/json" -d '{
 ### Environment
 ```bash
 # for pvc
-$ mkdir -p /opt/grafana/plugins
-$ sudo chwon -R 472:472 $_
+kubems-01 ~ $ mkdir -p /opt/grafana/plugins
+kubems-01 ~ $ sudo chwon -R 472:472 $_
 
 # https://grafana.com/docs/grafana/latest/installation/docker/#migration-from-a-previous-version-of-the-docker-container-to-5-1-or-later
 # 104:104 for version < 5.1
@@ -29,7 +29,7 @@ $ sudo chwon -R 472:472 $_
 ### Setup
 - ns
     ```bash
-    $ cat << EOF | kubectl apply -f -
+    $ cat << EOF | k apply -f -
     ---
     kind: Namespace
     apiVersion: v1
@@ -41,23 +41,189 @@ $ sudo chwon -R 472:472 $_
     ```
 - sa
     ```bash
+    $ cat << EOF | k apply -f -
+    ---
+    apiVersion: v1
+    kind: ServiceAccount
+    metadata:
+      labels:
+        k8s-app: grafana
+      name: grafana-admin
+      namespace: kubernetes-dashboard
+    ---
+    apiVersion: rbac.authorization.k8s.io/v1beta1
+    kind: ClusterRoleBinding
+    metadata:
+      name: grafana-admin
+      labels:
+        k8s-app: grafana
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+    - kind: ServiceAccount
+      name: grafana
+      namespace: kubernetes-dashboard
+    EOF
 
     ```
 - pv & pvc
     ```bash
+    $ cat << EOF | k apply -f -
+    ---
+    kind: PersistentVolume
+    apiVersion: v1
+    metadata:
+      name: grafana
+      labels:
+        type: local
+    spec:
+      storageClassName: manual
+      capacity:
+        storage: 2Gi
+      accessModes:
+        - ReadWriteMany
+      hostPath:
+        path: "/opt/grafana"
 
+    ---
+    kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: grafana
+      namespace: kubernetes-dashboard
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: 2Gi
+      storageClassName: "manual"
+      volumeName: grafana
+    EOF
     ```
 - deploy
     ```bash
-
+    $ cat << EOF | k apply -f -
+    ---
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    metadata:
+      name: grafana
+      namespace: kubernetes-dashboard
+      labels:
+        app: grafana
+        component: core
+    spec:
+      replicas: 1
+      strategy:
+        rollingUpdate:
+          maxSurge: 25%
+          maxUnavailable: 25%
+        type: RollingUpdate
+      template:
+        metadata:
+          labels:
+            app: grafana
+            component: core
+        spec:
+          affinity:
+            nodeAffinity:
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                    - kubems-01
+          containers:
+          - image: grafana/grafana
+            name: grafana
+            imagePullPolicy: IfNotPresent
+            resources:
+              # keep request = limit to keep this container in guaranteed class
+              limits:
+                cpu: 512m
+                memory: 512Mi
+              requests:
+                cpu: 256m
+                memory: 256Mi
+            env:
+              # The following env variables set up basic auth twith the default admin user and admin password.
+              - name: GF_SERVER_DOMAIN
+                value: "ssdfw-staging-grafana.marvell.com"
+              - name: GF_SECURITY_ADMIN_PASSWORD
+                value: "mypasswd"
+              - name: GF_INSTALL_PLUGINS
+                value: "grafana-kubernetes-app"
+              - name: GF_SERVER_ROOT_URL
+                value: "/"
+              - name: GF_AUTH_BASIC_ENABLED
+                value: "true"
+              - name: GF_AUTH_ANONYMOUS_ENABLED
+                value: "false"
+            readinessProbe:
+              httpGet:
+                path: /login
+                port: 3000
+            volumeMounts:
+            - name: grafana-persistent-storage
+              mountPath: /var/lib/grafana
+          restartPolicy: Always
+          terminationGracePeriodSeconds: 30
+          serviceAccountName: grafana
+          volumes:
+          - name: grafana-persistent-storage
+            persistentVolumeClaim:
+              claimName: grafana
+    EOF
     ```
 - svc
     ```bash
-
+    $ cat << EOF | k apply -f -
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: grafana
+      namespace: kubernetes-dashboard
+      labels:
+        app: grafana
+        component: core
+    spec:
+      type: CluslterIP
+      ports:
+        - name: http
+          port: 3000
+          protocol: TCP
+      selector:
+        app: grafana
+        component: core
+    EOF
     ```
 - ing
     ```bash
-
+    $ cat << EOF | k apply -f -
+    apiVersion: extensions/v1beta1
+    kind: Ingress
+    metadata:
+        name: grafana
+        namespace: kubernetes-dashboard
+    spec:
+        rules:
+        - host: grafana.marslo.com
+         http:
+           paths:
+           - path: /
+             backend:
+              serviceName: grafana
+              servicePort: http
+        tls:
+        - hosts:
+          - grafana.marslo.com
+          secretName: marslo-cert
+    EOF
     ```
 
 ## Reference
