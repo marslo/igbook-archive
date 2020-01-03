@@ -227,7 +227,7 @@ kubems-01 ~ $ sudo chwon -R 472:472 $_
     ```
 
 ### configure
-- `grafana-kubernetes-app`
+#### `grafana-kubernetes-app`
 
 ```bash
 $ cat ~/.kube/config | grep certificate-authority-data | awk '{print $2}' | base64 -d
@@ -235,7 +235,8 @@ $ cat ~/.kube/config | grep client-certificate-data | awk '{print $2}' | base64 
 $ cat ~/.kube/config | grep client-key-data | awk '{print $2}' | base64 -d
 ```
 
-- dashboard (315)
+#### dashboard (315)
+
 ![grafana-315](../screenshot/grafana-315.mp4)
 
 ## Reference
