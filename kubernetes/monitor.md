@@ -152,7 +152,7 @@ kubems-01 ~ $ sudo chwon -R 472:472 $_
             env:
               # The following env variables set up basic auth twith the default admin user and admin password.
               - name: GF_SERVER_DOMAIN
-                value: "ssdfw-staging-grafana.marvell.com"
+                value: "grafana.marslo.com"
               - name: GF_SECURITY_ADMIN_PASSWORD
                 value: "mypasswd"
               - name: GF_INSTALL_PLUGINS
@@ -225,6 +225,15 @@ kubems-01 ~ $ sudo chwon -R 472:472 $_
           secretName: marslo-cert
     EOF
     ```
+
+### configure
+- `grafana-kubernetes-app`
+
+```bash
+$ cat ~/.kube/config | grep certificate-authority-data | awk '{print $2}' | base64 -d
+$ cat ~/.kube/config | grep client-certificate-data | awk '{print $2}' | base64 -d
+$ cat ~/.kube/config | grep client-key-data | awk '{print $2}' | base64 -d
+```
 
 ## Reference
 - [Scaling out Grafana with Kubernetes and AWS](https://medium.com/@fcgravalos/scaling-out-grafana-with-kubernetes-and-aws-62745257df10)
