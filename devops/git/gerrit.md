@@ -4,8 +4,14 @@
 
   - [.gitconfig](#gitconfig)
   - [project.config](#projectconfig)
+    - [refs for Verified](#refs-for-verified)
+    - [reference](#reference)
   - [refs/meta/config](#refsmetaconfig)
-- [reference](#reference)
+    - [get project.config](#get-projectconfig)
+    - [publish to remote](#publish-to-remote)
+    - [update meta/config if remotes update](#update-metaconfig-if-remotes-update)
+    - [useful refs](#useful-refs)
+- [reference](#reference-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

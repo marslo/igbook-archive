@@ -2,11 +2,19 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [core.autocrlf](#coreautocrlf)
-- [please notice](#please-notice)
+- [theory](#theory)
+  - [core.autocrlf](#coreautocrlf)
+    - [parameters](#parameters)
+    - [set in GUI](#set-in-gui)
+  - [please notice](#please-notice)
+- [practice](#practice)
+  - [force using `lf` in both remote and local](#force-using-lf-in-both-remote-and-local)
+  - [ignore `warning: LF will be replaced by CRLF`](#ignore-warning-lf-will-be-replaced-by-crlf)
+- [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+## theory
 ### core.autocrlf
 
 #### [parameters](https://stackoverflow.com/a/41282375/2940319)
@@ -54,3 +62,23 @@ $ git config --global core.autocrlf false
 > `eol`
 >
 > This attribute sets a specific line-ending style to be used in the working directory. It enables end-of-line conversion without any content checks, effectively setting the text attribute. Note that setting this attribute on paths which are in the index with CRLF line endings may make the paths to be considered dirty. Adding the path to the index again will normalize the line endings in the index.
+
+## practice
+### force using `lf` in both remote and local
+```bahs
+$ git config core.eol lf
+$ git config core.autocrlf input
+```
+or
+```bash
+$ git config --global core.eol lf
+$ git config --global core.autocrlf input
+```
+
+### [ignore `warning: LF will be replaced by CRLF`](https://stackoverflow.com/a/17628353/2940319)
+```bash
+$ git config --global core.safecrlf false
+```
+
+## Reference
+- [Force LF eol in git repo and working copy](https://stackoverflow.com/a/9977954/2940319)

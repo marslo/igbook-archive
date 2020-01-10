@@ -23,7 +23,7 @@
 - devops
   - [git](devops/git/git.md)
     * [gerrit](devops/git/gerrit.md)
-    * [lineEnding](devops/git/lineEnding.md)
+    * [eol](devops/git/eol.md)
     * [q&a](devops/git/q&a.md)
   * [adminTools](devops/adminTools.md)
   * [android](devops/android.md)
