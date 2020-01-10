@@ -1,3 +1,25 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Lockable Resource Manager](#lockable-resource-manager)
+  - [get info](#get-info)
+    - [get all labels](#get-all-labels)
+    - [Get resource by label](#get-resource-by-label)
+    - [is label valided](#is-label-valided)
+    - [Get free number of label](#get-free-number-of-label)
+    - [Get all resource](#get-all-resource)
+  - [add or remove](#add-or-remove)
+    - [remove by label (or name)](#remove-by-label-or-name)
+    - [create new item](#create-new-item)
+  - [reserve & unlock](#reserve--unlock)
+    - [by cli](#by-cli)
+    - [by api](#by-api)
+    - [examples](#examples)
+  - [reference](#reference)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 # Lockable Resource Manager
 

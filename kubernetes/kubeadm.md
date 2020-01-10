@@ -5,6 +5,7 @@
 - [Repo Sources](#repo-sources)
 - [Package Search](#package-search)
 - [Installation](#installation)
+- [reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

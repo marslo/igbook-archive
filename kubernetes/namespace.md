@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [remove stuck namespace](#remove-stuck-namespace)
+  - [check which item occupied the resource](#check-which-item-occupied-the-resource)
+  - [remove challenge.certmanager](#remove-challengecertmanager)
+- [Reference](#reference)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## remove stuck namespace
 ### check which item occupied the resource
 
