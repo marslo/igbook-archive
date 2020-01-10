@@ -1,11 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [I, marslo](#i-marslo)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # I, marslo
 
 - [artifactory](artifactory/artifactory.md)
@@ -22,8 +14,8 @@
   * [windows](cheatsheet/windows.md)
 - devops
   - [git](devops/git/git.md)
-    * [gerrit](devops/git/gerrit.md)
     * [eol](devops/git/eol.md)
+    * [gerrit](devops/git/gerrit.md)
     * [q&a](devops/git/q&a.md)
   * [adminTools](devops/adminTools.md)
   * [android](devops/android.md)

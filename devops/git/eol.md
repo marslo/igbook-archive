@@ -4,8 +4,6 @@
 
 - [theory](#theory)
   - [core.autocrlf](#coreautocrlf)
-    - [parameters](#parameters)
-    - [set in GUI](#set-in-gui)
   - [please notice](#please-notice)
 - [practice](#practice)
   - [force using `lf` in both remote and local](#force-using-lf-in-both-remote-and-local)
