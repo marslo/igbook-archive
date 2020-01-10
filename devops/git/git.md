@@ -476,6 +476,10 @@ Applying: 2: 1
     ```
 
 ## trick and scripts
+### remove `warning: CRLF will be replaced by LF in xxx file` for `.gitattributes` ([reference](https://help.github.com/en/github/using-git/configuring-git-to-handle-line-endings))
+```bash
+$ git add --all -u --renormalize .
+```
 ### fetch merge all
 ```bash
 $ cat ~/.gitconfig
