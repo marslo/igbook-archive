@@ -480,6 +480,13 @@ Applying: 2: 1
 ```bash
 $ git add --all -u --renormalize .
 ```
+
+- or ignore the warning
+
+```bash
+$ git config --global core.safecrlf false
+```
+
 ### fetch merge all
 ```bash
 $ cat ~/.gitconfig
