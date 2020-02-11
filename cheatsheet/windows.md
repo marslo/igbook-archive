@@ -102,10 +102,10 @@ Type "SETX /?" for usage.
 
 - Fix:
 
-    ```bat
-    [14:31:18.67 C:\]
-    $ REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /t REG_SZ /d "%path%;%M2_HOME%\bin" /f
-    ```
+```bat
+[14:31:18.67 C:\]
+$ REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /t REG_SZ /d "%path%;%M2_HOME%\bin" /f
+```
 
 
 ### whoami check SID
@@ -138,4 +138,11 @@ Windows Registry Editor Version 5.00
 "TurnOffSidebar"=-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Windows\Sidebar]
 "TurnOffSidebar"=-
+```
+
+### issue for `"profile.d\Active"' is not recognized as an internal or external command`
+
+```bat
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor]
+"Autorun"="@CHCP 65001>nul"
 ```
