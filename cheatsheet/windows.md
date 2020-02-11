@@ -102,10 +102,10 @@ Type "SETX /?" for usage.
 
 - Fix:
 
-```bat
-[14:31:18.67 C:\]
-$ REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /t REG_SZ /d "%path%;%M2_HOME%\bin" /f
-```
+    ```bat
+    [14:31:18.67 C:\]
+    $ REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /t REG_SZ /d "%path%;%M2_HOME%\bin" /f
+    ```
 
 
 ### whoami check SID
@@ -145,4 +145,6 @@ Windows Registry Editor Version 5.00
 ```bat
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor]
 "Autorun"="@CHCP 65001>nul"
+
+$ REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor" /v AutoRun /t REG_SZ /d "@CHCP 65001>nul" /f
 ```
