@@ -140,7 +140,7 @@ Windows Registry Editor Version 5.00
 "TurnOffSidebar"=-
 ```
 
-### issue about `"profile.d\Active"' is not recognized as an internal or external command`
+### [issue about `"profile.d\Active"' is not recognized as an internal or external command`](https://github.com/cmderdev/cmder/issues/1102#issuecomment-251550950)
 
 - regedit
 
