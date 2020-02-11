@@ -140,11 +140,17 @@ Windows Registry Editor Version 5.00
 "TurnOffSidebar"=-
 ```
 
-### issue for `"profile.d\Active"' is not recognized as an internal or external command`
+### issue about `"profile.d\Active"' is not recognized as an internal or external command`
 
-```bat
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor]
-"Autorun"="@CHCP 65001>nul"
+- regedit
 
-$ REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor" /v AutoRun /t REG_SZ /d "@CHCP 65001>nul" /f
+    ```bat
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor]
+    "Autorun"="@CHCP 65001>nul"
 ```
+
+- cmd
+
+    ```bat
+    $ REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor" /v AutoRun /t REG_SZ /d "@CHCP 65001>nul" /f
+    ```
